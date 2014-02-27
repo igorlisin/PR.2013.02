@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PR.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="imagesFolderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">images</Value>
+    </Setting>
+    <Setting Name="reportTemplatesFolderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">templates</Value>
+    </Setting>
+    <Setting Name="reportsFolderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">reports</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

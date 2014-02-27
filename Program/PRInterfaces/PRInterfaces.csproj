@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C5AD062-661C-4A1F-9D9D-703E2F2847B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PRInterfaces</RootNamespace>
+    <AssemblyName>PRInterfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enumerations\DocumentTypes.cs" />
+    <Compile Include="Enumerations\ObjectTypes.cs" />
+    <Compile Include="Enumerations\PictureTypes.cs" />
+    <Compile Include="Enumerations\ApartmentTypes.cs" />
+    <Compile Include="Interfaces\IDistrict.cs" />
+    <Compile Include="Interfaces\IApartment.cs" />
+    <Compile Include="Interfaces\IApartments.cs" />
+    <Compile Include="Interfaces\ICities.cs" />
+    <Compile Include="Interfaces\ICity.cs" />
+    <Compile Include="Interfaces\IClient.cs" />
+    <Compile Include="Interfaces\IClients.cs" />
+    <Compile Include="Interfaces\ICompanies.cs" />
+    <Compile Include="Interfaces\ICompany.cs" />
+    <Compile Include="Interfaces\IComplex.cs" />
+    <Compile Include="Interfaces\IComplexes.cs" />
+    <Compile Include="Interfaces\ICountries.cs" />
+    <Compile Include="Interfaces\ICountry.cs" />
+    <Compile Include="Interfaces\IDistricts.cs" />
+    <Compile Include="Interfaces\IDocument.cs" />
+    <Compile Include="Interfaces\IDocuments.cs" />
+    <Compile Include="Interfaces\IEmployee.cs" />
+    <Compile Include="Interfaces\IEmployees.cs" />
+    <Compile Include="Interfaces\IEntities.cs" />
+    <Compile Include="Interfaces\IEntity.cs" />
+    <Compile Include="Interfaces\IHome.cs" />
+    <Compile Include="Interfaces\IHomes.cs" />
+    <Compile Include="Interfaces\IPicture.cs" />
+    <Compile Include="Interfaces\IPictures.cs" />
+    <Compile Include="Interfaces\IMan.cs" />
+    <Compile Include="Interfaces\IMans.cs" />
+    <Compile Include="Interfaces\IObject.cs" />
+    <Compile Include="Interfaces\IObjects.cs" />
+    <Compile Include="Interfaces\IPlugin.cs" />
+    <Compile Include="Interfaces\IRegion.cs" />
+    <Compile Include="Interfaces\IRegions.cs" />
+    <Compile Include="Interfaces\IReport.cs" />
+    <Compile Include="Interfaces\IReports.cs" />
+    <Compile Include="Interfaces\IStreet.cs" />
+    <Compile Include="Interfaces\IStreets.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="AfterClean">
+    <RemoveDir Directories="obj\" />
+  </Target>
+</Project>

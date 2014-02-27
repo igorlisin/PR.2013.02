@@ -1,0 +1,509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CDD1536-C2AC-43B3-83FF-C9B2A39B83F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PRUI</RootNamespace>
+    <AssemblyName>PRUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\ApartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApartmentForm.Designer.cs">
+      <DependentUpon>ApartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ApartmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApartmentsForm.Designer.cs">
+      <DependentUpon>ApartmentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CitiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CitiesForm.Designer.cs">
+      <DependentUpon>CitiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CityForm.Designer.cs">
+      <DependentUpon>CityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CitySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CitySelectForm.Designer.cs">
+      <DependentUpon>CitySelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientForm.Designer.cs">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientSelectForm.Designer.cs">
+      <DependentUpon>ClientSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientsForm.Designer.cs">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ComplexesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ComplexesForm.Designer.cs">
+      <DependentUpon>ComplexesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ComplexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ComplexForm.Designer.cs">
+      <DependentUpon>ComplexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ComplexSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ComplexSelectForm.Designer.cs">
+      <DependentUpon>ComplexSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CountriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CountriesForm.Designer.cs">
+      <DependentUpon>CountriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CountryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CountryForm.Designer.cs">
+      <DependentUpon>CountryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CountrySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CountrySelectForm.Designer.cs">
+      <DependentUpon>CountrySelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DocumentForm.Designer.cs">
+      <DependentUpon>DocumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DocumentSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DocumentSelectForm.Designer.cs">
+      <DependentUpon>DocumentSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DocumentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DocumentsForm.Designer.cs">
+      <DependentUpon>DocumentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeesForm.Designer.cs">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EntityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EntityForm.Designer.cs">
+      <DependentUpon>EntityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HomeSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomeSelectForm.Designer.cs">
+      <DependentUpon>HomeSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HomesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomesForm.Designer.cs">
+      <DependentUpon>HomesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImagePreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImagePreviewForm.Designer.cs">
+      <DependentUpon>ImagePreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ImageSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageSelectForm.Designer.cs">
+      <DependentUpon>ImageSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PictureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PictureForm.Designer.cs">
+      <DependentUpon>PictureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PicturesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PicturesForm.Designer.cs">
+      <DependentUpon>PicturesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManForm.Designer.cs">
+      <DependentUpon>ManForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManSelectForm.Designer.cs">
+      <DependentUpon>ManSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MansForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MansForm.Designer.cs">
+      <DependentUpon>MansForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProgramOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProgramOptionsForm.Designer.cs">
+      <DependentUpon>ProgramOptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProgressBarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProgressBarForm.Designer.cs">
+      <DependentUpon>ProgressBarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegionForm.Designer.cs">
+      <DependentUpon>RegionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegionSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegionSelectForm.Designer.cs">
+      <DependentUpon>RegionSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegionsForm.Designer.cs">
+      <DependentUpon>RegionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportsForm.Designer.cs">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StreetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StreetForm.Designer.cs">
+      <DependentUpon>StreetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StreetSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StreetSelectForm.Designer.cs">
+      <DependentUpon>StreetSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StreetsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StreetsForm.Designer.cs">
+      <DependentUpon>StreetsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateForms\TemplateEntityPersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateForms\TemplateEntityPersonForm.Designer.cs">
+      <DependentUpon>TemplateEntityPersonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateForms\TemplateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateForms\TemplateDialog.Designer.cs">
+      <DependentUpon>TemplateDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateForms\TemplateEntityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateForms\TemplateEntityForm.Designer.cs">
+      <DependentUpon>TemplateEntityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateForms\TemplateEntityListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateForms\TemplateEntityListForm.Designer.cs">
+      <DependentUpon>TemplateEntityListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemplateForms\TemplateEntityLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateForms\TemplateEntityLocationForm.Designer.cs">
+      <DependentUpon>TemplateEntityLocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateForms\TemplateEntitySelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateForms\TemplateEntitySelectForm.Designer.cs">
+      <DependentUpon>TemplateEntitySelectForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\ApartmentForm.resx">
+      <DependentUpon>ApartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApartmentsForm.resx">
+      <DependentUpon>ApartmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CitiesForm.resx">
+      <DependentUpon>CitiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CityForm.resx">
+      <DependentUpon>CityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CitySelectForm.resx">
+      <DependentUpon>CitySelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientForm.resx">
+      <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientSelectForm.resx">
+      <DependentUpon>ClientSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientsForm.resx">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ComplexesForm.resx">
+      <DependentUpon>ComplexesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ComplexForm.resx">
+      <DependentUpon>ComplexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ComplexSelectForm.resx">
+      <DependentUpon>ComplexSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CountriesForm.resx">
+      <DependentUpon>CountriesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CountryForm.resx">
+      <DependentUpon>CountryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CountrySelectForm.resx">
+      <DependentUpon>CountrySelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DocumentForm.resx">
+      <DependentUpon>DocumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DocumentSelectForm.resx">
+      <DependentUpon>DocumentSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DocumentsForm.resx">
+      <DependentUpon>DocumentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeesForm.resx">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EntityForm.resx">
+      <DependentUpon>EntityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HomeSelectForm.resx">
+      <DependentUpon>HomeSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HomesForm.resx">
+      <DependentUpon>HomesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImagePreviewForm.resx">
+      <DependentUpon>ImagePreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageSelectForm.resx">
+      <DependentUpon>ImageSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PictureForm.resx">
+      <DependentUpon>PictureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PicturesForm.resx">
+      <DependentUpon>PicturesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManForm.resx">
+      <DependentUpon>ManForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManSelectForm.resx">
+      <DependentUpon>ManSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MansForm.resx">
+      <DependentUpon>MansForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProgramOptionsForm.resx">
+      <DependentUpon>ProgramOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProgressBarForm.resx">
+      <DependentUpon>ProgressBarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegionForm.resx">
+      <DependentUpon>RegionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegionSelectForm.resx">
+      <DependentUpon>RegionSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegionsForm.resx">
+      <DependentUpon>RegionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StreetForm.resx">
+      <DependentUpon>StreetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StreetSelectForm.resx">
+      <DependentUpon>StreetSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StreetsForm.resx">
+      <DependentUpon>StreetsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateForms\TemplateEntityPersonForm.resx">
+      <DependentUpon>TemplateEntityPersonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateForms\TemplateDialog.resx">
+      <DependentUpon>TemplateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateForms\TemplateEntityForm.resx">
+      <DependentUpon>TemplateEntityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateForms\TemplateEntityListForm.resx">
+      <DependentUpon>TemplateEntityListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateForms\TemplateEntityLocationForm.resx">
+      <DependentUpon>TemplateEntityLocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateForms\TemplateEntitySelectForm.resx">
+      <DependentUpon>TemplateEntitySelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PRInterfaces\PRInterfaces.csproj">
+      <Project>{4c5ad062-661c-4a1f-9d9d-703e2f2847b3}</Project>
+      <Name>PRInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{681aafb2-0bcb-4936-a9df-c65c5608af25}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linkButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlinkButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enlargeImageButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defaultPictureImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ensmallImageButton.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="AfterClean">
+    <RemoveDir Directories="obj\" />
+  </Target>
+</Project>

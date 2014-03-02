@@ -49,6 +49,12 @@
     <Compile Include="Forms\ApartmentForm.Designer.cs">
       <DependentUpon>ApartmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ApartmentSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ApartmentSelectForm.Designer.cs">
+      <DependentUpon>ApartmentSelectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ApartmentsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,12 @@
     </Compile>
     <Compile Include="Forms\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeSelectForm.Designer.cs">
+      <DependentUpon>EmployeeSelectForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\EmployeesForm.cs">
       <SubType>Form</SubType>
@@ -330,6 +342,9 @@
     <EmbeddedResource Include="Forms\ApartmentForm.resx">
       <DependentUpon>ApartmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ApartmentSelectForm.resx">
+      <DependentUpon>ApartmentSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ApartmentsForm.resx">
       <DependentUpon>ApartmentsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeSelectForm.resx">
+      <DependentUpon>EmployeeSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EmployeesForm.resx">
       <DependentUpon>EmployeesForm.cs</DependentUpon>

@@ -388,8 +388,53 @@ namespace PRUI.Forms
 
         #endregion
 
-        #endregion
+        private void relinkEmployeeButton_Click(object sender, EventArgs e)
+        {
+            EmployeeSelectForm employeeSelectForm; 
+            employeeSelectForm = new EmployeeSelectForm();
+            employeeSelectForm.ShowDialog();
+        }
 
         #endregion
+
+        private void relinkObjectButton_Click(object sender, EventArgs e)
+        {
+            ApartmentSelectForm objectSelectForm;
+            objectSelectForm = new ApartmentSelectForm();
+            objectSelectForm.ShowDialog();
+        }
+
+
+        #endregion
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clientPatronymicTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddObjectButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddClientButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddEmployeeButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -53,12 +53,32 @@
             this.evaluationDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.reportNumberTextBox = new System.Windows.Forms.TextBox();
             this.reportNumberLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.ObjectKomplexTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ObjectFlatTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ObjectHouseTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ObjectStreetTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.relinkObjectButton = new System.Windows.Forms.Button();
+            this.unlinkObjectButton = new System.Windows.Forms.Button();
+            this.ObjectCityTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.AddObjectButton = new System.Windows.Forms.Button();
+            this.AddClientButton = new System.Windows.Forms.Button();
+            this.AddEmployeeButton = new System.Windows.Forms.Button();
+            this.ObjectTypeTextBox = new System.Windows.Forms.TextBox();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
             this.clientInfoGroup.SuspendLayout();
             this.employeeInfoGroup.SuspendLayout();
             this.reportInfoGroup.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // saveButton
@@ -79,14 +99,15 @@
             // 
             // noteInfoGroup
             // 
-            this.noteInfoGroup.Location = new System.Drawing.Point(995, 341);
+            this.noteInfoGroup.Location = new System.Drawing.Point(995, 353);
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(1214, 447);
+            this.closeButton.Location = new System.Drawing.Point(1213, 583);
             // 
             // clientInfoGroup
             // 
+            this.clientInfoGroup.Controls.Add(this.AddClientButton);
             this.clientInfoGroup.Controls.Add(this.relinkClientButton);
             this.clientInfoGroup.Controls.Add(this.unlinkClientButton);
             this.clientInfoGroup.Controls.Add(this.clientNameLabel);
@@ -95,9 +116,9 @@
             this.clientInfoGroup.Controls.Add(this.clientSurnameLabel);
             this.clientInfoGroup.Controls.Add(this.clientPatronymicLabel);
             this.clientInfoGroup.Controls.Add(this.clientSurnameTextBox);
-            this.clientInfoGroup.Location = new System.Drawing.Point(498, 208);
+            this.clientInfoGroup.Location = new System.Drawing.Point(619, 12);
             this.clientInfoGroup.Name = "clientInfoGroup";
-            this.clientInfoGroup.Size = new System.Drawing.Size(276, 107);
+            this.clientInfoGroup.Size = new System.Drawing.Size(276, 142);
             this.clientInfoGroup.TabIndex = 32;
             this.clientInfoGroup.TabStop = false;
             this.clientInfoGroup.Text = "Клиент";
@@ -105,7 +126,7 @@
             // relinkClientButton
             // 
             this.relinkClientButton.Image = global::PRUI.Properties.Resources.linkButton;
-            this.relinkClientButton.Location = new System.Drawing.Point(204, 32);
+            this.relinkClientButton.Location = new System.Drawing.Point(9, 108);
             this.relinkClientButton.Name = "relinkClientButton";
             this.relinkClientButton.Size = new System.Drawing.Size(30, 20);
             this.relinkClientButton.TabIndex = 61;
@@ -115,7 +136,7 @@
             // unlinkClientButton
             // 
             this.unlinkClientButton.Image = global::PRUI.Properties.Resources.unlinkButton;
-            this.unlinkClientButton.Location = new System.Drawing.Point(240, 32);
+            this.unlinkClientButton.Location = new System.Drawing.Point(93, 108);
             this.unlinkClientButton.Name = "unlinkClientButton";
             this.unlinkClientButton.Size = new System.Drawing.Size(30, 20);
             this.unlinkClientButton.TabIndex = 62;
@@ -138,6 +159,7 @@
             this.clientPatronymicTextBox.Name = "clientPatronymicTextBox";
             this.clientPatronymicTextBox.Size = new System.Drawing.Size(261, 20);
             this.clientPatronymicTextBox.TabIndex = 10;
+            this.clientPatronymicTextBox.TextChanged += new System.EventHandler(this.clientPatronymicTextBox_TextChanged);
             // 
             // clientNameTextBox
             // 
@@ -175,6 +197,7 @@
             // 
             // employeeInfoGroup
             // 
+            this.employeeInfoGroup.Controls.Add(this.AddEmployeeButton);
             this.employeeInfoGroup.Controls.Add(this.relinkEmployeeButton);
             this.employeeInfoGroup.Controls.Add(this.unlinkEmployeeButton);
             this.employeeInfoGroup.Controls.Add(this.employeeNameLabel);
@@ -183,9 +206,9 @@
             this.employeeInfoGroup.Controls.Add(this.employeeSurnameLabel);
             this.employeeInfoGroup.Controls.Add(this.employeePatronymicLabel);
             this.employeeInfoGroup.Controls.Add(this.employeeSurnameTextBox);
-            this.employeeInfoGroup.Location = new System.Drawing.Point(498, 321);
+            this.employeeInfoGroup.Location = new System.Drawing.Point(619, 184);
             this.employeeInfoGroup.Name = "employeeInfoGroup";
-            this.employeeInfoGroup.Size = new System.Drawing.Size(276, 98);
+            this.employeeInfoGroup.Size = new System.Drawing.Size(276, 145);
             this.employeeInfoGroup.TabIndex = 33;
             this.employeeInfoGroup.TabStop = false;
             this.employeeInfoGroup.Text = "Сотрудник";
@@ -193,16 +216,17 @@
             // relinkEmployeeButton
             // 
             this.relinkEmployeeButton.Image = global::PRUI.Properties.Resources.linkButton;
-            this.relinkEmployeeButton.Location = new System.Drawing.Point(204, 32);
+            this.relinkEmployeeButton.Location = new System.Drawing.Point(9, 106);
             this.relinkEmployeeButton.Name = "relinkEmployeeButton";
             this.relinkEmployeeButton.Size = new System.Drawing.Size(30, 20);
             this.relinkEmployeeButton.TabIndex = 61;
             this.relinkEmployeeButton.UseVisualStyleBackColor = true;
+            this.relinkEmployeeButton.Click += new System.EventHandler(this.relinkEmployeeButton_Click);
             // 
             // unlinkEmployeeButton
             // 
             this.unlinkEmployeeButton.Image = global::PRUI.Properties.Resources.unlinkButton;
-            this.unlinkEmployeeButton.Location = new System.Drawing.Point(240, 32);
+            this.unlinkEmployeeButton.Location = new System.Drawing.Point(93, 106);
             this.unlinkEmployeeButton.Name = "unlinkEmployeeButton";
             this.unlinkEmployeeButton.Size = new System.Drawing.Size(30, 20);
             this.unlinkEmployeeButton.TabIndex = 62;
@@ -324,25 +348,214 @@
             this.reportNumberLabel.TabIndex = 35;
             this.reportNumberLabel.Text = "Номер";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ObjectTypeTextBox);
+            this.groupBox1.Controls.Add(this.AddObjectButton);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.ObjectKomplexTextBox);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.ObjectFlatTextBox);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.ObjectHouseTextBox);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.ObjectStreetTextBox);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.relinkObjectButton);
+            this.groupBox1.Controls.Add(this.unlinkObjectButton);
+            this.groupBox1.Controls.Add(this.ObjectCityTextBox);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(304, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(276, 331);
+            this.groupBox1.TabIndex = 35;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Объект оценки";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 204);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 13);
+            this.label8.TabIndex = 73;
+            this.label8.Text = "По комплексу";
+            // 
+            // ObjectKomplexTextBox
+            // 
+            this.ObjectKomplexTextBox.Enabled = false;
+            this.ObjectKomplexTextBox.Location = new System.Drawing.Point(9, 218);
+            this.ObjectKomplexTextBox.Name = "ObjectKomplexTextBox";
+            this.ObjectKomplexTextBox.Size = new System.Drawing.Size(73, 20);
+            this.ObjectKomplexTextBox.TabIndex = 72;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(192, 158);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 13);
+            this.label7.TabIndex = 71;
+            this.label7.Text = "Квартира";
+            // 
+            // ObjectFlatTextBox
+            // 
+            this.ObjectFlatTextBox.Enabled = false;
+            this.ObjectFlatTextBox.Location = new System.Drawing.Point(195, 172);
+            this.ObjectFlatTextBox.Name = "ObjectFlatTextBox";
+            this.ObjectFlatTextBox.Size = new System.Drawing.Size(75, 20);
+            this.ObjectFlatTextBox.TabIndex = 70;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 158);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.TabIndex = 69;
+            this.label6.Text = "Дом";
+            // 
+            // ObjectHouseTextBox
+            // 
+            this.ObjectHouseTextBox.Enabled = false;
+            this.ObjectHouseTextBox.Location = new System.Drawing.Point(9, 172);
+            this.ObjectHouseTextBox.Name = "ObjectHouseTextBox";
+            this.ObjectHouseTextBox.Size = new System.Drawing.Size(73, 20);
+            this.ObjectHouseTextBox.TabIndex = 68;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 115);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 13);
+            this.label5.TabIndex = 67;
+            this.label5.Text = "Улица";
+            // 
+            // ObjectStreetTextBox
+            // 
+            this.ObjectStreetTextBox.Enabled = false;
+            this.ObjectStreetTextBox.Location = new System.Drawing.Point(9, 129);
+            this.ObjectStreetTextBox.Name = "ObjectStreetTextBox";
+            this.ObjectStreetTextBox.Size = new System.Drawing.Size(261, 20);
+            this.ObjectStreetTextBox.TabIndex = 66;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 63;
+            this.label1.Text = "Город";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // relinkObjectButton
+            // 
+            this.relinkObjectButton.Image = global::PRUI.Properties.Resources.linkButton;
+            this.relinkObjectButton.Location = new System.Drawing.Point(9, 257);
+            this.relinkObjectButton.Name = "relinkObjectButton";
+            this.relinkObjectButton.Size = new System.Drawing.Size(30, 20);
+            this.relinkObjectButton.TabIndex = 61;
+            this.relinkObjectButton.UseVisualStyleBackColor = true;
+            this.relinkObjectButton.Click += new System.EventHandler(this.relinkObjectButton_Click);
+            // 
+            // unlinkObjectButton
+            // 
+            this.unlinkObjectButton.Image = global::PRUI.Properties.Resources.unlinkButton;
+            this.unlinkObjectButton.Location = new System.Drawing.Point(90, 257);
+            this.unlinkObjectButton.Name = "unlinkObjectButton";
+            this.unlinkObjectButton.Size = new System.Drawing.Size(30, 20);
+            this.unlinkObjectButton.TabIndex = 62;
+            this.unlinkObjectButton.UseVisualStyleBackColor = true;
+            // 
+            // ObjectCityTextBox
+            // 
+            this.ObjectCityTextBox.Enabled = false;
+            this.ObjectCityTextBox.Location = new System.Drawing.Point(9, 88);
+            this.ObjectCityTextBox.Name = "ObjectCityTextBox";
+            this.ObjectCityTextBox.Size = new System.Drawing.Size(261, 20);
+            this.ObjectCityTextBox.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Тип";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Адрес";
+            // 
+            // AddObjectButton
+            // 
+            this.AddObjectButton.Location = new System.Drawing.Point(47, 257);
+            this.AddObjectButton.Name = "AddObjectButton";
+            this.AddObjectButton.Size = new System.Drawing.Size(37, 20);
+            this.AddObjectButton.TabIndex = 36;
+            this.AddObjectButton.Text = "+";
+            this.AddObjectButton.UseVisualStyleBackColor = true;
+            this.AddObjectButton.Click += new System.EventHandler(this.AddObjectButton_Click);
+            // 
+            // AddClientButton
+            // 
+            this.AddClientButton.Location = new System.Drawing.Point(48, 108);
+            this.AddClientButton.Name = "AddClientButton";
+            this.AddClientButton.Size = new System.Drawing.Size(37, 20);
+            this.AddClientButton.TabIndex = 74;
+            this.AddClientButton.Text = "+";
+            this.AddClientButton.UseVisualStyleBackColor = true;
+            this.AddClientButton.Click += new System.EventHandler(this.AddClientButton_Click);
+            // 
+            // AddEmployeeButton
+            // 
+            this.AddEmployeeButton.Location = new System.Drawing.Point(48, 106);
+            this.AddEmployeeButton.Name = "AddEmployeeButton";
+            this.AddEmployeeButton.Size = new System.Drawing.Size(37, 20);
+            this.AddEmployeeButton.TabIndex = 63;
+            this.AddEmployeeButton.Text = "+";
+            this.AddEmployeeButton.UseVisualStyleBackColor = true;
+            this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
+            // 
+            // ObjectTypeTextBox
+            // 
+            this.ObjectTypeTextBox.Enabled = false;
+            this.ObjectTypeTextBox.Location = new System.Drawing.Point(8, 32);
+            this.ObjectTypeTextBox.Name = "ObjectTypeTextBox";
+            this.ObjectTypeTextBox.Size = new System.Drawing.Size(261, 20);
+            this.ObjectTypeTextBox.TabIndex = 74;
+            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 618);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.reportInfoGroup);
             this.Controls.Add(this.employeeInfoGroup);
             this.Controls.Add(this.clientInfoGroup);
             this.Name = "ReportForm";
             this.Text = "ReportForm";
+            this.Controls.SetChildIndex(this.clientInfoGroup, 0);
+            this.Controls.SetChildIndex(this.employeeInfoGroup, 0);
+            this.Controls.SetChildIndex(this.reportInfoGroup, 0);
+            this.Controls.SetChildIndex(this.groupBox1, 0);
             this.Controls.SetChildIndex(this.saveButton, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.idInfoGroup, 0);
             this.Controls.SetChildIndex(this.descriptionInfoGroup, 0);
             this.Controls.SetChildIndex(this.noteInfoGroup, 0);
             this.Controls.SetChildIndex(this.closeButton, 0);
-            this.Controls.SetChildIndex(this.clientInfoGroup, 0);
-            this.Controls.SetChildIndex(this.employeeInfoGroup, 0);
-            this.Controls.SetChildIndex(this.reportInfoGroup, 0);
             this.idInfoGroup.ResumeLayout(false);
             this.idInfoGroup.PerformLayout();
             this.descriptionInfoGroup.ResumeLayout(false);
@@ -355,6 +568,8 @@
             this.employeeInfoGroup.PerformLayout();
             this.reportInfoGroup.ResumeLayout(false);
             this.reportInfoGroup.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -386,5 +601,24 @@
         private System.Windows.Forms.Label reportDateLabel;
         private System.Windows.Forms.Label evaluationDateLabel;
         private System.Windows.Forms.DateTimePicker reportDateDateTimePicker;
+        protected System.Windows.Forms.GroupBox groupBox1;
+        protected System.Windows.Forms.Button relinkObjectButton;
+        protected System.Windows.Forms.Button unlinkObjectButton;
+        protected System.Windows.Forms.TextBox ObjectCityTextBox;
+        protected System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.Label label8;
+        protected System.Windows.Forms.TextBox ObjectKomplexTextBox;
+        protected System.Windows.Forms.Label label7;
+        protected System.Windows.Forms.TextBox ObjectFlatTextBox;
+        protected System.Windows.Forms.Label label6;
+        protected System.Windows.Forms.TextBox ObjectHouseTextBox;
+        protected System.Windows.Forms.Label label5;
+        protected System.Windows.Forms.TextBox ObjectStreetTextBox;
+        private System.Windows.Forms.Button AddObjectButton;
+        private System.Windows.Forms.Button AddClientButton;
+        private System.Windows.Forms.Button AddEmployeeButton;
+        protected System.Windows.Forms.TextBox ObjectTypeTextBox;
     }
 }

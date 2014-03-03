@@ -43,6 +43,26 @@ namespace PRUI.Forms
         /// </summary>
         private IEmployee _employeeAfterRelinking;
 
+        /// <summary>
+        /// Поле. Список квартир
+        /// </summary>
+        IApartments _apartments;
+
+        /// <summary>
+        /// Поле. Список домов
+        /// </summary>
+        IHomes _homes;
+
+        /// <summary>
+        /// Поле. Человек
+        /// </summary>
+        IMans _man;
+
+        /// <summary>
+        /// Поле. Документ
+        /// </summary>
+        IDocuments _document;
+
         #endregion
 
         #region Properties
@@ -189,7 +209,7 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public ReportForm(IReport report, IClients clients, IEmployees employees)
+        public ReportForm(IReport report, IClients clients, IEmployees employees, IApartments apartments, IHomes homes, IMans man, IDocuments document)
         {
             InitializeComponent();                          // Инициализировать компоненты формы
 
@@ -199,6 +219,13 @@ namespace PRUI.Forms
 
             _clientAfterRelinking = report.Client;          // Сохранить клиента связанного с отчетов
             _employeeAfterRelinking = report.Employee;      // Сохранить сотрудника связанного с отчетов
+
+            _apartments = apartments;                       // Сохранить список квартир в поле
+
+            _homes = homes;                                 // Сохранить список домов с поле
+
+            _man = man;                                     // Сохранить чловека
+            _document = document;                           // Сохранить документ
 
             CleanAllData();                                 // Очистить компоненты всех групп
 
@@ -424,12 +451,46 @@ namespace PRUI.Forms
 
         private void AddObjectButton_Click(object sender, EventArgs e)
         {
+            IApartment apartment;                                       // Квартира
+            IHome home;                                                 // Дом, связанный с квартирой
+            ApartmentForm apartmentForm;                                // Форма редактирования квартиры
+ 
+            apartment = _apartments.Create();                           // Создать квартиру
+            home = _homes.Create();                                     // Создать дом, связанный с квартирой
+            apartment.Home = home;                                      // Связать дом с квартирой
+
+            apartmentForm = new ApartmentForm(apartment, _homes);       // Создать форму для редактирования квартиры
+
+            apartmentForm.ShowDialog();                                 // Отобразить форму для редактирования квартиры
 
         }
 
         private void AddClientButton_Click(object sender, EventArgs e)
         {
+            IMan man;                                               // Человек
+            IDocument document;                                     // Документ
+            IClient client;                                         // Клиент
 
+            man = _man.Create();                                    // Создать человек
+            document = _document.Create();                          // Создать документ
+            client = _clients.Create();                             // Создать клиент
+
+            man.Name = clientNameTextBox.Text;                      // Присвоить Имя с текстового поля
+            man.Surname = clientSurnameTextBox.Text;                // Присвоить Фамилия с текстового поля
+            man.Patronymic = clientPatronymicTextBox.Text;          // Присвоить Отчество с текстового поля
+
+            document.Series = Convert.ToInt32(clientDocSeriesTextBox.Text);             // Присвоить Серия документа с текстового поля
+            document.Number = Convert.ToInt32(clientDocNumberTextBox.Text);             // Присвоить Номер документа с текстового поля
+            document.DataOfIssue = Convert.ToDateTime(clientDocDataIssueTextBox.Text);  // Присвоить Дата получения документа с текстового поля
+            document.PlaceOfIssue = clientDocGivesTextBox.Text;                         // Присвоить Кем выдан с текстового поля
+
+            client.Man = man;                                       // Присвоить Клиента с текстового поля
+
+            _man.Add(man);                                          // Добавить в базу человека
+            _document.Add(document);                                // Добавить в базу документ
+            _clients.Add(client);                                   // Добавить в базу клиента
+
+           
         }
 
         private void AddEmployeeButton_Click(object sender, EventArgs e)

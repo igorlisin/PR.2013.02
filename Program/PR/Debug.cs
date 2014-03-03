@@ -169,6 +169,10 @@ namespace PR
                 _objectModel.Reports,
                 _objectModel.Clients,
                 _objectModel.Employees,
+                _objectModel.Appartments,
+                _objectModel.Homes,
+                _objectModel.Mans,
+                _objectModel.Documents,
                 Properties.Settings.Default.reportTemplatesFolderPath,
                 Properties.Settings.Default.reportsFolderPath,
                 new ReportsForm.CreateReportDocument(ReportGenerator.Generate));

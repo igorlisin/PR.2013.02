@@ -53,6 +53,26 @@ namespace PRUI.Forms
         /// </summary>
         private string _reportsFolderPath;
 
+        /// <summary>
+        /// Поле. Список квартир
+        /// </summary>
+        IApartments _apartments;
+
+        /// <summary>
+        /// Поле. Список домов
+        /// </summary>
+        IHomes _homes;
+
+        /// <summary>
+        /// Поле. Человек
+        /// </summary>
+        IMans _man;
+
+        /// <summary>
+        /// Поле. Документ
+        /// </summary>
+        IDocuments _document;
+
         #endregion
 
         #region Constructors
@@ -60,7 +80,7 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public ReportsForm(IReports reports, IClients clients, IEmployees employees, string reportTemplatesFolderPath, string reportsFolderPath, CreateReportDocument createReportDocumentFunction)
+        public ReportsForm(IReports reports, IClients clients, IEmployees employees, IApartments apartments, IHomes homes, IMans man, IDocuments document, string reportTemplatesFolderPath, string reportsFolderPath, CreateReportDocument createReportDocumentFunction)
             : base()
         {
             InitializeComponent();                                      // Инициализировать компоненты формы
@@ -68,6 +88,10 @@ namespace PRUI.Forms
             _reports = reports;                                         // Сохранить список отчетов в поле
             _clients = clients;                                         // Сохранить список клиентов в поле
             _employees = employees;                                     // Сохранить список сотрудников в поле
+            _apartments = apartments;                                   // Сохранить список квартир в поле
+            _homes = homes;                                             // Сохранить список домов с поле
+            _man = man;                                                 // Сохранить человека
+            _document = document;                                       // Сохранить документ
             _reportTemplatesFolderPath = reportTemplatesFolderPath;     // Сохранить путь к папке с шаблонами отчетов
             _reportsFolderPath = reportsFolderPath;                     // Сохранить путь к папке с отчетами
             _createReportDocument = createReportDocumentFunction;       // Сохранить делегат метода создания отчета
@@ -249,7 +273,11 @@ namespace PRUI.Forms
             reportForm = new ReportForm(                                // Создать форму для редактирования отчета
                 report,
                 _clients,
-                _employees);                        
+                _employees,
+                _apartments,
+                _homes,
+                _man,
+                _document );                        
 
             reportForm.ShowDialog();                                    // Отобразить форму для редактирования отчета
 
@@ -329,7 +357,11 @@ namespace PRUI.Forms
                 reportForm = new ReportForm(                                // Создать форму для редактирования отчета
                     report,
                     _clients,
-                    _employees);                        
+                    _employees,
+                    _apartments,
+                    _homes,
+                    _man,
+                    _document);                        
 
                 reportForm.ShowDialog();                                     // Отобразить форму для редактирования отчета
 

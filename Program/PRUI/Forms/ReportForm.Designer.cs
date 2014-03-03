@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             this.clientInfoGroup = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.clientDocGivesTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.clientDocDataIssueTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.clientDocNumberTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.clientDocSeriesTextBox = new System.Windows.Forms.TextBox();
+            this.AddClientButton = new System.Windows.Forms.Button();
             this.relinkClientButton = new System.Windows.Forms.Button();
             this.unlinkClientButton = new System.Windows.Forms.Button();
             this.clientNameLabel = new System.Windows.Forms.Label();
@@ -38,6 +48,7 @@
             this.clientPatronymicLabel = new System.Windows.Forms.Label();
             this.clientSurnameTextBox = new System.Windows.Forms.TextBox();
             this.employeeInfoGroup = new System.Windows.Forms.GroupBox();
+            this.AddEmployeeButton = new System.Windows.Forms.Button();
             this.relinkEmployeeButton = new System.Windows.Forms.Button();
             this.unlinkEmployeeButton = new System.Windows.Forms.Button();
             this.employeeNameLabel = new System.Windows.Forms.Label();
@@ -54,6 +65,8 @@
             this.reportNumberTextBox = new System.Windows.Forms.TextBox();
             this.reportNumberLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ObjectTypeTextBox = new System.Windows.Forms.TextBox();
+            this.AddObjectButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.ObjectKomplexTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -68,10 +81,6 @@
             this.ObjectCityTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.AddObjectButton = new System.Windows.Forms.Button();
-            this.AddClientButton = new System.Windows.Forms.Button();
-            this.AddEmployeeButton = new System.Windows.Forms.Button();
-            this.ObjectTypeTextBox = new System.Windows.Forms.TextBox();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -107,6 +116,15 @@
             // 
             // clientInfoGroup
             // 
+            this.clientInfoGroup.Controls.Add(this.label12);
+            this.clientInfoGroup.Controls.Add(this.clientDocGivesTextBox);
+            this.clientInfoGroup.Controls.Add(this.label11);
+            this.clientInfoGroup.Controls.Add(this.clientDocDataIssueTextBox);
+            this.clientInfoGroup.Controls.Add(this.label10);
+            this.clientInfoGroup.Controls.Add(this.clientDocNumberTextBox);
+            this.clientInfoGroup.Controls.Add(this.label9);
+            this.clientInfoGroup.Controls.Add(this.label4);
+            this.clientInfoGroup.Controls.Add(this.clientDocSeriesTextBox);
             this.clientInfoGroup.Controls.Add(this.AddClientButton);
             this.clientInfoGroup.Controls.Add(this.relinkClientButton);
             this.clientInfoGroup.Controls.Add(this.unlinkClientButton);
@@ -118,15 +136,99 @@
             this.clientInfoGroup.Controls.Add(this.clientSurnameTextBox);
             this.clientInfoGroup.Location = new System.Drawing.Point(619, 12);
             this.clientInfoGroup.Name = "clientInfoGroup";
-            this.clientInfoGroup.Size = new System.Drawing.Size(276, 142);
+            this.clientInfoGroup.Size = new System.Drawing.Size(276, 309);
             this.clientInfoGroup.TabIndex = 32;
             this.clientInfoGroup.TabStop = false;
             this.clientInfoGroup.Text = "Клиент";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 202);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 13);
+            this.label12.TabIndex = 83;
+            this.label12.Text = "Кем выдан";
+            // 
+            // clientDocGivesTextBox
+            // 
+            this.clientDocGivesTextBox.Location = new System.Drawing.Point(9, 218);
+            this.clientDocGivesTextBox.Multiline = true;
+            this.clientDocGivesTextBox.Name = "clientDocGivesTextBox";
+            this.clientDocGivesTextBox.Size = new System.Drawing.Size(261, 59);
+            this.clientDocGivesTextBox.TabIndex = 82;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 167);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 13);
+            this.label11.TabIndex = 81;
+            this.label11.Text = "Дата выдачи";
+            // 
+            // clientDocDataIssueTextBox
+            // 
+            this.clientDocDataIssueTextBox.Location = new System.Drawing.Point(9, 183);
+            this.clientDocDataIssueTextBox.Name = "clientDocDataIssueTextBox";
+            this.clientDocDataIssueTextBox.Size = new System.Drawing.Size(76, 20);
+            this.clientDocDataIssueTextBox.TabIndex = 80;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(152, 122);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 79;
+            this.label10.Text = "Номер";
+            // 
+            // clientDocNumberTextBox
+            // 
+            this.clientDocNumberTextBox.Location = new System.Drawing.Point(155, 138);
+            this.clientDocNumberTextBox.Name = "clientDocNumberTextBox";
+            this.clientDocNumberTextBox.Size = new System.Drawing.Size(115, 20);
+            this.clientDocNumberTextBox.TabIndex = 78;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 122);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(38, 13);
+            this.label9.TabIndex = 77;
+            this.label9.Text = "Серия";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 76;
+            this.label4.Text = "Документ";
+            // 
+            // clientDocSeriesTextBox
+            // 
+            this.clientDocSeriesTextBox.Location = new System.Drawing.Point(9, 138);
+            this.clientDocSeriesTextBox.Name = "clientDocSeriesTextBox";
+            this.clientDocSeriesTextBox.Size = new System.Drawing.Size(76, 20);
+            this.clientDocSeriesTextBox.TabIndex = 75;
+            // 
+            // AddClientButton
+            // 
+            this.AddClientButton.Location = new System.Drawing.Point(48, 283);
+            this.AddClientButton.Name = "AddClientButton";
+            this.AddClientButton.Size = new System.Drawing.Size(37, 20);
+            this.AddClientButton.TabIndex = 74;
+            this.AddClientButton.Text = "+";
+            this.AddClientButton.UseVisualStyleBackColor = true;
+            this.AddClientButton.Click += new System.EventHandler(this.AddClientButton_Click);
+            // 
             // relinkClientButton
             // 
             this.relinkClientButton.Image = global::PRUI.Properties.Resources.linkButton;
-            this.relinkClientButton.Location = new System.Drawing.Point(9, 108);
+            this.relinkClientButton.Location = new System.Drawing.Point(9, 283);
             this.relinkClientButton.Name = "relinkClientButton";
             this.relinkClientButton.Size = new System.Drawing.Size(30, 20);
             this.relinkClientButton.TabIndex = 61;
@@ -136,7 +238,7 @@
             // unlinkClientButton
             // 
             this.unlinkClientButton.Image = global::PRUI.Properties.Resources.unlinkButton;
-            this.unlinkClientButton.Location = new System.Drawing.Point(93, 108);
+            this.unlinkClientButton.Location = new System.Drawing.Point(93, 283);
             this.unlinkClientButton.Name = "unlinkClientButton";
             this.unlinkClientButton.Size = new System.Drawing.Size(30, 20);
             this.unlinkClientButton.TabIndex = 62;
@@ -154,7 +256,6 @@
             // 
             // clientPatronymicTextBox
             // 
-            this.clientPatronymicTextBox.Enabled = false;
             this.clientPatronymicTextBox.Location = new System.Drawing.Point(9, 71);
             this.clientPatronymicTextBox.Name = "clientPatronymicTextBox";
             this.clientPatronymicTextBox.Size = new System.Drawing.Size(261, 20);
@@ -163,7 +264,6 @@
             // 
             // clientNameTextBox
             // 
-            this.clientNameTextBox.Enabled = false;
             this.clientNameTextBox.Location = new System.Drawing.Point(9, 32);
             this.clientNameTextBox.Name = "clientNameTextBox";
             this.clientNameTextBox.Size = new System.Drawing.Size(76, 20);
@@ -189,7 +289,6 @@
             // 
             // clientSurnameTextBox
             // 
-            this.clientSurnameTextBox.Enabled = false;
             this.clientSurnameTextBox.Location = new System.Drawing.Point(93, 32);
             this.clientSurnameTextBox.Name = "clientSurnameTextBox";
             this.clientSurnameTextBox.Size = new System.Drawing.Size(105, 20);
@@ -206,12 +305,22 @@
             this.employeeInfoGroup.Controls.Add(this.employeeSurnameLabel);
             this.employeeInfoGroup.Controls.Add(this.employeePatronymicLabel);
             this.employeeInfoGroup.Controls.Add(this.employeeSurnameTextBox);
-            this.employeeInfoGroup.Location = new System.Drawing.Point(619, 184);
+            this.employeeInfoGroup.Location = new System.Drawing.Point(619, 327);
             this.employeeInfoGroup.Name = "employeeInfoGroup";
             this.employeeInfoGroup.Size = new System.Drawing.Size(276, 145);
             this.employeeInfoGroup.TabIndex = 33;
             this.employeeInfoGroup.TabStop = false;
             this.employeeInfoGroup.Text = "Сотрудник";
+            // 
+            // AddEmployeeButton
+            // 
+            this.AddEmployeeButton.Location = new System.Drawing.Point(48, 106);
+            this.AddEmployeeButton.Name = "AddEmployeeButton";
+            this.AddEmployeeButton.Size = new System.Drawing.Size(37, 20);
+            this.AddEmployeeButton.TabIndex = 63;
+            this.AddEmployeeButton.Text = "+";
+            this.AddEmployeeButton.UseVisualStyleBackColor = true;
+            this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
             // 
             // relinkEmployeeButton
             // 
@@ -374,6 +483,24 @@
             this.groupBox1.Text = "Объект оценки";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // ObjectTypeTextBox
+            // 
+            this.ObjectTypeTextBox.Enabled = false;
+            this.ObjectTypeTextBox.Location = new System.Drawing.Point(8, 32);
+            this.ObjectTypeTextBox.Name = "ObjectTypeTextBox";
+            this.ObjectTypeTextBox.Size = new System.Drawing.Size(261, 20);
+            this.ObjectTypeTextBox.TabIndex = 74;
+            // 
+            // AddObjectButton
+            // 
+            this.AddObjectButton.Location = new System.Drawing.Point(47, 257);
+            this.AddObjectButton.Name = "AddObjectButton";
+            this.AddObjectButton.Size = new System.Drawing.Size(37, 20);
+            this.AddObjectButton.TabIndex = 36;
+            this.AddObjectButton.Text = "+";
+            this.AddObjectButton.UseVisualStyleBackColor = true;
+            this.AddObjectButton.Click += new System.EventHandler(this.AddObjectButton_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -497,44 +624,6 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Адрес";
             // 
-            // AddObjectButton
-            // 
-            this.AddObjectButton.Location = new System.Drawing.Point(47, 257);
-            this.AddObjectButton.Name = "AddObjectButton";
-            this.AddObjectButton.Size = new System.Drawing.Size(37, 20);
-            this.AddObjectButton.TabIndex = 36;
-            this.AddObjectButton.Text = "+";
-            this.AddObjectButton.UseVisualStyleBackColor = true;
-            this.AddObjectButton.Click += new System.EventHandler(this.AddObjectButton_Click);
-            // 
-            // AddClientButton
-            // 
-            this.AddClientButton.Location = new System.Drawing.Point(48, 108);
-            this.AddClientButton.Name = "AddClientButton";
-            this.AddClientButton.Size = new System.Drawing.Size(37, 20);
-            this.AddClientButton.TabIndex = 74;
-            this.AddClientButton.Text = "+";
-            this.AddClientButton.UseVisualStyleBackColor = true;
-            this.AddClientButton.Click += new System.EventHandler(this.AddClientButton_Click);
-            // 
-            // AddEmployeeButton
-            // 
-            this.AddEmployeeButton.Location = new System.Drawing.Point(48, 106);
-            this.AddEmployeeButton.Name = "AddEmployeeButton";
-            this.AddEmployeeButton.Size = new System.Drawing.Size(37, 20);
-            this.AddEmployeeButton.TabIndex = 63;
-            this.AddEmployeeButton.Text = "+";
-            this.AddEmployeeButton.UseVisualStyleBackColor = true;
-            this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
-            // 
-            // ObjectTypeTextBox
-            // 
-            this.ObjectTypeTextBox.Enabled = false;
-            this.ObjectTypeTextBox.Location = new System.Drawing.Point(8, 32);
-            this.ObjectTypeTextBox.Name = "ObjectTypeTextBox";
-            this.ObjectTypeTextBox.Size = new System.Drawing.Size(261, 20);
-            this.ObjectTypeTextBox.TabIndex = 74;
-            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -620,5 +709,14 @@
         private System.Windows.Forms.Button AddClientButton;
         private System.Windows.Forms.Button AddEmployeeButton;
         protected System.Windows.Forms.TextBox ObjectTypeTextBox;
+        protected System.Windows.Forms.Label label10;
+        protected System.Windows.Forms.TextBox clientDocNumberTextBox;
+        protected System.Windows.Forms.Label label9;
+        protected System.Windows.Forms.Label label4;
+        protected System.Windows.Forms.TextBox clientDocSeriesTextBox;
+        protected System.Windows.Forms.Label label12;
+        protected System.Windows.Forms.TextBox clientDocGivesTextBox;
+        protected System.Windows.Forms.Label label11;
+        protected System.Windows.Forms.TextBox clientDocDataIssueTextBox;
     }
 }

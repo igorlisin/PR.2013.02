@@ -417,9 +417,15 @@ namespace PRUI.Forms
 
         private void relinkEmployeeButton_Click(object sender, EventArgs e)
         {
-            EmployeeSelectForm employeeSelectForm; 
-            employeeSelectForm = new EmployeeSelectForm();
-            employeeSelectForm.ShowDialog();
+            EmployeeSelectForm employeeSelectForm;                                              // Форма выбора сотрудника
+            employeeSelectForm = new EmployeeSelectForm(_employees);                            // Создать форму
+            employeeSelectForm.ShowDialog();                                                    // Показать окно
+            if (employeeSelectForm.selectedEmployee != null)                                    // Проверить выбранного работника
+            {
+                _employeeAfterRelinking = employeeSelectForm.selectedEmployee;                  // Сохранить выбранного работника в поле
+            }
+
+            CopyLinkedDataFromEntity();                                                          // Скопировать данные из сущностей, связанных с основной сущностью
         }
 
         #endregion

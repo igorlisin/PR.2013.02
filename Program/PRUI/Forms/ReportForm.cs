@@ -44,6 +44,11 @@ namespace PRUI.Forms
         private IEmployee _employeeAfterRelinking;
 
         /// <summary>
+        /// Поле. Объект после перепривязки
+        /// </summary>
+        private IApartment _apartmentAfterRelinking;
+
+        /// <summary>
         /// Поле. Список квартир
         /// </summary>
         IApartments _apartments;
@@ -88,8 +93,8 @@ namespace PRUI.Forms
         private DateTime EvaluationDate
         {
             get
-            { 
-                return (evaluationDateDateTimePicker.Value); 
+            {
+                return (evaluationDateDateTimePicker.Value);
             }
             set
             {
@@ -119,7 +124,7 @@ namespace PRUI.Forms
         {
             get
             {
-                return(clientNameTextBox.Text);
+                return (clientNameTextBox.Text);
             }
             set
             {
@@ -134,7 +139,7 @@ namespace PRUI.Forms
         {
             get
             {
-                return(clientSurnameTextBox.Text);
+                return (clientSurnameTextBox.Text);
             }
             set
             {
@@ -202,6 +207,98 @@ namespace PRUI.Forms
             }
         }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectType
+        {
+            get
+            {
+                return (ObjectTypeTextBox.Text);
+            }
+            set
+            {
+                ObjectTypeTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectCity
+        {
+            get
+            {
+                return (ObjectCityTextBox.Text);
+            }
+            set
+            {
+                ObjectCityTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectStreet
+        {
+            get
+            {
+                return (ObjectStreetTextBox.Text);
+            }
+            set
+            {
+                ObjectStreetTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectHome
+        {
+            get
+            {
+                return (ObjectHouseTextBox.Text);
+            }
+            set
+            {
+                ObjectHouseTextBox.Text = value;
+            }
+        }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectFlat
+        {
+            get
+            {
+                return (ObjectFlatTextBox.Text);
+            }
+            set
+            {
+                ObjectFlatTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectComplex
+        {
+            get
+            {
+                return (ObjectKomplexTextBox.Text);
+            }
+            set
+            {
+                ObjectKomplexTextBox.Text = value;
+            }
+        }
+
+
         #endregion
 
         #region Constructors
@@ -248,6 +345,7 @@ namespace PRUI.Forms
             CleanReport();              // Очистить данные отчета
             CleanClient();              // Очистить данные клиента
             CleanEmployee();            // Очистить данные сотрудника
+            
         }
 
         /// <summary>
@@ -276,6 +374,19 @@ namespace PRUI.Forms
             EmployeeName = "";              // Очистить имя сотрудника
             EmployeeSurname = "";           // Очистить фамилию сотрудника
             EmployeePatronymic = "";        // Очистить отчество сотрудника
+        }
+
+        /// <summary>
+        /// Метод. Очищает данные сотрудника
+        /// </summary>
+        private void CleanApartment()
+        {
+            ObjectType = "";        // Очистить тип
+            ObjectCity = "";        // Очистить город
+            ObjectStreet = "";      // Очистить улица
+            ObjectComplex = "";     // Очистить комплекс
+            ObjectHome = "";        // Очистить дом
+            ObjectFlat = "";        // Очистить квартира
         }
 
         #endregion
@@ -308,6 +419,7 @@ namespace PRUI.Forms
 
             _report.Client = _clientAfterRelinking;             // Скопировать клиента после перепривязки
             _report.Employee = _employeeAfterRelinking;         // Скопировать сотрудника после перепривязки
+  //          _report.Object = _apartmentAfterRelinking;  
         }
 
         /// <summary>
@@ -323,6 +435,11 @@ namespace PRUI.Forms
             if (_employeeAfterRelinking != null)                        // Проверить сотрудника, связанного с отчетом
             {
                 CopyEmployeeFromEntity(_employeeAfterRelinking);        // Скопировать данные сотрудника
+            }
+
+            if (_apartmentAfterRelinking != null)                        // Проверить квартиру, связанного с отчетом
+            {
+                CopyApartmentFromEntity(_apartmentAfterRelinking);        // Скопировать данные квартиры
             }
         }
 
@@ -355,6 +472,19 @@ namespace PRUI.Forms
             EmployeeName = employee.Man.Name;                   // Скопировать имя
             EmployeeSurname = employee.Man.Surname;             // Скопировать фамилию
             EmployeePatronymic = employee.Man.Patronymic;       // Скопировать отчество
+        }
+
+        /// <summary>
+        /// Метод. Копирует данные сущности в компоненты квартира
+        /// </summary>
+        protected void CopyApartmentFromEntity(IApartment apartment)
+        {
+            ObjectType = apartment.RoomNumber.ToString();                       // Скопировать тип квартиры
+            ObjectCity = apartment.Home.Street.City.Name;                       // Скопировать город
+            ObjectStreet = apartment.Home.Street.Name;                          // Скопировать улица
+            ObjectComplex = Convert.ToString(apartment.Home.ComplexNumber);     // Скопировать комплекс
+            ObjectHome = apartment.Home.Number;                                 // Скопировать номер дома
+            ObjectFlat = apartment.Number.ToString();                           // Скопировать номер квартиры
         }
 
         #endregion
@@ -432,35 +562,29 @@ namespace PRUI.Forms
 
         private void relinkObjectButton_Click(object sender, EventArgs e)
         {
-            ApartmentSelectForm objectSelectForm;
-            objectSelectForm = new ApartmentSelectForm();
-            objectSelectForm.ShowDialog();
+            ApartmentSelectForm objectSelectForm;                                               // Форма выбора квартиры
+            objectSelectForm = new ApartmentSelectForm(_apartments);                                       // Создание формы
+            objectSelectForm.ShowDialog();                                                      // Открытие диалогового окна
+
+           if (objectSelectForm.SelectedApartment != null)                                    // Проверить выбранного квартиры
+            {
+                _apartmentAfterRelinking = objectSelectForm.SelectedApartment;                  // Сохранить выбранного квартиры в поле
+            }
+
+            CopyLinkedDataFromEntity();                                                          // Скопировать данные из сущностей, связанных с основной сущностью
         }
 
 
         #endregion
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void clientPatronymicTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void AddObjectButton_Click(object sender, EventArgs e)
         {
             IApartment apartment;                                       // Квартира
             IHome home;                                                 // Дом, связанный с квартирой
             ApartmentForm apartmentForm;                                // Форма редактирования квартиры
- 
+            bool entityNeedSave;                                        // Флаг необходимости сохранения сущности
+
             apartment = _apartments.Create();                           // Создать квартиру
             home = _homes.Create();                                     // Создать дом, связанный с квартирой
             apartment.Home = home;                                      // Связать дом с квартирой
@@ -468,6 +592,14 @@ namespace PRUI.Forms
             apartmentForm = new ApartmentForm(apartment, _homes);       // Создать форму для редактирования квартиры
 
             apartmentForm.ShowDialog();                                 // Отобразить форму для редактирования квартиры
+
+            entityNeedSave = apartmentForm.EntityNeedSave;              // Получить значение флага необходимости сохранения сущности
+
+            if (entityNeedSave == true)                                 // Проверить флаг необходимости сохранения сущности
+            {
+                _apartments.Add(apartment);                             // Добавить созданный квартира в список
+            }
+
 
         }
 
@@ -496,12 +628,28 @@ namespace PRUI.Forms
             _document.Add(document);                                // Добавить в базу документ
             _clients.Add(client);                                   // Добавить в базу клиента
 
-           
+            _clientAfterRelinking = client;                         // Привязывание клиента
+
         }
 
-        private void AddEmployeeButton_Click(object sender, EventArgs e)
-        {
 
+        private void unlinkEmployeeButton_Click(object sender, EventArgs e)
+        {
+            DialogResult unlinkConfirm;                         // Результат подтверждения сообщения
+
+            unlinkConfirm = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
+                "Вы действительно хотите отвязать сотрудника?",
+                "Подтверждение",
+                MessageBoxButtons.YesNo);
+
+            if (unlinkConfirm == DialogResult.Yes)              // Проверить результат подтверждения сообщения
+            {
+                _employeeAfterRelinking = null;                   // Отвязать отчет от связанного работника
+
+                CleanEmployee();                                  // Очистить данные работника
+
+                CopyLinkedDataFromEntity();                     // Скопировать данные из сущностей, связанных с основной сущностью 
+            }
         }
     }
 }

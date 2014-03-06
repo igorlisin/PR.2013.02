@@ -48,7 +48,6 @@
             this.clientPatronymicLabel = new System.Windows.Forms.Label();
             this.clientSurnameTextBox = new System.Windows.Forms.TextBox();
             this.employeeInfoGroup = new System.Windows.Forms.GroupBox();
-            this.AddEmployeeButton = new System.Windows.Forms.Button();
             this.relinkEmployeeButton = new System.Windows.Forms.Button();
             this.unlinkEmployeeButton = new System.Windows.Forms.Button();
             this.employeeNameLabel = new System.Windows.Forms.Label();
@@ -64,7 +63,7 @@
             this.evaluationDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.reportNumberTextBox = new System.Windows.Forms.TextBox();
             this.reportNumberLabel = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ObjectGroupBox = new System.Windows.Forms.GroupBox();
             this.ObjectTypeTextBox = new System.Windows.Forms.TextBox();
             this.AddObjectButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -87,7 +86,7 @@
             this.clientInfoGroup.SuspendLayout();
             this.employeeInfoGroup.SuspendLayout();
             this.reportInfoGroup.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.ObjectGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // saveButton
@@ -260,7 +259,6 @@
             this.clientPatronymicTextBox.Name = "clientPatronymicTextBox";
             this.clientPatronymicTextBox.Size = new System.Drawing.Size(261, 20);
             this.clientPatronymicTextBox.TabIndex = 10;
-            this.clientPatronymicTextBox.TextChanged += new System.EventHandler(this.clientPatronymicTextBox_TextChanged);
             // 
             // clientNameTextBox
             // 
@@ -296,7 +294,6 @@
             // 
             // employeeInfoGroup
             // 
-            this.employeeInfoGroup.Controls.Add(this.AddEmployeeButton);
             this.employeeInfoGroup.Controls.Add(this.relinkEmployeeButton);
             this.employeeInfoGroup.Controls.Add(this.unlinkEmployeeButton);
             this.employeeInfoGroup.Controls.Add(this.employeeNameLabel);
@@ -311,16 +308,6 @@
             this.employeeInfoGroup.TabIndex = 33;
             this.employeeInfoGroup.TabStop = false;
             this.employeeInfoGroup.Text = "Сотрудник";
-            // 
-            // AddEmployeeButton
-            // 
-            this.AddEmployeeButton.Location = new System.Drawing.Point(48, 106);
-            this.AddEmployeeButton.Name = "AddEmployeeButton";
-            this.AddEmployeeButton.Size = new System.Drawing.Size(37, 20);
-            this.AddEmployeeButton.TabIndex = 63;
-            this.AddEmployeeButton.Text = "+";
-            this.AddEmployeeButton.UseVisualStyleBackColor = true;
-            this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
             // 
             // relinkEmployeeButton
             // 
@@ -340,6 +327,7 @@
             this.unlinkEmployeeButton.Size = new System.Drawing.Size(30, 20);
             this.unlinkEmployeeButton.TabIndex = 62;
             this.unlinkEmployeeButton.UseVisualStyleBackColor = true;
+            this.unlinkEmployeeButton.Click += new System.EventHandler(this.unlinkEmployeeButton_Click);
             // 
             // employeeNameLabel
             // 
@@ -457,31 +445,30 @@
             this.reportNumberLabel.TabIndex = 35;
             this.reportNumberLabel.Text = "Номер";
             // 
-            // groupBox1
+            // ObjectGroupBox
             // 
-            this.groupBox1.Controls.Add(this.ObjectTypeTextBox);
-            this.groupBox1.Controls.Add(this.AddObjectButton);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.ObjectKomplexTextBox);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.ObjectFlatTextBox);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.ObjectHouseTextBox);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.ObjectStreetTextBox);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.relinkObjectButton);
-            this.groupBox1.Controls.Add(this.unlinkObjectButton);
-            this.groupBox1.Controls.Add(this.ObjectCityTextBox);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(304, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(276, 331);
-            this.groupBox1.TabIndex = 35;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Объект оценки";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.ObjectGroupBox.Controls.Add(this.ObjectTypeTextBox);
+            this.ObjectGroupBox.Controls.Add(this.AddObjectButton);
+            this.ObjectGroupBox.Controls.Add(this.label8);
+            this.ObjectGroupBox.Controls.Add(this.ObjectKomplexTextBox);
+            this.ObjectGroupBox.Controls.Add(this.label7);
+            this.ObjectGroupBox.Controls.Add(this.ObjectFlatTextBox);
+            this.ObjectGroupBox.Controls.Add(this.label6);
+            this.ObjectGroupBox.Controls.Add(this.ObjectHouseTextBox);
+            this.ObjectGroupBox.Controls.Add(this.label5);
+            this.ObjectGroupBox.Controls.Add(this.ObjectStreetTextBox);
+            this.ObjectGroupBox.Controls.Add(this.label1);
+            this.ObjectGroupBox.Controls.Add(this.relinkObjectButton);
+            this.ObjectGroupBox.Controls.Add(this.unlinkObjectButton);
+            this.ObjectGroupBox.Controls.Add(this.ObjectCityTextBox);
+            this.ObjectGroupBox.Controls.Add(this.label2);
+            this.ObjectGroupBox.Controls.Add(this.label3);
+            this.ObjectGroupBox.Location = new System.Drawing.Point(304, 12);
+            this.ObjectGroupBox.Name = "ObjectGroupBox";
+            this.ObjectGroupBox.Size = new System.Drawing.Size(276, 331);
+            this.ObjectGroupBox.TabIndex = 35;
+            this.ObjectGroupBox.TabStop = false;
+            this.ObjectGroupBox.Text = "Объект оценки";
             // 
             // ObjectTypeTextBox
             // 
@@ -577,7 +564,6 @@
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 63;
             this.label1.Text = "Город";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // relinkObjectButton
             // 
@@ -629,7 +615,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 618);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.ObjectGroupBox);
             this.Controls.Add(this.reportInfoGroup);
             this.Controls.Add(this.employeeInfoGroup);
             this.Controls.Add(this.clientInfoGroup);
@@ -638,7 +624,7 @@
             this.Controls.SetChildIndex(this.clientInfoGroup, 0);
             this.Controls.SetChildIndex(this.employeeInfoGroup, 0);
             this.Controls.SetChildIndex(this.reportInfoGroup, 0);
-            this.Controls.SetChildIndex(this.groupBox1, 0);
+            this.Controls.SetChildIndex(this.ObjectGroupBox, 0);
             this.Controls.SetChildIndex(this.saveButton, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.idInfoGroup, 0);
@@ -657,8 +643,8 @@
             this.employeeInfoGroup.PerformLayout();
             this.reportInfoGroup.ResumeLayout(false);
             this.reportInfoGroup.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.ObjectGroupBox.ResumeLayout(false);
+            this.ObjectGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -690,7 +676,7 @@
         private System.Windows.Forms.Label reportDateLabel;
         private System.Windows.Forms.Label evaluationDateLabel;
         private System.Windows.Forms.DateTimePicker reportDateDateTimePicker;
-        protected System.Windows.Forms.GroupBox groupBox1;
+        protected System.Windows.Forms.GroupBox ObjectGroupBox;
         protected System.Windows.Forms.Button relinkObjectButton;
         protected System.Windows.Forms.Button unlinkObjectButton;
         protected System.Windows.Forms.TextBox ObjectCityTextBox;
@@ -707,7 +693,6 @@
         protected System.Windows.Forms.TextBox ObjectStreetTextBox;
         private System.Windows.Forms.Button AddObjectButton;
         private System.Windows.Forms.Button AddClientButton;
-        private System.Windows.Forms.Button AddEmployeeButton;
         protected System.Windows.Forms.TextBox ObjectTypeTextBox;
         protected System.Windows.Forms.Label label10;
         protected System.Windows.Forms.TextBox clientDocNumberTextBox;

@@ -32,7 +32,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.clientDocGivesTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.clientDocDataIssueTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.clientDocNumberTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -80,6 +79,7 @@
             this.ObjectCityTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.clientDocDataIssueTextBox = new System.Windows.Forms.DateTimePicker();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -165,13 +165,6 @@
             this.label11.Size = new System.Drawing.Size(73, 13);
             this.label11.TabIndex = 81;
             this.label11.Text = "Дата выдачи";
-            // 
-            // clientDocDataIssueTextBox
-            // 
-            this.clientDocDataIssueTextBox.Location = new System.Drawing.Point(9, 183);
-            this.clientDocDataIssueTextBox.Name = "clientDocDataIssueTextBox";
-            this.clientDocDataIssueTextBox.Size = new System.Drawing.Size(76, 20);
-            this.clientDocDataIssueTextBox.TabIndex = 80;
             // 
             // label10
             // 
@@ -610,6 +603,14 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Адрес";
             // 
+            // clientDocDataIssueTextBox
+            // 
+            this.clientDocDataIssueTextBox.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.clientDocDataIssueTextBox.Location = new System.Drawing.Point(9, 179);
+            this.clientDocDataIssueTextBox.Name = "clientDocDataIssueTextBox";
+            this.clientDocDataIssueTextBox.Size = new System.Drawing.Size(190, 20);
+            this.clientDocDataIssueTextBox.TabIndex = 35;
+            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,6 +703,6 @@
         protected System.Windows.Forms.Label label12;
         protected System.Windows.Forms.TextBox clientDocGivesTextBox;
         protected System.Windows.Forms.Label label11;
-        protected System.Windows.Forms.TextBox clientDocDataIssueTextBox;
+        private System.Windows.Forms.DateTimePicker clientDocDataIssueTextBox;
     }
 }

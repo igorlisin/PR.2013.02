@@ -316,6 +316,7 @@ namespace PRUI.Forms
 
             _clientAfterRelinking = report.Client;          // Сохранить клиента связанного с отчетов
             _employeeAfterRelinking = report.Employee;      // Сохранить сотрудника связанного с отчетов
+            _apartmentAfterRelinking = report.Apartment;    // Сохранить квартиру связанного с отчетов
 
             _apartments = apartments;                       // Сохранить список квартир в поле
 
@@ -345,6 +346,7 @@ namespace PRUI.Forms
             CleanReport();              // Очистить данные отчета
             CleanClient();              // Очистить данные клиента
             CleanEmployee();            // Очистить данные сотрудника
+            CleanApartment();           // Очистить данные по квартире
             
         }
 
@@ -419,7 +421,7 @@ namespace PRUI.Forms
 
             _report.Client = _clientAfterRelinking;             // Скопировать клиента после перепривязки
             _report.Employee = _employeeAfterRelinking;         // Скопировать сотрудника после перепривязки
-  //          _report.Object = _apartmentAfterRelinking;  
+            _report.Apartment = _apartmentAfterRelinking;       // Скопировать квартиру после перепривязки
         }
 
         /// <summary>
@@ -479,7 +481,7 @@ namespace PRUI.Forms
         /// </summary>
         protected void CopyApartmentFromEntity(IApartment apartment)
         {
-            ObjectType = apartment.RoomNumber.ToString();                       // Скопировать тип квартиры
+            ObjectType = Convert.ToString(apartment.RoomNumber);                       // Скопировать тип квартиры
             ObjectCity = apartment.Home.Street.City.Name;                       // Скопировать город
             ObjectStreet = apartment.Home.Street.Name;                          // Скопировать улица
             ObjectComplex = Convert.ToString(apartment.Home.ComplexNumber);     // Скопировать комплекс
@@ -619,7 +621,9 @@ namespace PRUI.Forms
 
             document.Series = Convert.ToInt32(clientDocSeriesTextBox.Text);             // Присвоить Серия документа с текстового поля
             document.Number = Convert.ToInt32(clientDocNumberTextBox.Text);             // Присвоить Номер документа с текстового поля
+
             document.DataOfIssue = Convert.ToDateTime(clientDocDataIssueTextBox.Text);  // Присвоить Дата получения документа с текстового поля
+
             document.PlaceOfIssue = clientDocGivesTextBox.Text;                         // Присвоить Кем выдан с текстового поля
 
             client.Man = man;                                       // Присвоить Клиента с текстового поля

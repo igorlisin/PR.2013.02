@@ -203,6 +203,26 @@ namespace PR.Classes
             }
         }
 
+
+        /// <summary>
+        /// Свойсво. Задает и возвращает квартиру (используется в Entity Framework) 
+        /// </summary>
+        public IApartment ApartmentForEntityFramework { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает объект оценки квартира
+        /// </summary>
+        public IApartment Apartment
+        {
+            get
+            {
+                return ((IApartment)ApartmentForEntityFramework);
+            }
+            set
+            {
+                ApartmentForEntityFramework = (Apartment)value;
+            }
+        }
         /// <summary>
         /// Свойство. Задает и возвращает объект оценки (используется в Entity Framework) 
         /// </summary>
@@ -223,6 +243,7 @@ namespace PR.Classes
             report.Company = Company;
             report.Employee = Employee;
             report.Object = Object;
+            report.Apartment = Apartment;
 
             return ((object)report);
         }

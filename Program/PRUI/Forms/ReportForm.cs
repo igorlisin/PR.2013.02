@@ -313,17 +313,14 @@ namespace PRUI.Forms
             _report = report;                               // Сохранить отчет в поле
             _clients = clients;                             // Сохранить список клиентов в поле
             _employees = employees;                         // Сохранить список сотрудников в поле
+            _apartments = apartments;                       // Сохранить список квартир в поле
+            _homes = homes;                                 // Сохранить список домов с поле
+            _man = man;                                     // Сохранить чловека
+            _document = document;                           // Сохранить документ
 
             _clientAfterRelinking = report.Client;          // Сохранить клиента связанного с отчетов
             _employeeAfterRelinking = report.Employee;      // Сохранить сотрудника связанного с отчетов
-            _apartmentAfterRelinking = report.Apartment;    // Сохранить квартиру связанного с отчетов
-
-            _apartments = apartments;                       // Сохранить список квартир в поле
-
-            _homes = homes;                                 // Сохранить список домов с поле
-
-            _man = man;                                     // Сохранить чловека
-            _document = document;                           // Сохранить документ
+            _apartmentAfterRelinking = report.Apartment;    // Сохранить квартиру связанного с отчетов   
 
             CleanAllData();                                 // Очистить компоненты всех групп
 
@@ -625,11 +622,13 @@ namespace PRUI.Forms
             document.DataOfIssue = Convert.ToDateTime(clientDocDataIssueTextBox.Text);  // Присвоить Дата получения документа с текстового поля
 
             document.PlaceOfIssue = clientDocGivesTextBox.Text;                         // Присвоить Кем выдан с текстового поля
+            
 
             client.Man = man;                                       // Присвоить Клиента с текстового поля
+            client.Man.Document = document;                         // Присвоить документ человеку
 
-            _man.Add(man);                                          // Добавить в базу человека
             _document.Add(document);                                // Добавить в базу документ
+            _man.Add(man);                                          // Добавить в базу человека
             _clients.Add(client);                                   // Добавить в базу клиента
 
             _clientAfterRelinking = client;                         // Привязывание клиента

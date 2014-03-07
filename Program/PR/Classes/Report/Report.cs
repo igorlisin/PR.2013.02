@@ -207,7 +207,7 @@ namespace PR.Classes
         /// <summary>
         /// Свойсво. Задает и возвращает квартиру (используется в Entity Framework) 
         /// </summary>
-        public IApartment ApartmentForEntityFramework { get; set; }
+        public Apartment ApartmentForEntityFramework { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает объект оценки квартира

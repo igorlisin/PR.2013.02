@@ -181,7 +181,7 @@ namespace PR
                 Property(c => c.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
                 Property(c => c.Description).IsOptional();
 
-                HasOptional(c => c.ReportForEntityFramwork).WithOptionalDependent(r => r.ClientForEntityFramwork).WillCascadeOnDelete(false);
+        //        HasOptional(c => c.ReportForEntityFramwork).WithOptionalDependent(r => r.ClientForEntityFramwork).WillCascadeOnDelete(false);
             }
         }
 
@@ -204,7 +204,7 @@ namespace PR
                 Property(e => e.Membership).IsOptional();
                 Property(e => e.WorkTime).IsOptional();
 
-                HasOptional(e => e.ReportForEntityFramwork).WithOptionalDependent(r => r.EmployeeForEntityFramework).WillCascadeOnDelete(false);
+              //  HasOptional(e => e.ReportForEntityFramwork).WithOptionalDependent(r => r.EmployeeForEntityFramework).WillCascadeOnDelete(false);
             }
         }
 
@@ -376,6 +376,7 @@ namespace PR
                 Property(r => r.DateOfContract).IsRequired().HasColumnType("datetime2");
                 Property(r => r.EvaluationDate).IsRequired().HasColumnType("datetime2");
                 Property(r => r.ReportDate).IsRequired().HasColumnType("datetime2");
+                HasOptional(e => e.EmployeeForEntityFramework);
             }
         }
 

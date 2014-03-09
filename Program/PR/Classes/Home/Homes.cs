@@ -122,7 +122,7 @@ namespace PR.Classes
         /// </summary>
         public IHome GetHome(int id)
         {
-            return ((IHome)_homesDbSet.Include(h => h.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework)/*.Include(h => h.ComplexForEntityFramework.CityForEntityFramework).Where(h=>h.Id == id)*/.First());
+            return ((IHome)_homesDbSet.Include(h => h.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(h => h.ComplexForEntityFramework.CityForEntityFramework).Where(h=>h.Id == id).First());
         }
 
         /// <summary>

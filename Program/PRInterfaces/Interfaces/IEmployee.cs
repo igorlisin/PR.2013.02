@@ -37,9 +37,6 @@ namespace PRInterfaces.Interfaces
         /// </summary>
         int WorkTime { get; set; }
 
-        /// <summary>
-        /// Свойство. Задает и возвращает отчет
-        /// </summary>
-        IReport Report { get; set; }
+     
     }
 }

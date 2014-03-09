@@ -45,25 +45,7 @@ namespace PR.Classes
         /// </summary>
         public Man ManForEntityFramework { get; set; }
 
-        /// <summary>
-        /// Свойство. Задает и возвращает отчет
-        /// </summary>
-        public IReport Report
-        {
-            get
-            {
-                return ((IReport)ReportForEntityFramwork);
-            }
-            set
-            {
-                ReportForEntityFramwork = (Report)value;
-            }
-        }
 
-        /// <summary>
-        /// Свойство. Задает и возвращает отчет (используется в Entity Framework) 
-        /// </summary>
-        public Report ReportForEntityFramwork { get; set; }
 
         /// <summary>
         /// Метод. Возвращает копию клиента

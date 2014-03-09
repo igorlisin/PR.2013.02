@@ -32,6 +32,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.clientDocGivesTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.clientDocDataIssueTextBox = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.clientDocNumberTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -79,7 +80,6 @@
             this.ObjectCityTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.clientDocDataIssueTextBox = new System.Windows.Forms.DateTimePicker();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -165,6 +165,14 @@
             this.label11.Size = new System.Drawing.Size(73, 13);
             this.label11.TabIndex = 81;
             this.label11.Text = "Дата выдачи";
+            // 
+            // clientDocDataIssueTextBox
+            // 
+            this.clientDocDataIssueTextBox.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.clientDocDataIssueTextBox.Location = new System.Drawing.Point(9, 179);
+            this.clientDocDataIssueTextBox.Name = "clientDocDataIssueTextBox";
+            this.clientDocDataIssueTextBox.Size = new System.Drawing.Size(190, 20);
+            this.clientDocDataIssueTextBox.TabIndex = 35;
             // 
             // label10
             // 
@@ -576,6 +584,7 @@
             this.unlinkObjectButton.Size = new System.Drawing.Size(30, 20);
             this.unlinkObjectButton.TabIndex = 62;
             this.unlinkObjectButton.UseVisualStyleBackColor = true;
+            this.unlinkObjectButton.Click += new System.EventHandler(this.unlinkObjectButton_Click);
             // 
             // ObjectCityTextBox
             // 
@@ -602,14 +611,6 @@
             this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Адрес";
-            // 
-            // clientDocDataIssueTextBox
-            // 
-            this.clientDocDataIssueTextBox.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.clientDocDataIssueTextBox.Location = new System.Drawing.Point(9, 179);
-            this.clientDocDataIssueTextBox.Name = "clientDocDataIssueTextBox";
-            this.clientDocDataIssueTextBox.Size = new System.Drawing.Size(190, 20);
-            this.clientDocDataIssueTextBox.TabIndex = 35;
             // 
             // ReportForm
             // 

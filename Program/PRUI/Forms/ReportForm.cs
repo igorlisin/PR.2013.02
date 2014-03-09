@@ -654,5 +654,24 @@ namespace PRUI.Forms
                 CopyLinkedDataFromEntity();                     // Скопировать данные из сущностей, связанных с основной сущностью 
             }
         }
+
+        private void unlinkObjectButton_Click(object sender, EventArgs e)
+        {
+            DialogResult unlinkConfirm;                         // Результат подтверждения сообщения
+
+            unlinkConfirm = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
+                "Вы действительно хотите отвязать квартиру?",
+                "Подтверждение",
+                MessageBoxButtons.YesNo);
+
+            if (unlinkConfirm == DialogResult.Yes)              // Проверить результат подтверждения сообщения
+            {
+                _apartmentAfterRelinking = null;                   // Отвязать отчет от связанного квартиры
+
+                CleanApartment();                                  // Очистить данные квартиры
+
+                CopyLinkedDataFromEntity();                     // Скопировать данные из сущностей, связанных с основной сущностью 
+            }
+        }
     }
 }

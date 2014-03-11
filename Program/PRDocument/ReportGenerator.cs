@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using BLL.Declension;
+
 using Microsoft.Office.Interop.Word;
 
 using PRInterfaces.Interfaces;
@@ -16,6 +18,7 @@ namespace PRDocument
 {
     public class ReportGenerator
     {
+       
         public static void Generate(IReport report, string reportTemplatesFolderPath, string reportsFolderPath)
         {
             string templateConcusReport = reportTemplatesFolderPath + @"\conclusion.dotx";                                        // Путь к шаблону договора
@@ -40,8 +43,13 @@ namespace PRDocument
             bookmarks_conclusion[14] = "komplex_addr";
             bookmarks_conclusion[15] = "street_addr";
 
+            string client_in_padeg = null;
+            client_in_padeg = BLL.Declension.DeclensionBLL.GetSNPDeclension(report.Client.Man.Surname, report.Client.Man.Name, report.Client.Man.Patronymic, BLL.Declension.DeclensionCase.Tvorit);
+   //         int padeg_rslt = decGetFIOPadegAS(report.Client.Man.Surname, report.Client.Man.Name, report.Client.Man.Patronymic, 2, 500, 500);
+
+
             texts_conclusion[0] = Convert.ToString(report.Apartment.RoomNumber);
-            texts_conclusion[1] = report.Client.Man.Surname + " " + report.Client.Man.Name + " " + report.Client.Man.Patronymic;
+            texts_conclusion[1] = client_in_padeg;//report.Client.Man.Surname + " " + report.Client.Man.Name + " " + report.Client.Man.Patronymic;
             texts_conclusion[2] = report.ReportNumber;
             texts_conclusion[3] = report.ReportNumber;
             texts_conclusion[4] = report.ReportNumber;
@@ -96,5 +104,12 @@ namespace PRDocument
 
             wordApplication.Quit();                                                                                         // Закрыть приложение
         }
+
+        //#region Padeg.dll functions and structs
+        //[DllImport("Padeg.dll", EntryPoint = "GetFIOPadegAS")]
+        //private static extern Int32 decGetFIOPadegAS(IntPtr surname, IntPtr name, IntPtr patronimic,
+        //                                             Int32 padeg, IntPtr result, ref Int32 resultLength);
+        //#endregion Padeg.dll functions and structs
+    
     }
 }

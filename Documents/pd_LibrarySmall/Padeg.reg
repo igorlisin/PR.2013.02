@@ -1,0 +1,7 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Padeg]
+"ExceptionDicDir"="C:\\Program Files\\Microsoft Office\\Office10\\"
+"AccentSymbol"="\""
+"AccentPosition"=dword:00000000
+

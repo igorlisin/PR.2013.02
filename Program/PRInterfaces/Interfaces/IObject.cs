@@ -40,6 +40,21 @@ namespace PRInterfaces.Interfaces
         int TypeOfValue { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает оценочную рыночную стоимость
+        /// </summary>
+        int Price { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает скидку по ликвидационной стоимости
+        /// </summary>
+        int Discount { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает курс доллара
+        /// </summary>
+        int Dollar { get; set; }
+
+        /// <summary>
         /// Свойство. Задает и возвращает цель оценки
         /// </summary>
         string PurposeOfTheEvaluation { get; set; }

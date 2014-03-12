@@ -466,7 +466,7 @@
             this.ObjectGroupBox.Controls.Add(this.label3);
             this.ObjectGroupBox.Location = new System.Drawing.Point(304, 12);
             this.ObjectGroupBox.Name = "ObjectGroupBox";
-            this.ObjectGroupBox.Size = new System.Drawing.Size(276, 331);
+            this.ObjectGroupBox.Size = new System.Drawing.Size(276, 303);
             this.ObjectGroupBox.TabIndex = 35;
             this.ObjectGroupBox.TabStop = false;
             this.ObjectGroupBox.Text = "Объект оценки";

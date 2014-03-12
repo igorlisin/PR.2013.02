@@ -71,6 +71,21 @@ namespace PRUI.Forms
         }
 
         /// <summary>
+        /// Свойство. Задает и возвращает этажность
+        /// </summary>
+        private string Floors
+        {
+            get
+            {
+                return (FloorsTextBox.Text);
+            }
+            set
+            {
+                FloorsTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
         /// Свойство. Задает и возвращает количество комнат
         /// </summary>
         private string RoomNumber
@@ -800,6 +815,7 @@ namespace PRUI.Forms
         {
             Number = "";                                                                    // Очистить номер квартиры
             Floor = "";                                                                     // Очистить этаж
+            Floors = "";                                                                    // Очистить этажность
             RoomNumber = "";                                                                // Очистить количество комнат
 
             ClearRoomTypeList();                                                            // Очистить список "Тип комнат"
@@ -1018,6 +1034,7 @@ namespace PRUI.Forms
         {
             Number = Convert.ToString(apartment.Number);                                                    // Скопировать номер квартиры
             Floor = Convert.ToString(apartment.Floor);                                                      // Скопировать этаж
+            Floors = Convert.ToString(apartment.Floors);                                                    // Скопировать этажность
             RoomNumber = Convert.ToString(apartment.RoomNumber);                                            // Скопировать количество комнат
             RoomType = apartment.RoomType;                                                                  // Скопировать тип комнат
             GrossArea = Convert.ToString(apartment.GrossArea);                                              // Скопировать общую площадь
@@ -1062,6 +1079,7 @@ namespace PRUI.Forms
         {
             apartment.Number = Convert.ToInt32(Number);                                                     // Скопировать номер квартиры
             apartment.Floor = Convert.ToInt32(Floor);                                                       // Скопировать этаж
+            apartment.Floors = Convert.ToInt32(Floors);                                                     // Скопировать этажность
             apartment.RoomNumber = Convert.ToInt32(RoomNumber);                                             // Скопировать количество комнат
             apartment.RoomType = RoomType;                                                                  // Скопировать тип комнат
             apartment.GrossArea = Convert.ToSingle(GrossArea);                                              // Скопировать общую площадь
@@ -1891,6 +1909,11 @@ namespace PRUI.Forms
         }
 
         #endregion
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
 
         #endregion
 

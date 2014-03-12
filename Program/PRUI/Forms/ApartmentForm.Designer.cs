@@ -103,7 +103,7 @@
             this.previewApartmentMapPictureButton = new System.Windows.Forms.Button();
             this.apartmentMapPictureBox = new System.Windows.Forms.PictureBox();
             this.numberOnFloor = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.FloorsTextBox = new System.Windows.Forms.TextBox();
             this.stateAndFinishingTabControlPage = new System.Windows.Forms.TabPage();
             this.placeTabControlPage = new System.Windows.Forms.TabPage();
             this.unlinkHomeButton = new System.Windows.Forms.Button();
@@ -130,7 +130,28 @@
             this.removeButton = new System.Windows.Forms.Button();
             this.apartmentPhotosDataGridView = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lawTabControlPage = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.PropertyTextBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dollartextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.DiscountTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.PriceTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DestTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PorposeTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.otherTabControlPage = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.SNIPTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.HolderName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -141,6 +162,9 @@
             this.placeTabControlPage.SuspendLayout();
             this.picturesTabControlPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lawTabControlPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.otherTabControlPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -701,7 +725,7 @@
             // 
             // kitchenAreaTextBox
             // 
-            this.kitchenAreaTextBox.Location = new System.Drawing.Point(235, 97);
+            this.kitchenAreaTextBox.Location = new System.Drawing.Point(350, 97);
             this.kitchenAreaTextBox.Name = "kitchenAreaTextBox";
             this.kitchenAreaTextBox.Size = new System.Drawing.Size(106, 20);
             this.kitchenAreaTextBox.TabIndex = 13;
@@ -711,7 +735,7 @@
             // kitchenAreaLabel
             // 
             this.kitchenAreaLabel.AutoSize = true;
-            this.kitchenAreaLabel.Location = new System.Drawing.Point(232, 81);
+            this.kitchenAreaLabel.Location = new System.Drawing.Point(347, 81);
             this.kitchenAreaLabel.Name = "kitchenAreaLabel";
             this.kitchenAreaLabel.Size = new System.Drawing.Size(85, 13);
             this.kitchenAreaLabel.TabIndex = 15;
@@ -719,7 +743,7 @@
             // 
             // livingAreaTextBox
             // 
-            this.livingAreaTextBox.Location = new System.Drawing.Point(123, 97);
+            this.livingAreaTextBox.Location = new System.Drawing.Point(238, 97);
             this.livingAreaTextBox.Name = "livingAreaTextBox";
             this.livingAreaTextBox.Size = new System.Drawing.Size(106, 20);
             this.livingAreaTextBox.TabIndex = 12;
@@ -729,7 +753,7 @@
             // livingAreaLabel
             // 
             this.livingAreaLabel.AutoSize = true;
-            this.livingAreaLabel.Location = new System.Drawing.Point(120, 81);
+            this.livingAreaLabel.Location = new System.Drawing.Point(247, 81);
             this.livingAreaLabel.Name = "livingAreaLabel";
             this.livingAreaLabel.Size = new System.Drawing.Size(90, 13);
             this.livingAreaLabel.TabIndex = 14;
@@ -759,6 +783,7 @@
             this.formTabControl.Controls.Add(this.stateAndFinishingTabControlPage);
             this.formTabControl.Controls.Add(this.placeTabControlPage);
             this.formTabControl.Controls.Add(this.picturesTabControlPage);
+            this.formTabControl.Controls.Add(this.lawTabControlPage);
             this.formTabControl.Controls.Add(this.otherTabControlPage);
             this.formTabControl.Location = new System.Drawing.Point(12, 12);
             this.formTabControl.Name = "formTabControl";
@@ -775,12 +800,14 @@
             this.baseTabControlPage.Controls.Add(this.previewApartmentMapPictureButton);
             this.baseTabControlPage.Controls.Add(this.apartmentMapPictureBox);
             this.baseTabControlPage.Controls.Add(this.numberOnFloor);
-            this.baseTabControlPage.Controls.Add(this.textBox1);
+            this.baseTabControlPage.Controls.Add(this.FloorsTextBox);
             this.baseTabControlPage.Controls.Add(this.numberTextBox);
             this.baseTabControlPage.Controls.Add(this.kitchenAreaTextBox);
             this.baseTabControlPage.Controls.Add(this.kitchenAreaLabel);
+            this.baseTabControlPage.Controls.Add(this.SNIPTextBox);
             this.baseTabControlPage.Controls.Add(this.grossAreaTextBox);
             this.baseTabControlPage.Controls.Add(this.hasSeparateKitchenOrWashroomCheckBox);
+            this.baseTabControlPage.Controls.Add(this.label5);
             this.baseTabControlPage.Controls.Add(this.hasDevicesCheckBox);
             this.baseTabControlPage.Controls.Add(this.grossAreaLabel);
             this.baseTabControlPage.Controls.Add(this.hasLowCurrentCheckBox);
@@ -869,16 +896,16 @@
             this.numberOnFloor.AutoSize = true;
             this.numberOnFloor.Location = new System.Drawing.Point(78, 3);
             this.numberOnFloor.Name = "numberOnFloor";
-            this.numberOnFloor.Size = new System.Drawing.Size(90, 13);
+            this.numberOnFloor.Size = new System.Drawing.Size(91, 13);
             this.numberOnFloor.TabIndex = 57;
-            this.numberOnFloor.Text = "Номер на этаже";
+            this.numberOnFloor.Text = "Этажность дома";
             // 
-            // textBox1
+            // FloorsTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(81, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(87, 20);
-            this.textBox1.TabIndex = 57;
+            this.FloorsTextBox.Location = new System.Drawing.Point(81, 19);
+            this.FloorsTextBox.Name = "FloorsTextBox";
+            this.FloorsTextBox.Size = new System.Drawing.Size(87, 20);
+            this.FloorsTextBox.TabIndex = 57;
             // 
             // stateAndFinishingTabControlPage
             // 
@@ -1160,6 +1187,160 @@
             this.dataGridView1.Size = new System.Drawing.Size(755, 282);
             this.dataGridView1.TabIndex = 54;
             // 
+            // lawTabControlPage
+            // 
+            this.lawTabControlPage.Controls.Add(this.label4);
+            this.lawTabControlPage.Controls.Add(this.dataGridView2);
+            this.lawTabControlPage.Controls.Add(this.groupBox1);
+            this.lawTabControlPage.Location = new System.Drawing.Point(4, 22);
+            this.lawTabControlPage.Name = "lawTabControlPage";
+            this.lawTabControlPage.Padding = new System.Windows.Forms.Padding(3);
+            this.lawTabControlPage.Size = new System.Drawing.Size(767, 443);
+            this.lawTabControlPage.TabIndex = 5;
+            this.lawTabControlPage.Text = "Юр. данные";
+            this.lawTabControlPage.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(299, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 13);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Правообладатели";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.HolderName});
+            this.dataGridView2.Location = new System.Drawing.Point(302, 33);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(266, 150);
+            this.dataGridView2.TabIndex = 38;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.PropertyTextBox);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.dollartextBox);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.DiscountTextBox);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.PriceTextBox);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.DestTextBox);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.PorposeTextBox);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(276, 295);
+            this.groupBox1.TabIndex = 37;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Объект оценки";
+            // 
+            // PropertyTextBox
+            // 
+            this.PropertyTextBox.Location = new System.Drawing.Point(8, 32);
+            this.PropertyTextBox.Name = "PropertyTextBox";
+            this.PropertyTextBox.Size = new System.Drawing.Size(261, 20);
+            this.PropertyTextBox.TabIndex = 74;
+            this.PropertyTextBox.Text = "Собственность";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 247);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 13);
+            this.label13.TabIndex = 73;
+            this.label13.Text = "Курс доллара";
+            // 
+            // dollartextBox
+            // 
+            this.dollartextBox.Location = new System.Drawing.Point(6, 261);
+            this.dollartextBox.Name = "dollartextBox";
+            this.dollartextBox.Size = new System.Drawing.Size(73, 20);
+            this.dollartextBox.TabIndex = 72;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(142, 201);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(131, 13);
+            this.label14.TabIndex = 71;
+            this.label14.Text = "Ликвидационная уценка";
+            // 
+            // DiscountTextBox
+            // 
+            this.DiscountTextBox.Location = new System.Drawing.Point(145, 215);
+            this.DiscountTextBox.Name = "DiscountTextBox";
+            this.DiscountTextBox.Size = new System.Drawing.Size(122, 20);
+            this.DiscountTextBox.TabIndex = 70;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(3, 201);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(114, 13);
+            this.label15.TabIndex = 69;
+            this.label15.Text = "Рыночная стоимость";
+            // 
+            // PriceTextBox
+            // 
+            this.PriceTextBox.Location = new System.Drawing.Point(6, 215);
+            this.PriceTextBox.Name = "PriceTextBox";
+            this.PriceTextBox.Size = new System.Drawing.Size(111, 20);
+            this.PriceTextBox.TabIndex = 68;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 140);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.TabIndex = 67;
+            this.label1.Text = "Назначение оценки";
+            // 
+            // DestTextBox
+            // 
+            this.DestTextBox.Location = new System.Drawing.Point(8, 154);
+            this.DestTextBox.Name = "DestTextBox";
+            this.DestTextBox.Size = new System.Drawing.Size(261, 20);
+            this.DestTextBox.TabIndex = 66;
+            this.DestTextBox.Text = "Обеспечение по ипотечному кредиту";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "Цель оценки";
+            // 
+            // PorposeTextBox
+            // 
+            this.PorposeTextBox.Location = new System.Drawing.Point(8, 114);
+            this.PorposeTextBox.Name = "PorposeTextBox";
+            this.PorposeTextBox.Size = new System.Drawing.Size(261, 20);
+            this.PorposeTextBox.TabIndex = 10;
+            this.PorposeTextBox.Text = "Определение рыночной и ликвидационной стоимости";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Право";
+            // 
             // otherTabControlPage
             // 
             this.otherTabControlPage.Controls.Add(this.auxiliaryRoomsLabel);
@@ -1181,6 +1362,47 @@
             this.otherTabControlPage.TabIndex = 4;
             this.otherTabControlPage.Text = "Разное";
             this.otherTabControlPage.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(104, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Общая площадь по СНиП";
+            // 
+            // SNIPTextBox
+            // 
+            this.SNIPTextBox.Location = new System.Drawing.Point(126, 97);
+            this.SNIPTextBox.Name = "SNIPTextBox";
+            this.SNIPTextBox.Size = new System.Drawing.Size(106, 20);
+            this.SNIPTextBox.TabIndex = 11;
+            this.SNIPTextBox.Enter += new System.EventHandler(this.grossAreaTextBox_Enter);
+            this.SNIPTextBox.Leave += new System.EventHandler(this.grossAreaTextBox_Leave);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 60);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Ограничения";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(9, 76);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(261, 20);
+            this.textBox1.TabIndex = 74;
+            this.textBox1.Text = "без ограничений и обременений";
+            // 
+            // HolderName
+            // 
+            this.HolderName.HeaderText = "ФИО";
+            this.HolderName.Name = "HolderName";
+            this.HolderName.Width = 200;
             // 
             // ApartmentForm
             // 
@@ -1214,6 +1436,11 @@
             this.picturesTabControlPage.ResumeLayout(false);
             this.picturesTabControlPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.lawTabControlPage.ResumeLayout(false);
+            this.lawTabControlPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.otherTabControlPage.ResumeLayout(false);
             this.otherTabControlPage.PerformLayout();
             this.ResumeLayout(false);
@@ -1311,7 +1538,7 @@
         protected System.Windows.Forms.Button unlinkHomeButton;
         protected System.Windows.Forms.Button relinkHomeButton;
         private System.Windows.Forms.Label numberOnFloor;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox FloorsTextBox;
         private System.Windows.Forms.TabPage otherTabControlPage;
         private System.Windows.Forms.PictureBox apartmentMapPictureBox;
         private System.Windows.Forms.Label apartmentPhotosDataGridView;
@@ -1324,5 +1551,26 @@
         private System.Windows.Forms.Label apartmentMapPictureNameLabel;
         protected System.Windows.Forms.Button relinkApartmentMapPictureButton;
         protected System.Windows.Forms.Button unlinkApartmentMapPictureButton;
+        private System.Windows.Forms.TabPage lawTabControlPage;
+        protected System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        protected System.Windows.Forms.GroupBox groupBox1;
+        protected System.Windows.Forms.TextBox PropertyTextBox;
+        protected System.Windows.Forms.Label label13;
+        protected System.Windows.Forms.TextBox dollartextBox;
+        protected System.Windows.Forms.Label label14;
+        protected System.Windows.Forms.TextBox DiscountTextBox;
+        protected System.Windows.Forms.Label label15;
+        protected System.Windows.Forms.TextBox PriceTextBox;
+        protected System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.TextBox DestTextBox;
+        protected System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.TextBox PorposeTextBox;
+        protected System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox SNIPTextBox;
+        private System.Windows.Forms.Label label5;
+        protected System.Windows.Forms.TextBox textBox1;
+        protected System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HolderName;
     }
 }

@@ -356,6 +356,11 @@ namespace PR.Classes
         private int _floor;
 
         /// <summary>
+        /// Поле. Этажность
+        /// </summary>
+        private int _floors;
+
+        /// <summary>
         /// Поле. Количество комнат
         /// </summary>
         private int _roomNumber;
@@ -369,6 +374,11 @@ namespace PR.Classes
         /// Поле. Общая площадь
         /// </summary>
         private float _grossArea;
+
+        /// <summary>
+        /// Поле. Общая площадь по СНИП
+        /// </summary>
+        private float _grossAreaSNIP;
 
         /// <summary>
         /// Поле. Жилая площадь
@@ -565,6 +575,21 @@ namespace PR.Classes
         }
 
         /// <summary>
+        /// Свойство. Задает и возвращает этажность 
+        /// </summary>
+        public int Floors
+        {
+            get
+            {
+                return (_floors);
+            }
+            set
+            {
+                _floors = value;
+            }
+        }
+
+        /// <summary>
         /// Свойство. Задает и возвращает количество комнат
         /// </summary>
         public int RoomNumber
@@ -606,6 +631,22 @@ namespace PR.Classes
             set
             {
                 _grossArea = value;
+            }
+        }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает общую площадь по СНИП
+        /// </summary>
+        public float GrossAreaSNIP
+        {
+            get
+            {
+                return (_grossAreaSNIP);
+            }
+            set
+            {
+                _grossAreaSNIP = value;
             }
         }
 

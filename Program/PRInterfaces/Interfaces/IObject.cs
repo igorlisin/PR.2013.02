@@ -12,12 +12,12 @@ namespace PRInterfaces.Interfaces
         /// <summary>
         /// Свойство. Задает и возвращает тип объекта оценки
         /// </summary>
-        int ObjectType { get; set; }
+        string ObjectType { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает количество комнат
         /// </summary>
-        int NumberOfRooms { get; set; }
+        //int NumberOfRooms { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает имущественные права на объект оценки
@@ -32,12 +32,12 @@ namespace PRInterfaces.Interfaces
         /// <summary>
         /// Свойство. Задает и возвращает правообладателей оцениваемого имущества
         /// </summary>
-        List<IMan> Holders { get; set; }
+        string Holders { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает вид оцениваемой стоимости
         /// </summary>
-        int TypeOfValue { get; set; }
+        string TypeOfValue { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает оценочную рыночную стоимость
@@ -58,5 +58,10 @@ namespace PRInterfaces.Interfaces
         /// Свойство. Задает и возвращает цель оценки
         /// </summary>
         string PurposeOfTheEvaluation { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает цель оценки
+        /// </summary>
+        string DestOfTheEvaluation { get; set; }
     }
 }

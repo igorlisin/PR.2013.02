@@ -23,6 +23,11 @@ namespace PRInterfaces.Interfaces
         int Floor { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает этажность дома 
+        /// </summary>
+        int Floors { get; set; }
+
+        /// <summary>
         /// Свойство. Задает и возвращает количество комнат
         /// </summary>
         int RoomNumber { get; set; }
@@ -36,6 +41,11 @@ namespace PRInterfaces.Interfaces
         /// Свойство. Задает и возвращает общую площадь
         /// </summary>
         float GrossArea { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает общую площадь по СНиП
+        /// </summary>
+        float GrossAreaSNIP { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает жилую площадь

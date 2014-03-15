@@ -67,7 +67,8 @@
     <Compile Include="Classes\Employee\Employees.cs" />
     <Compile Include="Classes\Home\Home.cs" />
     <Compile Include="Classes\Home\Homes.cs" />
-    <Compile Include="Classes\Obj\Objects.cs" />
+    <Compile Include="Classes\Object\Object.cs" />
+    <Compile Include="Classes\Object\Objects.cs" />
     <Compile Include="Classes\Pictures\Picture.cs" />
     <Compile Include="Classes\Pictures\Pictures.cs" />
     <Compile Include="Classes\Plugins manager\Plugins manager.cs" />
@@ -90,7 +91,6 @@
     <Compile Include="Debug.Designer.cs">
       <DependentUpon>Debug.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Obj\Object.cs" />
     <Compile Include="ObjectModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

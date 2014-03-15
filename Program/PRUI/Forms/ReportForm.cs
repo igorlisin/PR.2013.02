@@ -48,6 +48,7 @@ namespace PRUI.Forms
         /// </summary>
         private IApartment _apartmentAfterRelinking;
 
+
         /// <summary>
         /// Поле. Список квартир
         /// </summary>
@@ -57,6 +58,11 @@ namespace PRUI.Forms
         /// Поле. Список домов
         /// </summary>
         IHomes _homes;
+
+        /// <summary>
+        /// Поле. Список домов
+        /// </summary>
+        IObjects _objects;
 
         /// <summary>
         /// Поле. Человек
@@ -306,7 +312,7 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public ReportForm(IReport report, IClients clients, IEmployees employees, IApartments apartments, IHomes homes, IMans man, IDocuments document)
+        public ReportForm(IReport report, IClients clients, IEmployees employees, IApartments apartments,IObjects objects, IHomes homes, IMans man, IDocuments document)
         {
             InitializeComponent();                          // Инициализировать компоненты формы
 
@@ -314,6 +320,7 @@ namespace PRUI.Forms
             _clients = clients;                             // Сохранить список клиентов в поле
             _employees = employees;                         // Сохранить список сотрудников в поле
             _apartments = apartments;                       // Сохранить список квартир в поле
+            _objects = objects;
             _homes = homes;                                 // Сохранить список домов с поле
             _man = man;                                     // Сохранить чловека
             _document = document;                           // Сохранить документ
@@ -561,13 +568,13 @@ namespace PRUI.Forms
 
         private void relinkObjectButton_Click(object sender, EventArgs e)
         {
-            ApartmentSelectForm objectSelectForm;                                               // Форма выбора квартиры
-            objectSelectForm = new ApartmentSelectForm(_apartments);                                       // Создание формы
-            objectSelectForm.ShowDialog();                                                      // Открытие диалогового окна
+            ApartmentSelectForm apartmentSelectForm;                                               // Форма выбора квартиры
+            apartmentSelectForm = new ApartmentSelectForm(_apartments);                                       // Создание формы
+            apartmentSelectForm.ShowDialog();                                                      // Открытие диалогового окна
 
-           if (objectSelectForm.SelectedApartment != null)                                    // Проверить выбранного квартиры
+           if (apartmentSelectForm.SelectedApartment != null)                                    // Проверить выбранного квартиры
             {
-                _apartmentAfterRelinking = objectSelectForm.SelectedApartment;                  // Сохранить выбранного квартиры в поле
+                _apartmentAfterRelinking = apartmentSelectForm.SelectedApartment;                  // Сохранить выбранного квартиры в поле
             }
 
             CopyLinkedDataFromEntity();                                                          // Скопировать данные из сущностей, связанных с основной сущностью
@@ -582,13 +589,16 @@ namespace PRUI.Forms
             IApartment apartment;                                       // Квартира
             IHome home;                                                 // Дом, связанный с квартирой
             ApartmentForm apartmentForm;                                // Форма редактирования квартиры
+            IObject obj;
             bool entityNeedSave;                                        // Флаг необходимости сохранения сущности
 
             apartment = _apartments.Create();                           // Создать квартиру
             home = _homes.Create();                                     // Создать дом, связанный с квартирой
+            obj = _objects.Create();
             apartment.Home = home;                                      // Связать дом с квартирой
+            apartment.Object = obj;
 
-            apartmentForm = new ApartmentForm(apartment, _homes);       // Создать форму для редактирования квартиры
+            apartmentForm = new ApartmentForm(apartment, _homes, _objects);       // Создать форму для редактирования квартиры
 
             apartmentForm.ShowDialog();                                 // Отобразить форму для редактирования квартиры
 
@@ -597,6 +607,7 @@ namespace PRUI.Forms
             if (entityNeedSave == true)                                 // Проверить флаг необходимости сохранения сущности
             {
                 _apartments.Add(apartment);                             // Добавить созданный квартира в список
+               
             }
 
 

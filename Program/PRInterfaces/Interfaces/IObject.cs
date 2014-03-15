@@ -42,17 +42,17 @@ namespace PRInterfaces.Interfaces
         /// <summary>
         /// Свойство. Задает и возвращает оценочную рыночную стоимость
         /// </summary>
-        int Price { get; set; }
+        float Price { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает скидку по ликвидационной стоимости
         /// </summary>
-        int Discount { get; set; }
+        float Discount { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает курс доллара
         /// </summary>
-        int Dollar { get; set; }
+        float Dollar { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает цель оценки

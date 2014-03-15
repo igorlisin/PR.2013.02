@@ -68,6 +68,11 @@ namespace PR
         private IApartments _appartments;
 
         /// <summary>
+        /// Поле. Список квартир
+        /// </summary>
+        private IObjects _objects;
+
+        /// <summary>
         /// Поле. Список компаний
         /// </summary>
         private ICompanies _companies;
@@ -244,6 +249,21 @@ namespace PR
             set
             {
                 _appartments = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список объектов оценки
+        /// </summary>
+        public IObjects Objects
+        {
+            get
+            {
+                return (_objects);
+            }
+            set
+            {
+                _objects = value;
             }
         }
 

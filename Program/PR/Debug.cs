@@ -41,6 +41,7 @@ namespace PR
             _objectModel.Complexes = new Complexes(_databaseContext.Complexes, new Complexes.SaveChangesDelegate(Save));
             _objectModel.Homes = new Homes(_databaseContext.Homes, new Homes.SaveChangesDelegate(Save));
             _objectModel.Appartments = new Appartments(_databaseContext.Appartments, new Appartments.SaveChangesDelegate(Save));
+            _objectModel.Objects = new Objects(_databaseContext.Objects, new Objects.SaveChangesDelegate(Save));
 
             _objectModel.Pictures = new Pictures(_databaseContext.Pictures, new Pictures.SaveChangesDelegate(Save));
             _objectModel.Reports = new Reports(_databaseContext.Reports, new Reports.SaveChangesDelegate(Save));
@@ -170,6 +171,7 @@ namespace PR
                 _objectModel.Clients,
                 _objectModel.Employees,
                 _objectModel.Appartments,
+                _objectModel.Objects,
                 _objectModel.Homes,
                 _objectModel.Mans,
                 _objectModel.Documents,
@@ -181,7 +183,7 @@ namespace PR
 
         private void apartmentsButton_Click(object sender, EventArgs e)
         {
-            ApartmentsForm a = new ApartmentsForm(_objectModel.Appartments, _objectModel.Homes);
+            ApartmentsForm a = new ApartmentsForm(_objectModel.Appartments, _objectModel.Homes, _objectModel.Objects);
             a.ShowDialog();
         }
     }

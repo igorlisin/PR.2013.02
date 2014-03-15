@@ -72,6 +72,11 @@ namespace PR
         public DbSet<Apartment> Appartments { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает набор 
+        /// </summary>
+        public DbSet<Object> Objects { get; set; }
+
+        /// <summary>
         /// Свойство. Задает и возвращает набор компаний
         /// </summary>
         public DbSet<Company> Companies { get; set; }
@@ -107,6 +112,7 @@ namespace PR
             modelBuilder.Configurations.Add(new ComplexesTypeConfiguration());          // Добавить конфигурацию для таблицы "Комплекса"
             modelBuilder.Configurations.Add(new HomesTypeConfiguration());              // Добавить конфигурацию для таблицы "Дома"
             modelBuilder.Configurations.Add(new AppartmentsTypeConfiguration());        // Добавить конфигурацию для таблицы "Квартиры"
+            modelBuilder.Configurations.Add(new ObjectsTypeConfiguration());            // Добавить конфигурацию для таблицы "Объекты оценки"
 
             modelBuilder.Configurations.Add(new PicturesTypeConfiguration());           // Добавить конфигурацию для таблицы "Картинки"
             modelBuilder.Configurations.Add(new ReportsTypeConfiguration());            // Добавить конфигурацию для таблицы "Отчеты"
@@ -341,7 +347,36 @@ namespace PR
                 Property(a => a.Description).IsOptional();
                 Property(a => a.Number).IsRequired();
 
+                HasOptional(a => a.ObjectForEntityFramework);
                 HasOptional(a => a.HomeForEntityFramework).WithMany(h => h.AppartmentsForEntityFramework).WillCascadeOnDelete(false);
+            }
+        }
+
+        /// <summary>
+        /// Класс. Конфигурация таблицы "Объекты оценки"
+        /// </summary>
+        private class ObjectsTypeConfiguration : EntityTypeConfiguration<Object>
+        {
+            /// <summary>
+            /// Конструктор
+            /// </summary>
+            public ObjectsTypeConfiguration()
+            {
+                HasKey(a => a.Id);
+
+                Property(a => a.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+                Property(a => a.Description).IsOptional();
+                Property(a => a.DestOfTheEvaluation).IsOptional();
+                Property(a => a.Discount).IsOptional();
+                Property(a => a.Dollar).IsOptional();
+                Property(a => a.Holders).IsOptional();
+                Property(a => a.ObjectType).IsOptional();
+                Property(a => a.Price).IsOptional();
+                Property(a => a.Property).IsOptional();
+                Property(a => a.PurposeOfTheEvaluation).IsOptional();
+                Property(a => a.Restriction).IsOptional();
+                Property(a => a.TypeOfValue).IsOptional();
+              
             }
         }
 

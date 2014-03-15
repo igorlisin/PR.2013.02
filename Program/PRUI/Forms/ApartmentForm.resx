@@ -120,7 +120,4 @@
   <data name="viewOnApparmentLabel.Text" xml:space="preserve">
     <value>Мнение оценщика о возможности регистрации данной перепланировки/переоборудования в установленном законом порядке. Примерная стоимость регистраци перепланировки, либо приведения в первоначальное состояние</value>
   </data>
-  <metadata name="HolderName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

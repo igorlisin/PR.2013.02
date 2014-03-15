@@ -59,6 +59,11 @@ namespace PRUI.Forms
         IApartments _apartments;
 
         /// <summary>
+        /// Поле. Список квартир
+        /// </summary>
+        IObjects _objects;
+
+        /// <summary>
         /// Поле. Список домов
         /// </summary>
         IHomes _homes;
@@ -80,7 +85,7 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public ReportsForm(IReports reports, IClients clients, IEmployees employees, IApartments apartments, IHomes homes, IMans man, IDocuments document, string reportTemplatesFolderPath, string reportsFolderPath, CreateReportDocument createReportDocumentFunction)
+        public ReportsForm(IReports reports, IClients clients, IEmployees employees, IApartments apartments,IObjects objects, IHomes homes, IMans man, IDocuments document, string reportTemplatesFolderPath, string reportsFolderPath, CreateReportDocument createReportDocumentFunction)
             : base()
         {
             InitializeComponent();                                      // Инициализировать компоненты формы
@@ -89,6 +94,7 @@ namespace PRUI.Forms
             _clients = clients;                                         // Сохранить список клиентов в поле
             _employees = employees;                                     // Сохранить список сотрудников в поле
             _apartments = apartments;                                   // Сохранить список квартир в поле
+            _objects = objects;
             _homes = homes;                                             // Сохранить список домов с поле
             _man = man;                                                 // Сохранить человека
             _document = document;                                       // Сохранить документ
@@ -275,6 +281,7 @@ namespace PRUI.Forms
                 _clients,
                 _employees,
                 _apartments,
+                _objects,
                 _homes,
                 _man,
                 _document );                        
@@ -359,6 +366,7 @@ namespace PRUI.Forms
                     _clients,
                     _employees,
                     _apartments,
+                    _objects,
                     _homes,
                     _man,
                     _document);                        

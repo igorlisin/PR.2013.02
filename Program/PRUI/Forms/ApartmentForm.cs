@@ -27,6 +27,16 @@ namespace PRUI.Forms
         private IApartment _apartment;
 
         /// <summary>
+        /// Поле. Объект оценки
+        /// </summary>
+        private IObjects _objects;
+
+        /// <summary>
+        /// Поле. Объект оценки после перепривязки
+        /// </summary>
+        private IObject _objectAfterRelinking;
+
+        /// <summary>
         /// Поле. Дом после перепривязки
         /// </summary>
         private IHome _homeAfterRelinking;
@@ -127,6 +137,21 @@ namespace PRUI.Forms
             set
             {
                 grossAreaTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает общую площадь
+        /// </summary>
+        private string GrossAreaSNIP
+        {
+            get
+            {
+                return (SNIPTextBox.Text);
+            }
+            set
+            {
+                SNIPTextBox.Text = value;
             }
         }
 
@@ -762,6 +787,142 @@ namespace PRUI.Forms
             }
         }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectType
+        {
+            get
+            {
+                return (ObjTypeTextBox.Text);
+            }
+            set
+            {
+                ObjTypeTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectProperty
+        {
+            get
+            {
+                return (PropertyTextBox.Text);
+            }
+            set
+            {
+                PropertyTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectRestriction
+        {
+            get
+            {
+                return (RestrictionTextBox.Text);
+            }
+            set
+            {
+                RestrictionTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectHolders
+        {
+            get
+            {
+                return (HoldersTextBox.Text);
+            }
+            set
+            {
+                HoldersTextBox.Text = value;
+            }
+        }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private float ObjectPrice
+        {
+            get
+            {
+                return (Convert.ToSingle(PriceTextBox.Text));
+            }
+            set
+            {
+                PriceTextBox.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private float ObjectDiscount
+        {
+            get
+            {
+                return (Convert.ToSingle(DiscountTextBox.Text));
+            }
+            set
+            {
+                DiscountTextBox.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private float ObjectDollar
+        {
+            get
+            {
+                return (Convert.ToSingle(dollartextBox.Text));
+            }
+            set
+            {
+                dollartextBox.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectPurpose
+        {
+            get
+            {
+                return (PorposeTextBox.Text);
+            }
+            set
+            {
+                PorposeTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectDest
+        {
+            get
+            {
+                return (DestTextBox.Text);
+            }
+            set
+            {
+                DestTextBox.Text = value;
+            }
+        }
+
         #endregion
 
         #endregion
@@ -771,14 +932,16 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public ApartmentForm(IApartment apartment, IHomes homes)
+        public ApartmentForm(IApartment apartment, IHomes homes, IObjects objects)
         {
             InitializeComponent();                      // Инициализировать компоненты формы
 
             _apartment = apartment;                     // Сохранить квартиру в поле
             _homes = homes;                             // Сохранить список домов воле
+            _objects = objects;
 
             _homeAfterRelinking = apartment.Home;       // Сохранить дом, связанный с квартиров в поле
+            _objectAfterRelinking = apartment.Object;
 
             CleanAllData();                             // Очистить компоненты всех групп
 
@@ -822,10 +985,21 @@ namespace PRUI.Forms
             FillRoomTypeList();                                                             // Заполнить данными список "Тип комнат"
 
             GrossArea = "";                                                                 // Очистить общую площадь
+            GrossAreaSNIP = "";                                                             // Очистить общую площадь по СНиП
             LivingArea = "";                                                                // Очистить жилую площадь
             KitchenArea = "";                                                               // Очистить площадь кухни
             HasSeparateKitchenOrWashroom = false;                                           // Очистить наличие отдельных от других квартир кухни и санузла
             HasBalconyOrLoggia = false;                                                     // Очистить наличие балкона/лоджии
+
+            ObjectType = "жилая квартира";
+            ObjectProperty = "Собственность";
+            ObjectRestriction = "без ограничений и обременений";
+            ObjectHolders = "";
+            ObjectPrice = 0;
+            ObjectDollar = 0;
+            ObjectDiscount = 0;
+            ObjectPurpose = "Определение рыночной и ликвидационной стоимости";
+            ObjectDest = "Обеспечение по ипотечному кредиту";
 
             ClearWashroomTypeList();                                                        // Очистить список "Тип санузлов"
             FillWashroomTypeList();                                                         // Заполнить данными список "Тип санузлов"
@@ -977,6 +1151,7 @@ namespace PRUI.Forms
 
             CopyLinkedDataFromEntity();                         // Скопировать данные из сущностей, связанных с основной сущностью 
             CopyApartmentFromEntity(_apartment);                // Скопировать данные квартиры
+         //   CopyObjectFromEntity(_object);
 
         }
 
@@ -1010,8 +1185,13 @@ namespace PRUI.Forms
                 }
 
                 CopyHomeFromEntity(_homeAfterRelinking);                                                    // Скопировать данные дома
-            }   
-            
+            }
+
+            if (_objectAfterRelinking != null)
+            {
+                CopyObjectFromEntity(_objectAfterRelinking);
+            }
+
             SetButtonActivity();                                                                            // Задать активность компонентов
         }
 
@@ -1023,7 +1203,8 @@ namespace PRUI.Forms
             ((IEntity)_apartment).Description = Description;        // Скопировать описание
 
             CopyApartmentToEntity(_apartment);                      // Скопировать данные квартиры
-
+            CopyObjectToEntity();
+            _apartment.Object = _objectAfterRelinking;
             _apartment.Home = _homeAfterRelinking;                  // Скопировать дом после перепривязки
         }
 
@@ -1038,6 +1219,7 @@ namespace PRUI.Forms
             RoomNumber = Convert.ToString(apartment.RoomNumber);                                            // Скопировать количество комнат
             RoomType = apartment.RoomType;                                                                  // Скопировать тип комнат
             GrossArea = Convert.ToString(apartment.GrossArea);                                              // Скопировать общую площадь
+            GrossAreaSNIP = Convert.ToString(apartment.GrossAreaSNIP);                                              // Скопировать общую площадь по СНиП
             LivingArea = Convert.ToString(apartment.LivingArea);                                            // Скопировать жилую площадь
             KitchenArea = Convert.ToString(apartment.KitchenArea);                                          // Скопировать площадь кухни
             HasSeparateKitchenOrWashroom = apartment.HasSeparateKitchenOrWashroom;                          // Скопировать наличие отдельных от других квартир кухни и санузла
@@ -1070,6 +1252,7 @@ namespace PRUI.Forms
             ViewOnApparment = apartment.ViewOnApparment;                                                    // Скопировать мнение оценщика о возможности регистрации данной перепланировки/переоборудования в установленном законом порядке. Примерная стоимость регистраци перепланировки, либо приведения в первоначальное состояние
             CurrentUsing = apartment.CurrentUsing;                                                          // Скопировать текущее использование
             PicturesComment = apartment.PicturesComment;                                                    // Скопировать комментарии к фотографиям
+
         }
 
         /// <summary>
@@ -1083,6 +1266,7 @@ namespace PRUI.Forms
             apartment.RoomNumber = Convert.ToInt32(RoomNumber);                                             // Скопировать количество комнат
             apartment.RoomType = RoomType;                                                                  // Скопировать тип комнат
             apartment.GrossArea = Convert.ToSingle(GrossArea);                                              // Скопировать общую площадь
+            apartment.GrossAreaSNIP = Convert.ToSingle(GrossAreaSNIP);                                      // Скопировать общую площадь СНиП
             apartment.LivingArea = Convert.ToSingle(LivingArea);                                            // Скопировать жилую площадь
             apartment.KitchenArea = Convert.ToSingle(KitchenArea);                                          // Скопировать площадь кухни
             apartment.HasSeparateKitchenOrWashroom = HasSeparateKitchenOrWashroom;                          // Скопировать наличие отдельных от других квартир кухни и санузла
@@ -1115,6 +1299,47 @@ namespace PRUI.Forms
             apartment.ViewOnApparment = ViewOnApparment;                                                    // Скопировать мнение оценщика о возможности регистрации данной перепланировки/переоборудования в установленном законом порядке. Примерная стоимость регистраци перепланировки, либо приведения в первоначальное состояние
             apartment.CurrentUsing = CurrentUsing;                                                          // Скопировать текущее использование
             apartment.PicturesComment = PicturesComment;                                                    // Скопировать комментарии к фотографиям
+
+
+        }
+
+        /// <summary>
+        /// Метод. Копирует данные сущности в компоненты объекта оценки
+        /// </summary>
+        private void CopyObjectFromEntity(IObject obj)
+        {
+            ObjectType = obj.ObjectType;
+            ObjectProperty = obj.Property;
+            ObjectRestriction = obj.Restriction;
+            ObjectHolders = obj.Holders;
+            ObjectPrice = obj.Price;
+            ObjectDollar = obj.Dollar;
+            ObjectDiscount = obj.Discount;
+            ObjectPurpose = obj.PurposeOfTheEvaluation;
+            ObjectDest = obj.DestOfTheEvaluation;
+        }
+
+
+        /// <summary>
+        /// Метод. Копирует данные компонентов объекта оценки в данные сущности
+        /// </summary>
+        private void CopyObjectToEntity()
+        {
+            IObject obj;
+            obj = _objects.Create();
+
+            obj.ObjectType = ObjectType;
+            obj.Property = ObjectProperty;
+            obj.Restriction = ObjectRestriction;
+            obj.Holders = ObjectHolders;
+            obj.Price = ObjectPrice;
+            obj.Dollar = ObjectDollar;
+            obj.Discount = ObjectDiscount;
+            obj.PurposeOfTheEvaluation = ObjectPurpose;
+            obj.DestOfTheEvaluation = ObjectDest;
+
+            _objects.Add(obj);
+            _objectAfterRelinking = obj;
         }
 
         /// <summary>

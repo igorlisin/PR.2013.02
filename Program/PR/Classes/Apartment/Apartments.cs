@@ -106,9 +106,9 @@ namespace PR.Classes
         public void RemoveById(int id)
         {
             IApartment appartment;
-
+            
             appartment = GetAppartment(id);
-
+            
             if (appartment != null)
             {
                 _appartmentsDbSet.Remove((Apartment)appartment);
@@ -121,7 +121,7 @@ namespace PR.Classes
         /// </summary>
         public List<IApartment> ToList()
         {
-            return (_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).ToList<IApartment>());
+            return (_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).Include(a => a.ObjectForEntityFramework).ToList<IApartment>());
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace PR.Classes
         /// </summary>
         public IApartment[] ToArray()
         {
-            return (_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).ToArray<IApartment>());
+            return (_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).Include(a => a.ObjectForEntityFramework).ToArray<IApartment>());
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace PR.Classes
         /// </summary>
         public IApartment GetAppartment(int id)
         {
-            return ((IApartment)_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).Where(a => a.Id == id).First());
+            return ((IApartment)_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).Include(a => a.ObjectForEntityFramework).Where(a => a.Id == id).First());
         }
 
         /// <summary>
@@ -161,9 +161,18 @@ namespace PR.Classes
         /// </summary>
         public IEnumerator GetEnumerator()
         {
-            return (new EntityEnumerator(_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).ToArray<Apartment>()));
+            return (new EntityEnumerator(_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).Include(a=>a.ObjectForEntityFramework).ToArray<Apartment>()));
         }
 
+        /// <summary>
+        /// Метод. Возвращает 
+        /// </summary>
+        //public int GetObjectId(int apart_id)
+        //{
+        //    IApartment apart;
+        //    apart = GetAppartment(apart_id);
+        //    return (int)_appartmentsDbSet.Select(a=>a.ObjectForEntityFramework.Id);
+        //}
         #endregion
     }
 }

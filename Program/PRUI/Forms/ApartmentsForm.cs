@@ -27,6 +27,11 @@ namespace PRUI.Forms
         /// </summary>
         IHomes _homes;
 
+        /// <summary>
+        /// Поле. Список объектов оценки
+        /// </summary>
+        IObjects _objects;
+
         #endregion
 
         #region Constructors
@@ -34,7 +39,7 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public ApartmentsForm(IApartments apartments, IHomes homes)
+        public ApartmentsForm(IApartments apartments, IHomes homes, IObjects obj)
             : base()
         {
             InitializeComponent();                  // Инициализировать компоненты формы
@@ -42,6 +47,8 @@ namespace PRUI.Forms
             _apartments = apartments;               // Сохранить список квартир в поле
 
             _homes = homes;                         // Сохранить список домов с поле
+
+            _objects = obj;  
 
             ConfigureEntitiesDataGridView();        // Настроить визуальное представление элемента отображения списка сущностей
 
@@ -66,12 +73,15 @@ namespace PRUI.Forms
             DataGridViewColumn columnId;                                        // Колонка "Идентификатор"
             DataGridViewColumn columnDescription;                               // Колонка "Описание"
             DataGridViewColumn columnNumber;                                    // Колонка "Номер квартиры"
+ 
 
             cellTemplateText = new DataGridViewTextBoxCell();                   // Создать шаблон ячеек
 
             columnId = new DataGridViewColumn(cellTemplateText);                // Создать колонку "Идентификатор"
+            
             columnDescription = new DataGridViewColumn(cellTemplateText);       // Создать колонку "Описание"
             columnNumber = new DataGridViewColumn(cellTemplateText);            // Создать колонку "квартиры"
+ 
 
             columnId.Width = 100;                                               // Задать ширину колонки
             columnId.Name = "id";                                               // Задать название колонки
@@ -84,11 +94,14 @@ namespace PRUI.Forms
             columnNumber.Width = 160;                                           // Задать ширину колонки
             columnNumber.Name = "number";                                       // Задать название колонки
             columnNumber.HeaderText = "Номер квартиры";                             // Задать заголовок
+            
 
             entitiesDataGridView.Columns.Add(columnNumber);                     // Добавить колонку в элемент отображения списка сущностей
+            
             entitiesDataGridView.Columns.Add(columnId);                         // Добавить колонку в элемент отображения списка сущностей
             entitiesDataGridView.Columns.Add(columnDescription);                // Добавить колонку в элемент отображения списка сущностей
-
+             
+ 
             base.ConfigureEntitiesDataGridView();                               // Настроить визуальное представление элемента отображения сущностей
         }
 
@@ -98,6 +111,7 @@ namespace PRUI.Forms
         public void FillEntitiesDataGridView()
         {
             string id;                                              // Идентификатор
+                                                 //
             string description;                                     // Описание
             string number;                                          // Номер квартиры
 
@@ -106,6 +120,7 @@ namespace PRUI.Forms
             foreach (IApartment apartment in _apartments)           // Выполнить для всех квартир из списка квартир
             {
                 id = ((IEntity)apartment).Id.ToString();            // Получить идентификатор
+              
                 description = ((IEntity)apartment).Description;     // Получить описание
 
                 number = apartment.Number.ToString();               // Получить номер квартиры
@@ -145,11 +160,11 @@ namespace PRUI.Forms
         private void removeButton_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow;                                    // Выделенная строка
-
+            IApartment apartment;
             int rowCount;                                                   // Общее количество квартир в списке
             int selectedRowIndex;                                           // Индекс выделенной строки
             int id;                                                         // Идентификатор выделенной квартиры
-
+            
             rowCount = entitiesDataGridView.Rows.Count;                     // Получить общее количество квартир в списке
 
             if (rowCount > 0)                                               // Проверить общее количество квартир
@@ -157,8 +172,10 @@ namespace PRUI.Forms
                 selectedRow = entitiesDataGridView.SelectedRows[0];         // Получить выделенную строку
                 selectedRowIndex = selectedRow.Index;                       // Получить индекс выделенной строки
                 id = Convert.ToInt32(selectedRow.Cells["id"].Value);        // Получить идентификатор квартиры в выделенной строке
-
+                apartment = _apartments.GetAppartment(id);
+                _objects.RemoveById(((IEntity)apartment.Object).Id);
                 _apartments.RemoveById(id);                                 // Удалить квартиру из списка
+                               
 
                 FillEntitiesDataGridView();                                 // Заполнить данными элемент отображения списка сущностей
 
@@ -177,12 +194,14 @@ namespace PRUI.Forms
         private void editButton_Click(object sender, EventArgs e)
         {
             IApartment apartment;                                           // Квартира
+            IObject obj;
             ApartmentForm apartmentForm;                                    // Форма редактирования квартиры
             DataGridViewRow selectedRow;                                    // Выделенная строка
 
             int rowCount;                                                   // Общее количество строк в списке
             int selectedRowIndex;                                           // Индекс выделенной строки
             int id;                                                         // Идентификатор выделенной квартиры
+             
             bool entityNeedSave;                                            // Флаг необходимости сохранения сущности
 
             rowCount = entitiesDataGridView.Rows.Count;                     // Получить общее количество строк в списке
@@ -192,10 +211,11 @@ namespace PRUI.Forms
                 selectedRow = entitiesDataGridView.SelectedRows[0];         // Получить выделенную строку
                 selectedRowIndex = selectedRow.Index;                       // Получить индекс выделенной строки
                 id = Convert.ToInt32(selectedRow.Cells["id"].Value);        // Получить идентификатор квартиры в выделенной строке
-
+                
                 apartment = _apartments.GetAppartment(id);                  // Получить выделенную квартиру
+                obj = _objects.GetObject(((IEntity)apartment.Object).Id);
 
-                apartmentForm = new ApartmentForm(apartment, _homes);       // Создать форму для редактирования квартиры
+                apartmentForm = new ApartmentForm(apartment, _homes, _objects);       // Создать форму для редактирования квартиры
 
                 apartmentForm.ShowDialog();                                 // Отобразить форму для редактирования квартиры
 
@@ -221,6 +241,7 @@ namespace PRUI.Forms
             IHome home;                                                 // Дом, связанный с квартирой
             ApartmentForm apartmentForm;                                // Форма редактирования квартиры
             DataGridViewRow selectedRow;                                // Выделенная строка
+            IObject obj;
 
             int rowCount;                                               // Общее количество квартир в списке
             int selectedRowIndex;                                       // Индекс выделенной строки
@@ -236,10 +257,12 @@ namespace PRUI.Forms
             }
 
             apartment = _apartments.Create();                           // Создать квартиру
+            obj = _objects.Create();
             home = _homes.Create();                                     // Создать дом, связанный с квартирой
             apartment.Home = home;                                      // Связать дом с квартирой
+            apartment.Object = obj;
 
-            apartmentForm = new ApartmentForm(apartment, _homes);       // Создать форму для редактирования квартиры
+            apartmentForm = new ApartmentForm(apartment, _homes, _objects);       // Создать форму для редактирования квартиры
 
             apartmentForm.ShowDialog();                                 // Отобразить форму для редактирования квартиры
 
@@ -269,6 +292,7 @@ namespace PRUI.Forms
             ApartmentForm homeForm;                                         // Форма редактирования квартиры
             HomeSelectForm homeSelectForm;                                  // Форма выбора дома
             DataGridViewRow selectedRow;                                    // Выделенная строка
+            IObject obj;
 
             int rowCount;                                                   // Общее количество квартир в списке
             int selectedRowIndex;                                           // Индекс выделенной строки
@@ -284,6 +308,7 @@ namespace PRUI.Forms
             }
 
             apartment = _apartments.Create();                               // Создать квартиру
+            obj = _objects.Create();
 
             homeSelectForm = new HomeSelectForm(_homes);                    // Создать форму выбора дома
 
@@ -293,7 +318,7 @@ namespace PRUI.Forms
 
             if (apartment.Home != null)                                     // Проверить связанный с квартирой дом
             {
-                homeForm = new ApartmentForm(apartment, _homes);            // Создать форму для редактирования квартиры
+                homeForm = new ApartmentForm(apartment, _homes, _objects);            // Создать форму для редактирования квартиры
 
                 homeForm.ShowDialog();                                      // Отобразить форму для редактирования квартиры
 

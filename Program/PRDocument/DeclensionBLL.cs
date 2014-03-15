@@ -406,31 +406,31 @@ namespace BLL.Declension
 
         //#region Service functions
 
-        ///// <summary>
-        ///// Позволяет определить род ФИО. Допускается параметром передавать не только отчество, но и ФИО 
-        ///// целиком. Главное, чтобы в передаваемой строке последним было отчество.
-        ///// </summary>
-        ///// <param name="patronimic">Отчество</param>
-        ///// <returns>Род</returns>
-        //public static Gender GetGender(string patronimic)
-        //{
-        //    if (patronimic == null)
-        //    {
-        //        throw new ArgumentNullException("patronimic");
-        //    }
+        /// <summary>
+        /// Позволяет определить род ФИО. Допускается параметром передавать не только отчество, но и ФИО 
+        /// целиком. Главное, чтобы в передаваемой строке последним было отчество.
+        /// </summary>
+        /// <param name="patronimic">Отчество</param>
+        /// <returns>Род</returns>
+        public static int GetGender(string patronimic)
+        {
+            if (patronimic == null)
+            {
+                throw new ArgumentNullException("patronimic");
+            }
 
-        //    IntPtr ptr = IntPtr.Zero;
-        //    try
-        //    {
-        //        ptr = StringToIntPtr(patronimic);
+            IntPtr ptr = IntPtr.Zero;
+            try
+            {
+                ptr = StringToIntPtr(patronimic);
 
-        //        return (Gender) decGetSex(ptr);
-        //    }
-        //    finally
-        //    {
-        //        Marshal.FreeHGlobal(ptr);
-        //    }
-        //}
+                return decGetSex(ptr);
+            }
+            finally
+            {
+                Marshal.FreeHGlobal(ptr);
+            }
+        }
 
         ///// <summary>
         ///// Позволяет определить падеж ФИО. К сожалению, однозначно определить падеж можно только учитывая 
@@ -687,8 +687,8 @@ namespace BLL.Declension
         //private static extern Int32 decGetOfficePadeg(IntPtr office,
         //                                              Int32 padeg, IntPtr result, ref Int32 resultLength);
 
-        //[DllImport("Padeg.dll", EntryPoint = "GetSex")]
-        //private static extern Int32 decGetSex(IntPtr patronimic);
+        [DllImport("Padeg.dll", EntryPoint = "GetSex")]
+        private static extern Int32 decGetSex(IntPtr patronimic);
 
         //[DllImport("Padeg.dll", EntryPoint = "GetPadegId")]
         //private static extern Int32 decGetPadegId(IntPtr surnameNamePatronimic);

@@ -1130,6 +1130,7 @@ namespace PR.Classes
             }
         }
 
+
         /// <summary>
         /// Свойство. Задает и возвращает дом
         /// </summary>
@@ -1150,6 +1151,26 @@ namespace PR.Classes
         /// </summary>
         public Home HomeForEntityFramework { get; set; }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        public IObject Object
+        {
+            get
+            {
+                return ((IObject)ObjectForEntityFramework);
+            }
+            set
+            {
+                ObjectForEntityFramework = (Object)value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает  (используется в Entity Framework) 
+        /// </summary>
+        public Object ObjectForEntityFramework { get; set; }
+
         #endregion
 
         #region Constructors
@@ -1159,6 +1180,7 @@ namespace PR.Classes
         /// </summary>
         public Apartment()
         {
+            Object Object = new Object();
         }
 
         #endregion

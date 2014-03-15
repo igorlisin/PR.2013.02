@@ -208,9 +208,15 @@ namespace PRInterfaces.Interfaces
         string PicturesComment { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        IObject Object { get; set; }
+
+        /// <summary>
         /// Свойство. Задает и возвращает дом
         /// </summary>
         IHome Home { get; set; }
+
 
         #endregion
 

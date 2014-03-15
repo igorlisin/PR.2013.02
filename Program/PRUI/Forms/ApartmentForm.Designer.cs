@@ -104,6 +104,8 @@
             this.apartmentMapPictureBox = new System.Windows.Forms.PictureBox();
             this.numberOnFloor = new System.Windows.Forms.Label();
             this.FloorsTextBox = new System.Windows.Forms.TextBox();
+            this.SNIPTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.stateAndFinishingTabControlPage = new System.Windows.Forms.TabPage();
             this.placeTabControlPage = new System.Windows.Forms.TabPage();
             this.unlinkHomeButton = new System.Windows.Forms.Button();
@@ -132,8 +134,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lawTabControlPage = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ObjTypeTextBox = new System.Windows.Forms.TextBox();
+            this.RestrictionTextBox = new System.Windows.Forms.TextBox();
             this.PropertyTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dollartextBox = new System.Windows.Forms.TextBox();
@@ -144,14 +148,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DestTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.PorposeTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.otherTabControlPage = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.SNIPTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.HolderName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoldersTextBox = new System.Windows.Forms.TextBox();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -163,7 +164,6 @@
             this.picturesTabControlPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.lawTabControlPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.otherTabControlPage.SuspendLayout();
             this.SuspendLayout();
@@ -907,6 +907,24 @@
             this.FloorsTextBox.Size = new System.Drawing.Size(87, 20);
             this.FloorsTextBox.TabIndex = 57;
             // 
+            // SNIPTextBox
+            // 
+            this.SNIPTextBox.Location = new System.Drawing.Point(126, 97);
+            this.SNIPTextBox.Name = "SNIPTextBox";
+            this.SNIPTextBox.Size = new System.Drawing.Size(106, 20);
+            this.SNIPTextBox.TabIndex = 11;
+            this.SNIPTextBox.Enter += new System.EventHandler(this.grossAreaTextBox_Enter);
+            this.SNIPTextBox.Leave += new System.EventHandler(this.grossAreaTextBox_Leave);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(104, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Общая площадь по СНиП";
+            // 
             // stateAndFinishingTabControlPage
             // 
             this.stateAndFinishingTabControlPage.Controls.Add(this.label22);
@@ -1189,8 +1207,8 @@
             // 
             // lawTabControlPage
             // 
+            this.lawTabControlPage.Controls.Add(this.HoldersTextBox);
             this.lawTabControlPage.Controls.Add(this.label4);
-            this.lawTabControlPage.Controls.Add(this.dataGridView2);
             this.lawTabControlPage.Controls.Add(this.groupBox1);
             this.lawTabControlPage.Location = new System.Drawing.Point(4, 22);
             this.lawTabControlPage.Name = "lawTabControlPage";
@@ -1209,19 +1227,11 @@
             this.label4.TabIndex = 39;
             this.label4.Text = "Правообладатели";
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.HolderName});
-            this.dataGridView2.Location = new System.Drawing.Point(302, 33);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(266, 150);
-            this.dataGridView2.TabIndex = 38;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.ObjTypeTextBox);
+            this.groupBox1.Controls.Add(this.RestrictionTextBox);
             this.groupBox1.Controls.Add(this.PropertyTextBox);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.dollartextBox);
@@ -1237,10 +1247,35 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(276, 295);
+            this.groupBox1.Size = new System.Drawing.Size(276, 333);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Объект оценки";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 188);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.TabIndex = 76;
+            this.label7.Text = "Тип объекта";
+            // 
+            // ObjTypeTextBox
+            // 
+            this.ObjTypeTextBox.Location = new System.Drawing.Point(10, 202);
+            this.ObjTypeTextBox.Name = "ObjTypeTextBox";
+            this.ObjTypeTextBox.Size = new System.Drawing.Size(111, 20);
+            this.ObjTypeTextBox.TabIndex = 75;
+            this.ObjTypeTextBox.Text = "жилая квартира";
+            // 
+            // RestrictionTextBox
+            // 
+            this.RestrictionTextBox.Location = new System.Drawing.Point(9, 76);
+            this.RestrictionTextBox.Name = "RestrictionTextBox";
+            this.RestrictionTextBox.Size = new System.Drawing.Size(261, 20);
+            this.RestrictionTextBox.TabIndex = 74;
+            this.RestrictionTextBox.Text = "без ограничений и обременений";
             // 
             // PropertyTextBox
             // 
@@ -1253,7 +1288,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 247);
+            this.label13.Location = new System.Drawing.Point(7, 282);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(76, 13);
             this.label13.TabIndex = 73;
@@ -1261,7 +1296,7 @@
             // 
             // dollartextBox
             // 
-            this.dollartextBox.Location = new System.Drawing.Point(6, 261);
+            this.dollartextBox.Location = new System.Drawing.Point(10, 296);
             this.dollartextBox.Name = "dollartextBox";
             this.dollartextBox.Size = new System.Drawing.Size(73, 20);
             this.dollartextBox.TabIndex = 72;
@@ -1269,7 +1304,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(142, 201);
+            this.label14.Location = new System.Drawing.Point(146, 236);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(131, 13);
             this.label14.TabIndex = 71;
@@ -1277,7 +1312,7 @@
             // 
             // DiscountTextBox
             // 
-            this.DiscountTextBox.Location = new System.Drawing.Point(145, 215);
+            this.DiscountTextBox.Location = new System.Drawing.Point(149, 250);
             this.DiscountTextBox.Name = "DiscountTextBox";
             this.DiscountTextBox.Size = new System.Drawing.Size(122, 20);
             this.DiscountTextBox.TabIndex = 70;
@@ -1285,7 +1320,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 201);
+            this.label15.Location = new System.Drawing.Point(7, 236);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(114, 13);
             this.label15.TabIndex = 69;
@@ -1293,7 +1328,7 @@
             // 
             // PriceTextBox
             // 
-            this.PriceTextBox.Location = new System.Drawing.Point(6, 215);
+            this.PriceTextBox.Location = new System.Drawing.Point(10, 250);
             this.PriceTextBox.Name = "PriceTextBox";
             this.PriceTextBox.Size = new System.Drawing.Size(111, 20);
             this.PriceTextBox.TabIndex = 68;
@@ -1323,6 +1358,15 @@
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 63;
             this.label2.Text = "Цель оценки";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 60);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Ограничения";
             // 
             // PorposeTextBox
             // 
@@ -1363,46 +1407,13 @@
             this.otherTabControlPage.Text = "Разное";
             this.otherTabControlPage.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // HoldersTextBox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(104, 81);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Общая площадь по СНиП";
-            // 
-            // SNIPTextBox
-            // 
-            this.SNIPTextBox.Location = new System.Drawing.Point(126, 97);
-            this.SNIPTextBox.Name = "SNIPTextBox";
-            this.SNIPTextBox.Size = new System.Drawing.Size(106, 20);
-            this.SNIPTextBox.TabIndex = 11;
-            this.SNIPTextBox.Enter += new System.EventHandler(this.grossAreaTextBox_Enter);
-            this.SNIPTextBox.Leave += new System.EventHandler(this.grossAreaTextBox_Leave);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 60);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Ограничения";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 20);
-            this.textBox1.TabIndex = 74;
-            this.textBox1.Text = "без ограничений и обременений";
-            // 
-            // HolderName
-            // 
-            this.HolderName.HeaderText = "ФИО";
-            this.HolderName.Name = "HolderName";
-            this.HolderName.Width = 200;
+            this.HoldersTextBox.Location = new System.Drawing.Point(302, 38);
+            this.HoldersTextBox.Multiline = true;
+            this.HoldersTextBox.Name = "HoldersTextBox";
+            this.HoldersTextBox.Size = new System.Drawing.Size(220, 102);
+            this.HoldersTextBox.TabIndex = 69;
             // 
             // ApartmentForm
             // 
@@ -1438,7 +1449,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.lawTabControlPage.ResumeLayout(false);
             this.lawTabControlPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.otherTabControlPage.ResumeLayout(false);
@@ -1553,7 +1563,6 @@
         protected System.Windows.Forms.Button unlinkApartmentMapPictureButton;
         private System.Windows.Forms.TabPage lawTabControlPage;
         protected System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView2;
         protected System.Windows.Forms.GroupBox groupBox1;
         protected System.Windows.Forms.TextBox PropertyTextBox;
         protected System.Windows.Forms.Label label13;
@@ -1569,8 +1578,10 @@
         protected System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox SNIPTextBox;
         private System.Windows.Forms.Label label5;
-        protected System.Windows.Forms.TextBox textBox1;
+        protected System.Windows.Forms.TextBox RestrictionTextBox;
         protected System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HolderName;
+        protected System.Windows.Forms.Label label7;
+        protected System.Windows.Forms.TextBox ObjTypeTextBox;
+        protected System.Windows.Forms.TextBox HoldersTextBox;
     }
 }

@@ -107,8 +107,8 @@ namespace PR.Classes
         /// </summary>
         public List<IReport> ToList()
         {
-            return (_reportsDbSet.Include(r => r.ClientForEntityFramwork.ManForEntityFramework)
-                                 .Include(r => r.EmployeeForEntityFramework.ManForEntityFramework)
+            return (_reportsDbSet.Include(r => r.ClientForEntityFramwork.ManForEntityFramework.DocumentForEntityFramework)
+                                 .Include(r => r.EmployeeForEntityFramework.ManForEntityFramework.DocumentForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.ObjectForEntityFramework)
@@ -120,8 +120,8 @@ namespace PR.Classes
         /// </summary>
         public IReport[] ToArray()
         {
-            return (_reportsDbSet.Include(r => r.ClientForEntityFramwork.ManForEntityFramework)
-                                 .Include(r => r.EmployeeForEntityFramework.ManForEntityFramework)
+            return (_reportsDbSet.Include(r => r.ClientForEntityFramwork.ManForEntityFramework.DocumentForEntityFramework)
+                                 .Include(r => r.EmployeeForEntityFramework.ManForEntityFramework.DocumentForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.ObjectForEntityFramework)
@@ -133,8 +133,8 @@ namespace PR.Classes
         /// </summary>
         public IReport GetReport(int id)
         {
-            return ((IReport)_reportsDbSet.Include(r => r.ClientForEntityFramwork.ManForEntityFramework)
-                            .Include(r => r.EmployeeForEntityFramework.ManForEntityFramework)
+            return ((IReport)_reportsDbSet.Include(r => r.ClientForEntityFramwork.ManForEntityFramework.DocumentForEntityFramework)
+                            .Include(r => r.EmployeeForEntityFramework.ManForEntityFramework.DocumentForEntityFramework)
                             .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework)
                             .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
                             .Include(r=>r.ApartmentForEntityFramework.ObjectForEntityFramework)

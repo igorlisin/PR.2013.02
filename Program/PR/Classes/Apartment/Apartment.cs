@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 using PRInterfaces.Interfaces;
 using PRInterfaces.Enumerations;
@@ -1154,6 +1155,7 @@ namespace PR.Classes
         /// <summary>
         /// Свойство. Задает и возвращает 
         /// </summary>
+
         public IObject Object
         {
             get
@@ -1169,7 +1171,8 @@ namespace PR.Classes
         /// <summary>
         /// Свойство. Задает и возвращает  (используется в Entity Framework) 
         /// </summary>
-        public Object ObjectForEntityFramework { get; set; }
+        
+        public virtual Object ObjectForEntityFramework { get; set; }
 
         #endregion
 

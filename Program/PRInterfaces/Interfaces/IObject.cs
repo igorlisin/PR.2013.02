@@ -63,5 +63,10 @@ namespace PRInterfaces.Interfaces
         /// Свойство. Задает и возвращает цель оценки
         /// </summary>
         string DestOfTheEvaluation { get; set; }
+        
+        ///// <summary>
+        ///// Свойство. Задает и возвращает Квартиру
+        ///// </summary>
+        //IApartment Apartments { get; set; }
     }
 }

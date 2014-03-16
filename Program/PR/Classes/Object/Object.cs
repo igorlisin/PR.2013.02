@@ -1,7 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.ComponentModel.DataAnnotations;
+
 using PRInterfaces.Interfaces;
 using PRInterfaces.Enumerations.Object;
+
 
 namespace PR.Classes
 {
@@ -200,6 +205,29 @@ namespace PR.Classes
                     _destOfTheEvaluation = value;
                 }
             }
+
+
+            ///// <summary>
+            ///// Свойство. Задает и возвращает список улиц
+            ///// </summary>
+                    
+            //public IApartment Apartments
+            //{
+            //    get
+            //    {
+            //        return ((IApartment)ApartmentForEntityFramework);
+            //    }
+            //    set
+            //    {
+            //        ApartmentForEntityFramework = (Apartment)value;
+            //    }
+            //}
+
+            ///// <summary>
+            ///// Свойство. Задает и возвращает список улиц (используется в Entity Framework) 
+            ///// </summary>
+            
+            //public Apartment ApartmentForEntityFramework { get; set; }
         }
     }
 

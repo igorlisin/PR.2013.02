@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using System.ComponentModel.DataAnnotations;
 using PRInterfaces.Interfaces;
 using PRInterfaces.Enumerations;
 
@@ -347,10 +347,10 @@ namespace PR
                 Property(a => a.Description).IsOptional();
                 Property(a => a.Number).IsRequired();
 
-                HasOptional(a => a.ObjectForEntityFramework);
+                HasOptional(a => a.ObjectForEntityFramework);//.WithRequired(a => a.ApartmentForEntityFramework).WillCascadeOnDelete(true);
                 HasOptional(a => a.HomeForEntityFramework).WithMany(h => h.AppartmentsForEntityFramework).WillCascadeOnDelete(false);
             }
-        }
+        } 
 
         /// <summary>
         /// Класс. Конфигурация таблицы "Объекты оценки"
@@ -360,6 +360,7 @@ namespace PR
             /// <summary>
             /// Конструктор
             /// </summary>
+            
             public ObjectsTypeConfiguration()
             {
                 HasKey(a => a.Id);
@@ -376,6 +377,9 @@ namespace PR
                 Property(a => a.PurposeOfTheEvaluation).IsOptional();
                 Property(a => a.Restriction).IsOptional();
                 Property(a => a.TypeOfValue).IsOptional();
+
+                
+                //HasRequired(a => a.ApartmentForEntityFramework);
               
             }
         }

@@ -441,10 +441,10 @@ namespace PRDocument
             texts_report[33] = Convert.ToString(report.Apartment.FinishingMaterialForWashroomCeiling);
             texts_report[34] = Convert.ToString(report.Apartment.FinishingMaterialForWashroomFloor);
             texts_report[35] = Convert.ToString(report.Apartment.FinishingMaterialForWashroomWall);
-            texts_report[36] = report.Apartment.PlanMeets;
-            texts_report[37] = "";
-            texts_report[38] = "";
-            texts_report[39] = "";
+            texts_report[36] = Convert.ToString(report.Apartment.FinishingMaterialForWashroomCeiling);
+            texts_report[37] = Convert.ToString(report.Apartment.FinishingMaterialForWashroomFloor);
+            texts_report[38] = Convert.ToString(report.Apartment.FinishingMaterialForWashroomWall);
+            texts_report[39] = report.Apartment.PlanMeets;
             texts_report[40] = "";
             texts_report[41] = "";
             texts_report[42] = "";
@@ -457,27 +457,33 @@ namespace PRDocument
             texts_report[49] = report.Client.Man.Surname+" "+report.Client.Man.Name+" "+report.Client.Man.Patronymic;
             texts_report[50] = report.Client.Man.Surname+" "+report.Client.Man.Name+" "+report.Client.Man.Patronymic;
             texts_report[51] = report.Client.Man.Surname + " " + report.Client.Man.Name + " " + report.Client.Man.Patronymic;
-            texts_report[52] = "";
+            texts_report[52] = "паспорт" + " серии " +
+                                        report.Client.Man.Document.Series + " номер " +
+                                        report.Client.Man.Document.Number + " " +
+                                        report.Client.Man.Document.PlaceOfIssue;
             texts_report[53] = "";
             texts_report[54] = "";
             texts_report[55] = report.ReportDate.ToLongDateString();
-            texts_report[56] = report.ReportDate.ToShortDateString();
-            texts_report[57] = report.ReportDate.ToShortDateString();
-            texts_report[58] = report.ReportDate.ToShortDateString();
-            texts_report[59] = report.ReportDate.ToShortDateString();
+            texts_report[56] = report.ReportDate.ToLongDateString();
+            texts_report[57] = report.ReportDate.ToLongDateString();
+            texts_report[58] = report.ReportDate.ToLongDateString();
+            texts_report[59] = report.ReportDate.ToLongDateString();
             texts_report[60] = report.ReportDate.ToShortDateString();
             texts_report[61] = report.ReportDate.ToShortDateString();
             texts_report[62] = report.DateOfContract.ToLongDateString();
             texts_report[63] = report.DateOfContract.ToShortDateString();
             texts_report[64] = report.DateOfContract.ToShortDateString();
             texts_report[65] = report.DateOfContract.ToShortDateString();
-            texts_report[66] = report.DateOfContract.ToLongDateString();
+            texts_report[66] = Convert.ToString(report.Apartment.Object.Price); 
             texts_report[67] = report.Apartment.Object.DestOfTheEvaluation;
             texts_report[68] = "";
             texts_report[69] = Convert.ToString(report.Apartment.Object.Discount * 100) + "%";
             texts_report[70] = Convert.ToString(report.Apartment.Object.Discount * 100) + "%";
             texts_report[71] = "";
-            texts_report[72] = "";
+            texts_report[72] = "паспорт" + " серии " +
+                                        report.Client.Man.Document.Series + " номер " +
+                                        report.Client.Man.Document.Number + " " +
+                                        report.Client.Man.Document.PlaceOfIssue;
             texts_report[73] = Convert.ToString(report.Apartment.Object.Dollar);
             texts_report[74] = Convert.ToString(report.Apartment.Object.Dollar);
             texts_report[75] = Convert.ToString(report.Apartment.Object.Dollar);

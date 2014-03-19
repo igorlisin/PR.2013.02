@@ -97,6 +97,7 @@ namespace PRInterfaces.Interfaces
         /// </summary>
         ApartmentStates ApartmentState { get; set; }
 
+
         /// <summary>
         /// Свойство. Задает и возвращает необходимые ремонтные работы
         /// </summary>
@@ -216,6 +217,82 @@ namespace PRInterfaces.Interfaces
         /// Свойство. Задает и возвращает дом
         /// </summary>
         IHome Home { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает материал отделки пола 
+        /// </summary>
+        FloorMaterials FinishingMaterialForFloors { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние дверей
+        /// </summary>
+        Condition DoorsCondition { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние отополения
+        /// </summary>
+        Condition HeatingCondition { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние канализации
+        /// </summary>
+        Condition CanaliztionCondition { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние водоснабжения
+        /// </summary>
+        Condition WaterCondition { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние окон
+        /// </summary>
+        Condition WindowsCondition { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает количество санузлов
+        /// </summary>
+        string SanuzelQnt { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип труб отопления 
+        /// </summary>
+        Pipes HeatingPipesType { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип труб водоснабжения
+        /// </summary>
+        Pipes WaterPipesType { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип труб канализации
+        /// </summary>
+        Pipes CanalizationPipesType { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип входной двери
+        /// </summary>
+        Doors MainDoorType { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип межкомнатных дверей
+        /// </summary>
+        Doors RoomDoorsType { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип радиаторов
+        /// </summary>
+        Heaters HeatersType { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип окон
+        /// </summary>
+        Windows WindowsType { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает приборы учета
+        /// </summary>
+        string Counters { get; set; }
+
 
 
         #endregion

@@ -131,6 +131,47 @@
     }
 
     /// <summary>
+    /// Перечисление. Типы состояний
+    /// </summary>
+    public enum Condition
+    {
+        /// <summary>
+        /// Идеальное
+        /// </summary>
+        Perfect = 0,
+
+        /// <summary>
+        /// Очень хорошее
+        /// </summary>
+        VeryGood = 1,
+
+        /// <summary>
+        /// Хорошее
+        /// </summary>
+        Good = 2,
+
+        /// <summary>
+        /// Нормальное
+        /// </summary>
+        Normal = 3,
+
+        /// <summary>
+        /// Плохое
+        /// </summary>
+        Bad = 4,
+
+        /// <summary>
+        /// Очень плохое
+        /// </summary>
+        VeryBad = 5,
+
+        /// <summary>
+        /// Ужасное
+        /// </summary>
+        Terrible = 6
+    }
+
+    /// <summary>
     /// Перечисление. Материалы отделки пола
     /// </summary>
     public enum FloorMaterials
@@ -255,5 +296,89 @@
         /// Стандартная планировка 
         /// </summary>
         Standard = 0
+    }
+
+    /// <summary>
+    /// Перечисление. Двери
+    /// </summary>
+    public enum Doors
+    {
+        /// <summary>
+        /// Деревянные
+        /// </summary>
+        Wood = 0,
+
+        /// <summary>
+        /// Филенчатые
+        /// </summary>
+        Fil = 1,
+
+        /// <summary>
+        /// Металлические
+        /// </summary>
+        Metal = 2
+    }
+
+    /// <summary>
+    /// Перечисление. Окна
+    /// </summary>
+    public enum Windows
+    {
+        /// <summary>
+        /// Деревянные
+        /// </summary>
+        Wood = 0,
+
+        /// <summary>
+        /// Деревянные евро
+        /// </summary>
+        Euro = 1,
+
+        /// <summary>
+        /// Пластиковые
+        /// </summary>
+        Plastic = 2
+    }
+
+    /// <summary>
+    /// Перечисление. Трубы
+    /// </summary>
+    public enum Pipes
+    {
+        /// <summary>
+        /// пластиковые
+        /// </summary>
+        Plastic = 0,
+
+        /// <summary>
+        /// металопластиковые
+        /// </summary>
+        MetalPlastic = 1,
+
+        /// <summary>
+        /// Металлические
+        /// </summary>
+        Metal = 2
+    }
+
+    /// <summary>
+    /// Перечисление. Радиаторы отопления
+    /// </summary>
+    public enum Heaters
+    {
+        /// <summary>
+        /// Чугунные
+        /// </summary>
+        Iron = 0,
+
+        /// <summary>
+        /// Алюминиевые
+        /// </summary>
+        Alumin = 1,
+
+        /// <summary>
+        /// Стальные
+        /// </summary>
+        Steel = 2
     }
 }

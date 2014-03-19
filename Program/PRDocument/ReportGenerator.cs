@@ -439,23 +439,23 @@ namespace PRDocument
             texts_report[33] = "";
             texts_report[34] = "";
             texts_report[35] = "";
-            texts_report[36] = Convert.ToString(report.Apartment.FinishingMaterialForWashroomCeiling);
-            texts_report[37] = Convert.ToString(report.Apartment.FinishingMaterialForWashroomFloor);
-            texts_report[38] = Convert.ToString(report.Apartment.FinishingMaterialForWashroomWall);
+            texts_report[36] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForWashroomCeiling);
+            texts_report[37] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForWashroomFloor);
+            texts_report[38] = report.Apartment.GetWallMaterialAsString(report.Apartment.FinishingMaterialForWashroomWall);
             texts_report[39] = report.Apartment.PlanMeets;
             texts_report[40] = "";
             texts_report[41] = "";
             texts_report[42] = "";
-            texts_report[43] = Convert.ToString(report.Apartment.FinishingMaterialForKitchenCeiling);
-            texts_report[44] = Convert.ToString(report.Apartment.FinishingMaterialForLivingRoomCeiling);
-            texts_report[45] = Convert.ToString(report.Apartment.FinishingMaterialForHallCeiling);
+            texts_report[43] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForKitchenCeiling);
+            texts_report[44] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForLivingRoomCeiling);
+            texts_report[45] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForHallCeiling);
             texts_report[46] = report.Client.Man.Surname+" "+report.Client.Man.Name+" "+report.Client.Man.Patronymic;
             texts_report[47] = client_in_padeg;
             texts_report[48] = report.Client.Man.Name+" "+report.Client.Man.Patronymic;
             texts_report[49] = report.Client.Man.Surname+" "+report.Client.Man.Name+" "+report.Client.Man.Patronymic;
             texts_report[50] = report.Client.Man.Surname+" "+report.Client.Man.Name+" "+report.Client.Man.Patronymic;
             texts_report[51] = report.Client.Man.Surname + " " + report.Client.Man.Name + " " + report.Client.Man.Patronymic;
-            texts_report[52] = "паспорт" + " серии " +
+            texts_report[52] = " серия " +
                                         report.Client.Man.Document.Series + " номер " +
                                         report.Client.Man.Document.Number + " " +
                                         report.Client.Man.Document.PlaceOfIssue;
@@ -478,7 +478,7 @@ namespace PRDocument
             texts_report[69] = Convert.ToString(report.Apartment.Object.Discount * 100) + "%";
             texts_report[70] = Convert.ToString(report.Apartment.Object.Discount * 100) + "%";
             texts_report[71] = "";
-            texts_report[72] = "паспорт" + " серии " +
+            texts_report[72] = " серия " +
                                         report.Client.Man.Document.Series + " номер " +
                                         report.Client.Man.Document.Number + " " +
                                         report.Client.Man.Document.PlaceOfIssue;
@@ -495,7 +495,7 @@ namespace PRDocument
             texts_report[83] = report.Employee.Man.Surname + " " + report.Employee.Man.Name + " " + report.Employee.Man.Patronymic;
             texts_report[84] = "";
             texts_report[85] = "";
-            texts_report[86] = "паспорт" + " серии " +
+            texts_report[86] = " серия " +
                                         report.Employee.Man.Document.Series + " номер " +
                                         report.Employee.Man.Document.Number + " " +
                                         report.Employee.Man.Document.PlaceOfIssue;
@@ -515,14 +515,14 @@ namespace PRDocument
             texts_report[100] = Convert.ToString(report.Employee.WorkTime);
             texts_report[101] = report.Apartment.AuxiliaryRooms;
             texts_report[102] = "";
-            texts_report[103] = Convert.ToString(report.Apartment.ApartmentState);
+            texts_report[103] = report.Apartment.GetApartmentStateAsString(report.Apartment.ApartmentState);
             texts_report[104] = Convert.ToString(report.Apartment.CeilingHeight);
             texts_report[105] = "";
             texts_report[106] = Convert.ToString(report.Apartment.Floor);
             texts_report[107] = Convert.ToString(report.Apartment.Floor);
-            texts_report[108] = Convert.ToString(report.Apartment.FinishingMaterialForHallFloor);
-            texts_report[109] = Convert.ToString(report.Apartment.FinishingMaterialForKitchenFloor);
-            texts_report[110] = Convert.ToString(report.Apartment.FinishingMaterialForLivingRoomFloor);
+            texts_report[108] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForHallFloor);
+            texts_report[109] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForKitchenFloor);
+            texts_report[110] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForLivingRoomFloor);
             texts_report[111] = Convert.ToString(report.Apartment.Floors);
             texts_report[112] = Convert.ToString(report.Apartment.Floors);
             texts_report[113] = "";
@@ -573,7 +573,7 @@ namespace PRDocument
             texts_report[158] = "";
             texts_report[159] = "";
             texts_report[160] = "";
-            texts_report[161] = "";
+            texts_report[161] = Convert.ToString(report.Apartment.KitchenArea); ;
             texts_report[162] = "";
             texts_report[163] = report.Apartment.Object.Restriction;
             texts_report[164] = report.Apartment.Object.Restriction;
@@ -591,7 +591,7 @@ namespace PRDocument
             texts_report[176] = "";
             texts_report[177] = "";
             texts_report[178] = report.Apartment.PlanMeets;
-            texts_report[179] = report.Apartment.ViewOnApparment;
+            texts_report[179] = report.Apartment.ViewOnApparment=="ok"?"регистрация возможна":"регистрация не возможна";
             texts_report[180] = "";
             texts_report[181] = Convert.ToString(report.Apartment.Object.Price);
             texts_report[182] = Convert.ToString(report.Apartment.Object.Price);
@@ -631,8 +631,8 @@ namespace PRDocument
             texts_report[216] = "";
             texts_report[217] = "";
             texts_report[218] = report.Apartment.Object.PurposeOfTheEvaluation;
-            texts_report[219] = Convert.ToString(report.Apartment.RepairWork);
-            texts_report[220] = Convert.ToString(report.Apartment.RoomFinishingQuality);
+            texts_report[219] = report.Apartment.GetRepairWorkAsString(report.Apartment.RepairWork);
+            texts_report[220] = report.Apartment.GetRoomFinishingQualityAsString(report.Apartment.RoomFinishingQuality);
             texts_report[221] = report.ReportDate.ToShortDateString();
             texts_report[222] = report.ReportDate.ToShortDateString();
             texts_report[223] = report.ReportDate.ToLongDateString();
@@ -648,8 +648,8 @@ namespace PRDocument
             texts_report[233] = report.Apartment.Object.Property;
             texts_report[234] = "";
             texts_report[235] = "";
-            texts_report[236] = Convert.ToString(report.Apartment.RoomType);
-            texts_report[237] = "";
+            texts_report[236] = report.Apartment.GetRoomTypeAsString(report.Apartment.RoomType);
+            texts_report[237] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
             texts_report[238] = "";
             texts_report[239] = "";
             texts_report[240] = report.Apartment.HasSeparateKitchenOrWashroom == true ? "есть" : "нет";
@@ -662,15 +662,15 @@ namespace PRDocument
             texts_report[247] = "";
             texts_report[248] = "";
             texts_report[249] = "";
-            texts_report[250] = Convert.ToString(report.Apartment.FinishingMaterialForWashroomCeiling);
-            texts_report[251] = Convert.ToString(report.Apartment.FinishingMaterialForWashroomFloor);
-            texts_report[252] = Convert.ToString(report.Apartment.FinishingMaterialForLivingRoomWall);
+            texts_report[250] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForWashroomCeiling);
+            texts_report[251] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForWashroomFloor);
+            texts_report[252] = report.Apartment.GetWallMaterialAsString(report.Apartment.FinishingMaterialForWashroomWall);
             texts_report[253] = "";
             texts_report[254] = "";
             texts_report[255] = report.Apartment.Views;
-            texts_report[256] = Convert.ToString(report.Apartment.FinishingMaterialForHallFloor);
-            texts_report[257] = Convert.ToString(report.Apartment.FinishingMaterialForKitchenWall);
-            texts_report[258] = Convert.ToString(report.Apartment.FinishingMaterialForLivingRoomWall);
+            texts_report[256] = report.Apartment.GetWallMaterialAsString(report.Apartment.FinishingMaterialForHallWall);
+            texts_report[257] = report.Apartment.GetWallMaterialAsString(report.Apartment.FinishingMaterialForKitchenWall);
+            texts_report[258] = report.Apartment.GetWallMaterialAsString(report.Apartment.FinishingMaterialForLivingRoomWall);
             texts_report[259] = "";
             texts_report[260] = "";
             texts_report[261] = "";
@@ -678,11 +678,11 @@ namespace PRDocument
             texts_report[263] = "";
             texts_report[264] = "";
             texts_report[265] = "";
-            texts_report[266] = "";
+            texts_report[266] = "верхняя";
             texts_report[267] = "";
             texts_report[268] = "";
             texts_report[269] = "";
-            texts_report[270] = "";
+            texts_report[270] = Convert.ToString(report.ReportDate.Year); 
             texts_report[271] = "";
 
 

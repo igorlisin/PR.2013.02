@@ -10,6 +10,11 @@ namespace PR.Classes
     public class Client : Entity, IClient 
     {
         /// <summary>
+        /// Статическое поле. Название по умолчанию
+        /// </summary>
+        private static string _clientAddress;
+
+        /// <summary>
         /// Статический метод. Преобразует объект типа IClient в объект типа Client
         /// </summary>
         public static Client IClientToClientConverter(IClient client)
@@ -45,7 +50,20 @@ namespace PR.Classes
         /// </summary>
         public Man ManForEntityFramework { get; set; }
 
-
+        /// <summary>
+        /// Свойство. Задает и возвращает адрес клиента
+        /// </summary>
+        public string Address
+        {
+            get
+            {
+                return _clientAddress;
+            }
+            set
+            {
+                _clientAddress = value;
+            }
+        }
 
         /// <summary>
         /// Метод. Возвращает копию клиента

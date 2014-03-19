@@ -10,6 +10,10 @@ namespace PRInterfaces.Interfaces
         /// </summary>
         IMan Man { get; set; }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает адрес клиента
+        /// </summary>
+        string Address { get; set; }
  
     }
 }

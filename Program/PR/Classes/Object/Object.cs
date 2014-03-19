@@ -41,6 +41,10 @@ namespace PR.Classes
             /// </summary>
             private string _holders;
             /// <summary>
+            /// Поле. Документы правообладателей оцениваемого имущества
+            /// </summary>
+            private string _documents;
+            /// <summary>
             /// Поле. Вид оцениваемой стоимости
             /// </summary>
             private string _typeOfValue;
@@ -119,6 +123,20 @@ namespace PR.Classes
                 set
                 {
                     _holders = value;
+                }
+            }
+            /// <summary>
+            /// Свойство. Задает и возвращает документы правообладателей оцениваемого имущества
+            /// </summary>
+            public string Documents
+            {
+                get
+                {
+                    return (_documents);
+                }
+                set
+                {
+                    _documents = value;
                 }
             }
             /// <summary>

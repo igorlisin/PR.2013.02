@@ -342,6 +342,122 @@ namespace PR.Classes
             return (currentUsingTypeAsString);
         }
 
+        /// <summary>
+        /// Статический метод. Возвращает тип окон как тестовую строку
+        /// </summary>
+        public static string GetWindowsTypeAsStringStatic(Windows WindowsType)
+        {
+            string WindowsTypeAsString;                                // Тип (как тескстовая строка)
+
+            switch (WindowsType)                                       // Проверить тип
+            {
+                case Windows.Wood:                                      // Сравнить тип 
+                    WindowsTypeAsString = "Деревянные";        // Задать тип (как текстовую строку)
+                    break;
+                case Windows.Euro:                                     // Сравнить тип 
+                    WindowsTypeAsString = "Деревянные евро";       // Задать тип (как текстовую строку)
+                    break;
+                case Windows.Plastic:                                     // Сравнить тип 
+                    WindowsTypeAsString = "Пластиковые";       // Задать тип (как текстовую строку)
+                    break;
+                default:                                                // Тип по умолчанию 
+                    WindowsTypeAsString = "--";                        // Задать тип (как текстовую строку)
+                    break;
+            }
+
+            return (WindowsTypeAsString);
+        }
+
+        /// <summary>
+        /// Статический метод. Возвращает тип дверей как тестовую строку
+        /// </summary>
+        public static string GetDoorsTypeAsStringStatic(Doors DoorsType)
+        {
+            string DoorsTypeAsString;                                // Тип (как тескстовая строка)
+
+            switch (DoorsType)                                       // Проверить тип
+            {
+                case Doors.Wood:                                      // Сравнить тип 
+                    DoorsTypeAsString = "Деревянные";        // Задать тип (как текстовую строку)
+                    break;
+                case Doors.Fil:                                     // Сравнить тип 
+                    DoorsTypeAsString = "Филенчатые";       // Задать тип (как текстовую строку)
+                    break;
+                case Doors.Metal:                                     // Сравнить тип 
+                    DoorsTypeAsString = "Железная";       // Задать тип (как текстовую строку)
+                    break;
+                default:                                                // Тип по умолчанию 
+                    DoorsTypeAsString = "--";                        // Задать тип (как текстовую строку)
+                    break;
+            }
+
+            return (DoorsTypeAsString);
+        }
+
+        /// <summary>
+        /// Статический метод. Возвращает тип дверей как тестовую строку
+        /// </summary>
+        public static string GetPipesTypeAsStringStatic(Pipes PipesType)
+        {
+            string PipesTypeAsString;                                // Тип (как тескстовая строка)
+
+            switch (PipesType)                                       // Проверить тип
+            {
+                case Pipes.MetalPlastic:                                      // Сравнить тип 
+                    PipesTypeAsString = "Пластиковые";        // Задать тип (как текстовую строку)
+                    break;
+                case Pipes.Plastic:                                     // Сравнить тип 
+                    PipesTypeAsString = "Металлопластиковые";       // Задать тип (как текстовую строку)
+                    break;
+                case Pipes.Metal:                                     // Сравнить тип 
+                    PipesTypeAsString = "Стальные";       // Задать тип (как текстовую строку)
+                    break;
+                default:                                                // Тип по умолчанию 
+                    PipesTypeAsString = "--";                        // Задать тип (как текстовую строку)
+                    break;
+            }
+
+            return (PipesTypeAsString);
+        }
+
+        /// <summary>
+        /// Метод. Возвращает качество отделки помещения как текстовую строку
+        /// </summary>
+        public static string GetConditionAsStringStatic(Condition condition)
+        {
+            string conditionAsString;                        // Тип (как тескстовая строка)
+
+            switch (condition)                               // Проверить тип
+            {
+                case Condition.Perfect:                    // Сравнить тип 
+                    conditionAsString = "Идеальное";         // Задать тип (как текстовую строку)
+                    break;
+                case Condition.VeryGood:                   // Сравнить тип 
+                    conditionAsString = "Очень хорошее";     // Задать тип (как текстовую строку)
+                    break;
+                case Condition.Good:                       // Сравнить тип 
+                    conditionAsString = "Хорошее";           // Задать тип (как текстовую строку)
+                    break;
+                case Condition.Normal:                     // Сравнить тип 
+                    conditionAsString = "Нормальное";        // Задать тип (как текстовую строку)
+                    break;
+                case Condition.Bad:                        // Сравнить тип 
+                    conditionAsString = "Плохое";            // Задать тип (как текстовую строку)
+                    break;
+                case Condition.VeryBad:                    // Сравнить тип 
+                    conditionAsString = "Очень плохое";      // Задать тип (как текстовую строку)
+                    break;
+                case Condition.Terrible:                   // Сравнить тип 
+                    conditionAsString = "Ужасное";           // Задать тип (как текстовую строку)
+                    break;
+                default:                                                // Тип по умолчанию 
+                    conditionAsString = "--";                // Задать тип (как текстовую строку)
+                    break;
+            }
+
+            return (conditionAsString);
+        }
+
         #endregion
 
         #region Fields
@@ -540,6 +656,82 @@ namespace PR.Classes
         /// Поле. Комментарии к фотографиям
         /// </summary>
         private string _picturesComment;
+
+
+        /// <summary>
+        /// Поле. Задает и возвращает материал отделки пола 
+        /// </summary>
+        private FloorMaterials _finishingMaterialForFloors;
+
+        /// <summary>
+        /// Поле. Задает и возвращает состояние дверей
+        /// </summary>
+        private Condition _doorsCondition;
+
+        /// <summary>
+        /// Поле. Задает и возвращает состояние отополения
+        /// </summary>
+        private Condition _heatingCondition;
+
+        /// <summary>
+        /// Поле. Задает и возвращает состояние канализации
+        /// </summary>
+        private Condition _canaliztionCondition;
+
+        /// <summary>
+        /// Поле. Задает и возвращает состояние водоснабжения
+        /// </summary>
+        private Condition _waterCondition;
+
+        /// <summary>
+        /// Поле. Задает и возвращает состояние окон
+        /// </summary>
+        private Condition _windowsCondition;
+
+        /// <summary>
+        /// Поле. Задает и возвращает количество санузлов
+        /// </summary>
+        private string _sanuzelQnt;
+
+        /// <summary>
+        /// Поле. Задает и возвращает тип труб отопления 
+        /// </summary>
+        private Pipes _heatingPipesType;
+
+        /// <summary>
+        /// Поле. Задает и возвращает тип труб водоснабжения
+        /// </summary>
+        private Pipes _waterPipesType;
+
+        /// <summary>
+        /// Поле. Задает и возвращает тип труб канализации
+        /// </summary>
+        private Pipes _canalizationPipesType;
+
+        /// <summary>
+        /// Поле. Задает и возвращает тип входной двери
+        /// </summary>
+        private Doors _mainDoorType;
+
+        /// <summary>
+        /// Поле. Задает и возвращает тип межкомнатных дверей
+        /// </summary>
+        private Doors _roomDoorsType;
+
+        /// <summary>
+        /// Поле. Задает и возвращает тип радиаторов
+        /// </summary>
+        private Heaters _heatersType;
+
+        /// <summary>
+        /// Поле. Задает и возвращает тип окон
+        /// </summary>
+        private Windows _windowsType;
+
+        /// <summary>
+        /// Поле. Задает и возвращает приборы учета
+        /// </summary>
+        private string _counters;
 
         #endregion
 
@@ -1174,6 +1366,234 @@ namespace PR.Classes
         
         public virtual Object ObjectForEntityFramework { get; set; }
 
+
+        /// <summary>
+        /// Свойство. Задает и возвращает материал отделки пола 
+        /// </summary>
+        public FloorMaterials FinishingMaterialForFloors
+        { 
+            get{
+                return _finishingMaterialForFloors;
+            } 
+            set{
+                _finishingMaterialForFloors=value;
+            } 
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние дверей
+        /// </summary>
+        public Condition DoorsCondition
+        {
+            get
+            {
+                return _doorsCondition;
+            }
+            set
+            {
+                _doorsCondition = value;
+            }
+        }
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние отополения
+        /// </summary>
+        public Condition HeatingCondition
+        {
+            get
+            {
+                return _heatingCondition;
+            }
+            set
+            {
+                _heatingCondition = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние канализации
+        /// </summary>
+        public Condition CanaliztionCondition
+        {
+            get
+            {
+                return _canaliztionCondition;
+            }
+            set
+            {
+                _canaliztionCondition = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние водоснабжения
+        /// </summary>
+        public Condition WaterCondition
+        {
+            get
+            {
+                return _waterCondition;
+            }
+            set
+            {
+                _waterCondition = value;
+            }
+        
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние окон
+        /// </summary>
+        public Condition WindowsCondition
+        {
+            get
+            {
+                return _windowsCondition;
+            }
+            set
+            {
+                _windowsCondition = value;
+            }
+        
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает количество санузлов
+        /// </summary>
+        public string SanuzelQnt
+        {
+            get
+            {
+                return _sanuzelQnt;
+            }
+            set
+            {
+                _sanuzelQnt = value;
+            }
+        
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип труб отопления 
+        /// </summary>
+        public Pipes HeatingPipesType
+        {
+            get
+            {
+                return _heatingPipesType;
+            }
+            set
+            {
+                _heatingPipesType = value;
+            }
+        
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип труб водоснабжения
+        /// </summary>
+        public Pipes WaterPipesType
+        {
+            get
+            {
+                return _waterPipesType;
+            }
+            set
+            {
+                _waterPipesType = value;
+            }
+        
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип труб канализации
+        /// </summary>
+        public Pipes CanalizationPipesType
+        {
+            get
+            {
+                return _canalizationPipesType;
+            }
+            set
+            {
+                _canalizationPipesType = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип входной двери
+        /// </summary>
+        public Doors MainDoorType
+        {
+            get
+            {
+                return _mainDoorType;
+            }
+            set
+            {
+                _mainDoorType = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип межкомнатных дверей
+        /// </summary>
+        public Doors RoomDoorsType
+        {
+            get
+            {
+                return _roomDoorsType;
+            }
+            set
+            {
+                _roomDoorsType = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип радиаторов
+        /// </summary>
+        public Heaters HeatersType
+        {
+            get
+            {
+                return _heatersType;
+            }
+            set
+            {
+                _heatersType = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип окон
+        /// </summary>
+        public Windows WindowsType
+        {
+            get
+            {
+                return _windowsType;
+            }
+            set
+            {
+                _windowsType = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает приборы учета
+        /// </summary>
+        public string Counters
+        {
+            get
+            {
+                return _counters;
+            }
+            set
+            {
+                _counters = value;
+            }
+        }
+
         #endregion
 
         #region Constructors
@@ -1283,6 +1703,37 @@ namespace PR.Classes
             return (Apartment.GetCurrentUsingAsStringStatic(currentUsingType));
         }
 
+        /// <summary>
+        /// Метод. Возвращает тип  как тестовую строку
+        /// </summary>
+        public string GetWindowsTypeAsString(Windows WindowsType)
+        {
+            return (Apartment.GetWindowsTypeAsStringStatic(WindowsType));
+        }
+
+        /// <summary>
+        /// Метод. Возвращает тип  как тестовую строку
+        /// </summary>
+        public string GetDoorsTypeAsString(Doors DoorsType)
+        {
+            return (Apartment.GetDoorsTypeAsStringStatic(DoorsType));
+        }
+
+        /// <summary>
+        /// Метод. Возвращает тип  как тестовую строку
+        /// </summary>
+        public string GetPipesTypeAsString(Pipes PipesType)
+        {
+            return (Apartment.GetPipesTypeAsStringStatic(PipesType));
+        }
+
+        /// <summary>
+        /// Метод. Возвращает тип  как тестовую строку
+        /// </summary>
+        public string GetConditionTypeAsString(Condition ConditionType)
+        {
+            return (Apartment.GetConditionAsStringStatic(ConditionType));
+        }
         // TODO: Реализовать метод "Clone" после всех полей и свойств
 
         #endregion

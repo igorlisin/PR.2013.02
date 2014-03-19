@@ -35,6 +35,11 @@ namespace PRInterfaces.Interfaces
         string Holders { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает документы правообладателей оцениваемого имущества
+        /// </summary>
+        string Documents { get; set; }
+
+        /// <summary>
         /// Свойство. Задает и возвращает вид оцениваемой стоимости
         /// </summary>
         string TypeOfValue { get; set; }

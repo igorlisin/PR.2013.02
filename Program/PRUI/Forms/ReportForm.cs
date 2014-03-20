@@ -626,6 +626,7 @@ namespace PRUI.Forms
             man.Name = clientNameTextBox.Text;                      // Присвоить Имя с текстового поля
             man.Surname = clientSurnameTextBox.Text;                // Присвоить Фамилия с текстового поля
             man.Patronymic = clientPatronymicTextBox.Text;          // Присвоить Отчество с текстового поля
+            client.Address = ClientAddressTextBox.Text;
 
             document.Series = Convert.ToInt32(clientDocSeriesTextBox.Text);             // Присвоить Серия документа с текстового поля
             document.Number = Convert.ToInt32(clientDocNumberTextBox.Text);             // Присвоить Номер документа с текстового поля

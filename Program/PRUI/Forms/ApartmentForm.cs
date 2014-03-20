@@ -950,6 +950,22 @@ namespace PRUI.Forms
             }
         }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает 
+        /// </summary>
+        private string ObjectDocuments
+        {
+            get
+            {
+                return (HoldersDocumentsTextBox.Text);
+            }
+            set
+            {
+                HoldersDocumentsTextBox.Text = value;
+            }
+        }
+
+
         #region Apartment man picture
 
         /// <summary>
@@ -1195,6 +1211,7 @@ namespace PRUI.Forms
             ObjectDiscount = 0;
             ObjectPurpose = "Определение рыночной и ликвидационной стоимости";
             ObjectDest = "Обеспечение по ипотечному кредиту";
+            ObjectDocuments = "";
 
             ClearWashroomTypeList();                                                        // Очистить список "Тип санузлов"
             FillWashroomTypeList();                                                         // Заполнить данными список "Тип санузлов"
@@ -1291,6 +1308,24 @@ namespace PRUI.Forms
 
             ClearCanalizationConditionList(CanalizationCondComboBox);
             FillCanalizationConditionList(CanalizationCondComboBox);
+
+            ClearWaterConditionList(WaterCondComboBox);
+            FillWaterConditionList(WaterCondComboBox);
+
+            ClearMainDoorsTypeList(MainDoorTypeComboBox);
+            FillMainDoorsList(MainDoorTypeComboBox);
+
+            ClearRoomDoorsTypeList(RoomDoorsTypeComboBox);
+            FillRoomDoorsList(RoomDoorsTypeComboBox);
+
+            ClearDoorsConditionList(DoorsCondComboBox);
+            FillDoorsConditionList(DoorsCondComboBox);
+
+            ClearWindowsTypeList(WindowsTypeComboBox);
+            FillWindowsTypeList(WindowsTypeComboBox);
+
+            ClearWindowsConditionList(WindowsCondComboBox);
+            FillWindowsConditionList(WindowsCondComboBox);
 
         }
 
@@ -1467,6 +1502,21 @@ namespace PRUI.Forms
             CurrentUsing = apartment.CurrentUsing;                                                          // Скопировать текущее использование
             PicturesComment = apartment.PicturesComment;                                                    // Скопировать комментарии к фотографиям
 
+            MainDoorsType = apartment.MainDoorType;
+            RoomDoorsType = apartment.RoomDoorsType;
+            DoorsCondition = apartment.DoorsCondition;
+
+            WindowsType = apartment.WindowsType;
+            WindowsCondition = apartment.WindowsCondition;
+
+            HeatingPipesTypes = apartment.HeatingPipesType;
+            HeatingRadiatorsTypes = apartment.HeatersType;
+            HeatingCondition = apartment.HeatingCondition;
+
+            WaterCondition = apartment.WaterCondition;
+
+            CanalizationPipesTypes = apartment.CanalizationPipesType;
+            CanalizationCondition = apartment.CanaliztionCondition;
         }
 
         /// <summary>
@@ -1515,6 +1565,22 @@ namespace PRUI.Forms
             apartment.PicturesComment = PicturesComment;                                                    // Скопировать комментарии к фотографиям
 
 
+            apartment.MainDoorType= MainDoorsType;
+            apartment.RoomDoorsType= RoomDoorsType;
+            apartment.DoorsCondition=DoorsCondition;
+
+            apartment.WindowsType=WindowsType;
+            apartment.WindowsCondition=WindowsCondition;
+
+            apartment.HeatingPipesType=HeatingPipesTypes;
+            apartment.HeatersType=HeatingRadiatorsTypes;
+            apartment.HeatingCondition=HeatingCondition;
+
+            apartment.WaterCondition=WaterCondition;
+
+            apartment.CanalizationPipesType=CanalizationPipesTypes;
+            apartment.CanaliztionCondition = CanalizationCondition;
+
         }
 
         /// <summary>
@@ -1531,6 +1597,9 @@ namespace PRUI.Forms
             ObjectDiscount = obj.Discount;
             ObjectPurpose = obj.PurposeOfTheEvaluation;
             ObjectDest = obj.DestOfTheEvaluation;
+            ObjectDocuments = obj.Documents;
+            
+
         }
 
 
@@ -1551,8 +1620,16 @@ namespace PRUI.Forms
             obj.Discount = ObjectDiscount;
             obj.PurposeOfTheEvaluation = ObjectPurpose;
             obj.DestOfTheEvaluation = ObjectDest;
+            obj.Documents = ObjectDocuments;
 
-            _objects.Add(obj);
+            if (_objectAfterRelinking == null)  //Если объекта еще нет 
+            {
+                _objects.Add(obj);              // то создаем
+            }
+            else
+            {
+                _objects.SaveChanges();        //иначе изменяем, что есть
+            }
             _objectAfterRelinking = obj;
         }
 
@@ -2221,6 +2298,47 @@ namespace PRUI.Forms
             }
 
             SetMainDoorsTypeListDisplayMember(comboBox, "Value");                                                           // Задать отображаемое поле 
+        }
+
+        #endregion
+
+        #region Doors Condition List
+
+        /// <summary>
+        /// Метод. Очищает список 
+        /// </summary>
+        protected void ClearDoorsConditionList(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+        }
+
+        /// <summary>
+        /// Метод. Добавляет элемент в список 
+        /// </summary>
+        private void AddDoorsConditionToList(ComboBox comboBox, Condition doorsCondition, string DoorsConditionDescription)
+        {
+            comboBox.Items.Add(new KeyValuePair<Condition, string>(doorsCondition, DoorsConditionDescription));
+        }
+
+        /// <summary>
+        /// Метод. Задает отображаемое поле для списка 
+        /// </summary>
+        private void SetDoorsConditionListDisplayMember(ComboBox comboBox, string typeMember)
+        {
+            comboBox.DisplayMember = typeMember;
+        }
+
+        /// <summary>
+        /// Метод. Заполняет данными список 
+        /// </summary>
+        protected void FillDoorsConditionList(ComboBox comboBox)
+        {
+            foreach (Condition DoorsCondition in Enum.GetValues(typeof(Condition)))                                // Выполнить для всех элементов перечисления
+            {
+                AddDoorsConditionToList(comboBox, DoorsCondition, _apartment.GetConditionTypeAsString(DoorsCondition));        // Добавить элемент в список  
+            }
+
+            SetDoorsConditionListDisplayMember(comboBox, "Value");                                                           // Задать отображаемое поле 
         }
 
         #endregion

@@ -80,6 +80,8 @@
             this.ObjectCityTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.ClientAddressTextBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -115,7 +117,9 @@
             // 
             // clientInfoGroup
             // 
+            this.clientInfoGroup.Controls.Add(this.label13);
             this.clientInfoGroup.Controls.Add(this.label12);
+            this.clientInfoGroup.Controls.Add(this.ClientAddressTextBox);
             this.clientInfoGroup.Controls.Add(this.clientDocGivesTextBox);
             this.clientInfoGroup.Controls.Add(this.label11);
             this.clientInfoGroup.Controls.Add(this.clientDocDataIssueTextBox);
@@ -135,7 +139,7 @@
             this.clientInfoGroup.Controls.Add(this.clientSurnameTextBox);
             this.clientInfoGroup.Location = new System.Drawing.Point(619, 12);
             this.clientInfoGroup.Name = "clientInfoGroup";
-            this.clientInfoGroup.Size = new System.Drawing.Size(276, 309);
+            this.clientInfoGroup.Size = new System.Drawing.Size(276, 371);
             this.clientInfoGroup.TabIndex = 32;
             this.clientInfoGroup.TabStop = false;
             this.clientInfoGroup.Text = "Клиент";
@@ -217,7 +221,7 @@
             // 
             // AddClientButton
             // 
-            this.AddClientButton.Location = new System.Drawing.Point(48, 283);
+            this.AddClientButton.Location = new System.Drawing.Point(48, 341);
             this.AddClientButton.Name = "AddClientButton";
             this.AddClientButton.Size = new System.Drawing.Size(37, 20);
             this.AddClientButton.TabIndex = 74;
@@ -228,7 +232,7 @@
             // relinkClientButton
             // 
             this.relinkClientButton.Image = global::PRUI.Properties.Resources.linkButton;
-            this.relinkClientButton.Location = new System.Drawing.Point(9, 283);
+            this.relinkClientButton.Location = new System.Drawing.Point(9, 341);
             this.relinkClientButton.Name = "relinkClientButton";
             this.relinkClientButton.Size = new System.Drawing.Size(30, 20);
             this.relinkClientButton.TabIndex = 61;
@@ -238,7 +242,7 @@
             // unlinkClientButton
             // 
             this.unlinkClientButton.Image = global::PRUI.Properties.Resources.unlinkButton;
-            this.unlinkClientButton.Location = new System.Drawing.Point(93, 283);
+            this.unlinkClientButton.Location = new System.Drawing.Point(93, 341);
             this.unlinkClientButton.Name = "unlinkClientButton";
             this.unlinkClientButton.Size = new System.Drawing.Size(30, 20);
             this.unlinkClientButton.TabIndex = 62;
@@ -303,7 +307,7 @@
             this.employeeInfoGroup.Controls.Add(this.employeeSurnameLabel);
             this.employeeInfoGroup.Controls.Add(this.employeePatronymicLabel);
             this.employeeInfoGroup.Controls.Add(this.employeeSurnameTextBox);
-            this.employeeInfoGroup.Location = new System.Drawing.Point(619, 327);
+            this.employeeInfoGroup.Location = new System.Drawing.Point(619, 389);
             this.employeeInfoGroup.Name = "employeeInfoGroup";
             this.employeeInfoGroup.Size = new System.Drawing.Size(276, 145);
             this.employeeInfoGroup.TabIndex = 33;
@@ -612,6 +616,23 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Адрес";
             // 
+            // ClientAddressTextBox
+            // 
+            this.ClientAddressTextBox.Location = new System.Drawing.Point(9, 294);
+            this.ClientAddressTextBox.Multiline = true;
+            this.ClientAddressTextBox.Name = "ClientAddressTextBox";
+            this.ClientAddressTextBox.Size = new System.Drawing.Size(261, 41);
+            this.ClientAddressTextBox.TabIndex = 82;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 278);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 13);
+            this.label13.TabIndex = 83;
+            this.label13.Text = "Адрес";
+            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -705,5 +726,7 @@
         protected System.Windows.Forms.TextBox clientDocGivesTextBox;
         protected System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker clientDocDataIssueTextBox;
+        protected System.Windows.Forms.Label label13;
+        protected System.Windows.Forms.TextBox ClientAddressTextBox;
     }
 }

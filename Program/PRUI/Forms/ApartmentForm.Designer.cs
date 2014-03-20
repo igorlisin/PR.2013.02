@@ -126,6 +126,8 @@
             this.SNIPTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.stateAndFinishingTabControlPage = new System.Windows.Forms.TabPage();
+            this.heatingSystemLabel = new System.Windows.Forms.Label();
+            this.heatingSystemComboBox = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
             this.CounterTextBox = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -182,8 +184,8 @@
             this.PorposeTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.otherTabControlPage = new System.Windows.Forms.TabPage();
-            this.heatingSystemLabel = new System.Windows.Forms.Label();
-            this.heatingSystemComboBox = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.HoldersDocumentsTextBox = new System.Windows.Forms.TextBox();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -1207,6 +1209,24 @@
             this.stateAndFinishingTabControlPage.Text = "Состояние и отделка";
             this.stateAndFinishingTabControlPage.UseVisualStyleBackColor = true;
             // 
+            // heatingSystemLabel
+            // 
+            this.heatingSystemLabel.AutoSize = true;
+            this.heatingSystemLabel.Location = new System.Drawing.Point(283, 251);
+            this.heatingSystemLabel.Name = "heatingSystemLabel";
+            this.heatingSystemLabel.Size = new System.Drawing.Size(130, 13);
+            this.heatingSystemLabel.TabIndex = 66;
+            this.heatingSystemLabel.Text = "Тип системы отопления";
+            // 
+            // heatingSystemComboBox
+            // 
+            this.heatingSystemComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.heatingSystemComboBox.FormattingEnabled = true;
+            this.heatingSystemComboBox.Location = new System.Drawing.Point(283, 267);
+            this.heatingSystemComboBox.Name = "heatingSystemComboBox";
+            this.heatingSystemComboBox.Size = new System.Drawing.Size(131, 21);
+            this.heatingSystemComboBox.TabIndex = 67;
+            // 
             // label35
             // 
             this.label35.Location = new System.Drawing.Point(557, 345);
@@ -1530,6 +1550,8 @@
             // 
             // lawTabControlPage
             // 
+            this.lawTabControlPage.Controls.Add(this.HoldersDocumentsTextBox);
+            this.lawTabControlPage.Controls.Add(this.label23);
             this.lawTabControlPage.Controls.Add(this.HoldersTextBox);
             this.lawTabControlPage.Controls.Add(this.label4);
             this.lawTabControlPage.Controls.Add(this.groupBox1);
@@ -1543,7 +1565,7 @@
             // 
             // HoldersTextBox
             // 
-            this.HoldersTextBox.Location = new System.Drawing.Point(302, 38);
+            this.HoldersTextBox.Location = new System.Drawing.Point(302, 28);
             this.HoldersTextBox.Multiline = true;
             this.HoldersTextBox.Name = "HoldersTextBox";
             this.HoldersTextBox.Size = new System.Drawing.Size(220, 102);
@@ -1736,23 +1758,22 @@
             this.otherTabControlPage.Text = "Разное";
             this.otherTabControlPage.UseVisualStyleBackColor = true;
             // 
-            // heatingSystemLabel
+            // label23
             // 
-            this.heatingSystemLabel.AutoSize = true;
-            this.heatingSystemLabel.Location = new System.Drawing.Point(283, 251);
-            this.heatingSystemLabel.Name = "heatingSystemLabel";
-            this.heatingSystemLabel.Size = new System.Drawing.Size(130, 13);
-            this.heatingSystemLabel.TabIndex = 66;
-            this.heatingSystemLabel.Text = "Тип системы отопления";
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(299, 137);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(158, 13);
+            this.label23.TabIndex = 39;
+            this.label23.Text = "Документы правообладатели";
             // 
-            // heatingSystemComboBox
+            // HoldersDocumentsTextBox
             // 
-            this.heatingSystemComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.heatingSystemComboBox.FormattingEnabled = true;
-            this.heatingSystemComboBox.Location = new System.Drawing.Point(283, 267);
-            this.heatingSystemComboBox.Name = "heatingSystemComboBox";
-            this.heatingSystemComboBox.Size = new System.Drawing.Size(131, 21);
-            this.heatingSystemComboBox.TabIndex = 67;
+            this.HoldersDocumentsTextBox.Location = new System.Drawing.Point(302, 153);
+            this.HoldersDocumentsTextBox.Multiline = true;
+            this.HoldersDocumentsTextBox.Name = "HoldersDocumentsTextBox";
+            this.HoldersDocumentsTextBox.Size = new System.Drawing.Size(220, 102);
+            this.HoldersDocumentsTextBox.TabIndex = 69;
             // 
             // ApartmentForm
             // 
@@ -1953,5 +1974,7 @@
         private System.Windows.Forms.ComboBox WindowsTypeComboBox;
         private System.Windows.Forms.Label heatingSystemLabel;
         private System.Windows.Forms.ComboBox heatingSystemComboBox;
+        protected System.Windows.Forms.TextBox HoldersDocumentsTextBox;
+        protected System.Windows.Forms.Label label23;
     }
 }

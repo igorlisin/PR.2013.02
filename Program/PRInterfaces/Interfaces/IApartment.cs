@@ -367,6 +367,11 @@ namespace PRInterfaces.Interfaces
         string GetConditionTypeAsString(Condition ConditionType);
 
         /// <summary>
+        /// Метод. Возвращает состояние  как тестовую строку
+        /// </summary>
+        string GetPipesTypeAsString(Pipes PipesType);
+
+        /// <summary>
         /// Метод. Возвращает тип окон как тестовую строку
         /// </summary>
         string GetWindowsTypeAsString(Windows windowsType);

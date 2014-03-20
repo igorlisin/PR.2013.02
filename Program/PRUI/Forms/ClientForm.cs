@@ -16,6 +16,33 @@ namespace PRUI.Forms
     /// </summary>
     public partial class ClientForm : TemplateEntityPersonForm
     {
+        #region Fields
+
+        /// <summary>
+        /// Поле. Адрес
+        /// </summary>
+        private string _address;
+        
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Свойство. Задает и возвращает Адрес
+        /// </summary>
+        private string Address
+        {
+            get
+            {
+                return (ClientAddressTextBox.Text);
+            }
+            set
+            {
+                ClientAddressTextBox.Text = value;
+            }
+        }
+        #endregion
+
         #region Constructors
 
         /// <summary>
@@ -39,6 +66,24 @@ namespace PRUI.Forms
 
         #region Methods
 
+        /// <summary>
+        /// Метод. Очищает все данные формы
+        /// </summary>
+        protected override void CleanAllData()
+        {
+            base.CleanAllData();        // Очистить все данные
+
+            CleanAddress();           // Очистить данные Адрес
+        }
+
+               /// <summary>
+        /// Метод. Очищает данные Адрес
+        /// </summary>
+        private void CleanAddress()
+        {
+            Address = "";
+        }                 
+
         #region Copy
 
         /// <summary>
@@ -50,7 +95,7 @@ namespace PRUI.Forms
             CopyDescriptionFromEntity((IEntity)_client);        // Скопировать описание
 
             CopyLinkedDataFromEntity();                         // Скопировать данные из сущностей, связанных с основной сущностью 
-            CopyClientFromEntity();                             // Скопировать данные клиента
+            CopyClientFromEntity(_client);                             // Скопировать данные клиента
         }
 
         /// <summary>
@@ -71,8 +116,9 @@ namespace PRUI.Forms
         /// <summary>
         /// Метод. Копирует данные сущности в компоненты клиента
         /// </summary>
-        private void CopyClientFromEntity()
+        private void CopyClientFromEntity(IClient client)
         {
+            Address = client.Address;
         }
 
         /// <summary>
@@ -83,6 +129,7 @@ namespace PRUI.Forms
             ((IEntity)_client).Description = Description;       // Скопировать описание
 
             _client.Man = _manAfterRelinking;                   // Скопировать человека после перепривязки
+            _client.Address = Address;
         }
 
         #endregion

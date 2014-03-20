@@ -353,8 +353,28 @@ namespace PRInterfaces.Interfaces
 
         /// <summary>
         /// Метод. Возвращает текущее использование как текстовую строку
-        /// <returns></returns>
+        /// </summary>
         string GetCurrentUsingAsString(CurrentUsingTypes currentUsingType);
+
+        /// <summary>
+        /// Метод. Возвращает тип  двери как тестовую строку
+        /// </summary>
+        string GetDoorsTypeAsString(Doors DoorsType);
+
+        /// <summary>
+        /// Метод. Возвращает состояние  как тестовую строку
+        /// </summary>
+        string GetConditionTypeAsString(Condition ConditionType);
+
+        /// <summary>
+        /// Метод. Возвращает тип окон как тестовую строку
+        /// </summary>
+        string GetWindowsTypeAsString(Windows windowsType);
+
+        /// <summary>
+        /// Метод. Возвращает тип труб  как тестовую строку
+        /// </summary>
+        string GetHeaterTypeAsString(Heaters HeatersType);
 
         #endregion
     }

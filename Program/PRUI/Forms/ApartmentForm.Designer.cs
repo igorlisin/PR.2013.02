@@ -39,8 +39,6 @@
             this.planMeetsLabel = new System.Windows.Forms.Label();
             this.hasDevicesCheckBox = new System.Windows.Forms.CheckBox();
             this.hasLowCurrentCheckBox = new System.Windows.Forms.CheckBox();
-            this.heatingSystemComboBox = new System.Windows.Forms.ComboBox();
-            this.heatingSystemLabel = new System.Windows.Forms.Label();
             this.auxiliaryRoomsTextBox = new System.Windows.Forms.TextBox();
             this.auxiliaryRoomsLabel = new System.Windows.Forms.Label();
             this.viewsTextBox = new System.Windows.Forms.TextBox();
@@ -95,18 +93,6 @@
             this.grossAreaTextBox = new System.Windows.Forms.TextBox();
             this.grossAreaLabel = new System.Windows.Forms.Label();
             this.formTabControl = new System.Windows.Forms.TabControl();
-            this.baseTabControlPage = new System.Windows.Forms.TabPage();
-            this.relinkApartmentMapPictureButton = new System.Windows.Forms.Button();
-            this.unlinkApartmentMapPictureButton = new System.Windows.Forms.Button();
-            this.apartmentMapPictureNameTextBox = new System.Windows.Forms.TextBox();
-            this.apartmentMapPictureNameLabel = new System.Windows.Forms.Label();
-            this.previewApartmentMapPictureButton = new System.Windows.Forms.Button();
-            this.apartmentMapPictureBox = new System.Windows.Forms.PictureBox();
-            this.numberOnFloor = new System.Windows.Forms.Label();
-            this.FloorsTextBox = new System.Windows.Forms.TextBox();
-            this.SNIPTextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.stateAndFinishingTabControlPage = new System.Windows.Forms.TabPage();
             this.placeTabControlPage = new System.Windows.Forms.TabPage();
             this.unlinkHomeButton = new System.Windows.Forms.Button();
             this.complexNumberLabel = new System.Windows.Forms.Label();
@@ -126,6 +112,49 @@
             this.regionNameTextBox = new System.Windows.Forms.TextBox();
             this.countryNameLabel = new System.Windows.Forms.Label();
             this.countryNameTextBox = new System.Windows.Forms.TextBox();
+            this.baseTabControlPage = new System.Windows.Forms.TabPage();
+            this.SanuzelQntTextBox = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.relinkApartmentMapPictureButton = new System.Windows.Forms.Button();
+            this.unlinkApartmentMapPictureButton = new System.Windows.Forms.Button();
+            this.apartmentMapPictureNameTextBox = new System.Windows.Forms.TextBox();
+            this.apartmentMapPictureNameLabel = new System.Windows.Forms.Label();
+            this.previewApartmentMapPictureButton = new System.Windows.Forms.Button();
+            this.apartmentMapPictureBox = new System.Windows.Forms.PictureBox();
+            this.numberOnFloor = new System.Windows.Forms.Label();
+            this.FloorsTextBox = new System.Windows.Forms.TextBox();
+            this.SNIPTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.stateAndFinishingTabControlPage = new System.Windows.Forms.TabPage();
+            this.label35 = new System.Windows.Forms.Label();
+            this.CounterTextBox = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.CanalizationPipeTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.CanalizationCondComboBox = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.WaterCondComboBox = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.HeaterRadiatorTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.HeaterPipeTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.HeaterCondComboBox = new System.Windows.Forms.ComboBox();
+            this.WindowsCondComboBox = new System.Windows.Forms.ComboBox();
+            this.DoorsCondComboBox = new System.Windows.Forms.ComboBox();
+            this.RoomDoorsTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.WindowsTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.MainDoorTypeComboBox = new System.Windows.Forms.ComboBox();
             this.picturesTabControlPage = new System.Windows.Forms.TabPage();
             this.previewImageButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
@@ -133,6 +162,7 @@
             this.apartmentPhotosDataGridView = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lawTabControlPage = new System.Windows.Forms.TabPage();
+            this.HoldersTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -152,15 +182,16 @@
             this.PorposeTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.otherTabControlPage = new System.Windows.Forms.TabPage();
-            this.HoldersTextBox = new System.Windows.Forms.TextBox();
+            this.heatingSystemLabel = new System.Windows.Forms.Label();
+            this.heatingSystemComboBox = new System.Windows.Forms.ComboBox();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
             this.formTabControl.SuspendLayout();
+            this.placeTabControlPage.SuspendLayout();
             this.baseTabControlPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentMapPictureBox)).BeginInit();
             this.stateAndFinishingTabControlPage.SuspendLayout();
-            this.placeTabControlPage.SuspendLayout();
             this.picturesTabControlPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.lawTabControlPage.SuspendLayout();
@@ -187,6 +218,7 @@
             // noteInfoGroup
             // 
             this.noteInfoGroup.Location = new System.Drawing.Point(793, 341);
+            this.noteInfoGroup.Size = new System.Drawing.Size(293, 51);
             // 
             // closeButton
             // 
@@ -279,24 +311,6 @@
             this.hasLowCurrentCheckBox.TabIndex = 49;
             this.hasLowCurrentCheckBox.Text = "Наличие слаботочного обеспечения";
             this.hasLowCurrentCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // heatingSystemComboBox
-            // 
-            this.heatingSystemComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.heatingSystemComboBox.FormattingEnabled = true;
-            this.heatingSystemComboBox.Location = new System.Drawing.Point(214, 265);
-            this.heatingSystemComboBox.Name = "heatingSystemComboBox";
-            this.heatingSystemComboBox.Size = new System.Drawing.Size(157, 21);
-            this.heatingSystemComboBox.TabIndex = 47;
-            // 
-            // heatingSystemLabel
-            // 
-            this.heatingSystemLabel.AutoSize = true;
-            this.heatingSystemLabel.Location = new System.Drawing.Point(214, 249);
-            this.heatingSystemLabel.Name = "heatingSystemLabel";
-            this.heatingSystemLabel.Size = new System.Drawing.Size(107, 13);
-            this.heatingSystemLabel.TabIndex = 46;
-            this.heatingSystemLabel.Text = "Система отопления";
             // 
             // auxiliaryRoomsTextBox
             // 
@@ -779,186 +793,17 @@
             // 
             // formTabControl
             // 
+            this.formTabControl.Controls.Add(this.placeTabControlPage);
             this.formTabControl.Controls.Add(this.baseTabControlPage);
             this.formTabControl.Controls.Add(this.stateAndFinishingTabControlPage);
-            this.formTabControl.Controls.Add(this.placeTabControlPage);
             this.formTabControl.Controls.Add(this.picturesTabControlPage);
             this.formTabControl.Controls.Add(this.lawTabControlPage);
             this.formTabControl.Controls.Add(this.otherTabControlPage);
             this.formTabControl.Location = new System.Drawing.Point(12, 12);
             this.formTabControl.Name = "formTabControl";
             this.formTabControl.SelectedIndex = 0;
-            this.formTabControl.Size = new System.Drawing.Size(775, 469);
+            this.formTabControl.Size = new System.Drawing.Size(781, 469);
             this.formTabControl.TabIndex = 16;
-            // 
-            // baseTabControlPage
-            // 
-            this.baseTabControlPage.Controls.Add(this.relinkApartmentMapPictureButton);
-            this.baseTabControlPage.Controls.Add(this.unlinkApartmentMapPictureButton);
-            this.baseTabControlPage.Controls.Add(this.apartmentMapPictureNameTextBox);
-            this.baseTabControlPage.Controls.Add(this.apartmentMapPictureNameLabel);
-            this.baseTabControlPage.Controls.Add(this.previewApartmentMapPictureButton);
-            this.baseTabControlPage.Controls.Add(this.apartmentMapPictureBox);
-            this.baseTabControlPage.Controls.Add(this.numberOnFloor);
-            this.baseTabControlPage.Controls.Add(this.FloorsTextBox);
-            this.baseTabControlPage.Controls.Add(this.numberTextBox);
-            this.baseTabControlPage.Controls.Add(this.kitchenAreaTextBox);
-            this.baseTabControlPage.Controls.Add(this.kitchenAreaLabel);
-            this.baseTabControlPage.Controls.Add(this.SNIPTextBox);
-            this.baseTabControlPage.Controls.Add(this.grossAreaTextBox);
-            this.baseTabControlPage.Controls.Add(this.hasSeparateKitchenOrWashroomCheckBox);
-            this.baseTabControlPage.Controls.Add(this.label5);
-            this.baseTabControlPage.Controls.Add(this.hasDevicesCheckBox);
-            this.baseTabControlPage.Controls.Add(this.grossAreaLabel);
-            this.baseTabControlPage.Controls.Add(this.hasLowCurrentCheckBox);
-            this.baseTabControlPage.Controls.Add(this.hasBalconyOrLoggiaCheckBox);
-            this.baseTabControlPage.Controls.Add(this.numberLabel);
-            this.baseTabControlPage.Controls.Add(this.floorLabel);
-            this.baseTabControlPage.Controls.Add(this.livingAreaLabel);
-            this.baseTabControlPage.Controls.Add(this.floorTextBox);
-            this.baseTabControlPage.Controls.Add(this.roomNumberTextBox);
-            this.baseTabControlPage.Controls.Add(this.livingAreaTextBox);
-            this.baseTabControlPage.Controls.Add(this.roomNumberLabel);
-            this.baseTabControlPage.Controls.Add(this.washroomTypeComboBox);
-            this.baseTabControlPage.Controls.Add(this.ceilingHeightTextBox);
-            this.baseTabControlPage.Controls.Add(this.washroomTypeLabel);
-            this.baseTabControlPage.Controls.Add(this.roomTypeLabel);
-            this.baseTabControlPage.Controls.Add(this.roomTypeComboBox);
-            this.baseTabControlPage.Controls.Add(this.viewsTextBox);
-            this.baseTabControlPage.Controls.Add(this.ceilingHeightLabel);
-            this.baseTabControlPage.Controls.Add(this.viewsLabel);
-            this.baseTabControlPage.Controls.Add(this.layoutLabel);
-            this.baseTabControlPage.Controls.Add(this.layoutComboBox);
-            this.baseTabControlPage.Location = new System.Drawing.Point(4, 22);
-            this.baseTabControlPage.Name = "baseTabControlPage";
-            this.baseTabControlPage.Padding = new System.Windows.Forms.Padding(3);
-            this.baseTabControlPage.Size = new System.Drawing.Size(767, 443);
-            this.baseTabControlPage.TabIndex = 0;
-            this.baseTabControlPage.Text = "Основные сведения";
-            this.baseTabControlPage.UseVisualStyleBackColor = true;
-            // 
-            // relinkApartmentMapPictureButton
-            // 
-            this.relinkApartmentMapPictureButton.Image = global::PRUI.Properties.Resources.linkButton;
-            this.relinkApartmentMapPictureButton.Location = new System.Drawing.Point(695, 19);
-            this.relinkApartmentMapPictureButton.Name = "relinkApartmentMapPictureButton";
-            this.relinkApartmentMapPictureButton.Size = new System.Drawing.Size(30, 20);
-            this.relinkApartmentMapPictureButton.TabIndex = 54;
-            this.relinkApartmentMapPictureButton.UseVisualStyleBackColor = true;
-            // 
-            // unlinkApartmentMapPictureButton
-            // 
-            this.unlinkApartmentMapPictureButton.Image = global::PRUI.Properties.Resources.unlinkButton;
-            this.unlinkApartmentMapPictureButton.Location = new System.Drawing.Point(731, 19);
-            this.unlinkApartmentMapPictureButton.Name = "unlinkApartmentMapPictureButton";
-            this.unlinkApartmentMapPictureButton.Size = new System.Drawing.Size(30, 20);
-            this.unlinkApartmentMapPictureButton.TabIndex = 55;
-            this.unlinkApartmentMapPictureButton.UseVisualStyleBackColor = true;
-            // 
-            // apartmentMapPictureNameTextBox
-            // 
-            this.apartmentMapPictureNameTextBox.Enabled = false;
-            this.apartmentMapPictureNameTextBox.Location = new System.Drawing.Point(462, 19);
-            this.apartmentMapPictureNameTextBox.Name = "apartmentMapPictureNameTextBox";
-            this.apartmentMapPictureNameTextBox.Size = new System.Drawing.Size(227, 20);
-            this.apartmentMapPictureNameTextBox.TabIndex = 17;
-            // 
-            // apartmentMapPictureNameLabel
-            // 
-            this.apartmentMapPictureNameLabel.AutoSize = true;
-            this.apartmentMapPictureNameLabel.Location = new System.Drawing.Point(459, 3);
-            this.apartmentMapPictureNameLabel.Name = "apartmentMapPictureNameLabel";
-            this.apartmentMapPictureNameLabel.Size = new System.Drawing.Size(55, 13);
-            this.apartmentMapPictureNameLabel.TabIndex = 18;
-            this.apartmentMapPictureNameLabel.Text = "Картинка";
-            // 
-            // previewApartmentMapPictureButton
-            // 
-            this.previewApartmentMapPictureButton.Location = new System.Drawing.Point(686, 413);
-            this.previewApartmentMapPictureButton.Name = "previewApartmentMapPictureButton";
-            this.previewApartmentMapPictureButton.Size = new System.Drawing.Size(75, 23);
-            this.previewApartmentMapPictureButton.TabIndex = 59;
-            this.previewApartmentMapPictureButton.Text = "Просмотр";
-            this.previewApartmentMapPictureButton.UseVisualStyleBackColor = true;
-            // 
-            // apartmentMapPictureBox
-            // 
-            this.apartmentMapPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.apartmentMapPictureBox.Location = new System.Drawing.Point(462, 42);
-            this.apartmentMapPictureBox.Name = "apartmentMapPictureBox";
-            this.apartmentMapPictureBox.Size = new System.Drawing.Size(299, 365);
-            this.apartmentMapPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.apartmentMapPictureBox.TabIndex = 58;
-            this.apartmentMapPictureBox.TabStop = false;
-            // 
-            // numberOnFloor
-            // 
-            this.numberOnFloor.AutoSize = true;
-            this.numberOnFloor.Location = new System.Drawing.Point(78, 3);
-            this.numberOnFloor.Name = "numberOnFloor";
-            this.numberOnFloor.Size = new System.Drawing.Size(91, 13);
-            this.numberOnFloor.TabIndex = 57;
-            this.numberOnFloor.Text = "Этажность дома";
-            // 
-            // FloorsTextBox
-            // 
-            this.FloorsTextBox.Location = new System.Drawing.Point(81, 19);
-            this.FloorsTextBox.Name = "FloorsTextBox";
-            this.FloorsTextBox.Size = new System.Drawing.Size(87, 20);
-            this.FloorsTextBox.TabIndex = 57;
-            // 
-            // SNIPTextBox
-            // 
-            this.SNIPTextBox.Location = new System.Drawing.Point(126, 97);
-            this.SNIPTextBox.Name = "SNIPTextBox";
-            this.SNIPTextBox.Size = new System.Drawing.Size(106, 20);
-            this.SNIPTextBox.TabIndex = 11;
-            this.SNIPTextBox.Enter += new System.EventHandler(this.grossAreaTextBox_Enter);
-            this.SNIPTextBox.Leave += new System.EventHandler(this.grossAreaTextBox_Leave);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(104, 81);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Общая площадь по СНиП";
-            // 
-            // stateAndFinishingTabControlPage
-            // 
-            this.stateAndFinishingTabControlPage.Controls.Add(this.label22);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.roomFinishingQualityLabel);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.roomFinishingQualityComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForLivingRoomCeilingComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.label21);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForLivingRoomFloorComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForHallCeilingComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForHallFloorComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.label19);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.label20);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.repairWorkComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.repairWorkLabel);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.apartmentStateComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForWashroomWallComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForKitchenCeilingComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForKitchenFloorComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.label18);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForKitchenWallComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForWashroomCeilingComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.apartmentStateLabel);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForWashroomFloorComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.label17);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForHallWallComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForLivingRoomWallComboBox);
-            this.stateAndFinishingTabControlPage.Controls.Add(this.label16);
-            this.stateAndFinishingTabControlPage.Location = new System.Drawing.Point(4, 22);
-            this.stateAndFinishingTabControlPage.Name = "stateAndFinishingTabControlPage";
-            this.stateAndFinishingTabControlPage.Padding = new System.Windows.Forms.Padding(3);
-            this.stateAndFinishingTabControlPage.Size = new System.Drawing.Size(767, 443);
-            this.stateAndFinishingTabControlPage.TabIndex = 1;
-            this.stateAndFinishingTabControlPage.Text = "Состояние и отделка";
-            this.stateAndFinishingTabControlPage.UseVisualStyleBackColor = true;
             // 
             // placeTabControlPage
             // 
@@ -983,7 +828,7 @@
             this.placeTabControlPage.Location = new System.Drawing.Point(4, 22);
             this.placeTabControlPage.Name = "placeTabControlPage";
             this.placeTabControlPage.Padding = new System.Windows.Forms.Padding(3);
-            this.placeTabControlPage.Size = new System.Drawing.Size(767, 443);
+            this.placeTabControlPage.Size = new System.Drawing.Size(773, 443);
             this.placeTabControlPage.TabIndex = 3;
             this.placeTabControlPage.Text = "Рассположение";
             this.placeTabControlPage.UseVisualStyleBackColor = true;
@@ -1144,6 +989,484 @@
             this.countryNameTextBox.Size = new System.Drawing.Size(189, 20);
             this.countryNameTextBox.TabIndex = 11;
             // 
+            // baseTabControlPage
+            // 
+            this.baseTabControlPage.Controls.Add(this.SanuzelQntTextBox);
+            this.baseTabControlPage.Controls.Add(this.label32);
+            this.baseTabControlPage.Controls.Add(this.relinkApartmentMapPictureButton);
+            this.baseTabControlPage.Controls.Add(this.unlinkApartmentMapPictureButton);
+            this.baseTabControlPage.Controls.Add(this.apartmentMapPictureNameTextBox);
+            this.baseTabControlPage.Controls.Add(this.apartmentMapPictureNameLabel);
+            this.baseTabControlPage.Controls.Add(this.previewApartmentMapPictureButton);
+            this.baseTabControlPage.Controls.Add(this.apartmentMapPictureBox);
+            this.baseTabControlPage.Controls.Add(this.numberOnFloor);
+            this.baseTabControlPage.Controls.Add(this.FloorsTextBox);
+            this.baseTabControlPage.Controls.Add(this.numberTextBox);
+            this.baseTabControlPage.Controls.Add(this.kitchenAreaTextBox);
+            this.baseTabControlPage.Controls.Add(this.kitchenAreaLabel);
+            this.baseTabControlPage.Controls.Add(this.SNIPTextBox);
+            this.baseTabControlPage.Controls.Add(this.grossAreaTextBox);
+            this.baseTabControlPage.Controls.Add(this.hasSeparateKitchenOrWashroomCheckBox);
+            this.baseTabControlPage.Controls.Add(this.label5);
+            this.baseTabControlPage.Controls.Add(this.hasDevicesCheckBox);
+            this.baseTabControlPage.Controls.Add(this.grossAreaLabel);
+            this.baseTabControlPage.Controls.Add(this.hasLowCurrentCheckBox);
+            this.baseTabControlPage.Controls.Add(this.hasBalconyOrLoggiaCheckBox);
+            this.baseTabControlPage.Controls.Add(this.numberLabel);
+            this.baseTabControlPage.Controls.Add(this.floorLabel);
+            this.baseTabControlPage.Controls.Add(this.livingAreaLabel);
+            this.baseTabControlPage.Controls.Add(this.floorTextBox);
+            this.baseTabControlPage.Controls.Add(this.roomNumberTextBox);
+            this.baseTabControlPage.Controls.Add(this.livingAreaTextBox);
+            this.baseTabControlPage.Controls.Add(this.roomNumberLabel);
+            this.baseTabControlPage.Controls.Add(this.washroomTypeComboBox);
+            this.baseTabControlPage.Controls.Add(this.ceilingHeightTextBox);
+            this.baseTabControlPage.Controls.Add(this.washroomTypeLabel);
+            this.baseTabControlPage.Controls.Add(this.roomTypeLabel);
+            this.baseTabControlPage.Controls.Add(this.roomTypeComboBox);
+            this.baseTabControlPage.Controls.Add(this.viewsTextBox);
+            this.baseTabControlPage.Controls.Add(this.ceilingHeightLabel);
+            this.baseTabControlPage.Controls.Add(this.viewsLabel);
+            this.baseTabControlPage.Controls.Add(this.layoutLabel);
+            this.baseTabControlPage.Controls.Add(this.layoutComboBox);
+            this.baseTabControlPage.Location = new System.Drawing.Point(4, 22);
+            this.baseTabControlPage.Name = "baseTabControlPage";
+            this.baseTabControlPage.Padding = new System.Windows.Forms.Padding(3);
+            this.baseTabControlPage.Size = new System.Drawing.Size(773, 443);
+            this.baseTabControlPage.TabIndex = 0;
+            this.baseTabControlPage.Text = "Основные сведения";
+            this.baseTabControlPage.UseVisualStyleBackColor = true;
+            // 
+            // SanuzelQntTextBox
+            // 
+            this.SanuzelQntTextBox.Location = new System.Drawing.Point(278, 413);
+            this.SanuzelQntTextBox.Name = "SanuzelQntTextBox";
+            this.SanuzelQntTextBox.Size = new System.Drawing.Size(66, 20);
+            this.SanuzelQntTextBox.TabIndex = 61;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(275, 397);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(116, 13);
+            this.label32.TabIndex = 60;
+            this.label32.Text = "Количество санузлов";
+            // 
+            // relinkApartmentMapPictureButton
+            // 
+            this.relinkApartmentMapPictureButton.Image = global::PRUI.Properties.Resources.linkButton;
+            this.relinkApartmentMapPictureButton.Location = new System.Drawing.Point(695, 19);
+            this.relinkApartmentMapPictureButton.Name = "relinkApartmentMapPictureButton";
+            this.relinkApartmentMapPictureButton.Size = new System.Drawing.Size(30, 20);
+            this.relinkApartmentMapPictureButton.TabIndex = 54;
+            this.relinkApartmentMapPictureButton.UseVisualStyleBackColor = true;
+            // 
+            // unlinkApartmentMapPictureButton
+            // 
+            this.unlinkApartmentMapPictureButton.Image = global::PRUI.Properties.Resources.unlinkButton;
+            this.unlinkApartmentMapPictureButton.Location = new System.Drawing.Point(731, 19);
+            this.unlinkApartmentMapPictureButton.Name = "unlinkApartmentMapPictureButton";
+            this.unlinkApartmentMapPictureButton.Size = new System.Drawing.Size(30, 20);
+            this.unlinkApartmentMapPictureButton.TabIndex = 55;
+            this.unlinkApartmentMapPictureButton.UseVisualStyleBackColor = true;
+            // 
+            // apartmentMapPictureNameTextBox
+            // 
+            this.apartmentMapPictureNameTextBox.Enabled = false;
+            this.apartmentMapPictureNameTextBox.Location = new System.Drawing.Point(462, 19);
+            this.apartmentMapPictureNameTextBox.Name = "apartmentMapPictureNameTextBox";
+            this.apartmentMapPictureNameTextBox.Size = new System.Drawing.Size(227, 20);
+            this.apartmentMapPictureNameTextBox.TabIndex = 17;
+            // 
+            // apartmentMapPictureNameLabel
+            // 
+            this.apartmentMapPictureNameLabel.AutoSize = true;
+            this.apartmentMapPictureNameLabel.Location = new System.Drawing.Point(459, 3);
+            this.apartmentMapPictureNameLabel.Name = "apartmentMapPictureNameLabel";
+            this.apartmentMapPictureNameLabel.Size = new System.Drawing.Size(55, 13);
+            this.apartmentMapPictureNameLabel.TabIndex = 18;
+            this.apartmentMapPictureNameLabel.Text = "Картинка";
+            // 
+            // previewApartmentMapPictureButton
+            // 
+            this.previewApartmentMapPictureButton.Location = new System.Drawing.Point(686, 413);
+            this.previewApartmentMapPictureButton.Name = "previewApartmentMapPictureButton";
+            this.previewApartmentMapPictureButton.Size = new System.Drawing.Size(75, 23);
+            this.previewApartmentMapPictureButton.TabIndex = 59;
+            this.previewApartmentMapPictureButton.Text = "Просмотр";
+            this.previewApartmentMapPictureButton.UseVisualStyleBackColor = true;
+            // 
+            // apartmentMapPictureBox
+            // 
+            this.apartmentMapPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.apartmentMapPictureBox.Location = new System.Drawing.Point(462, 42);
+            this.apartmentMapPictureBox.Name = "apartmentMapPictureBox";
+            this.apartmentMapPictureBox.Size = new System.Drawing.Size(299, 365);
+            this.apartmentMapPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.apartmentMapPictureBox.TabIndex = 58;
+            this.apartmentMapPictureBox.TabStop = false;
+            // 
+            // numberOnFloor
+            // 
+            this.numberOnFloor.AutoSize = true;
+            this.numberOnFloor.Location = new System.Drawing.Point(78, 3);
+            this.numberOnFloor.Name = "numberOnFloor";
+            this.numberOnFloor.Size = new System.Drawing.Size(91, 13);
+            this.numberOnFloor.TabIndex = 57;
+            this.numberOnFloor.Text = "Этажность дома";
+            // 
+            // FloorsTextBox
+            // 
+            this.FloorsTextBox.Location = new System.Drawing.Point(81, 19);
+            this.FloorsTextBox.Name = "FloorsTextBox";
+            this.FloorsTextBox.Size = new System.Drawing.Size(87, 20);
+            this.FloorsTextBox.TabIndex = 57;
+            // 
+            // SNIPTextBox
+            // 
+            this.SNIPTextBox.Location = new System.Drawing.Point(126, 97);
+            this.SNIPTextBox.Name = "SNIPTextBox";
+            this.SNIPTextBox.Size = new System.Drawing.Size(106, 20);
+            this.SNIPTextBox.TabIndex = 11;
+            this.SNIPTextBox.Enter += new System.EventHandler(this.grossAreaTextBox_Enter);
+            this.SNIPTextBox.Leave += new System.EventHandler(this.grossAreaTextBox_Leave);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(104, 81);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Общая площадь по СНиП";
+            // 
+            // stateAndFinishingTabControlPage
+            // 
+            this.stateAndFinishingTabControlPage.Controls.Add(this.heatingSystemLabel);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.heatingSystemComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label35);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.CounterTextBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label28);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label33);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.CanalizationPipeTypeComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label34);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.CanalizationCondComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label30);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label31);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.WaterCondComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label25);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label24);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.HeaterRadiatorTypeComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label12);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.HeaterPipeTypeComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label22);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.roomFinishingQualityLabel);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.roomFinishingQualityComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForLivingRoomCeilingComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label21);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForLivingRoomFloorComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForHallCeilingComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForHallFloorComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label26);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label36);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label11);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label9);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label29);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label10);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label27);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label8);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label19);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label20);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.repairWorkComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.repairWorkLabel);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.apartmentStateComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForWashroomWallComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForKitchenCeilingComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForKitchenFloorComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label18);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForKitchenWallComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.HeaterCondComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.WindowsCondComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.DoorsCondComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.RoomDoorsTypeComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.WindowsTypeComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.MainDoorTypeComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForWashroomCeilingComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.apartmentStateLabel);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForWashroomFloorComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label17);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForHallWallComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.finishingMaterialForLivingRoomWallComboBox);
+            this.stateAndFinishingTabControlPage.Controls.Add(this.label16);
+            this.stateAndFinishingTabControlPage.Location = new System.Drawing.Point(4, 22);
+            this.stateAndFinishingTabControlPage.Name = "stateAndFinishingTabControlPage";
+            this.stateAndFinishingTabControlPage.Padding = new System.Windows.Forms.Padding(3);
+            this.stateAndFinishingTabControlPage.Size = new System.Drawing.Size(773, 443);
+            this.stateAndFinishingTabControlPage.TabIndex = 1;
+            this.stateAndFinishingTabControlPage.Text = "Состояние и отделка";
+            this.stateAndFinishingTabControlPage.UseVisualStyleBackColor = true;
+            // 
+            // label35
+            // 
+            this.label35.Location = new System.Drawing.Point(557, 345);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(131, 13);
+            this.label35.TabIndex = 65;
+            this.label35.Text = "Приборы учета";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // CounterTextBox
+            // 
+            this.CounterTextBox.Location = new System.Drawing.Point(557, 361);
+            this.CounterTextBox.Multiline = true;
+            this.CounterTextBox.Name = "CounterTextBox";
+            this.CounterTextBox.Size = new System.Drawing.Size(131, 60);
+            this.CounterTextBox.TabIndex = 64;
+            // 
+            // label28
+            // 
+            this.label28.Location = new System.Drawing.Point(557, 251);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(131, 13);
+            this.label28.TabIndex = 63;
+            this.label28.Text = "Тип труб канализации";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label33
+            // 
+            this.label33.Location = new System.Drawing.Point(560, 229);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(131, 13);
+            this.label33.TabIndex = 61;
+            this.label33.Text = "Канализация";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // CanalizationPipeTypeComboBox
+            // 
+            this.CanalizationPipeTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CanalizationPipeTypeComboBox.FormattingEnabled = true;
+            this.CanalizationPipeTypeComboBox.Location = new System.Drawing.Point(557, 267);
+            this.CanalizationPipeTypeComboBox.Name = "CanalizationPipeTypeComboBox";
+            this.CanalizationPipeTypeComboBox.Size = new System.Drawing.Size(131, 21);
+            this.CanalizationPipeTypeComboBox.TabIndex = 59;
+            // 
+            // label34
+            // 
+            this.label34.Location = new System.Drawing.Point(557, 291);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(131, 13);
+            this.label34.TabIndex = 57;
+            this.label34.Text = "Состояние канализации";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // CanalizationCondComboBox
+            // 
+            this.CanalizationCondComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CanalizationCondComboBox.FormattingEnabled = true;
+            this.CanalizationCondComboBox.Location = new System.Drawing.Point(557, 307);
+            this.CanalizationCondComboBox.Name = "CanalizationCondComboBox";
+            this.CanalizationCondComboBox.Size = new System.Drawing.Size(131, 21);
+            this.CanalizationCondComboBox.TabIndex = 56;
+            // 
+            // label30
+            // 
+            this.label30.Location = new System.Drawing.Point(423, 229);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(131, 13);
+            this.label30.TabIndex = 55;
+            this.label30.Text = "Водоснабжение";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label31
+            // 
+            this.label31.Location = new System.Drawing.Point(419, 251);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(147, 13);
+            this.label31.TabIndex = 51;
+            this.label31.Text = "Состояние водоснабжения";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // WaterCondComboBox
+            // 
+            this.WaterCondComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.WaterCondComboBox.FormattingEnabled = true;
+            this.WaterCondComboBox.Location = new System.Drawing.Point(420, 267);
+            this.WaterCondComboBox.Name = "WaterCondComboBox";
+            this.WaterCondComboBox.Size = new System.Drawing.Size(131, 21);
+            this.WaterCondComboBox.TabIndex = 50;
+            // 
+            // label25
+            // 
+            this.label25.Location = new System.Drawing.Point(286, 335);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(131, 13);
+            this.label25.TabIndex = 49;
+            this.label25.Text = "Тип радиаторов";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label24
+            // 
+            this.label24.Location = new System.Drawing.Point(286, 291);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(131, 13);
+            this.label24.TabIndex = 48;
+            this.label24.Text = "Тип труб отопления";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // HeaterRadiatorTypeComboBox
+            // 
+            this.HeaterRadiatorTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HeaterRadiatorTypeComboBox.FormattingEnabled = true;
+            this.HeaterRadiatorTypeComboBox.Location = new System.Drawing.Point(283, 351);
+            this.HeaterRadiatorTypeComboBox.Name = "HeaterRadiatorTypeComboBox";
+            this.HeaterRadiatorTypeComboBox.Size = new System.Drawing.Size(131, 21);
+            this.HeaterRadiatorTypeComboBox.TabIndex = 45;
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(286, 229);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(131, 13);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "Отопление";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // HeaterPipeTypeComboBox
+            // 
+            this.HeaterPipeTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HeaterPipeTypeComboBox.FormattingEnabled = true;
+            this.HeaterPipeTypeComboBox.Location = new System.Drawing.Point(283, 307);
+            this.HeaterPipeTypeComboBox.Name = "HeaterPipeTypeComboBox";
+            this.HeaterPipeTypeComboBox.Size = new System.Drawing.Size(131, 21);
+            this.HeaterPipeTypeComboBox.TabIndex = 44;
+            // 
+            // label26
+            // 
+            this.label26.Location = new System.Drawing.Point(286, 384);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(131, 13);
+            this.label26.TabIndex = 39;
+            this.label26.Text = "Состояние отопления";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label36
+            // 
+            this.label36.Location = new System.Drawing.Point(146, 291);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(131, 13);
+            this.label36.TabIndex = 39;
+            this.label36.Text = "Состояние окон";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(9, 335);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(131, 13);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Состояние дверей";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(9, 291);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(131, 13);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "Тип межкомнатных дверей";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label29
+            // 
+            this.label29.Location = new System.Drawing.Point(146, 229);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(131, 13);
+            this.label29.TabIndex = 39;
+            this.label29.Text = "Окна";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(9, 229);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(131, 13);
+            this.label10.TabIndex = 39;
+            this.label10.Text = "Двери";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label27
+            // 
+            this.label27.Location = new System.Drawing.Point(146, 251);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(131, 13);
+            this.label27.TabIndex = 39;
+            this.label27.Text = "Тип окон";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(9, 251);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(131, 13);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "Тип входной двери";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // HeaterCondComboBox
+            // 
+            this.HeaterCondComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HeaterCondComboBox.FormattingEnabled = true;
+            this.HeaterCondComboBox.Location = new System.Drawing.Point(283, 400);
+            this.HeaterCondComboBox.Name = "HeaterCondComboBox";
+            this.HeaterCondComboBox.Size = new System.Drawing.Size(131, 21);
+            this.HeaterCondComboBox.TabIndex = 27;
+            // 
+            // WindowsCondComboBox
+            // 
+            this.WindowsCondComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.WindowsCondComboBox.FormattingEnabled = true;
+            this.WindowsCondComboBox.Location = new System.Drawing.Point(146, 307);
+            this.WindowsCondComboBox.Name = "WindowsCondComboBox";
+            this.WindowsCondComboBox.Size = new System.Drawing.Size(131, 21);
+            this.WindowsCondComboBox.TabIndex = 27;
+            // 
+            // DoorsCondComboBox
+            // 
+            this.DoorsCondComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DoorsCondComboBox.FormattingEnabled = true;
+            this.DoorsCondComboBox.Location = new System.Drawing.Point(9, 351);
+            this.DoorsCondComboBox.Name = "DoorsCondComboBox";
+            this.DoorsCondComboBox.Size = new System.Drawing.Size(131, 21);
+            this.DoorsCondComboBox.TabIndex = 27;
+            // 
+            // RoomDoorsTypeComboBox
+            // 
+            this.RoomDoorsTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RoomDoorsTypeComboBox.FormattingEnabled = true;
+            this.RoomDoorsTypeComboBox.Location = new System.Drawing.Point(9, 307);
+            this.RoomDoorsTypeComboBox.Name = "RoomDoorsTypeComboBox";
+            this.RoomDoorsTypeComboBox.Size = new System.Drawing.Size(131, 21);
+            this.RoomDoorsTypeComboBox.TabIndex = 27;
+            // 
+            // WindowsTypeComboBox
+            // 
+            this.WindowsTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.WindowsTypeComboBox.FormattingEnabled = true;
+            this.WindowsTypeComboBox.Location = new System.Drawing.Point(146, 267);
+            this.WindowsTypeComboBox.Name = "WindowsTypeComboBox";
+            this.WindowsTypeComboBox.Size = new System.Drawing.Size(131, 21);
+            this.WindowsTypeComboBox.TabIndex = 27;
+            // 
+            // MainDoorTypeComboBox
+            // 
+            this.MainDoorTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MainDoorTypeComboBox.FormattingEnabled = true;
+            this.MainDoorTypeComboBox.Location = new System.Drawing.Point(9, 267);
+            this.MainDoorTypeComboBox.Name = "MainDoorTypeComboBox";
+            this.MainDoorTypeComboBox.Size = new System.Drawing.Size(131, 21);
+            this.MainDoorTypeComboBox.TabIndex = 27;
+            // 
             // picturesTabControlPage
             // 
             this.picturesTabControlPage.Controls.Add(this.previewImageButton);
@@ -1156,7 +1479,7 @@
             this.picturesTabControlPage.Location = new System.Drawing.Point(4, 22);
             this.picturesTabControlPage.Name = "picturesTabControlPage";
             this.picturesTabControlPage.Padding = new System.Windows.Forms.Padding(3);
-            this.picturesTabControlPage.Size = new System.Drawing.Size(767, 443);
+            this.picturesTabControlPage.Size = new System.Drawing.Size(773, 443);
             this.picturesTabControlPage.TabIndex = 2;
             this.picturesTabControlPage.Text = "Фотографии";
             this.picturesTabControlPage.UseVisualStyleBackColor = true;
@@ -1213,10 +1536,18 @@
             this.lawTabControlPage.Location = new System.Drawing.Point(4, 22);
             this.lawTabControlPage.Name = "lawTabControlPage";
             this.lawTabControlPage.Padding = new System.Windows.Forms.Padding(3);
-            this.lawTabControlPage.Size = new System.Drawing.Size(767, 443);
+            this.lawTabControlPage.Size = new System.Drawing.Size(773, 443);
             this.lawTabControlPage.TabIndex = 5;
             this.lawTabControlPage.Text = "Юр. данные";
             this.lawTabControlPage.UseVisualStyleBackColor = true;
+            // 
+            // HoldersTextBox
+            // 
+            this.HoldersTextBox.Location = new System.Drawing.Point(302, 38);
+            this.HoldersTextBox.Multiline = true;
+            this.HoldersTextBox.Name = "HoldersTextBox";
+            this.HoldersTextBox.Size = new System.Drawing.Size(220, 102);
+            this.HoldersTextBox.TabIndex = 69;
             // 
             // label4
             // 
@@ -1397,23 +1728,31 @@
             this.otherTabControlPage.Controls.Add(this.objectCommunicationLabel);
             this.otherTabControlPage.Controls.Add(this.objectCommunicationComboBox);
             this.otherTabControlPage.Controls.Add(this.currentUsingLabel);
-            this.otherTabControlPage.Controls.Add(this.heatingSystemLabel);
-            this.otherTabControlPage.Controls.Add(this.heatingSystemComboBox);
             this.otherTabControlPage.Location = new System.Drawing.Point(4, 22);
             this.otherTabControlPage.Name = "otherTabControlPage";
             this.otherTabControlPage.Padding = new System.Windows.Forms.Padding(3);
-            this.otherTabControlPage.Size = new System.Drawing.Size(767, 443);
+            this.otherTabControlPage.Size = new System.Drawing.Size(773, 443);
             this.otherTabControlPage.TabIndex = 4;
             this.otherTabControlPage.Text = "Разное";
             this.otherTabControlPage.UseVisualStyleBackColor = true;
             // 
-            // HoldersTextBox
+            // heatingSystemLabel
             // 
-            this.HoldersTextBox.Location = new System.Drawing.Point(302, 38);
-            this.HoldersTextBox.Multiline = true;
-            this.HoldersTextBox.Name = "HoldersTextBox";
-            this.HoldersTextBox.Size = new System.Drawing.Size(220, 102);
-            this.HoldersTextBox.TabIndex = 69;
+            this.heatingSystemLabel.AutoSize = true;
+            this.heatingSystemLabel.Location = new System.Drawing.Point(283, 251);
+            this.heatingSystemLabel.Name = "heatingSystemLabel";
+            this.heatingSystemLabel.Size = new System.Drawing.Size(130, 13);
+            this.heatingSystemLabel.TabIndex = 66;
+            this.heatingSystemLabel.Text = "Тип системы отопления";
+            // 
+            // heatingSystemComboBox
+            // 
+            this.heatingSystemComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.heatingSystemComboBox.FormattingEnabled = true;
+            this.heatingSystemComboBox.Location = new System.Drawing.Point(283, 267);
+            this.heatingSystemComboBox.Name = "heatingSystemComboBox";
+            this.heatingSystemComboBox.Size = new System.Drawing.Size(131, 21);
+            this.heatingSystemComboBox.TabIndex = 67;
             // 
             // ApartmentForm
             // 
@@ -1424,11 +1763,11 @@
             this.Name = "ApartmentForm";
             this.Text = "Квартира";
             this.Controls.SetChildIndex(this.formTabControl, 0);
+            this.Controls.SetChildIndex(this.noteInfoGroup, 0);
+            this.Controls.SetChildIndex(this.descriptionInfoGroup, 0);
             this.Controls.SetChildIndex(this.saveButton, 0);
             this.Controls.SetChildIndex(this.okButton, 0);
             this.Controls.SetChildIndex(this.idInfoGroup, 0);
-            this.Controls.SetChildIndex(this.descriptionInfoGroup, 0);
-            this.Controls.SetChildIndex(this.noteInfoGroup, 0);
             this.Controls.SetChildIndex(this.closeButton, 0);
             this.idInfoGroup.ResumeLayout(false);
             this.idInfoGroup.PerformLayout();
@@ -1437,13 +1776,13 @@
             this.noteInfoGroup.ResumeLayout(false);
             this.noteInfoGroup.PerformLayout();
             this.formTabControl.ResumeLayout(false);
+            this.placeTabControlPage.ResumeLayout(false);
+            this.placeTabControlPage.PerformLayout();
             this.baseTabControlPage.ResumeLayout(false);
             this.baseTabControlPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentMapPictureBox)).EndInit();
             this.stateAndFinishingTabControlPage.ResumeLayout(false);
             this.stateAndFinishingTabControlPage.PerformLayout();
-            this.placeTabControlPage.ResumeLayout(false);
-            this.placeTabControlPage.PerformLayout();
             this.picturesTabControlPage.ResumeLayout(false);
             this.picturesTabControlPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1512,8 +1851,6 @@
         private System.Windows.Forms.ComboBox finishingMaterialForLivingRoomCeilingComboBox;
         private System.Windows.Forms.ComboBox objectCommunicationComboBox;
         private System.Windows.Forms.Label objectCommunicationLabel;
-        private System.Windows.Forms.ComboBox heatingSystemComboBox;
-        private System.Windows.Forms.Label heatingSystemLabel;
         private System.Windows.Forms.CheckBox hasLowCurrentCheckBox;
         private System.Windows.Forms.CheckBox hasDevicesCheckBox;
         private System.Windows.Forms.Label planMeetsLabel;
@@ -1583,5 +1920,38 @@
         protected System.Windows.Forms.Label label7;
         protected System.Windows.Forms.TextBox ObjTypeTextBox;
         protected System.Windows.Forms.TextBox HoldersTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox MainDoorTypeComboBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox RoomDoorsTypeComboBox;
+        private System.Windows.Forms.TextBox SanuzelQntTextBox;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ComboBox CanalizationPipeTypeComboBox;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox CanalizationCondComboBox;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ComboBox WaterCondComboBox;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox HeaterRadiatorTypeComboBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox HeaterPipeTypeComboBox;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox HeaterCondComboBox;
+        private System.Windows.Forms.ComboBox DoorsCondComboBox;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox CounterTextBox;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox WindowsCondComboBox;
+        private System.Windows.Forms.ComboBox WindowsTypeComboBox;
+        private System.Windows.Forms.Label heatingSystemLabel;
+        private System.Windows.Forms.ComboBox heatingSystemComboBox;
     }
 }

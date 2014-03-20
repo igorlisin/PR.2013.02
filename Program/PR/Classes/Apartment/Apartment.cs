@@ -421,6 +421,32 @@ namespace PR.Classes
         }
 
         /// <summary>
+        /// Статический метод. Возвращает тип радиаторов как тестовую строку
+        /// </summary>
+        public static string GetHeaterTypeAsStringStatic(Heaters HeatersType)
+        {
+            string HeaterTypeAsString;                                // Тип (как тескстовая строка)
+
+            switch (HeatersType)                                       // Проверить тип
+            {
+                case Heaters.Iron:                                      // Сравнить тип 
+                    HeaterTypeAsString = "Чугунные";        // Задать тип (как текстовую строку)
+                    break;
+                case Heaters.Alumin:                                     // Сравнить тип 
+                    HeaterTypeAsString = "Алюминиевые";       // Задать тип (как текстовую строку)
+                    break;
+                case Heaters.Steel:                                     // Сравнить тип 
+                    HeaterTypeAsString = "Стальные";       // Задать тип (как текстовую строку)
+                    break;
+                default:                                                // Тип по умолчанию 
+                    HeaterTypeAsString = "--";                        // Задать тип (как текстовую строку)
+                    break;
+            }
+
+            return (HeaterTypeAsString);
+        }
+
+        /// <summary>
         /// Метод. Возвращает качество отделки помещения как текстовую строку
         /// </summary>
         public static string GetConditionAsStringStatic(Condition condition)
@@ -729,7 +755,7 @@ namespace PR.Classes
         private Windows _windowsType;
 
         /// <summary>
-        /// Поле. Задает и возвращает приборы учета
+        /// Поле. Задает и возвращает приборы 
         /// </summary>
         private string _counters;
 
@@ -1733,6 +1759,14 @@ namespace PR.Classes
         public string GetConditionTypeAsString(Condition ConditionType)
         {
             return (Apartment.GetConditionAsStringStatic(ConditionType));
+        }
+
+        /// <summary>
+        /// Метод. Возвращает тип  как тестовую строку
+        /// </summary>
+        public string GetHeaterTypeAsString(Heaters HeaterType)
+        {
+            return (Apartment.GetHeaterTypeAsStringStatic(HeaterType));
         }
         // TODO: Реализовать метод "Clone" после всех полей и свойств
 

@@ -755,6 +755,201 @@ namespace PRUI.Forms
             }
         }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает тип входных дверей
+        /// </summary>
+        private Doors MainDoorsType
+        {
+            get
+            {
+                return (((KeyValuePair<Doors, string>)MainDoorTypeComboBox.SelectedItem).Key);
+            }
+            set
+            {
+                SetComboBoxElementByType<Doors>(MainDoorTypeComboBox, value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип межкомн дверей
+        /// </summary>
+        private Doors RoomDoorsType
+        {
+            get
+            {
+                return (((KeyValuePair<Doors, string>)RoomDoorsTypeComboBox.SelectedItem).Key);
+            }
+            set
+            {
+                SetComboBoxElementByType<Doors>(RoomDoorsTypeComboBox, value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает сосотояние дверей
+        /// </summary>
+        private Condition DoorsCondition
+        {
+            get
+            {
+                return (((KeyValuePair<Condition, string>)DoorsCondComboBox.SelectedItem).Key);
+            }
+            set
+            {
+                SetComboBoxElementByType<Condition>(DoorsCondComboBox, value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип окон
+        /// </summary>
+        private Windows WindowsType
+        {
+            get
+            {
+                return (((KeyValuePair<Windows, string>)WindowsTypeComboBox.SelectedItem).Key);
+            }
+            set
+            {
+                SetComboBoxElementByType<Windows>(WindowsTypeComboBox, value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние окон
+        /// </summary>
+        private Condition WindowsCondition
+        {
+            get
+            {
+                return (((KeyValuePair<Condition, string>)WindowsCondComboBox.SelectedItem).Key);
+            }
+            set
+            {
+                SetComboBoxElementByType<Condition>(WindowsCondComboBox, value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип труб отопления
+        /// </summary>
+        private Pipes HeatingPipesTypes
+        {
+            get
+            {
+                return (((KeyValuePair<Pipes, string>)HeaterPipeTypeComboBox.SelectedItem).Key);
+            }
+            set
+            {
+                SetComboBoxElementByType<Pipes>(HeaterPipeTypeComboBox, value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип радиаторов отопления
+        /// </summary>
+        private Heaters HeatingRadiatorsTypes
+        {
+            get
+            {
+                return (((KeyValuePair<Heaters, string>)HeaterRadiatorTypeComboBox.SelectedItem).Key);
+            }
+            set
+            {
+                SetComboBoxElementByType<Heaters>(HeaterRadiatorTypeComboBox, value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние системы отопления
+        /// </summary>
+        private Condition HeatingCondition
+        {
+            get
+            {
+                return (((KeyValuePair<Condition, string>)HeaterCondComboBox.SelectedItem).Key);
+            }
+            set
+            {
+                SetComboBoxElementByType<Condition>(HeaterCondComboBox, value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние системы водоснабжения
+        /// </summary>
+        private Condition WaterCondition
+        {
+            get
+            {
+                return (((KeyValuePair<Condition, string>)WaterCondComboBox.SelectedItem).Key);
+            }
+            set
+            {
+                SetComboBoxElementByType<Condition>(WaterCondComboBox, value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип труб канализации
+        /// </summary>
+        private Pipes CanalizationPipesTypes
+        {
+            get
+            {
+                return (((KeyValuePair<Pipes, string>)CanalizationPipeTypeComboBox.SelectedItem).Key);
+            }
+            set
+            {
+                SetComboBoxElementByType<Pipes>(CanalizationPipeTypeComboBox, value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние канализации
+        /// </summary>
+        private Condition CanalizationCondition
+        {
+            get
+            {
+                return (((KeyValuePair<Condition, string>)CanalizationCondComboBox.SelectedItem).Key);
+            }
+            set
+            {
+                SetComboBoxElementByType<Condition>(CanalizationCondComboBox, value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает количество санузлов
+        /// </summary>
+        private string SanuzelQnt
+        {
+            get
+            {
+                return (SanuzelQntTextBox.Text);
+            }
+            set
+            {
+                SanuzelQntTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает  приборы учета
+        /// </summary>
+        private string Counters
+        {
+            get
+            {
+                return (CounterTextBox.Text);
+            }
+            set
+            {
+                CounterTextBox.Text = value;
+            }
+        }
+
         #region Apartment man picture
 
         /// <summary>
@@ -1078,6 +1273,25 @@ namespace PRUI.Forms
             FillCurrentUsingList();                                                         // Заполнить данными список "Текущее использование" 
 
             PicturesComment = "";                                                           // Очистить омментарии к фотографиям
+
+            SanuzelQnt = "1";
+            Counters = "";
+
+            ClearHeaterPipesTypeList(HeaterRadiatorTypeComboBox);
+            FillHeatingRadiatorTypeList(HeaterRadiatorTypeComboBox);
+
+            ClearHeaterPipesTypeList(HeaterPipeTypeComboBox);
+            FillHeaterPipesTypeList(HeaterPipeTypeComboBox);
+
+            ClearHeatingConditionList(HeaterCondComboBox);
+            FillHeatingConditionList(HeaterCondComboBox);
+
+            ClearCanalizationPipesTypeList(CanalizationPipeTypeComboBox);
+            FillCanalizationPipesTypeList(CanalizationPipeTypeComboBox);
+
+            ClearCanalizationConditionList(CanalizationCondComboBox);
+            FillCanalizationConditionList(CanalizationCondComboBox);
+
         }
 
         /// <summary>
@@ -1929,6 +2143,416 @@ namespace PRUI.Forms
 
         #endregion
 
+        #region Main Doors Type List
+
+        /// <summary>
+        /// Метод. Очищает список 
+        /// </summary>
+        protected void ClearMainDoorsTypeList(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+        }
+
+        /// <summary>
+        /// Метод. Добавляет элемент в список 
+        /// </summary>
+        private void AddMainDoorsTypeToList(ComboBox comboBox, Doors MainDoors, string DoorsTypeDescription)
+        {
+            comboBox.Items.Add(new KeyValuePair<Doors, string>(MainDoors, DoorsTypeDescription));
+        }
+
+        /// <summary>
+        /// Метод. Задает отображаемое поле для списка 
+        /// </summary>
+        private void SetMainDoorsTypeListDisplayMember(ComboBox comboBox, string typeMember)
+        {
+            comboBox.DisplayMember = typeMember;
+        }
+
+        /// <summary>
+        /// Метод. Заполняет данными список "Материал отделки пола"
+        /// </summary>
+        protected void FillMainDoorsList(ComboBox comboBox)
+        {
+            foreach (Doors DoorsType in Enum.GetValues(typeof(Doors)))                                // Выполнить для всех элементов перечисления
+            {
+                AddMainDoorsTypeToList(comboBox, DoorsType, _apartment.GetDoorsTypeAsString(DoorsType));        // Добавить элемент в список  
+            }
+
+            SetMainDoorsTypeListDisplayMember(comboBox, "Value");                                                           // Задать отображаемое поле 
+        }
+
+        #endregion
+
+        #region Room Doors Type List
+
+        /// <summary>
+        /// Метод. Очищает список 
+        /// </summary>
+        protected void ClearRoomDoorsTypeList(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+        }
+
+        /// <summary>
+        /// Метод. Добавляет элемент в список 
+        /// </summary>
+        private void AddRoomDoorsTypeToList(ComboBox comboBox, Doors RoomDoors, string DoorsTypeDescription)
+        {
+            comboBox.Items.Add(new KeyValuePair<Doors, string>(RoomDoors, DoorsTypeDescription));
+        }
+
+        /// <summary>
+        /// Метод. Задает отображаемое поле для списка 
+        /// </summary>
+        private void SetRoomDoorsTypeListDisplayMember(ComboBox comboBox, string typeMember)
+        {
+            comboBox.DisplayMember = typeMember;
+        }
+
+        /// <summary>
+        /// Метод. Заполняет данными список 
+        /// </summary>
+        protected void FillRoomDoorsList(ComboBox comboBox)
+        {
+            foreach (Doors DoorsType in Enum.GetValues(typeof(Doors)))                                // Выполнить для всех элементов перечисления
+            {
+                AddRoomDoorsTypeToList(comboBox, DoorsType, _apartment.GetDoorsTypeAsString(DoorsType));        // Добавить элемент в список  
+            }
+
+            SetMainDoorsTypeListDisplayMember(comboBox, "Value");                                                           // Задать отображаемое поле 
+        }
+
+        #endregion
+
+        #region Windows Type List
+
+        /// <summary>
+        /// Метод. Очищает список 
+        /// </summary>
+        protected void ClearWindowsTypeList(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+        }
+
+        /// <summary>
+        /// Метод. Добавляет элемент в список 
+        /// </summary>
+        private void AddWindowsTypeToList(ComboBox comboBox, Windows windows, string WindowsTypeDescription)
+        {
+            comboBox.Items.Add(new KeyValuePair<Windows, string>(windows, WindowsTypeDescription));
+        }
+
+        /// <summary>
+        /// Метод. Задает отображаемое поле для списка 
+        /// </summary>
+        private void SetWindowsTypeListDisplayMember(ComboBox comboBox, string typeMember)
+        {
+            comboBox.DisplayMember = typeMember;
+        }
+
+        /// <summary>
+        /// Метод. Заполняет данными список 
+        /// </summary>
+        protected void FillWindowsTypeList(ComboBox comboBox)
+        {
+            foreach (Windows WindowsType in Enum.GetValues(typeof(Windows)))                                // Выполнить для всех элементов перечисления
+            {
+                AddWindowsTypeToList(comboBox, WindowsType, _apartment.GetWindowsTypeAsString(WindowsType));        // Добавить элемент в список  
+            }
+
+            SetWindowsTypeListDisplayMember(comboBox, "Value");                                                           // Задать отображаемое поле 
+        }
+
+        #endregion
+
+        #region Windows Condition List
+
+        /// <summary>
+        /// Метод. Очищает список 
+        /// </summary>
+        protected void ClearWindowsConditionList(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+        }
+
+        /// <summary>
+        /// Метод. Добавляет элемент в список 
+        /// </summary>
+        private void AddWindowsConditionToList(ComboBox comboBox, Condition windowsCondition, string WindowsConditionDescription)
+        {
+            comboBox.Items.Add(new KeyValuePair<Condition, string>(windowsCondition, WindowsConditionDescription));
+        }
+
+        /// <summary>
+        /// Метод. Задает отображаемое поле для списка 
+        /// </summary>
+        private void SetWindowsConditionListDisplayMember(ComboBox comboBox, string typeMember)
+        {
+            comboBox.DisplayMember = typeMember;
+        }
+
+        /// <summary>
+        /// Метод. Заполняет данными список 
+        /// </summary>
+        protected void FillWindowsConditionList(ComboBox comboBox)
+        {
+            foreach (Condition WindowsCondition in Enum.GetValues(typeof(Condition)))                                // Выполнить для всех элементов перечисления
+            {
+                AddWindowsConditionToList(comboBox, WindowsCondition, _apartment.GetConditionTypeAsString(WindowsCondition));        // Добавить элемент в список  
+            }
+
+            SetWindowsConditionListDisplayMember(comboBox, "Value");                                                           // Задать отображаемое поле 
+        }
+
+        #endregion
+
+        #region Heating Condition List
+
+        /// <summary>
+        /// Метод. Очищает список 
+        /// </summary>
+        protected void ClearHeatingConditionList(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+        }
+
+        /// <summary>
+        /// Метод. Добавляет элемент в список 
+        /// </summary>
+        private void AddHeatingConditionToList(ComboBox comboBox, Condition heatingCondition, string HeatingConditionDescription)
+        {
+            comboBox.Items.Add(new KeyValuePair<Condition, string>(heatingCondition, HeatingConditionDescription));
+        }
+
+        /// <summary>
+        /// Метод. Задает отображаемое поле для списка 
+        /// </summary>
+        private void SetHeatingConditionListDisplayMember(ComboBox comboBox, string typeMember)
+        {
+            comboBox.DisplayMember = typeMember;
+        }
+
+        /// <summary>
+        /// Метод. Заполняет данными список 
+        /// </summary>
+        protected void FillHeatingConditionList(ComboBox comboBox)
+        {
+            foreach (Condition HeatingCondition in Enum.GetValues(typeof(Condition)))                                // Выполнить для всех элементов перечисления
+            {
+                AddHeatingConditionToList(comboBox, HeatingCondition, _apartment.GetConditionTypeAsString(HeatingCondition));        // Добавить элемент в список  
+            }
+
+            SetHeatingConditionListDisplayMember(comboBox, "Value");                                                           // Задать отображаемое поле 
+        }
+
+        #endregion
+
+        #region Water Condition List
+
+        /// <summary>
+        /// Метод. Очищает список 
+        /// </summary>
+        protected void ClearWaterConditionList(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+        }
+
+        /// <summary>
+        /// Метод. Добавляет элемент в список 
+        /// </summary>
+        private void AddWaterConditionToList(ComboBox comboBox, Condition waterCondition, string WaterConditionDescription)
+        {
+            comboBox.Items.Add(new KeyValuePair<Condition, string>(waterCondition, WaterConditionDescription));
+        }
+
+        /// <summary>
+        /// Метод. Задает отображаемое поле для списка 
+        /// </summary>
+        private void SetWaterConditionListDisplayMember(ComboBox comboBox, string typeMember)
+        {
+            comboBox.DisplayMember = typeMember;
+        }
+
+        /// <summary>
+        /// Метод. Заполняет данными список 
+        /// </summary>
+        protected void FillWaterConditionList(ComboBox comboBox)
+        {
+            foreach (Condition WaterCondition in Enum.GetValues(typeof(Condition)))                                // Выполнить для всех элементов перечисления
+            {
+                AddWaterConditionToList(comboBox, WaterCondition, _apartment.GetConditionTypeAsString(WaterCondition));        // Добавить элемент в список  
+            }
+
+            SetWaterConditionListDisplayMember(comboBox, "Value");                                                           // Задать отображаемое поле 
+        }
+
+        #endregion
+
+        #region Canalization Condition List
+
+        /// <summary>
+        /// Метод. Очищает список 
+        /// </summary>
+        protected void ClearCanalizationConditionList(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+        }
+
+        /// <summary>
+        /// Метод. Добавляет элемент в список 
+        /// </summary>
+        private void AddCanalizationConditionToList(ComboBox comboBox, Condition canalizationCondition, string CanalizationConditionDescription)
+        {
+            comboBox.Items.Add(new KeyValuePair<Condition, string>(canalizationCondition, CanalizationConditionDescription));
+        }
+
+        /// <summary>
+        /// Метод. Задает отображаемое поле для списка 
+        /// </summary>
+        private void SetCanalizationConditionListDisplayMember(ComboBox comboBox, string typeMember)
+        {
+            comboBox.DisplayMember = typeMember;
+        }
+
+        /// <summary>
+        /// Метод. Заполняет данными список 
+        /// </summary>
+        protected void FillCanalizationConditionList(ComboBox comboBox)
+        {
+            foreach (Condition CanalizationCondition in Enum.GetValues(typeof(Condition)))                                // Выполнить для всех элементов перечисления
+            {
+                AddCanalizationConditionToList(comboBox, CanalizationCondition, _apartment.GetConditionTypeAsString(CanalizationCondition));        // Добавить элемент в список  
+            }
+
+            SetCanalizationConditionListDisplayMember(comboBox, "Value");                                                           // Задать отображаемое поле 
+        }
+
+        #endregion
+
+        #region Heater Pipes Type List
+
+        /// <summary>
+        /// Метод. Очищает список 
+        /// </summary>
+        protected void ClearHeaterPipesTypeList(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+        }
+
+        /// <summary>
+        /// Метод. Добавляет элемент в список 
+        /// </summary>
+        private void AddHeaterPipesTypeToList(ComboBox comboBox, Pipes heaterPipesType, string HeaterPipesTypeDescription)
+        {
+            comboBox.Items.Add(new KeyValuePair<Pipes, string>(heaterPipesType, HeaterPipesTypeDescription));
+        }
+
+        /// <summary>
+        /// Метод. Задает отображаемое поле для списка 
+        /// </summary>
+        private void SetHeaterPipesTypeListDisplayMember(ComboBox comboBox, string typeMember)
+        {
+            comboBox.DisplayMember = typeMember;
+        }
+
+        /// <summary>
+        /// Метод. Заполняет данными список 
+        /// </summary>
+        protected void FillHeaterPipesTypeList(ComboBox comboBox)
+        {
+            foreach (Pipes HeaterPipesType in Enum.GetValues(typeof(Pipes)))                                // Выполнить для всех элементов перечисления
+            {
+                AddHeaterPipesTypeToList(comboBox, HeaterPipesType, _apartment.GetPipesTypeAsString(HeaterPipesType));        // Добавить элемент в список  
+            }
+
+            SetHeaterPipesTypeListDisplayMember(comboBox, "Value");                                                           // Задать отображаемое поле 
+        }
+
+        #endregion
+
+        #region Radiator Type List
+
+        /// <summary>
+        /// Метод. Очищает список 
+        /// </summary>
+        protected void ClearHeatingRadiatorTypeList(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+        }
+
+        /// <summary>
+        /// Метод. Добавляет элемент в список 
+        /// </summary>
+        private void AddHeatingRadiatorTypeToList(ComboBox comboBox, Heaters HeatingRadiatorType, string HeatingRadiatorTypeDescription)
+        {
+            comboBox.Items.Add(new KeyValuePair<Heaters, string>(HeatingRadiatorType, HeatingRadiatorTypeDescription));
+        }
+
+        /// <summary>
+        /// Метод. Задает отображаемое поле для списка 
+        /// </summary>
+        private void SetHeatingRadiatorTypeListDisplayMember(ComboBox comboBox, string typeMember)
+        {
+            comboBox.DisplayMember = typeMember;
+        }
+
+        /// <summary>
+        /// Метод. Заполняет данными список 
+        /// </summary>
+        protected void FillHeatingRadiatorTypeList(ComboBox comboBox)
+        {
+            foreach (Heaters HeatingRadiatorType in Enum.GetValues(typeof(Heaters)))                                // Выполнить для всех элементов перечисления
+            {
+                AddHeatingRadiatorTypeToList(comboBox, HeatingRadiatorType, _apartment.GetHeaterTypeAsString(HeatingRadiatorType));        // Добавить элемент в список  
+            }
+
+            SetHeatingRadiatorTypeListDisplayMember(comboBox, "Value");                                                           // Задать отображаемое поле 
+        }
+
+        #endregion
+
+        #region Canalization Pipes Type List
+
+        /// <summary>
+        /// Метод. Очищает список 
+        /// </summary>
+        protected void ClearCanalizationPipesTypeList(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+        }
+
+        /// <summary>
+        /// Метод. Добавляет элемент в список 
+        /// </summary>
+        private void AddCanalizationPipesTypeToList(ComboBox comboBox, Pipes canalizationPipesType, string CanalizationPipesTypeDescription)
+        {
+            comboBox.Items.Add(new KeyValuePair<Pipes, string>(canalizationPipesType, CanalizationPipesTypeDescription));
+        }
+
+        /// <summary>
+        /// Метод. Задает отображаемое поле для списка 
+        /// </summary>
+        private void SetCanalizationPipesTypeListDisplayMember(ComboBox comboBox, string typeMember)
+        {
+            comboBox.DisplayMember = typeMember;
+        }
+
+        /// <summary>
+        /// Метод. Заполняет данными список 
+        /// </summary>
+        protected void FillCanalizationPipesTypeList(ComboBox comboBox)
+        {
+            foreach (Pipes CanalizationPipesType in Enum.GetValues(typeof(Pipes)))                                // Выполнить для всех элементов перечисления
+            {
+                AddCanalizationPipesTypeToList(comboBox, CanalizationPipesType, _apartment.GetPipesTypeAsString(CanalizationPipesType));        // Добавить элемент в список  
+            }
+
+            SetCanalizationPipesTypeListDisplayMember(comboBox, "Value");                                                           // Задать отображаемое поле 
+        }
+
+        #endregion
+
         /// <summary>
         /// Метод. Задает активность компонентов
         /// </summary>
@@ -2142,7 +2766,13 @@ namespace PRUI.Forms
 
         #endregion
 
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
+
 
         #endregion
     }

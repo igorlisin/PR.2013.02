@@ -587,29 +587,37 @@ namespace PRUI.Forms
         private void AddObjectButton_Click(object sender, EventArgs e)
         {
             IApartment apartment;                                       // Квартира
-            IHome home;                                                 // Дом, связанный с квартирой
             ApartmentForm apartmentForm;                                // Форма редактирования квартиры
+            HomeSelectForm homeSelectForm;                                  // Выбор дома
+
             IObject obj;
             bool entityNeedSave;                                        // Флаг необходимости сохранения сущности
 
             apartment = _apartments.Create();                           // Создать квартиру
-            home = _homes.Create();                                     // Создать дом, связанный с квартирой
             obj = _objects.Create();
-            apartment.Home = home;                                      // Связать дом с квартирой
-            apartment.Object = obj;
+            homeSelectForm = new HomeSelectForm(_homes);                    // Создать форму выбора дома
 
-            apartmentForm = new ApartmentForm(apartment, _homes, _objects);       // Создать форму для редактирования квартиры
+            homeSelectForm.ShowDialog();                                    // Отобразить форму выбора дома
 
-            apartmentForm.ShowDialog();                                 // Отобразить форму для редактирования квартиры
+            apartment.Home = homeSelectForm.SelectedHome;                   // Связать дом с квартирой
 
-            entityNeedSave = apartmentForm.EntityNeedSave;              // Получить значение флага необходимости сохранения сущности
-
-            if (entityNeedSave == true)                                 // Проверить флаг необходимости сохранения сущности
+            if (apartment.Home != null)                                     // Проверить связанный с квартирой дом
             {
-                _apartments.Add(apartment);                             // Добавить созданный квартира в список
-               
-            }
 
+                apartment.Object = obj;
+
+                apartmentForm = new ApartmentForm(apartment, _homes, _objects);       // Создать форму для редактирования квартиры
+
+                apartmentForm.ShowDialog();                                 // Отобразить форму для редактирования квартиры
+
+                entityNeedSave = apartmentForm.EntityNeedSave;              // Получить значение флага необходимости сохранения сущности
+
+                if (entityNeedSave == true)                                 // Проверить флаг необходимости сохранения сущности
+                {
+                    _apartments.Add(apartment);                             // Добавить созданный квартира в список
+
+                }
+            }
 
         }
 

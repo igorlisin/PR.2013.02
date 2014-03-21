@@ -1609,7 +1609,17 @@ namespace PRUI.Forms
         private void CopyObjectToEntity()
         {
             IObject obj;
-            obj = _objects.Create();
+
+            if (_objectAfterRelinking == null)  //Если объекта еще нет 
+            {
+                obj = _objects.Create();              // то создаем
+            }
+            else
+            {
+                obj = _objectAfterRelinking;        //иначе изменяем, что есть
+            }
+
+            
 
             obj.ObjectType = ObjectType;
             obj.Property = ObjectProperty;

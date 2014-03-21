@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using PRInterfaces.Enumerations;
 using PRInterfaces.Interfaces;
 
 namespace PR.Classes
@@ -75,6 +75,135 @@ namespace PR.Classes
         /// Поле. Номер по комплексу
         /// </summary>
         private string _complexNumber;
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private string _buildYear;
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private string _wear;
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private Condition _roofCondition;
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private MaterialType _outsideWall;
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private MaterialType _insideWall;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private bool _lift;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private string _kapremontYear;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private string _kapremontPeriod;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private bool _defects;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private bool _garbadge;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private string _extraFactors;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private bool _conserge;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private MaterialType _ceilingType;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private Condition _ceilingCondition;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private string _basement;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private string _basementWear;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private bool _attic;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private string _PromzoneDistance;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private string _stopDistance;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private string _social;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private string _transport;
+
+
+        /// <summary>
+        /// Поле. 
+        /// </summary>
+        private bool _gaz;
+
+
 
         /// <summary>
         /// Свойство. Задает и возвращает номер
@@ -167,6 +296,336 @@ namespace PR.Classes
         public List<Apartment> AppartmentsForEntityFramework { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает год постройки дома
+        /// </summary>
+       public string BuildYear { 
+            get
+            {
+               return _buildYear;
+            }
+            set
+            {
+                _buildYear = value;
+            } 
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает износ дома
+        /// </summary>
+       public string Wear
+       {
+           get
+           {
+               return _wear;
+           }
+           set
+           {
+               _wear = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние крыши
+        /// </summary>
+       public Condition RoofCondition
+       {
+           get
+           {
+               return _roofCondition;
+           }
+           set
+           {
+               _roofCondition = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип несущих стен дома
+        /// </summary>
+       public MaterialType OutsideWall
+       {
+           get
+           {
+               return _outsideWall;
+           }
+           set
+           {
+               _outsideWall = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает перегородорк дома
+        /// </summary>
+       public MaterialType InsideWall
+       {
+           get
+           {
+               return _insideWall;
+           }
+           set
+           {
+               _insideWall = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает наличие лифта
+        /// </summary>
+       public bool Lift
+       {
+           get
+           {
+               return _lift;
+           }
+           set
+           {
+               _lift = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает год последнего капремонта
+        /// </summary>
+       public string KapremontYear
+       {
+           get
+           {
+               return _kapremontYear;
+           }
+           set
+           {
+               _kapremontYear = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает периодичность капремонта
+        /// </summary>
+       public string KapremontPeriod
+       {
+           get
+           {
+               return _kapremontPeriod;
+           }
+           set
+           {
+               _kapremontPeriod = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает наличия дефектов здания
+        /// </summary>
+       public bool Defects
+       {
+           get
+           {
+               return _defects;
+           }
+           set
+           {
+               _defects = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает наличие мусоропровода
+        /// </summary>
+       public bool Garbadge
+       {
+           get
+           {
+               return _garbadge;
+           }
+           set
+           {
+               _garbadge = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает дополнительных факторов
+        /// </summary>
+       public string ExtraFactors
+       {
+           get
+           {
+               return _extraFactors;
+           }
+           set
+           {
+               _extraFactors = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает наличие консьержа
+        /// </summary>
+       public bool Conserge
+       {
+           get
+           {
+               return _conserge;
+           }
+           set
+           {
+               _conserge = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает тип перекрытий
+        /// </summary>
+       public MaterialType CeilingType
+       {
+           get
+           {
+               return _ceilingType;
+           }
+           set
+           {
+               _ceilingType = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает состояние перекрытий
+        /// </summary>
+       public Condition CeilingCondition
+       {
+           get
+           {
+               return _ceilingCondition;
+           }
+           set
+           {
+               _ceilingCondition = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает фундамент
+        /// </summary>
+       public string Basement
+       {
+           get
+           {
+               return _basement;
+           }
+           set
+           {
+               _basement = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает износ фундамента
+        /// </summary>
+       public string BasementWear
+       {
+           get
+           {
+               return _basementWear;
+           }
+           set
+           {
+               _basementWear = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает наличие чердака
+        /// </summary>
+       public bool Attic
+       {
+           get
+           {
+               return _attic;
+           }
+           set
+           {
+               _attic = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает расстояние от промзоны
+        /// </summary>
+       public string PromzoneDistance
+       {
+           get
+           {
+               return _PromzoneDistance;
+           }
+           set
+           {
+               _PromzoneDistance = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает расстояние от остановки
+        /// </summary>
+       public string StopDistance
+       {
+           get
+           {
+               return _stopDistance;
+           }
+           set
+           {
+               _stopDistance = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает соц слой жильцов
+        /// </summary>
+       public string Social
+       {
+           get
+           {
+               return _social;
+           }
+           set
+           {
+               _social = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает общественный транспорт
+        /// </summary>
+       public string Transport
+       {
+           get
+           {
+               return _transport;
+           }
+           set
+           {
+               _transport = value;
+           }
+       }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает наличие газа
+        /// </summary>
+       public bool Gaz
+       {
+           get
+           {
+               return _gaz;
+           }
+           set
+           {
+               _gaz = value;
+           }
+       }
+
+
+        /// <summary>
         /// Конструктор
         /// </summary>
         public Home()
@@ -190,5 +649,7 @@ namespace PR.Classes
 
             return ((object)home);
         }
+
+
     }
 }

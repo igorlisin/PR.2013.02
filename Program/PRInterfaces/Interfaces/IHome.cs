@@ -36,12 +36,7 @@ namespace PRInterfaces.Interfaces
         /// <summary>
         /// Свойство. Задает и возвращает год постройки дома
         /// </summary>
-        string BuildYear { get; set; }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает износ дома
-        /// </summary>
-        string Wear { get; set; }
+        int BuildYear { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает состояние крыши

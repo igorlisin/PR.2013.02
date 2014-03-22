@@ -65,6 +65,10 @@
             // 
             this.relinkCountryButton.Visible = false;
             // 
+            // homeInfoGroupBox
+            // 
+            this.homeInfoGroupBox.Location = new System.Drawing.Point(11, 330);
+            // 
             // complexNumberTextBox
             // 
             this.complexNumberTextBox.Enabled = false;

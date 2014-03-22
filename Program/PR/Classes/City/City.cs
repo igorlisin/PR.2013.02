@@ -125,6 +125,26 @@ namespace PR.Classes
         /// Свойство. Задает и возвращает список комплексов (используется в Entity Framework) 
         /// </summary>
         public List<Complex> ComplexesForEntityFramework { get; set; }
+
+        ///// <summary>
+        ///// Свойство. Задает и возвращает список районов
+        ///// </summary>
+        //public List<IDistrict> Districts
+        //{
+        //    get
+        //    {
+        //        return ((IDistrict)DistrictsForEntityFramework);
+        //    }
+        //    set
+        //    {
+        //        DistrictsForEntityFramework = (District)value;
+        //    }
+        //}
+
+        ///// <summary>
+        ///// Свойство. Задает и возвращает список районов (используется в Entity Framework) 
+        ///// </summary>
+        //public List<District> DistrictsForEntityFramework { get; set; }
      
         /// <summary>
         /// Конструктор

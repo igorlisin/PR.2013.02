@@ -495,7 +495,7 @@ namespace PRDocument
             texts_report[83] = report.Employee.Man.Surname + " " + report.Employee.Man.Name + " " + report.Employee.Man.Patronymic;
             texts_report[84] = "Доценко Ирина Анатольевна";
             texts_report[85] = "Фадеев Владимир Петрович";
-            texts_report[86] = " серия " +
+            texts_report[86] = "серия " +
                                         report.Employee.Man.Document.Series + " номер " +
                                         report.Employee.Man.Document.Number + " " +
                                         report.Employee.Man.Document.PlaceOfIssue;

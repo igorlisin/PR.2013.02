@@ -59,10 +59,5 @@ namespace PRInterfaces.Interfaces
         /// </summary>
         string Prestige { get; set; }
 
-
-        /// <summary>
-        /// Свойство. Задает и возвращает город
-        /// </summary>
-        ICity City { get; set; }
     }
 }

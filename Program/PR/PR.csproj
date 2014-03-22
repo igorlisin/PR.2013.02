@@ -63,6 +63,8 @@
     <Compile Include="Classes\Complex\Complexes.cs" />
     <Compile Include="Classes\Country\Countries.cs" />
     <Compile Include="Classes\Country\Country.cs" />
+    <Compile Include="Classes\District\District.cs" />
+    <Compile Include="Classes\District\Districts.cs" />
     <Compile Include="Classes\Employee\Employee.cs" />
     <Compile Include="Classes\Employee\Employees.cs" />
     <Compile Include="Classes\Home\Home.cs" />

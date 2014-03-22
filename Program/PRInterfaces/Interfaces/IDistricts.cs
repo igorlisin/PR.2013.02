@@ -40,7 +40,7 @@ namespace PRInterfaces.Interfaces
         /// <summary>
         /// Метод. Возвращает район с указанным идентификатором из списка районов
         /// </summary>
-        IDistrict GetRegion(int index);
+        IDistrict GetDistrict(int index);
 
         /// <summary>
         /// Метод. Сохраняет изменения списка районов

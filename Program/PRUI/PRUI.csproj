@@ -133,6 +133,24 @@
     <Compile Include="Forms\CountrySelectForm.Designer.cs">
       <DependentUpon>CountrySelectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DistrictForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DistrictForm.Designer.cs">
+      <DependentUpon>DistrictForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DistrictSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DistrictSelectForm.Designer.cs">
+      <DependentUpon>DistrictSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DistrictsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DistrictsForm.Designer.cs">
+      <DependentUpon>DistrictsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DocumentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,6 +401,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CountrySelectForm.resx">
       <DependentUpon>CountrySelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DistrictForm.resx">
+      <DependentUpon>DistrictForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DistrictSelectForm.resx">
+      <DependentUpon>DistrictSelectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DocumentForm.resx">
       <DependentUpon>DocumentForm.cs</DependentUpon>

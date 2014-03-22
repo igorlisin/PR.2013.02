@@ -77,129 +77,124 @@ namespace PR.Classes
         private string _complexNumber;
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Год постройки
         /// </summary>
-        private string _buildYear;
+        private int _buildYear;
 
         /// <summary>
-        /// Поле. 
-        /// </summary>
-        private string _wear;
-
-        /// <summary>
-        /// Поле. 
+        /// Поле. Состояние крыши
         /// </summary>
         private Condition _roofCondition;
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Материал несущих стен
         /// </summary>
         private MaterialType _outsideWall;
 
         /// <summary>
-        /// Поле. 
+        /// Поле. материал перегородок
         /// </summary>
         private MaterialType _insideWall;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Наличие лифта
         /// </summary>
         private bool _lift;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. год последнего капремонта
         /// </summary>
         private string _kapremontYear;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Периодичность капремонта
         /// </summary>
         private string _kapremontPeriod;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Наличие дефектов конструкции
         /// </summary>
         private bool _defects;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Наличие мусоропровода
         /// </summary>
         private bool _garbadge;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Наличие доп факторов
         /// </summary>
         private string _extraFactors;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Наличие консьержа
         /// </summary>
         private bool _conserge;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Тип перекрытий
         /// </summary>
         private MaterialType _ceilingType;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Состояние перекрытий
         /// </summary>
         private Condition _ceilingCondition;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Фундамент
         /// </summary>
         private string _basement;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Износ фундамента
         /// </summary>
         private string _basementWear;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. наличие чердака
         /// </summary>
         private bool _attic;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Рассотяние до промзоны
         /// </summary>
         private string _PromzoneDistance;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Расстояние до остановок 
         /// </summary>
         private string _stopDistance;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Социальный состав жильцов
         /// </summary>
         private string _social;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Общественный транспорт
         /// </summary>
         private string _transport;
 
 
         /// <summary>
-        /// Поле. 
+        /// Поле. Наличие газа
         /// </summary>
         private bool _gaz;
 
@@ -298,7 +293,7 @@ namespace PR.Classes
         /// <summary>
         /// Свойство. Задает и возвращает год постройки дома
         /// </summary>
-       public string BuildYear { 
+       public int BuildYear { 
             get
             {
                return _buildYear;
@@ -309,20 +304,6 @@ namespace PR.Classes
             } 
         }
 
-        /// <summary>
-        /// Свойство. Задает и возвращает износ дома
-        /// </summary>
-       public string Wear
-       {
-           get
-           {
-               return _wear;
-           }
-           set
-           {
-               _wear = value;
-           }
-       }
 
         /// <summary>
         /// Свойство. Задает и возвращает состояние крыши

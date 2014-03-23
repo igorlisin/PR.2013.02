@@ -1,6 +1,7 @@
 ﻿using System;
 
 using PRInterfaces.Interfaces;
+using PRInterfaces.Enumerations;
 
 namespace PR.Classes
 {
@@ -57,7 +58,7 @@ namespace PR.Classes
         /// <summary>
         /// Поле. Задает и возвращает престижность района
         /// </summary>
-       private string _prestige ;
+       private Condition _prestige ;
 
 
         /// <summary>
@@ -197,7 +198,7 @@ namespace PR.Classes
        /// <summary>
        /// Свойство. Задает и возвращает престижность района
        /// </summary>
-       public string Prestige
+       public Condition Prestige
        {
            get
            {
@@ -208,6 +209,7 @@ namespace PR.Classes
                _prestige = value;
            }
        }
+
        /// <summary>
        /// Статический метод. Преобразует объект типа IDistrict в объект типа District
        /// </summary>

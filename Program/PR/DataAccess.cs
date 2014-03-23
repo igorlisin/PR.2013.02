@@ -325,6 +325,28 @@ namespace PR
                 Property(h => h.Description).IsOptional();
                 Property(h => h.Number).IsRequired();
                 Property(h => h.ComplexNumber).IsOptional();
+                Property(h => h.Attic).IsOptional();
+                Property(h => h.Basement).IsOptional();
+                Property(h => h.BasementWear).IsOptional();
+                Property(h => h.BuildYear).IsOptional();
+                Property(h => h.CeilingCondition).IsOptional();
+                Property(h => h.CeilingType).IsOptional();
+                Property(h => h.Conserge).IsOptional();
+                Property(h => h.Defects).IsOptional();
+                Property(h => h.ExtraFactors).IsOptional();
+                Property(h => h.Garbadge).IsOptional();
+                Property(h => h.Gaz).IsOptional();
+                Property(h => h.InsideWall).IsOptional();
+                Property(h => h.KapremontPeriod).IsOptional();
+                Property(h => h.KapremontYear).IsOptional();
+                Property(h => h.Lift).IsOptional();
+                Property(h => h.OutsideWall).IsOptional();
+                Property(h => h.PromzoneDistance).IsOptional();
+                Property(h => h.RoofCondition).IsOptional();
+                Property(h => h.Social).IsOptional();
+                Property(h => h.StopDistance).IsOptional();
+                Property(h => h.Transport).IsOptional();
+
 
                 HasOptional(h => h.StreetForEntityFramework).WithMany(s => s.HomesForEntityFramework).WillCascadeOnDelete(false);
                 HasOptional(h => h.ComplexForEntityFramework).WithMany(s => s.HomesForEntityFramework).WillCascadeOnDelete(false);
@@ -347,7 +369,7 @@ namespace PR
                 Property(a => a.Description).IsOptional();
                 Property(a => a.Number).IsRequired();
 
-                HasOptional(a => a.ObjectForEntityFramework);//.WithRequired(a => a.ApartmentForEntityFramework).WillCascadeOnDelete(true);
+                HasOptional(a => a.ObjectForEntityFramework);
                 HasOptional(a => a.HomeForEntityFramework).WithMany(h => h.AppartmentsForEntityFramework).WillCascadeOnDelete(false);
             }
         } 
@@ -415,7 +437,7 @@ namespace PR
                 Property(r => r.DateOfContract).IsRequired().HasColumnType("datetime2");
                 Property(r => r.EvaluationDate).IsRequired().HasColumnType("datetime2");
                 Property(r => r.ReportDate).IsRequired().HasColumnType("datetime2");
-                HasOptional(e => e.EmployeeForEntityFramework);
+                HasOptional(r => r.EmployeeForEntityFramework);
             }
         }
 

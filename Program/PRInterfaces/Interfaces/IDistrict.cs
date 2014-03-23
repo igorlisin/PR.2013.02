@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using PRInterfaces.Enumerations;
 
 namespace PRInterfaces.Interfaces
 {
@@ -57,7 +58,7 @@ namespace PRInterfaces.Interfaces
         /// <summary>
         /// Свойство. Задает и возвращает престижность района
         /// </summary>
-        string Prestige { get; set; }
+        Condition Prestige { get; set; }
 
     }
 }

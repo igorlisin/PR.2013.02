@@ -129,13 +129,23 @@ namespace PRInterfaces.Interfaces
         string Social { get; set; }
 
         /// <summary>
-        /// Свойство. Задает и возвращает общественный транспорт
+        /// Свойство. Задает и возвращает наличие трамвая
         /// </summary>
-        string Transport { get; set; }
+        bool Transport { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает наличие газа
         /// </summary>
         bool Gaz { get; set; }
+
+        /// <summary>
+        /// Метод. Возвращает тип комнат как тестовую строку
+        /// </summary>
+        string GetMaterialTypeAsString(MaterialType materialType);
+
+        /// <summary>
+        /// Метод. Возвращает состояние  как тестовую строку
+        /// </summary>
+        string GetConditionTypeAsString(Condition ConditionType);
     }
 }

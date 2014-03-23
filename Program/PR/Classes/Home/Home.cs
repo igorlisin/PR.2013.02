@@ -8,8 +8,9 @@ namespace PR.Classes
     /// <summary>
     /// Класс. Дом
     /// </summary>
-    public class Home : Entity, IHome 
+    public class Home : Entity, IHome
     {
+        #region Static
         /// <summary>
         /// Статическое поле. Номер по умолчанию
         /// </summary>
@@ -67,6 +68,82 @@ namespace PR.Classes
         }
 
         /// <summary>
+        /// Метод. Возвращает  как тестовую строку
+        /// </summary>
+        public static string GetMaterialAsStringStatic(MaterialType material)
+        {
+            string materialAsString;                             // Тип (как тескстовая строка)
+
+            switch (material)                                    // Проверить тип
+            {
+                case MaterialType.ArmedBeton:                            // Сравнить тип 
+                    materialAsString = "Железобетон";                 // Задать тип (как текстовую строку)
+                    break;
+                case MaterialType.Brick:                        // Сравнить тип 
+                    materialAsString = "Кирпич";                // Задать тип (как текстовую строку)
+                    break;
+                case MaterialType.Gazobeton:                     // Сравнить тип 
+                    materialAsString = "Газобетон";      // Задать тип (как текстовую строку)
+                    break;
+                case MaterialType.Gips:                     // Сравнить тип 
+                    materialAsString = "Гипс";      // Задать тип (как текстовую строку)
+                    break;
+                case MaterialType.Gipsokarton:                     // Сравнить тип 
+                    materialAsString = "Гипсокартон";      // Задать тип (как текстовую строку)
+                    break;
+                case MaterialType.Wood:                     // Сравнить тип 
+                    materialAsString = "Дерево";      // Задать тип (как текстовую строку)
+                    break;
+                default:                                                // Тип по умолчанию 
+                    materialAsString = "--";                     // Задать тип (как текстовую строку)
+                    break;
+            }
+
+            return (materialAsString);
+        }
+
+        /// <summary>
+        /// Метод. Возвращает качество отделки помещения как текстовую строку
+        /// </summary>
+        public static string GetConditionAsStringStatic(Condition condition)
+        {
+            string conditionAsString;                        // Тип (как тескстовая строка)
+
+            switch (condition)                               // Проверить тип
+            {
+                case Condition.Perfect:                    // Сравнить тип 
+                    conditionAsString = "Идеальное";         // Задать тип (как текстовую строку)
+                    break;
+                case Condition.VeryGood:                   // Сравнить тип 
+                    conditionAsString = "Очень хорошее";     // Задать тип (как текстовую строку)
+                    break;
+                case Condition.Good:                       // Сравнить тип 
+                    conditionAsString = "Хорошее";           // Задать тип (как текстовую строку)
+                    break;
+                case Condition.Normal:                     // Сравнить тип 
+                    conditionAsString = "Нормальное";        // Задать тип (как текстовую строку)
+                    break;
+                case Condition.Bad:                        // Сравнить тип 
+                    conditionAsString = "Плохое";            // Задать тип (как текстовую строку)
+                    break;
+                case Condition.VeryBad:                    // Сравнить тип 
+                    conditionAsString = "Очень плохое";      // Задать тип (как текстовую строку)
+                    break;
+                case Condition.Terrible:                   // Сравнить тип 
+                    conditionAsString = "Ужасное";           // Задать тип (как текстовую строку)
+                    break;
+                default:                                                // Тип по умолчанию 
+                    conditionAsString = "--";                // Задать тип (как текстовую строку)
+                    break;
+            }
+
+            return (conditionAsString);
+        }
+
+        #endregion
+
+        #region Fields
+        /// <summary>
         /// Поле. Номер
         /// </summary>
         private string _number;
@@ -96,110 +173,94 @@ namespace PR.Classes
         /// </summary>
         private MaterialType _insideWall;
 
-
         /// <summary>
         /// Поле. Наличие лифта
         /// </summary>
         private bool _lift;
-
 
         /// <summary>
         /// Поле. год последнего капремонта
         /// </summary>
         private string _kapremontYear;
 
-
         /// <summary>
         /// Поле. Периодичность капремонта
         /// </summary>
         private string _kapremontPeriod;
-
 
         /// <summary>
         /// Поле. Наличие дефектов конструкции
         /// </summary>
         private bool _defects;
 
-
         /// <summary>
         /// Поле. Наличие мусоропровода
         /// </summary>
         private bool _garbadge;
-
 
         /// <summary>
         /// Поле. Наличие доп факторов
         /// </summary>
         private string _extraFactors;
 
-
         /// <summary>
         /// Поле. Наличие консьержа
         /// </summary>
         private bool _conserge;
-
 
         /// <summary>
         /// Поле. Тип перекрытий
         /// </summary>
         private MaterialType _ceilingType;
 
-
         /// <summary>
         /// Поле. Состояние перекрытий
         /// </summary>
         private Condition _ceilingCondition;
-
 
         /// <summary>
         /// Поле. Фундамент
         /// </summary>
         private string _basement;
 
-
         /// <summary>
         /// Поле. Износ фундамента
         /// </summary>
         private string _basementWear;
-
 
         /// <summary>
         /// Поле. наличие чердака
         /// </summary>
         private bool _attic;
 
-
         /// <summary>
         /// Поле. Рассотяние до промзоны
         /// </summary>
         private string _PromzoneDistance;
-
 
         /// <summary>
         /// Поле. Расстояние до остановок 
         /// </summary>
         private string _stopDistance;
 
-
         /// <summary>
         /// Поле. Социальный состав жильцов
         /// </summary>
         private string _social;
 
-
         /// <summary>
-        /// Поле. Общественный транспорт
+        /// Поле. Наличие трамвая
         /// </summary>
-        private string _transport;
+        private bool _transport;
 
 
         /// <summary>
         /// Поле. Наличие газа
         /// </summary>
         private bool _gaz;
+        #endregion
 
-
-
+        #region Properties
         /// <summary>
         /// Свойство. Задает и возвращает номер
         /// </summary>
@@ -576,9 +637,9 @@ namespace PR.Classes
        }
 
         /// <summary>
-        /// Свойство. Задает и возвращает общественный транспорт
+        /// Свойство. Задает и возвращает  наличие трамвая
         /// </summary>
-       public string Transport
+       public bool Transport
        {
            get
            {
@@ -604,16 +665,19 @@ namespace PR.Classes
                _gaz = value;
            }
        }
+        #endregion
 
-
-        /// <summary>
+       #region Constructor
+       /// <summary>
         /// Конструктор
         /// </summary>
         public Home()
         {
             Appartments = new List<IApartment>();       // Создать список квартир, связанных домом
         }
+        #endregion
 
+        #region Metods
         /// <summary>
         /// Метод. Возвращает копию дома
         /// </summary>
@@ -631,6 +695,22 @@ namespace PR.Classes
             return ((object)home);
         }
 
+        /// <summary>
+        /// Метод. Возвращает тип комнат как тестовую строку
+        /// </summary>
+        public string GetMaterialTypeAsString(MaterialType materialType)
+        {
+            return (Home.GetMaterialAsStringStatic(materialType));
+        }
 
+        /// <summary>
+        /// Метод. Возвращает тип  как тестовую строку
+        /// </summary>
+        public string GetConditionTypeAsString(Condition ConditionType)
+        {
+            return (Apartment.GetConditionAsStringStatic(ConditionType));
+        }
+
+        #endregion
     }
 }

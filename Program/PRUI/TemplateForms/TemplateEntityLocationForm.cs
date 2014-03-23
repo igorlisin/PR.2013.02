@@ -79,127 +79,7 @@ namespace PRUI.TemplateForms
         /// </summary>
         protected IHomes _homes;
 
-        /// <summary>
-        /// Поле. Год постройки
-        /// </summary>
-        protected int _buildYear;
-
-        /// <summary>
-        /// Поле. Состояние крыши
-        /// </summary>
-        protected Condition _roofCondition;
-
-        /// <summary>
-        /// Поле. Материал несущих стен
-        /// </summary>
-        protected MaterialType _outsideWall;
-
-        /// <summary>
-        /// Поле. материал перегородок
-        /// </summary>
-        protected MaterialType _insideWall;
-
-
-        /// <summary>
-        /// Поле. Наличие лифта
-        /// </summary>
-        protected bool _lift;
-
-
-        /// <summary>
-        /// Поле. год последнего капремонта
-        /// </summary>
-        protected string _kapremontYear;
-
-
-        /// <summary>
-        /// Поле. Периодичность капремонта
-        /// </summary>
-        protected string _kapremontPeriod;
-
-
-        /// <summary>
-        /// Поле. Наличие дефектов конструкции
-        /// </summary>
-        protected bool _defects;
-
-
-        /// <summary>
-        /// Поле. Наличие мусоропровода
-        /// </summary>
-        protected bool _garbadge;
-
-
-        /// <summary>
-        /// Поле. Наличие доп факторов
-        /// </summary>
-        protected string _extraFactors;
-
-
-        /// <summary>
-        /// Поле. Наличие консьержа
-        /// </summary>
-        protected bool _conserge;
-
-
-        /// <summary>
-        /// Поле. Тип перекрытий
-        /// </summary>
-        protected MaterialType _ceilingType;
-
-
-        /// <summary>
-        /// Поле. Состояние перекрытий
-        /// </summary>
-        protected Condition _ceilingCondition;
-
-
-        /// <summary>
-        /// Поле. Фундамент
-        /// </summary>
-        protected string _basement;
-
-
-        /// <summary>
-        /// Поле. Износ фундамента
-        /// </summary>
-        protected string _basementWear;
-
-
-        /// <summary>
-        /// Поле. наличие чердака
-        /// </summary>
-        protected bool _attic;
-
-
-        /// <summary>
-        /// Поле. Рассотяние до промзоны
-        /// </summary>
-        protected string _PromzoneDistance;
-
-
-        /// <summary>
-        /// Поле. Расстояние до остановок 
-        /// </summary>
-        protected string _stopDistance;
-
-
-        /// <summary>
-        /// Поле. Социальный состав жильцов
-        /// </summary>
-        protected string _social;
-
-
-        /// <summary>
-        /// Поле. Общественный транспорт
-        /// </summary>
-        protected string _transport;
-
-
-        /// <summary>
-        /// Поле. Наличие газа
-        /// </summary>
-        protected bool _gaz;
+  
 
         /// <summary>
         /// Поле. Страна после перепривязки
@@ -340,321 +220,7 @@ namespace PRUI.TemplateForms
             }
         }
 
-        /// <summary>
-        /// Свойство. Задает и возвращает год постройки дома
-        /// </summary>
-        protected int BuildYear
-        {
-            get
-            {
-                return (Convert.ToInt32(BuildYearTextBox.Text));
-            }
-            set
-            {
-                BuildYearTextBox.Text = Convert.ToString(value);
-            }
-        }
 
-
-        /// <summary>
-        /// Свойство. Задает и возвращает состояние крыши
-        /// </summary>
-        //protected Condition RoofCondition
-        //{
-        //    get
-        //    {
-        //        return (((KeyValuePair<Condition, string>)RoofConditionComboBox.SelectedItem).Key);
-        //    }
-        //    set
-        //    {
-        //        SetComboBoxElementByType<Condition>(RoofConditionComboBox, value);
-        //    }
-        //}
-
-        /// <summary>
-        /// Свойство. Задает и возвращает тип несущих стен дома
-        /// </summary>
-        //protected MaterialType OutsideWall
-        //{
-        //    get
-        //    {
-        //        return _outsideWall;
-        //    }
-        //    set
-        //    {
-        //        _outsideWall = value;
-        //    }
-        //}
-
-        /// <summary>
-        /// Свойство. Задает и возвращает перегородорк дома
-        /// </summary>
-        //protected MaterialType InsideWall
-        //{
-        //    get
-        //    {
-        //        return _insideWall;
-        //    }
-        //    set
-        //    {
-        //        _insideWall = value;
-        //    }
-        //}
-
-        /// <summary>
-        /// Свойство. Задает и возвращает наличие лифта
-        /// </summary>
-        protected bool Lift
-        {
-            get
-            {
-                return (LiftCheckBox.Checked);
-            }
-            set
-            {
-                LiftCheckBox.Checked = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает год последнего капремонта
-        /// </summary>
-        protected string KapremontYear
-        {
-            get
-            {
-                return (KapremontYearTextBox.Text);
-            }
-            set
-            {
-                KapremontYearTextBox.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает периодичность капремонта
-        /// </summary>
-        protected string KapremontPeriod
-        {
-            get
-            {
-                return (KapremontPeriodTextBox.Text);
-            }
-            set
-            {
-                KapremontPeriodTextBox.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает наличия дефектов здания
-        /// </summary>
-        protected bool Defects
-        {
-            get
-            {
-                return (DefectsCheckBox.Checked);
-            }
-            set
-            {
-                DefectsCheckBox.Checked = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает наличие мусоропровода
-        /// </summary>
-        protected bool Garbadge
-        {
-            get
-            {
-                return (GarbageCheckBox.Checked);
-            }
-            set
-            {
-                GarbageCheckBox.Checked = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает дополнительных факторов
-        /// </summary>
-        protected string ExtraFactors
-        {
-            get
-            {
-                return (ExtraFactorsTextBox.Text);
-            }
-            set
-            {
-                ExtraFactorsTextBox.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает наличие консьержа
-        /// </summary>
-        protected bool Conserge
-        {
-            get
-            {
-                return (ConcergeCheckBox.Checked);
-            }
-            set
-            {
-                ConcergeCheckBox.Checked = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает тип перекрытий
-        /// </summary>
-        //protected MaterialType CeilingType
-        //{
-        //    get
-        //    {
-        //        return _ceilingType;
-        //    }
-        //    set
-        //    {
-        //        _ceilingType = value;
-        //    }
-        //}
-
-        /// <summary>
-        /// Свойство. Задает и возвращает состояние перекрытий
-        /// </summary>
-        //protected Condition CeilingCondition
-        //{
-        //    get
-        //    {
-        //        return _ceilingCondition;
-        //    }
-        //    set
-        //    {
-        //        _ceilingCondition = value;
-        //    }
-        //}
-
-        /// <summary>
-        /// Свойство. Задает и возвращает фундамент
-        /// </summary>
-        protected string Basement
-        {
-            get
-            {
-                return (BasementTextBox.Text);
-            }
-            set
-            {
-                BasementTextBox.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает износ фундамента
-        /// </summary>
-        protected string BasementWear
-        {
-            get
-            {
-                return (BasmentWearTextBox.Text);
-            }
-            set
-            {
-                BasmentWearTextBox.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает наличие чердака
-        /// </summary>
-        protected bool Attic
-        {
-            get
-            {
-                return (AtticCheckBox.Checked);
-            }
-            set
-            {
-                AtticCheckBox.Checked = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает расстояние от промзоны
-        /// </summary>
-        protected string PromzoneDistance
-        {
-            get
-            {
-                return (PromDistanceTextBox.Text);
-            }
-            set
-            {
-                PromDistanceTextBox.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает расстояние от остановки
-        /// </summary>
-        protected string StopDistance
-        {
-            get
-            {
-                return (StopDistanceTextBox.Text);
-            }
-            set
-            {
-                StopDistanceTextBox.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает соц слой жильцов
-        /// </summary>
-        protected string Social
-        {
-            get
-            {
-                return (SocialTextBox.Text);
-            }
-            set
-            {
-                SocialTextBox.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает общественный транспорт
-        /// </summary>
-        //protected string Transport
-        //{
-        //    get
-        //    {
-        //        return (TramwayCheckBox.Checked?"Трамвай и автобус":"Автобус");
-        //    }
-        //    set
-        //    {
-        //        _transport = value;
-        //    }
-        //}
-
-        /// <summary>
-        /// Свойство. Задает и возвращает наличие газа
-        /// </summary>
-        protected bool Gaz
-        {
-            get
-            {
-                return (GazCheckBox.Checked);
-            }
-            set
-            {
-                GazCheckBox.Checked = value;
-            }
-        }
 
         #endregion
 
@@ -685,6 +251,7 @@ namespace PRUI.TemplateForms
             CleanComplexNumber();       // Очистить номер комплекса
             CleanHomeNumber();          // Очистить номер дома
             CleanComplexNumber();       // Очистить номер дома по комплексу
+           
         }
 
         /// <summary>
@@ -742,6 +309,9 @@ namespace PRUI.TemplateForms
         {
             HomeComplexNumber = "";     // Очистить номер дома по комплексу
         }
+
+ 
+           
 
         #endregion
 
@@ -801,6 +371,8 @@ namespace PRUI.TemplateForms
         {
             HomeNumber = home.Number;                   // Скопировать номер дома
             HomeComplexNumber = home.ComplexNumber;     // Скопировать номер дома по комплексу
+
+
         }
 
         #endregion
@@ -1182,6 +754,38 @@ namespace PRUI.TemplateForms
             unlinkCityButton.Enabled = (_cityAfterRelinking == null) ? false : true;
             unlinkStreetButton.Enabled = (_streetAfterRelinking == null) ? false : true;
             unlinkComplexButton.Enabled = (_complexAfterRelinking == null) ? false : true;
+        }
+
+        #endregion
+
+        #region Template methods
+
+        /// <summary>
+        /// Шаблонный метод. Выбирает элемент в списке
+        /// </summary>
+        protected void SetComboBoxElementByType<T>(ComboBox comboBox, T value)
+        {
+            int count;                                                                          // Количество элементов в списке
+            int counter;                                                                        // Счетчик циклов
+
+            T currentElement;                                                                   // Ключ текущего элемента списка
+
+            count = comboBox.Items.Count;                                                       // Получить количество элементов в списке
+
+            for (counter = 0; counter < count; counter++)                                       // Выполнить для всех элементов списка
+            {
+                KeyValuePair<T, string> keyValuePair;                                           // Пара ключ-значение для текущего элемента списка
+
+                keyValuePair = (KeyValuePair<T, string>)comboBox.Items[counter];                // Получить пару ключ значение для текущего элемента списка
+
+                currentElement = keyValuePair.Key;                                              // Получить значение ключа из пары ключ-значение
+
+                if (currentElement.ToString() == value.ToString())                              // Сравнить значение ключа элемента списка и заданного параметра (обе переменные имеют тип "T", приведение к строковому формату необходимо, так как сравнени "T == T" приводит к ошибке)
+                {
+                    comboBox.SelectedIndex = counter;                                           // Задать индекс выделенного элемента
+                    break;
+                }
+            }
         }
 
         #endregion

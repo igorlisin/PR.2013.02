@@ -34,6 +34,9 @@
             this.complexInfoGroupBox.SuspendLayout();
             this.streetInfoGroupBox.SuspendLayout();
             this.cityInfoGroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -80,11 +83,16 @@
             // 
             this.relinkCityButton.Visible = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Enabled = false;
+            this.groupBox1.Visible = false;
+            // 
             // CityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 478);
+            this.ClientSize = new System.Drawing.Size(695, 514);
             this.Name = "CityForm";
             this.Text = "Город";
             this.regionInfoGroup.ResumeLayout(false);
@@ -99,6 +107,10 @@
             this.streetInfoGroupBox.PerformLayout();
             this.cityInfoGroupBox.ResumeLayout(false);
             this.cityInfoGroupBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             this.idInfoGroup.ResumeLayout(false);
             this.idInfoGroup.PerformLayout();
             this.descriptionInfoGroup.ResumeLayout(false);

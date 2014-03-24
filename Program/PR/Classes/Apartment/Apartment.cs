@@ -759,6 +759,11 @@ namespace PR.Classes
         /// </summary>
         private string _counters;
 
+        /// <summary>
+        /// Поле. Задает и возвращает наличие домофона 
+        /// </summary>
+        private bool _domofon;
+
         #endregion
 
         #region Properties
@@ -1617,6 +1622,21 @@ namespace PR.Classes
             set
             {
                 _counters = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает наличие домофона
+        /// </summary>
+        public bool Domofon
+        {
+            get
+            {
+                return _domofon;
+            }
+            set
+            {
+                _domofon = value;
             }
         }
 

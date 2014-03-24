@@ -58,6 +58,11 @@ namespace PR
         private IComplexes _complexes;
 
         /// <summary>
+        /// Поле. Список районов
+        /// </summary>
+        private IDistricts _districts;
+
+        /// <summary>
         /// Поле. Список домов
         /// </summary>
         private IHomes _homes;
@@ -191,6 +196,22 @@ namespace PR
                 _cities = value;
             }
         }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список городов
+        /// </summary>
+        public IDistricts Districts
+        {
+            get
+            {
+                return (_districts);
+            }
+            set
+            {
+                _districts = value;
+            }
+        }
+
 
         /// <summary>
         /// Свойство. Задает и возвращает список улиц

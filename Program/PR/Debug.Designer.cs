@@ -57,6 +57,7 @@
             this.programOptionsButton = new System.Windows.Forms.Button();
             this.reportsButton = new System.Windows.Forms.Button();
             this.apartmentsButton = new System.Windows.Forms.Button();
+            this.DistrictButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,7 +137,7 @@
             // 
             // streetsButton
             // 
-            this.streetsButton.Location = new System.Drawing.Point(114, 132);
+            this.streetsButton.Location = new System.Drawing.Point(114, 167);
             this.streetsButton.Name = "streetsButton";
             this.streetsButton.Size = new System.Drawing.Size(96, 29);
             this.streetsButton.TabIndex = 9;
@@ -146,7 +147,7 @@
             // 
             // complexesButton
             // 
-            this.complexesButton.Location = new System.Drawing.Point(114, 167);
+            this.complexesButton.Location = new System.Drawing.Point(114, 202);
             this.complexesButton.Name = "complexesButton";
             this.complexesButton.Size = new System.Drawing.Size(96, 29);
             this.complexesButton.TabIndex = 10;
@@ -156,7 +157,7 @@
             // 
             // homesButton
             // 
-            this.homesButton.Location = new System.Drawing.Point(114, 202);
+            this.homesButton.Location = new System.Drawing.Point(114, 237);
             this.homesButton.Name = "homesButton";
             this.homesButton.Size = new System.Drawing.Size(96, 29);
             this.homesButton.TabIndex = 11;
@@ -304,7 +305,7 @@
             // 
             // apartmentsButton
             // 
-            this.apartmentsButton.Location = new System.Drawing.Point(114, 237);
+            this.apartmentsButton.Location = new System.Drawing.Point(114, 272);
             this.apartmentsButton.Name = "apartmentsButton";
             this.apartmentsButton.Size = new System.Drawing.Size(96, 29);
             this.apartmentsButton.TabIndex = 21;
@@ -312,11 +313,22 @@
             this.apartmentsButton.UseVisualStyleBackColor = true;
             this.apartmentsButton.Click += new System.EventHandler(this.apartmentsButton_Click);
             // 
+            // DistrictButton
+            // 
+            this.DistrictButton.Location = new System.Drawing.Point(114, 132);
+            this.DistrictButton.Name = "DistrictButton";
+            this.DistrictButton.Size = new System.Drawing.Size(96, 29);
+            this.DistrictButton.TabIndex = 22;
+            this.DistrictButton.Text = "Районы";
+            this.DistrictButton.UseVisualStyleBackColor = true;
+            this.DistrictButton.Click += new System.EventHandler(this.DistrictButton_Click);
+            // 
             // Debug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 506);
+            this.Controls.Add(this.DistrictButton);
             this.Controls.Add(this.apartmentsButton);
             this.Controls.Add(this.reportsButton);
             this.Controls.Add(this.programOptionsButton);
@@ -351,6 +363,7 @@
             this.Controls.SetChildIndex(this.programOptionsButton, 0);
             this.Controls.SetChildIndex(this.reportsButton, 0);
             this.Controls.SetChildIndex(this.apartmentsButton, 0);
+            this.Controls.SetChildIndex(this.DistrictButton, 0);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -389,5 +402,6 @@
         private System.Windows.Forms.Button programOptionsButton;
         private System.Windows.Forms.Button reportsButton;
         private System.Windows.Forms.Button apartmentsButton;
+        private System.Windows.Forms.Button DistrictButton;
     }
 }

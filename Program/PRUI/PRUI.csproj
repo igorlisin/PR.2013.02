@@ -408,6 +408,9 @@
     <EmbeddedResource Include="Forms\DistrictSelectForm.resx">
       <DependentUpon>DistrictSelectForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DistrictsForm.resx">
+      <DependentUpon>DistrictsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DocumentForm.resx">
       <DependentUpon>DocumentForm.cs</DependentUpon>
     </EmbeddedResource>

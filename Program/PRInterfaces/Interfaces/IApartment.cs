@@ -293,6 +293,11 @@ namespace PRInterfaces.Interfaces
         /// </summary>
         string Counters { get; set; }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает наличие домофона
+        /// </summary>
+        bool Domofon { get; set; }
+
 
 
         #endregion

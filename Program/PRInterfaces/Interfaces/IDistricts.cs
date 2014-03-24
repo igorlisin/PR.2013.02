@@ -5,7 +5,7 @@ namespace PRInterfaces.Interfaces
     /// <summary>
     /// Интерфейс. Список районов
     /// </summary>
-    public interface IDistricts
+    public interface IDistricts: IEntities
     {
         /// <summary>
         /// Метод. Создает и возвращает новый район

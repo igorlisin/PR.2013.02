@@ -164,6 +164,8 @@
             this.apartmentPhotosDataGridView = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lawTabControlPage = new System.Windows.Forms.TabPage();
+            this.HoldersDocumentsTextBox = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.HoldersTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -184,8 +186,7 @@
             this.PorposeTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.otherTabControlPage = new System.Windows.Forms.TabPage();
-            this.label23 = new System.Windows.Forms.Label();
-            this.HoldersDocumentsTextBox = new System.Windows.Forms.TextBox();
+            this.DomofonCheckBox = new System.Windows.Forms.CheckBox();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -1013,6 +1014,7 @@
             this.baseTabControlPage.Controls.Add(this.hasDevicesCheckBox);
             this.baseTabControlPage.Controls.Add(this.grossAreaLabel);
             this.baseTabControlPage.Controls.Add(this.hasLowCurrentCheckBox);
+            this.baseTabControlPage.Controls.Add(this.DomofonCheckBox);
             this.baseTabControlPage.Controls.Add(this.hasBalconyOrLoggiaCheckBox);
             this.baseTabControlPage.Controls.Add(this.numberLabel);
             this.baseTabControlPage.Controls.Add(this.floorLabel);
@@ -1563,6 +1565,23 @@
             this.lawTabControlPage.Text = "Юр. данные";
             this.lawTabControlPage.UseVisualStyleBackColor = true;
             // 
+            // HoldersDocumentsTextBox
+            // 
+            this.HoldersDocumentsTextBox.Location = new System.Drawing.Point(302, 153);
+            this.HoldersDocumentsTextBox.Multiline = true;
+            this.HoldersDocumentsTextBox.Name = "HoldersDocumentsTextBox";
+            this.HoldersDocumentsTextBox.Size = new System.Drawing.Size(220, 102);
+            this.HoldersDocumentsTextBox.TabIndex = 69;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(299, 137);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(158, 13);
+            this.label23.TabIndex = 39;
+            this.label23.Text = "Документы правообладатели";
+            // 
             // HoldersTextBox
             // 
             this.HoldersTextBox.Location = new System.Drawing.Point(302, 28);
@@ -1758,22 +1777,15 @@
             this.otherTabControlPage.Text = "Разное";
             this.otherTabControlPage.UseVisualStyleBackColor = true;
             // 
-            // label23
+            // DomofonCheckBox
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(299, 137);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(158, 13);
-            this.label23.TabIndex = 39;
-            this.label23.Text = "Документы правообладатели";
-            // 
-            // HoldersDocumentsTextBox
-            // 
-            this.HoldersDocumentsTextBox.Location = new System.Drawing.Point(302, 153);
-            this.HoldersDocumentsTextBox.Multiline = true;
-            this.HoldersDocumentsTextBox.Name = "HoldersDocumentsTextBox";
-            this.HoldersDocumentsTextBox.Size = new System.Drawing.Size(220, 102);
-            this.HoldersDocumentsTextBox.TabIndex = 69;
+            this.DomofonCheckBox.AutoSize = true;
+            this.DomofonCheckBox.Location = new System.Drawing.Point(238, 241);
+            this.DomofonCheckBox.Name = "DomofonCheckBox";
+            this.DomofonCheckBox.Size = new System.Drawing.Size(124, 17);
+            this.DomofonCheckBox.TabIndex = 17;
+            this.DomofonCheckBox.Text = "Наличие домофона";
+            this.DomofonCheckBox.UseVisualStyleBackColor = true;
             // 
             // ApartmentForm
             // 
@@ -1976,5 +1988,6 @@
         private System.Windows.Forms.ComboBox heatingSystemComboBox;
         protected System.Windows.Forms.TextBox HoldersDocumentsTextBox;
         protected System.Windows.Forms.Label label23;
+        private System.Windows.Forms.CheckBox DomofonCheckBox;
     }
 }

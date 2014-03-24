@@ -18,6 +18,11 @@ namespace PRInterfaces.Interfaces
         IRegion Region { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает список районов
+        /// </summary>
+        List<IDistrict> Districts { get; set; }
+
+        /// <summary>
         /// Свойство. Задает и возвращает список улиц
         /// </summary>
         List<IStreet> Streets { get; set; }

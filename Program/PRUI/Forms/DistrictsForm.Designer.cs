@@ -28,9 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // addButton
+            // 
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // DistrictsForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(623, 437);
+            this.Name = "DistrictsForm";
             this.Text = "DistrictsForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

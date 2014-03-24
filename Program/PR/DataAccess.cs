@@ -87,6 +87,11 @@ namespace PR
         public DbSet<Picture> Pictures { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает набор районов
+        /// </summary>
+        public DbSet<District> Districts { get; set; }
+
+        /// <summary>
         /// Свойство. Задает и возвращает набор отчетов
         /// </summary>
         public DbSet<Report> Reports { get; set; }
@@ -110,6 +115,7 @@ namespace PR
             modelBuilder.Configurations.Add(new CitiesTypeConfiguration());             // Добавить конфигурацию для таблицы "Города"
             modelBuilder.Configurations.Add(new StreetsTypeConfiguration());            // Добавить конфигурацию для таблицы "Улицы"
             modelBuilder.Configurations.Add(new ComplexesTypeConfiguration());          // Добавить конфигурацию для таблицы "Комплекса"
+            modelBuilder.Configurations.Add(new DistrictsTypeConfiguration());          // Добавить конфигурацию для таблицы "Районы"
             modelBuilder.Configurations.Add(new HomesTypeConfiguration());              // Добавить конфигурацию для таблицы "Дома"
             modelBuilder.Configurations.Add(new AppartmentsTypeConfiguration());        // Добавить конфигурацию для таблицы "Квартиры"
             modelBuilder.Configurations.Add(new ObjectsTypeConfiguration());            // Добавить конфигурацию для таблицы "Объекты оценки"
@@ -306,6 +312,26 @@ namespace PR
                 Property(c => c.Number).IsRequired();
 
                 HasOptional(c => c.CityForEntityFramework).WithMany(c => c.ComplexesForEntityFramework).WillCascadeOnDelete(false);
+            }
+        }
+
+        /// <summary>
+        /// Класс. Конфигурация таблицы "Районы"
+        /// </summary>
+        private class DistrictsTypeConfiguration : EntityTypeConfiguration<District>
+        {
+            /// <summary>
+            /// Конструктор
+            /// </summary>
+            public DistrictsTypeConfiguration()
+            {
+                HasKey(d => d.Id);
+
+                Property(d => d.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+                Property(d => d.Description).IsOptional();
+                Property(d => d.Name).IsRequired();
+
+                //HasOptional(c => c.CityForEntityFramework).WithMany(c => c.ComplexesForEntityFramework).WillCascadeOnDelete(false);
             }
         }
 

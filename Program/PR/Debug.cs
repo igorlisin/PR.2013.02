@@ -42,6 +42,7 @@ namespace PR
             _objectModel.Homes = new Homes(_databaseContext.Homes, new Homes.SaveChangesDelegate(Save));
             _objectModel.Appartments = new Appartments(_databaseContext.Appartments, new Appartments.SaveChangesDelegate(Save));
             _objectModel.Objects = new Objects(_databaseContext.Objects, new Objects.SaveChangesDelegate(Save));
+            _objectModel.Districts = new Districts(_databaseContext.Districts, new Districts.SaveChangesDelegate(Save));
 
             _objectModel.Pictures = new Pictures(_databaseContext.Pictures, new Pictures.SaveChangesDelegate(Save));
             _objectModel.Reports = new Reports(_databaseContext.Reports, new Reports.SaveChangesDelegate(Save));
@@ -185,6 +186,12 @@ namespace PR
         {
             ApartmentsForm a = new ApartmentsForm(_objectModel.Appartments, _objectModel.Homes, _objectModel.Objects);
             a.ShowDialog();
+        }
+
+        private void DistrictButton_Click(object sender, EventArgs e)
+        {
+            DistrictsForm districtsForm = new DistrictsForm(_objectModel.Districts);
+            districtsForm.ShowDialog();
         }
     }
 }

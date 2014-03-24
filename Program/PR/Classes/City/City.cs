@@ -47,6 +47,22 @@ namespace PR.Classes
         }
 
         /// <summary>
+        /// Статический метод. Преобразует объект типа IDistrict в объект типа District
+        /// </summary>
+        public static District IDistrictToDistrictConverter(IDistrict district)
+        {
+            return ((District)district);
+        }
+
+        /// <summary>
+        /// Статический метод. Преобразует объект типа District в объект типа IDistrict
+        /// </summary>
+        public static IDistrict DistrictToIDistrictConverter(District district)
+        {
+            return ((IDistrict)district);
+        }
+
+        /// <summary>
         /// Поле. Название
         /// </summary>
         private string _name;
@@ -126,25 +142,25 @@ namespace PR.Classes
         /// </summary>
         public List<Complex> ComplexesForEntityFramework { get; set; }
 
-        ///// <summary>
-        ///// Свойство. Задает и возвращает список районов
-        ///// </summary>
-        //public List<IDistrict> Districts
-        //{
-        //    get
-        //    {
-        //        return ((IDistrict)DistrictsForEntityFramework);
-        //    }
-        //    set
-        //    {
-        //        DistrictsForEntityFramework = (District)value;
-        //    }
-        //}
+        /// <summary>
+        /// Свойство. Задает и возвращает список районов
+        /// </summary>
+        public List<IDistrict> Districts
+        {
+            get
+            {
+                return (DistrictsForEntityFramework.ConvertAll(District.DistrictToIDistrictConverter));
+            }
+            set
+            {
+                DistrictsForEntityFramework = value.ConvertAll(District.IDistrictToDistrictConverter);
+            }
+        }
 
-        ///// <summary>
-        ///// Свойство. Задает и возвращает список районов (используется в Entity Framework) 
-        ///// </summary>
-        //public List<District> DistrictsForEntityFramework { get; set; }
+        /// <summary>
+        /// Свойство. Задает и возвращает список районов (используется в Entity Framework) 
+        /// </summary>
+        public List<District> DistrictsForEntityFramework { get; set; }
      
         /// <summary>
         /// Конструктор

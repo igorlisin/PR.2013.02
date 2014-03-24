@@ -58,7 +58,21 @@ namespace PRInterfaces.Interfaces
         /// <summary>
         /// Свойство. Задает и возвращает престижность района
         /// </summary>
-        Condition Prestige { get; set; }
+        Prestiges Prestige { get; set; }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает город
+        /// </summary>
+        ICity City { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает дома
+        /// </summary>
+        List<IHome> Homes { get; set; }
+
+        /// <summary>
+        /// Метод. Возвращает  как тестовую строку
+        /// </summary>
+        string GetPrestigeAsString(Prestiges prestigeType);
     }
 }

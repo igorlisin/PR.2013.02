@@ -55,8 +55,8 @@
             this.relinkCountryButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DistrictTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.unlinkDistrictButton = new System.Windows.Forms.Button();
+            this.relinkDistrictButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.idInfoGroup.SuspendLayout();
@@ -352,8 +352,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.DistrictTextBox);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.unlinkDistrictButton);
+            this.groupBox1.Controls.Add(this.relinkDistrictButton);
             this.groupBox1.Location = new System.Drawing.Point(0, 271);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(276, 47);
@@ -367,28 +367,26 @@
             this.DistrictTextBox.Name = "DistrictTextBox";
             this.DistrictTextBox.Size = new System.Drawing.Size(189, 20);
             this.DistrictTextBox.TabIndex = 11;
-            this.DistrictTextBox.Enter += new System.EventHandler(this.complexNumberTextBox_Enter);
-            this.DistrictTextBox.Leave += new System.EventHandler(this.complexNumberTextBox_Leave);
             // 
-            // button1
+            // unlinkDistrictButton
             // 
-            this.button1.Image = global::PRUI.Properties.Resources.unlinkButton;
-            this.button1.Location = new System.Drawing.Point(237, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 20);
-            this.button1.TabIndex = 51;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.unlinkComplexButton_Click);
+            this.unlinkDistrictButton.Image = global::PRUI.Properties.Resources.unlinkButton;
+            this.unlinkDistrictButton.Location = new System.Drawing.Point(237, 19);
+            this.unlinkDistrictButton.Name = "unlinkDistrictButton";
+            this.unlinkDistrictButton.Size = new System.Drawing.Size(30, 20);
+            this.unlinkDistrictButton.TabIndex = 51;
+            this.unlinkDistrictButton.UseVisualStyleBackColor = true;
+            this.unlinkDistrictButton.Click += new System.EventHandler(this.unlinkDistrictButton_Click);
             // 
-            // button2
+            // relinkDistrictButton
             // 
-            this.button2.Image = global::PRUI.Properties.Resources.linkButton;
-            this.button2.Location = new System.Drawing.Point(201, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 20);
-            this.button2.TabIndex = 47;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.relinkComplexButton_Click);
+            this.relinkDistrictButton.Image = global::PRUI.Properties.Resources.linkButton;
+            this.relinkDistrictButton.Location = new System.Drawing.Point(201, 19);
+            this.relinkDistrictButton.Name = "relinkDistrictButton";
+            this.relinkDistrictButton.Size = new System.Drawing.Size(30, 20);
+            this.relinkDistrictButton.TabIndex = 47;
+            this.relinkDistrictButton.UseVisualStyleBackColor = true;
+            this.relinkDistrictButton.Click += new System.EventHandler(this.relinkDistrictButton_Click);
             // 
             // tabControl1
             // 
@@ -486,8 +484,8 @@
         protected System.Windows.Forms.Button relinkCityButton;
         protected System.Windows.Forms.GroupBox groupBox1;
         protected System.Windows.Forms.TextBox DistrictTextBox;
-        protected System.Windows.Forms.Button button1;
-        protected System.Windows.Forms.Button button2;
+        protected System.Windows.Forms.Button unlinkDistrictButton;
+        protected System.Windows.Forms.Button relinkDistrictButton;
         protected System.Windows.Forms.TabPage tabPage1;
         public System.Windows.Forms.TabControl tabControl1;
     }

@@ -50,6 +50,11 @@ namespace PRUI.TemplateForms
         protected IHome _home;
 
         /// <summary>
+        /// Поле. Район
+        /// </summary>
+        protected IDistrict _district;
+
+        /// <summary>
         /// Поле. Список стран
         /// </summary>
         protected ICountries _countries;
@@ -79,7 +84,10 @@ namespace PRUI.TemplateForms
         /// </summary>
         protected IHomes _homes;
 
-  
+        /// <summary>
+        /// Поле. Список районов
+        /// </summary>
+        protected IDistricts _districts;
 
         /// <summary>
         /// Поле. Страна после перепривязки
@@ -95,6 +103,11 @@ namespace PRUI.TemplateForms
         /// Поле. Город после перепривязки
         /// </summary>
         protected ICity _cityAfterRelinking;
+
+        /// <summary>
+        /// Поле. Район после перепривязки
+        /// </summary>
+        protected IDistrict _districtAfterRelinking;
 
         /// <summary>
         /// Поле. Улица после перепривязки
@@ -157,6 +170,21 @@ namespace PRUI.TemplateForms
             set
             {
                 cityNameTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает название города
+        /// </summary>
+        protected string DistrictName
+        {
+            get
+            {
+                return (DistrictTextBox.Text);
+            }
+            set
+            {
+                DistrictTextBox.Text = value;
             }
         }
 
@@ -279,6 +307,14 @@ namespace PRUI.TemplateForms
         }
 
         /// <summary>
+        /// Метод. Очищает название района
+        /// </summary>
+        protected void CleanDistrictName()
+        {
+            DistrictName = "";      // Очистить название района
+        }
+
+        /// <summary>
         /// Метод. Очищает название улицы
         /// </summary>
         protected void CleanStreetName()
@@ -309,9 +345,7 @@ namespace PRUI.TemplateForms
         {
             HomeComplexNumber = "";     // Очистить номер дома по комплексу
         }
-
- 
-           
+       
 
         #endregion
 
@@ -346,6 +380,14 @@ namespace PRUI.TemplateForms
         protected void CopyCityFromEntity(ICity city)
         {
             CityName = city.Name;       // Скопировать название города
+        }
+
+        /// <summary>
+        /// Метод. Копирует данные сущности в компоненты района
+        /// </summary>
+        protected void CopyDistrictFromEntity(IDistrict district)
+        {
+            DistrictName = district.Name;       // Скопировать название района
         }
 
         /// <summary>
@@ -789,5 +831,43 @@ namespace PRUI.TemplateForms
         }
 
         #endregion
+
+        private void relinkDistrictButton_Click(object sender, EventArgs e)
+
+        {
+            DistrictSelectForm districtSelectForm;                                // Форма выбора района
+
+            districtSelectForm = new DistrictSelectForm(_districts);              // Создать форму выбора район
+
+            districtSelectForm.ShowDialog();                                     // Отобразить форму выбора район
+
+            if (districtSelectForm.SelectedDistrict != null)                      // Проверить выбранный район
+            {
+                _districtAfterRelinking = districtSelectForm.SelectedDistrict;     // Сохранить выбранный район в поле
+            }
+
+            CopyLinkedDataFromEntity();                                         // Скопировать данные из сущностей, связанных с основной сущностью 
+        }
+
+        private void unlinkDistrictButton_Click(object sender, EventArgs e)
+        {
+            DialogResult unlinkConfirm;                         // Результат подтверждения сообщения
+
+            unlinkConfirm = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
+                "Вы действительно хотите отвязать район?",
+                "Подтверждение",
+                MessageBoxButtons.YesNo);
+
+            if (unlinkConfirm == DialogResult.Yes)              // Проверить результат подтверждения сообщения
+            {
+                _districtAfterRelinking = null;                     // Отвязать дом от связанного района
+
+                CleanCountryName();                             // Очистить название страны
+                CleanRegionName();                              // Очистить название региона
+                CleanCityName();                                // Очистить название города
+                CleanDistrictName();                            // Очистить название района
+                CopyLinkedDataFromEntity();                     // Скопировать данные из сущностей, связанных с основной сущностью 
+            }
+        }
     }
 }

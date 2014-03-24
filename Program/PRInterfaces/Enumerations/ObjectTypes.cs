@@ -8,7 +8,7 @@ namespace PRInterfaces.Enumerations
 {
     
     /// <summary>
-    /// Перечисление. 
+    /// Перечисление. Тип материала стен
     /// </summary>
     public enum MaterialType
     {
@@ -43,7 +43,26 @@ namespace PRInterfaces.Enumerations
         Wood = 5
     }
 
+    /// <summary>
+    /// Перечисление. Престижность
+    /// </summary>
+    public enum Prestiges
+    {
+        /// <summary>
+        /// Престижный
+        /// </summary>
+        HiPrestige = 0,
 
+        /// <summary>
+        /// Средней
+        /// </summary>
+        Middle = 1,
+
+        /// <summary>
+        /// Не престижный
+        /// </summary>
+        NotPrestige = 2
+    }
 
     namespace Object
     {

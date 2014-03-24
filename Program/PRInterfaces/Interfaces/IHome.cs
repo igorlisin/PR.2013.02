@@ -139,6 +139,13 @@ namespace PRInterfaces.Interfaces
         bool Gaz { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает район
+        /// </summary>
+        IDistrict District { get; set; }
+
+        #region Methods
+
+        /// <summary>
         /// Метод. Возвращает тип комнат как тестовую строку
         /// </summary>
         string GetMaterialTypeAsString(MaterialType materialType);
@@ -147,5 +154,7 @@ namespace PRInterfaces.Interfaces
         /// Метод. Возвращает состояние  как тестовую строку
         /// </summary>
         string GetConditionTypeAsString(Condition ConditionType);
+
+        #endregion
     }
 }

@@ -951,6 +951,21 @@ namespace PRUI.Forms
         }
 
         /// <summary>
+        /// Свойство. Задает и возвращает наличие домофона
+        /// </summary>
+        private bool HasDomofon
+        {
+            get
+            {
+                return (DomofonCheckBox.Checked);
+            }
+            set
+            {
+                DomofonCheckBox.Checked = value;
+            }
+        }
+
+        /// <summary>
         /// Свойство. Задает и возвращает 
         /// </summary>
         private string ObjectDocuments
@@ -1327,6 +1342,8 @@ namespace PRUI.Forms
             ClearWindowsConditionList(WindowsCondComboBox);
             FillWindowsConditionList(WindowsCondComboBox);
 
+            HasDomofon = false;
+
         }
 
         /// <summary>
@@ -1517,6 +1534,7 @@ namespace PRUI.Forms
 
             CanalizationPipesTypes = apartment.CanalizationPipesType;
             CanalizationCondition = apartment.CanaliztionCondition;
+            HasDomofon = apartment.Domofon;
         }
 
         /// <summary>
@@ -1565,21 +1583,22 @@ namespace PRUI.Forms
             apartment.PicturesComment = PicturesComment;                                                    // Скопировать комментарии к фотографиям
 
 
-            apartment.MainDoorType= MainDoorsType;
-            apartment.RoomDoorsType= RoomDoorsType;
-            apartment.DoorsCondition=DoorsCondition;
+            apartment.MainDoorType = MainDoorsType;
+            apartment.RoomDoorsType = RoomDoorsType;
+            apartment.DoorsCondition = DoorsCondition;
 
-            apartment.WindowsType=WindowsType;
-            apartment.WindowsCondition=WindowsCondition;
+            apartment.WindowsType = WindowsType;
+            apartment.WindowsCondition = WindowsCondition;
 
-            apartment.HeatingPipesType=HeatingPipesTypes;
-            apartment.HeatersType=HeatingRadiatorsTypes;
-            apartment.HeatingCondition=HeatingCondition;
+            apartment.HeatingPipesType = HeatingPipesTypes;
+            apartment.HeatersType = HeatingRadiatorsTypes;
+            apartment.HeatingCondition = HeatingCondition;
 
-            apartment.WaterCondition=WaterCondition;
+            apartment.WaterCondition = WaterCondition;
 
-            apartment.CanalizationPipesType=CanalizationPipesTypes;
+            apartment.CanalizationPipesType = CanalizationPipesTypes;
             apartment.CanaliztionCondition = CanalizationCondition;
+            apartment.Domofon = HasDomofon;
 
         }
 

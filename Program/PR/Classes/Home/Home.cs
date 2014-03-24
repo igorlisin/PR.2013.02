@@ -665,6 +665,27 @@ namespace PR.Classes
                _gaz = value;
            }
        }
+
+       /// <summary>
+       /// Свойство. Задает и возвращает район
+       /// </summary>
+       public IDistrict District
+       {
+           get
+           {
+               return ((District)DistrictForEntityFramework);
+           }
+           set
+           {
+               DistrictForEntityFramework = (District)value;
+           }
+       }
+
+       /// <summary>
+       /// Свойство. Задает и возвращает список районов (используется в Entity Framework) 
+       /// </summary>
+       public District DistrictForEntityFramework { get; set; }
+
         #endregion
 
        #region Constructor
@@ -696,7 +717,7 @@ namespace PR.Classes
         }
 
         /// <summary>
-        /// Метод. Возвращает тип комнат как тестовую строку
+        /// Метод. Возвращает тип материала как тестовую строку
         /// </summary>
         public string GetMaterialTypeAsString(MaterialType materialType)
         {
@@ -704,7 +725,7 @@ namespace PR.Classes
         }
 
         /// <summary>
-        /// Метод. Возвращает тип  как тестовую строку
+        /// Метод. Возвращает состояние  как тестовую строку
         /// </summary>
         public string GetConditionTypeAsString(Condition ConditionType)
         {

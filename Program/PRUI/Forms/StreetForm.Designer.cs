@@ -88,6 +88,11 @@
             // 
             this.unlinkStreetButton.Visible = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Enabled = false;
+            this.groupBox1.Visible = false;
+            // 
             // idInfoGroup
             // 
             this.idInfoGroup.Size = new System.Drawing.Size(276, 61);

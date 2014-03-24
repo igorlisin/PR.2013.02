@@ -149,6 +149,10 @@
             // 
             this.relinkCityButton.Visible = false;
             // 
+            // DistrictTextBox
+            // 
+            this.DistrictTextBox.Enabled = false;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage3);

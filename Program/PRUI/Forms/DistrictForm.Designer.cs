@@ -62,6 +62,14 @@
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // regionNameTextBox
+            // 
+            this.regionNameTextBox.Enabled = false;
+            // 
+            // countryNameTextBox
+            // 
+            this.countryNameTextBox.Enabled = false;
+            // 
             // homeInfoGroupBox
             // 
             this.homeInfoGroupBox.Visible = false;
@@ -73,6 +81,10 @@
             // streetInfoGroupBox
             // 
             this.streetInfoGroupBox.Visible = false;
+            // 
+            // cityNameTextBox
+            // 
+            this.cityNameTextBox.Enabled = false;
             // 
             // groupBox1
             // 

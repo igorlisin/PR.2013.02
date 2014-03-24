@@ -28,11 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.addContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addByCityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // removeButton
+            // 
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // addButton
             // 
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // editButton
+            // 
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
+            // addContextMenuStrip
+            // 
+            this.addContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.addByCityToolStripMenuItem});
+            this.addContextMenuStrip.Name = "addContextMenuStrip";
+            this.addContextMenuStrip.Size = new System.Drawing.Size(173, 48);
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.addToolStripMenuItem.Text = "Новый";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
+            // 
+            // addByCityToolStripMenuItem
+            // 
+            this.addByCityToolStripMenuItem.Name = "addByCityToolStripMenuItem";
+            this.addByCityToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.addByCityToolStripMenuItem.Text = "На основе города";
+            this.addByCityToolStripMenuItem.Click += new System.EventHandler(this.addByCityToolStripMenuItem_Click);
             // 
             // DistrictsForm
             // 
@@ -41,10 +76,19 @@
             this.ClientSize = new System.Drawing.Size(623, 437);
             this.Name = "DistrictsForm";
             this.Text = "DistrictsForm";
+            this.Controls.SetChildIndex(this.removeButton, 0);
+            this.Controls.SetChildIndex(this.addButton, 0);
+            this.Controls.SetChildIndex(this.editButton, 0);
+            this.Controls.SetChildIndex(this.closeButton, 0);
+            this.addContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ContextMenuStrip addContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addByCityToolStripMenuItem;
     }
 }

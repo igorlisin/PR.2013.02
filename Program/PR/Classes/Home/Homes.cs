@@ -106,7 +106,7 @@ namespace PR.Classes
         /// </summary>
         public List<IHome> ToList()
         {
-            return (_homesDbSet.Include(h => h.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(h => h.ComplexForEntityFramework.CityForEntityFramework).ToList<IHome>());
+            return (_homesDbSet.Include(h => h.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(h => h.ComplexForEntityFramework.CityForEntityFramework).Include(h => h.StreetForEntityFramework.CityForEntityFramework.DistrictsForEntityFramework).ToList<IHome>());
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace PR.Classes
         /// </summary>
         public IHome[] ToArray()
         {
-            return (_homesDbSet.Include(h => h.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(h => h.ComplexForEntityFramework.CityForEntityFramework).ToArray<IHome>());
+            return (_homesDbSet.Include(h => h.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(h => h.ComplexForEntityFramework.CityForEntityFramework).Include(h => h.StreetForEntityFramework.CityForEntityFramework.DistrictsForEntityFramework).ToArray<IHome>());
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace PR.Classes
         /// </summary>
         public IHome GetHome(int id)
         {
-            return ((IHome)_homesDbSet.Include(h => h.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(h => h.ComplexForEntityFramework.CityForEntityFramework).Where(h=>h.Id == id).First());
+            return ((IHome)_homesDbSet.Include(h => h.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(h => h.ComplexForEntityFramework.CityForEntityFramework).Include(h => h.StreetForEntityFramework.CityForEntityFramework.DistrictsForEntityFramework).Where(h => h.Id == id).First());
         }
 
         /// <summary>

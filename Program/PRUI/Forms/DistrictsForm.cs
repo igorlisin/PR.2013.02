@@ -19,6 +19,11 @@ namespace PRUI.Forms
         /// </summary>
         IDistricts _districts;
 
+        /// <summary>
+        /// Поле. Список городов
+        /// </summary>
+        ICities _cities;
+
         #endregion
 
         #region Constructors
@@ -26,13 +31,13 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public DistrictsForm(IDistricts districts)
+        public DistrictsForm(IDistricts districts, ICities cities)
             : base()
         {
             InitializeComponent();                  // Инициализировать компоненты формы
 
-            _districts = districts;                 // Сохранить список документов в поле
-
+            _districts = districts;                 // Сохранить список районов в поле
+            _cities = cities;                           // Сохранить список районов в поле
             ConfigureEntitiesDataGridView();        // Настроить визуальное представление элемента отображения списка сущностей
 
             FillEntitiesDataGridView();             // Заполнить элемент отображения списка сущностей
@@ -114,45 +119,18 @@ namespace PRUI.Forms
         /// </summary>
         private void addButton_Click(object sender, EventArgs e)
         {
-            IDistrict district;                                         // Документ
-            DistrictForm districtForm;                                  // Форма редактирования документа
-            DataGridViewRow selectedRow;                                // Выделенная строка
 
-            int rowCount;                                               // Общее количество документов в списке
-            int selectedRowIndex;                                       // Индекс выделенной строки
-            bool entityNeedSave;                                        // Флаг необходимости сохранения сущности
+            int buttonWidth;                                        // Ширина кнопки
+            int buttonHeight;                                       // Высота кнопки
 
-            rowCount = entitiesDataGridView.Rows.Count;                 // Получить общее количество документов в списке
+            buttonWidth = ((Button)sender).Width;                   // Получить ширину кнопки
+            buttonHeight = ((Button)sender).Height;                 // Получить высоту кнопки
 
-            selectedRowIndex = 0;                                       // Задать индекс выделенной строки
-            if (rowCount > 0)                                           // Проверить общее количество документов
-            {
-                selectedRow = entitiesDataGridView.SelectedRows[0];     // Получить выделенную строку
-                selectedRowIndex = selectedRow.Index;                   // Получить индекс выделенной строки
-            }
-
-            district = _districts.Create();                             // Создать документ
-
-            districtForm = new DistrictForm(district);                  // Создать форму для редактирования документа
-
-            districtForm.ShowDialog();                                  // Отобразить форму для редактирования документа
-
-            entityNeedSave = districtForm.EntityNeedSave;               // Получить значение флага необходимости сохранения сущности
-
-            if (entityNeedSave == true)                                 // Проверить флаг необходимости сохранения сущности
-            {
-                _districts.Add(district);                               // Добавить созданный документ в список
-            }
-
-            FillEntitiesDataGridView();                                 // Заполнить данными элемент отображения списка сущностей
-
-            if (rowCount > 0)                                           // Проверить общее количество документов
-            {
-                SelectRow(selectedRowIndex);                            // Выделить строку
-            }
-
-            SetButtonActivity();                                        // Задать активность элементов управления
+            addContextMenuStrip.Show(
+                (Control)sender,
+                new Point(buttonWidth / 2, buttonHeight / 2));      // Показать контекстное меню
         }
+
 
         /// <summary>
         /// Метод. Удаляет документ из списка документов
@@ -210,7 +188,7 @@ namespace PRUI.Forms
 
                 district = _districts.GetDistrict(id);                      // Получить выделенный документ
 
-                districtForm = new DistrictForm(district);                  // Создать форму для редактирования документа
+                districtForm = new DistrictForm(district, _cities);                  // Создать форму для редактирования документа
 
                 districtForm.ShowDialog();                                  // Отобразить форму для редактирования документа
 
@@ -229,6 +207,104 @@ namespace PRUI.Forms
 
         #endregion
 
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IDistrict district;                                         // Район
+            DistrictForm districtForm;                                  // Форма редактирования документа
+            DataGridViewRow selectedRow;                                // Выделенная строка
+
+            int rowCount;                                               // Общее количество документов в списке
+            int selectedRowIndex;                                       // Индекс выделенной строки
+            bool entityNeedSave;                                        // Флаг необходимости сохранения сущности
+
+            rowCount = entitiesDataGridView.Rows.Count;                 // Получить общее количество документов в списке
+
+            selectedRowIndex = 0;                                       // Задать индекс выделенной строки
+            if (rowCount > 0)                                           // Проверить общее количество документов
+            {
+                selectedRow = entitiesDataGridView.SelectedRows[0];     // Получить выделенную строку
+                selectedRowIndex = selectedRow.Index;                   // Получить индекс выделенной строки
+            }
+
+            district = _districts.Create();                             // Создать документ
+
+            districtForm = new DistrictForm(district,_cities);                  // Создать форму для редактирования документа
+
+            districtForm.ShowDialog();                                  // Отобразить форму для редактирования документа
+
+            entityNeedSave = districtForm.EntityNeedSave;               // Получить значение флага необходимости сохранения сущности
+
+            if (entityNeedSave == true)                                 // Проверить флаг необходимости сохранения сущности
+            {
+                _districts.Add(district);                               // Добавить созданный документ в список
+            }
+
+            FillEntitiesDataGridView();                                 // Заполнить данными элемент отображения списка сущностей
+
+            if (rowCount > 0)                                           // Проверить общее количество документов
+            {
+                SelectRow(selectedRowIndex);                            // Выделить строку
+            }
+
+            SetButtonActivity();                                        // Задать активность элементов управления
+        }
+        
+
+
         #endregion
+
+        private void addByCityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IDistrict district;                                         // Район
+            DistrictForm districtForm;                                  // Форма редактирования документа
+            DataGridViewRow selectedRow;                                // Выделенная строка
+            CitySelectForm citySelectForm;                              // Форма выбора города
+
+            int rowCount;                                               // Общее количество документов в списке
+            int selectedRowIndex;                                       // Индекс выделенной строки
+            bool entityNeedSave;                                        // Флаг необходимости сохранения сущности
+
+            rowCount = entitiesDataGridView.Rows.Count;                 // Получить общее количество документов в списке
+
+            selectedRowIndex = 0;                                       // Задать индекс выделенной строки
+            if (rowCount > 0)                                           // Проверить общее количество документов
+            {
+                selectedRow = entitiesDataGridView.SelectedRows[0];     // Получить выделенную строку
+                selectedRowIndex = selectedRow.Index;                   // Получить индекс выделенной строки
+            }
+
+            district = _districts.Create();                             // Создать Район
+
+            citySelectForm = new CitySelectForm(                        // Создать форму выбора города
+     _cities);
+
+            citySelectForm.ShowDialog();                                // Отобразить форму выбора города
+
+            district.City = citySelectForm.SelectedCity;                  // Связать город с улицей
+
+            if (district.City != null)                                    // Проверить связанный с улицей город
+            {
+
+            districtForm = new DistrictForm(district,_cities);                  // Создать форму для редактирования Район
+
+            districtForm.ShowDialog();                                  // Отобразить форму для редактирования Район
+
+            entityNeedSave = districtForm.EntityNeedSave;               // Получить значение флага необходимости сохранения сущности
+
+            if (entityNeedSave == true)                                 // Проверить флаг необходимости сохранения сущности
+            {
+                _districts.Add(district);                               // Добавить созданный Район в список
+            }
+
+            FillEntitiesDataGridView();                                 // Заполнить данными элемент отображения списка сущностей
+
+            if (rowCount > 0)                                           // Проверить общее количество Район
+            {
+                SelectRow(selectedRowIndex);                            // Выделить строку
+            }
+
+            SetButtonActivity();                                        // Задать активность элементов управления
+        }
+        }
     }
 }

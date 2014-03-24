@@ -28,6 +28,11 @@ namespace PRUI.Forms
         IStreets _streets;
 
         /// <summary>
+        /// Поле. Список районов
+        /// </summary>
+        IDistricts _districts;
+
+        /// <summary>
         /// Поле. Список комплексов
         /// </summary>
         IComplexes _complexes;
@@ -39,7 +44,7 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public HomesForm(IHomes homes, IStreets streets, IComplexes complexes)
+        public HomesForm(IHomes homes, IStreets streets, IComplexes complexes, IDistricts districts)
             : base()
         {
             InitializeComponent();                  // Инициализировать компоненты формы
@@ -47,6 +52,8 @@ namespace PRUI.Forms
             _homes = homes;                         // Сохранить список домов в поле
 
             _streets = streets;                     // Сохранить список улиц с поле
+
+            _districts = districts;                 // Сохранить список районов
 
             _complexes = complexes;                 // Сохранить список комплексов с поле
 
@@ -303,7 +310,7 @@ namespace PRUI.Forms
 
                 home = _homes.GetHome(id);                                  // Получить выделенный дом
 
-                homeForm = new HomeForm(home, _streets,_complexes);         // Создать форму для редактирования дома
+                homeForm = new HomeForm(home, _streets,_complexes, _districts);         // Создать форму для редактирования дома
 
                 homeForm.ShowDialog();                                      // Отобразить форму для редактирования дома
 
@@ -350,7 +357,7 @@ namespace PRUI.Forms
             home.Street = street;                                       // Связать улицу с домом
             home.Complex = complex;                                     // Связать комплекс с домом
 
-            homeForm = new HomeForm(home, _streets,_complexes);         // Создать форму для редактирования дома
+            homeForm = new HomeForm(home, _streets,_complexes,_districts);         // Создать форму для редактирования дома
 
             homeForm.ShowDialog();                                      // Отобразить форму для редактирования дома
 
@@ -405,7 +412,7 @@ namespace PRUI.Forms
 
             if (home.Street != null)                                        // Проверить связанную с домом улицу
             {
-                homeForm = new HomeForm(home, _streets, _complexes);        // Создать форму для редактирования дома
+                homeForm = new HomeForm(home, _streets, _complexes,_districts);        // Создать форму для редактирования дома
 
                 homeForm.ShowDialog();                                      // Отобразить форму для редактирования дома
 
@@ -460,7 +467,7 @@ namespace PRUI.Forms
 
             if (home.Complex != null)                                       // Проверить связанный с домом комплекс
             {
-                homeForm = new HomeForm(home, _streets, _complexes);        // Создать форму для редактирования дома
+                homeForm = new HomeForm(home, _streets, _complexes,_districts);        // Создать форму для редактирования дома
 
                 homeForm.ShowDialog();                                      // Отобразить форму для редактирования дома
 

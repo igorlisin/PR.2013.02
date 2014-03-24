@@ -479,16 +479,18 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public HomeForm(IHome home, IStreets streets, IComplexes complexes)
+        public HomeForm(IHome home, IStreets streets, IComplexes complexes, IDistricts  districts)
         {
             InitializeComponent();                      // Инициализировать компоненты формы
 
             _home = home;                               // Сохранить дом в поле
             _streets = streets;                         // Сохранить список улиц в поле
             _complexes = complexes;                     // Сохранить список комплексов в поле
+            _districts = districts;
 
             _streetAfterRelinking = home.Street;        // Сохранить улицу, связанную с домом в поле
             _complexAfterRelinking = home.Complex;      // Сохранить комплекс, связанный с домом в поле
+            _districtAfterRelinking = home.District;    // Сохранить район, связанную с домом в поле
 
             CleanAllData();                             // Очистить все данные формы
             CleanLocationData();                        // Очистить данные характеристик дома
@@ -616,6 +618,11 @@ namespace PRUI.Forms
                 CopyComplexFromEntity(_complexAfterRelinking);              // Скопировать данные комплекса
             }
 
+            if (_districtAfterRelinking != null)                             // Проверить район, связанный с домом
+            {
+                CopyDistrictFromEntity(_districtAfterRelinking);              // Скопировать данные района
+            }
+
             FindDiscrepancy();                                              // Проверить соотвествие города, связанного с улицей и города связанного с комплексом, если это разные города вывести сообщение
 
             SetButtonActivity();                                            // Задать активность компонентов
@@ -630,6 +637,7 @@ namespace PRUI.Forms
 
             _home.Street = _streetAfterRelinking;                       // Скопировать улицу после перепривязки
             _home.Complex = _complexAfterRelinking;                     // Скопировать комплекс после перепривязки
+            _home.District = _districtAfterRelinking;                   // Скопировать район после перепривязки
 
             _home.Number = homeNumberTextBox.Text;                      // Скопировать номер дома
             _home.ComplexNumber = homeComplexNumberTextBox.Text;        // Скопировать номер дома по комплексу

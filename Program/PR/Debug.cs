@@ -133,7 +133,7 @@ namespace PR
 
         private void homesButton_Click(object sender, EventArgs e)
         {
-            HomesForm homesForm = new HomesForm(_objectModel.Homes, _objectModel.Streets, _objectModel.Complexes);
+            HomesForm homesForm = new HomesForm(_objectModel.Homes, _objectModel.Streets, _objectModel.Complexes, _objectModel.Districts);
             homesForm.ShowDialog();
         }
 
@@ -190,7 +190,7 @@ namespace PR
 
         private void DistrictButton_Click(object sender, EventArgs e)
         {
-            DistrictsForm districtsForm = new DistrictsForm(_objectModel.Districts);
+            DistrictsForm districtsForm = new DistrictsForm(_objectModel.Districts, _objectModel.Cities);
             districtsForm.ShowDialog();
         }
     }

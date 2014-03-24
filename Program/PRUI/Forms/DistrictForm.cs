@@ -13,7 +13,7 @@ namespace PRUI.Forms
 {
     public partial class DistrictForm : TemplateEntityLocationForm
     {
-          #region Fields
+        #region Fields
 
         /// <summary>
         /// Поле. Название района
@@ -218,14 +218,14 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public DistrictForm(IDistrict district)
+        public DistrictForm(IDistrict district, ICities cities)
         {
             InitializeComponent();                  // Инициализировать компоненты формы
 
             _district = district;                       // Сохранить район в поле
-            //_h = mans;                           // Сохранить список людей в поле
+            _cities = cities;                       // Сохранить список городов в поле
 
-            //_manAfterRelinking = client.Man;        // Сохранить человека, связанного с клиентом
+            _cityAfterRelinking = district.City;      // Сохранить город, связанный с районом
 
             CleanAllData();                         // Очистить компоненты всех групп
 
@@ -273,24 +273,34 @@ namespace PRUI.Forms
             CopyIdFromEntity((IEntity)_district);                 // Скопировать идентификатор
             CopyDescriptionFromEntity((IEntity)_district);        // Скопировать описание
 
-           // CopyLinkedDataFromEntity();                         // Скопировать данные из сущностей, связанных с основной сущностью 
+            CopyLinkedDataFromEntity();                         // Скопировать данные из сущностей, связанных с основной сущностью 
             CopyDistrictFromEntity(_district);                             // Скопировать данные района
         }
 
         /// <summary>
         /// Метод. Копирует данные из сущностей, связанных с основной сущностью
         /// </summary>
-        //protected override void CopyLinkedDataFromEntity()
-        //{
-        //    if (_manAfterRelinking != null)                                     // Проверить человека, связанного с клиентом
-        //    {
-        //        if (_manAfterRelinking.Document != null)                        // Проверить документ, связанный с человеком
-        //        {
-        //            CopyDocumentFromEntity(_manAfterRelinking.Document);        // Скопировать данные документа      
-        //        }
-        //        CopyManFromEntity(_manAfterRelinking);                          // Скопировать данные человека    
-        //    }
-        //}
+        protected override void CopyLinkedDataFromEntity()
+        {
+            IRegion region;                                         // Регион, связанный с городом
+
+            if (_cityAfterRelinking != null)                        // Проверить город, связанный с улицей
+            {
+                if (_cityAfterRelinking.Region != null)             // Проверить регион, связанный с городом
+                {
+                    region = _cityAfterRelinking.Region;            // Получить регион, связанный с городом
+
+                    if (region.Country != null)                     // Проверить регион, связанный с городом
+                    {
+                        CopyCountryFromEntity(region.Country);      // Скопировать данные страны
+                    }
+                    CopyRegionFromEntity(region);                   // Скопировать данные региона
+                }
+                CopyCityFromEntity(_cityAfterRelinking);            // Скопировать данные города
+            }
+
+            SetButtonActivity();                                    // Задать активность компонентов
+        }
 
         /// <summary>
         /// Метод. Копирует данные сущности в компоненты раойна

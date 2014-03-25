@@ -75,7 +75,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 437);
             this.Name = "DistrictsForm";
-            this.Text = "DistrictsForm";
+            this.Text = "Районы";
             this.Controls.SetChildIndex(this.removeButton, 0);
             this.Controls.SetChildIndex(this.addButton, 0);
             this.Controls.SetChildIndex(this.editButton, 0);

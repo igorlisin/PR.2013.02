@@ -40,7 +40,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 447);
             this.Name = "DistrictSelectForm";
-            this.Text = "DistrictSelectForm";
+            this.Text = "Выбор района";
             this.ResumeLayout(false);
 
         }

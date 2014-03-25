@@ -68,6 +68,13 @@
             this.StopDistanceTextBox = new System.Windows.Forms.TextBox();
             this.BasementTextBox = new System.Windows.Forms.TextBox();
             this.BuildYearTextBox = new System.Windows.Forms.TextBox();
+            this.ParkingCheckBox = new System.Windows.Forms.CheckBox();
+            this.ClosestStopTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Local1TextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Local2TextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.regionInfoGroup.SuspendLayout();
             this.countryInfoGroup.SuspendLayout();
             this.homeInfoGroupBox.SuspendLayout();
@@ -156,12 +163,25 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Size = new System.Drawing.Size(409, 454);
             this.tabControl1.Controls.SetChildIndex(this.tabPage3, 0);
             this.tabControl1.Controls.SetChildIndex(this.tabPage1, 0);
             // 
+            // idInfoGroup
+            // 
+            this.idInfoGroup.Location = new System.Drawing.Point(411, 12);
+            // 
+            // descriptionInfoGroup
+            // 
+            this.descriptionInfoGroup.Location = new System.Drawing.Point(411, 65);
+            // 
+            // noteInfoGroup
+            // 
+            this.noteInfoGroup.Location = new System.Drawing.Point(411, 341);
+            // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(601, 483);
+            this.closeButton.Location = new System.Drawing.Point(620, 483);
             // 
             // tabPage3
             // 
@@ -180,8 +200,11 @@
             this.tabPage3.Controls.Add(this.label23);
             this.tabPage3.Controls.Add(this.label24);
             this.tabPage3.Controls.Add(this.label25);
+            this.tabPage3.Controls.Add(this.label3);
+            this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.label26);
             this.tabPage3.Controls.Add(this.label27);
+            this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.label28);
             this.tabPage3.Controls.Add(this.label29);
             this.tabPage3.Controls.Add(this.label30);
@@ -189,15 +212,18 @@
             this.tabPage3.Controls.Add(this.KapremontYearTextBox);
             this.tabPage3.Controls.Add(this.ExtraFactorsTextBox);
             this.tabPage3.Controls.Add(this.BasmentWearTextBox);
+            this.tabPage3.Controls.Add(this.Local2TextBox);
+            this.tabPage3.Controls.Add(this.Local1TextBox);
             this.tabPage3.Controls.Add(this.SocialTextBox);
             this.tabPage3.Controls.Add(this.PromDistanceTextBox);
+            this.tabPage3.Controls.Add(this.ClosestStopTextBox);
             this.tabPage3.Controls.Add(this.StopDistanceTextBox);
             this.tabPage3.Controls.Add(this.BasementTextBox);
             this.tabPage3.Controls.Add(this.BuildYearTextBox);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(379, 428);
+            this.tabPage3.Size = new System.Drawing.Size(401, 428);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Локальные особенности";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -205,7 +231,7 @@
             // RoofConditionComboBox
             // 
             this.RoofConditionComboBox.FormattingEnabled = true;
-            this.RoofConditionComboBox.Location = new System.Drawing.Point(256, 173);
+            this.RoofConditionComboBox.Location = new System.Drawing.Point(257, 118);
             this.RoofConditionComboBox.Name = "RoofConditionComboBox";
             this.RoofConditionComboBox.Size = new System.Drawing.Size(94, 21);
             this.RoofConditionComboBox.TabIndex = 38;
@@ -213,7 +239,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(248, 157);
+            this.label16.Location = new System.Drawing.Point(249, 102);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(98, 13);
             this.label16.TabIndex = 36;
@@ -221,6 +247,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.ParkingCheckBox);
             this.groupBox5.Controls.Add(this.checkBox1);
             this.groupBox5.Controls.Add(this.TramwayCheckBox);
             this.groupBox5.Location = new System.Drawing.Point(173, 359);
@@ -228,7 +255,7 @@
             this.groupBox5.Size = new System.Drawing.Size(200, 63);
             this.groupBox5.TabIndex = 47;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Общественный транспорт";
+            this.groupBox5.Text = "Транспортная ситуация";
             // 
             // checkBox1
             // 
@@ -255,7 +282,7 @@
             // GazCheckBox
             // 
             this.GazCheckBox.AutoSize = true;
-            this.GazCheckBox.Location = new System.Drawing.Point(9, 405);
+            this.GazCheckBox.Location = new System.Drawing.Point(109, 403);
             this.GazCheckBox.Name = "GazCheckBox";
             this.GazCheckBox.Size = new System.Drawing.Size(44, 17);
             this.GazCheckBox.TabIndex = 46;
@@ -265,7 +292,7 @@
             // AtticCheckBox
             // 
             this.AtticCheckBox.AutoSize = true;
-            this.AtticCheckBox.Location = new System.Drawing.Point(9, 384);
+            this.AtticCheckBox.Location = new System.Drawing.Point(109, 382);
             this.AtticCheckBox.Name = "AtticCheckBox";
             this.AtticCheckBox.Size = new System.Drawing.Size(64, 17);
             this.AtticCheckBox.TabIndex = 45;
@@ -275,7 +302,7 @@
             // ConcergeCheckBox
             // 
             this.ConcergeCheckBox.AutoSize = true;
-            this.ConcergeCheckBox.Location = new System.Drawing.Point(9, 361);
+            this.ConcergeCheckBox.Location = new System.Drawing.Point(3, 403);
             this.ConcergeCheckBox.Name = "ConcergeCheckBox";
             this.ConcergeCheckBox.Size = new System.Drawing.Size(77, 17);
             this.ConcergeCheckBox.TabIndex = 44;
@@ -285,7 +312,7 @@
             // GarbageCheckBox
             // 
             this.GarbageCheckBox.AutoSize = true;
-            this.GarbageCheckBox.Location = new System.Drawing.Point(9, 338);
+            this.GarbageCheckBox.Location = new System.Drawing.Point(3, 382);
             this.GarbageCheckBox.Name = "GarbageCheckBox";
             this.GarbageCheckBox.Size = new System.Drawing.Size(100, 17);
             this.GarbageCheckBox.TabIndex = 43;
@@ -295,7 +322,7 @@
             // DefectsCheckBox
             // 
             this.DefectsCheckBox.AutoSize = true;
-            this.DefectsCheckBox.Location = new System.Drawing.Point(9, 315);
+            this.DefectsCheckBox.Location = new System.Drawing.Point(3, 359);
             this.DefectsCheckBox.Name = "DefectsCheckBox";
             this.DefectsCheckBox.Size = new System.Drawing.Size(141, 17);
             this.DefectsCheckBox.TabIndex = 42;
@@ -305,7 +332,7 @@
             // LiftCheckBox
             // 
             this.LiftCheckBox.AutoSize = true;
-            this.LiftCheckBox.Location = new System.Drawing.Point(9, 292);
+            this.LiftCheckBox.Location = new System.Drawing.Point(3, 336);
             this.LiftCheckBox.Name = "LiftCheckBox";
             this.LiftCheckBox.Size = new System.Drawing.Size(53, 17);
             this.LiftCheckBox.TabIndex = 41;
@@ -318,7 +345,7 @@
             this.groupBox6.Controls.Add(this.label17);
             this.groupBox6.Controls.Add(this.CeilingTypeComboBox);
             this.groupBox6.Controls.Add(this.label18);
-            this.groupBox6.Location = new System.Drawing.Point(0, 140);
+            this.groupBox6.Location = new System.Drawing.Point(2, 125);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(247, 64);
             this.groupBox6.TabIndex = 40;
@@ -365,9 +392,9 @@
             this.groupBox7.Controls.Add(this.label20);
             this.groupBox7.Controls.Add(this.MainWallTypeComboBox);
             this.groupBox7.Controls.Add(this.label21);
-            this.groupBox7.Location = new System.Drawing.Point(250, 6);
+            this.groupBox7.Location = new System.Drawing.Point(250, 2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(129, 140);
+            this.groupBox7.Size = new System.Drawing.Size(129, 95);
             this.groupBox7.TabIndex = 39;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Стены";
@@ -409,7 +436,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 63);
+            this.label22.Location = new System.Drawing.Point(6, 47);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(149, 13);
             this.label22.TabIndex = 35;
@@ -418,7 +445,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(120, 12);
+            this.label23.Location = new System.Drawing.Point(120, 9);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(89, 13);
             this.label23.TabIndex = 34;
@@ -427,7 +454,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(120, 104);
+            this.label24.Location = new System.Drawing.Point(120, 88);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(104, 13);
             this.label24.TabIndex = 37;
@@ -445,7 +472,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(176, 207);
+            this.label26.Location = new System.Drawing.Point(176, 235);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(144, 13);
             this.label26.TabIndex = 32;
@@ -454,7 +481,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(6, 252);
+            this.label27.Location = new System.Drawing.Point(248, 143);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(157, 13);
             this.label27.TabIndex = 31;
@@ -463,7 +490,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(6, 207);
+            this.label28.Location = new System.Drawing.Point(5, 295);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(152, 13);
             this.label28.TabIndex = 30;
@@ -472,7 +499,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(6, 104);
+            this.label29.Location = new System.Drawing.Point(6, 88);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(66, 13);
             this.label29.TabIndex = 29;
@@ -481,7 +508,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(6, 12);
+            this.label30.Location = new System.Drawing.Point(6, 9);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(81, 13);
             this.label30.TabIndex = 28;
@@ -489,14 +516,14 @@
             // 
             // KapremontPeriodTextBox
             // 
-            this.KapremontPeriodTextBox.Location = new System.Drawing.Point(9, 79);
+            this.KapremontPeriodTextBox.Location = new System.Drawing.Point(9, 63);
             this.KapremontPeriodTextBox.Name = "KapremontPeriodTextBox";
             this.KapremontPeriodTextBox.Size = new System.Drawing.Size(215, 20);
             this.KapremontPeriodTextBox.TabIndex = 26;
             // 
             // KapremontYearTextBox
             // 
-            this.KapremontYearTextBox.Location = new System.Drawing.Point(123, 28);
+            this.KapremontYearTextBox.Location = new System.Drawing.Point(123, 25);
             this.KapremontYearTextBox.Name = "KapremontYearTextBox";
             this.KapremontYearTextBox.Size = new System.Drawing.Size(101, 20);
             this.KapremontYearTextBox.TabIndex = 25;
@@ -511,52 +538,114 @@
             // 
             // BasmentWearTextBox
             // 
-            this.BasmentWearTextBox.Location = new System.Drawing.Point(123, 120);
+            this.BasmentWearTextBox.Location = new System.Drawing.Point(123, 104);
             this.BasmentWearTextBox.Name = "BasmentWearTextBox";
             this.BasmentWearTextBox.Size = new System.Drawing.Size(101, 20);
             this.BasmentWearTextBox.TabIndex = 23;
             // 
             // SocialTextBox
             // 
-            this.SocialTextBox.Location = new System.Drawing.Point(179, 223);
+            this.SocialTextBox.Location = new System.Drawing.Point(179, 251);
             this.SocialTextBox.Multiline = true;
             this.SocialTextBox.Name = "SocialTextBox";
-            this.SocialTextBox.Size = new System.Drawing.Size(194, 65);
+            this.SocialTextBox.Size = new System.Drawing.Size(194, 42);
             this.SocialTextBox.TabIndex = 22;
             // 
             // PromDistanceTextBox
             // 
-            this.PromDistanceTextBox.Location = new System.Drawing.Point(9, 268);
+            this.PromDistanceTextBox.Location = new System.Drawing.Point(257, 159);
             this.PromDistanceTextBox.Name = "PromDistanceTextBox";
             this.PromDistanceTextBox.Size = new System.Drawing.Size(94, 20);
             this.PromDistanceTextBox.TabIndex = 21;
             // 
             // StopDistanceTextBox
             // 
-            this.StopDistanceTextBox.Location = new System.Drawing.Point(9, 223);
+            this.StopDistanceTextBox.Location = new System.Drawing.Point(8, 311);
             this.StopDistanceTextBox.Name = "StopDistanceTextBox";
             this.StopDistanceTextBox.Size = new System.Drawing.Size(94, 20);
             this.StopDistanceTextBox.TabIndex = 20;
             // 
             // BasementTextBox
             // 
-            this.BasementTextBox.Location = new System.Drawing.Point(9, 120);
+            this.BasementTextBox.Location = new System.Drawing.Point(9, 104);
             this.BasementTextBox.Name = "BasementTextBox";
             this.BasementTextBox.Size = new System.Drawing.Size(94, 20);
             this.BasementTextBox.TabIndex = 27;
             // 
             // BuildYearTextBox
             // 
-            this.BuildYearTextBox.Location = new System.Drawing.Point(9, 28);
+            this.BuildYearTextBox.Location = new System.Drawing.Point(9, 25);
             this.BuildYearTextBox.Name = "BuildYearTextBox";
             this.BuildYearTextBox.Size = new System.Drawing.Size(94, 20);
             this.BuildYearTextBox.TabIndex = 19;
+            // 
+            // ParkingCheckBox
+            // 
+            this.ParkingCheckBox.AutoSize = true;
+            this.ParkingCheckBox.Checked = true;
+            this.ParkingCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ParkingCheckBox.Location = new System.Drawing.Point(106, 23);
+            this.ParkingCheckBox.Name = "ParkingCheckBox";
+            this.ParkingCheckBox.Size = new System.Drawing.Size(76, 17);
+            this.ParkingCheckBox.TabIndex = 17;
+            this.ParkingCheckBox.Text = "Парковка";
+            this.ParkingCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // ClosestStopTextBox
+            // 
+            this.ClosestStopTextBox.Location = new System.Drawing.Point(8, 273);
+            this.ClosestStopTextBox.Name = "ClosestStopTextBox";
+            this.ClosestStopTextBox.Size = new System.Drawing.Size(94, 20);
+            this.ClosestStopTextBox.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 257);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Ближайшая остановка";
+            // 
+            // Local1TextBox
+            // 
+            this.Local1TextBox.Location = new System.Drawing.Point(9, 208);
+            this.Local1TextBox.Multiline = true;
+            this.Local1TextBox.Name = "Local1TextBox";
+            this.Local1TextBox.Size = new System.Drawing.Size(128, 25);
+            this.Local1TextBox.TabIndex = 22;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 192);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 13);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Локальные особенности 1";
+            // 
+            // Local2TextBox
+            // 
+            this.Local2TextBox.Location = new System.Drawing.Point(179, 207);
+            this.Local2TextBox.Multiline = true;
+            this.Local2TextBox.Name = "Local2TextBox";
+            this.Local2TextBox.Size = new System.Drawing.Size(128, 25);
+            this.Local2TextBox.TabIndex = 22;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(176, 191);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 13);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Локальные особенности 2";
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 520);
+            this.ClientSize = new System.Drawing.Size(716, 520);
             this.Name = "HomeForm";
             this.Text = "Дом";
             this.regionInfoGroup.ResumeLayout(false);
@@ -635,5 +724,12 @@
         protected System.Windows.Forms.TextBox StopDistanceTextBox;
         protected System.Windows.Forms.TextBox BasementTextBox;
         public System.Windows.Forms.TextBox BuildYearTextBox;
+        private System.Windows.Forms.CheckBox ParkingCheckBox;
+        protected System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.TextBox Local2TextBox;
+        protected System.Windows.Forms.TextBox Local1TextBox;
+        protected System.Windows.Forms.TextBox ClosestStopTextBox;
     }
 }

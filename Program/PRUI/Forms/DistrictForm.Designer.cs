@@ -47,6 +47,8 @@
             this.PrestigeComboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.PharmacyTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.regionInfoGroup.SuspendLayout();
             this.countryInfoGroup.SuspendLayout();
             this.homeInfoGroupBox.SuspendLayout();
@@ -131,7 +133,7 @@
             // 
             // HospitalsTextBox
             // 
-            this.HospitalsTextBox.Location = new System.Drawing.Point(163, 72);
+            this.HospitalsTextBox.Location = new System.Drawing.Point(183, 72);
             this.HospitalsTextBox.Multiline = true;
             this.HospitalsTextBox.Name = "HospitalsTextBox";
             this.HospitalsTextBox.Size = new System.Drawing.Size(123, 45);
@@ -140,7 +142,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(161, 56);
+            this.label3.Location = new System.Drawing.Point(181, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 11;
@@ -165,7 +167,7 @@
             // 
             // SchoolsTextBox
             // 
-            this.SchoolsTextBox.Location = new System.Drawing.Point(163, 142);
+            this.SchoolsTextBox.Location = new System.Drawing.Point(183, 142);
             this.SchoolsTextBox.Multiline = true;
             this.SchoolsTextBox.Name = "SchoolsTextBox";
             this.SchoolsTextBox.Size = new System.Drawing.Size(123, 45);
@@ -174,7 +176,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(161, 126);
+            this.label5.Location = new System.Drawing.Point(181, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 11;
@@ -199,7 +201,7 @@
             // 
             // ServicesTextBox
             // 
-            this.ServicesTextBox.Location = new System.Drawing.Point(163, 213);
+            this.ServicesTextBox.Location = new System.Drawing.Point(183, 213);
             this.ServicesTextBox.Multiline = true;
             this.ServicesTextBox.Name = "ServicesTextBox";
             this.ServicesTextBox.Size = new System.Drawing.Size(123, 45);
@@ -208,7 +210,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(161, 197);
+            this.label7.Location = new System.Drawing.Point(181, 197);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(140, 13);
             this.label7.TabIndex = 11;
@@ -256,6 +258,7 @@
             this.tabPage2.Controls.Add(this.DistrictNameTextBox);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.HospitalsTextBox);
+            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.KindersTextBox);
             this.tabPage2.Controls.Add(this.label6);
@@ -263,6 +266,7 @@
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.RestPlacesTextBox);
             this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.PharmacyTextBox);
             this.tabPage2.Controls.Add(this.ServicesTextBox);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.TradingsTextBox);
@@ -276,13 +280,30 @@
             this.tabPage2.Text = "Особенности района";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // PharmacyTextBox
+            // 
+            this.PharmacyTextBox.Location = new System.Drawing.Point(184, 291);
+            this.PharmacyTextBox.Multiline = true;
+            this.PharmacyTextBox.Name = "PharmacyTextBox";
+            this.PharmacyTextBox.Size = new System.Drawing.Size(123, 45);
+            this.PharmacyTextBox.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(182, 275);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 13);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Список аптек";
+            // 
             // DistrictForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 515);
             this.Name = "DistrictForm";
-            this.Text = "DistrictForm";
+            this.Text = "Район";
             this.regionInfoGroup.ResumeLayout(false);
             this.regionInfoGroup.PerformLayout();
             this.countryInfoGroup.ResumeLayout(false);
@@ -332,5 +353,7 @@
         private System.Windows.Forms.ComboBox PrestigeComboBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox PharmacyTextBox;
     }
 }

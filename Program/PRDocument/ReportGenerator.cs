@@ -434,18 +434,18 @@ namespace PRDocument
             texts_report[28] = Convert.ToString(report.Apartment.GrossArea);
             texts_report[29] = Convert.ToString(report.Apartment.GrossAreaSNIP);
             texts_report[30] = Convert.ToString(report.Apartment.GrossAreaSNIP);
-            texts_report[31] = "";
+            texts_report[31] = report.Apartment.Home.Attic == true ? "есть" : "нет";
             texts_report[32] = report.Apartment.HasBalconyOrLoggia == true ? "есть" : "нет";//нужно дополнить размеры балкона и застекленность
-            texts_report[33] = "";
-            texts_report[34] = "";
-            texts_report[35] = "";
+            texts_report[33] = report.Apartment.Home.District.Banks;
+            texts_report[34] = report.Apartment.Home.Basement;
+            texts_report[35] = report.Apartment.Home.BasementWear;
             texts_report[36] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForWashroomCeiling);
             texts_report[37] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForWashroomFloor);
             texts_report[38] = report.Apartment.GetWallMaterialAsString(report.Apartment.FinishingMaterialForWashroomWall);
             texts_report[39] = report.Apartment.PlanMeets;
-            texts_report[40] = "";
-            texts_report[41] = "";
-            texts_report[42] = "";
+            texts_report[40] = report.Apartment.GetConditionTypeAsString(report.Apartment.Home.CeilingCondition);
+            texts_report[41] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.CeilingType);
+            texts_report[42] = Convert.ToString(((report.DateOfContract.Year-report.Apartment.Home.BuildYear)/150)*100);        // вычисление износа дома
             texts_report[43] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForKitchenCeiling);
             texts_report[44] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForLivingRoomCeiling);
             texts_report[45] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForHallCeiling);
@@ -459,8 +459,8 @@ namespace PRDocument
                                         report.Client.Man.Document.Series + " номер " +
                                         report.Client.Man.Document.Number + " " +
                                         report.Client.Man.Document.PlaceOfIssue;
-            texts_report[53] = "";
-            texts_report[54] = "";
+            texts_report[53] = report.Apartment.Home.StopDistance;
+            texts_report[54] = report.Apartment.Home.Conserge == true ? "есть" : "нет";
             texts_report[55] = report.ReportDate.ToLongDateString();
             texts_report[56] = report.ReportDate.ToLongDateString();
             texts_report[57] = report.ReportDate.ToLongDateString();
@@ -477,7 +477,7 @@ namespace PRDocument
             texts_report[68] = "имеются";
             texts_report[69] = Convert.ToString(report.Apartment.Object.Discount * 100) + "%";
             texts_report[70] = Convert.ToString(report.Apartment.Object.Discount * 100) + "%";
-            texts_report[71] = "";
+            texts_report[71] = report.Apartment.Home.District.Name;
             texts_report[72] = " серия " +
                                         report.Client.Man.Document.Series + " номер " +
                                         report.Client.Man.Document.Number + " " +
@@ -486,7 +486,7 @@ namespace PRDocument
             texts_report[74] = Convert.ToString(report.Apartment.Object.Dollar);
             texts_report[75] = Convert.ToString(report.Apartment.Object.Dollar);
             texts_report[76] = Convert.ToString(report.Apartment.Object.Dollar);
-            texts_report[77] = "";
+            texts_report[77] = report.Apartment.Domofon == true ? "есть" : "нет";
             texts_report[78] = report.Apartment.GetConditionTypeAsString(report.Apartment.DoorsCondition);
             texts_report[79] = report.Employee.Man.Surname + " " + report.Employee.Man.Name + " " + report.Employee.Man.Patronymic;
             texts_report[80] = report.Employee.Man.Surname + " " + report.Employee.Man.Name + " " + report.Employee.Man.Patronymic;
@@ -514,7 +514,7 @@ namespace PRDocument
             texts_report[99] = Convert.ToString(report.Employee.WorkTime);
             texts_report[100] = Convert.ToString(report.Employee.WorkTime);
             texts_report[101] = report.Apartment.AuxiliaryRooms;
-            texts_report[102] = "";
+            texts_report[102] = report.Apartment.Home.ExtraFactors;
             texts_report[103] = report.Apartment.GetApartmentStateAsString(report.Apartment.ApartmentState);
             texts_report[104] = Convert.ToString(report.Apartment.CeilingHeight);
             texts_report[105] = "";
@@ -525,7 +525,7 @@ namespace PRDocument
             texts_report[110] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForLivingRoomFloor);
             texts_report[111] = Convert.ToString(report.Apartment.Floors);
             texts_report[112] = Convert.ToString(report.Apartment.Floors);
-            texts_report[113] = "";
+            texts_report[113] = report.Apartment.Home.Garbadge == true ? "есть" : "нет";
             texts_report[114] = report.Apartment.GetConditionTypeAsString(report.Apartment.HeatingCondition);
             texts_report[115] = report.Apartment.GetPipesTypeAsString(report.Apartment.HeatingPipesType);
             texts_report[116] = report.Apartment.GetHeaterTypeAsString(report.Apartment.HeatersType);
@@ -534,10 +534,10 @@ namespace PRDocument
             texts_report[119] = report.Apartment.Object.Holders;
             texts_report[120] = report.Apartment.Object.Documents;
             texts_report[121] = report.Apartment.Object.Documents;
-            texts_report[122] = "";
-            texts_report[123] = "";
-            texts_report[124] = "";
-            texts_report[125] = "";
+            texts_report[122] = report.Apartment.Home.District.Hospitals;
+            texts_report[123] = Convert.ToString(((report.DateOfContract.Year - report.Apartment.Home.BuildYear) / 150) * 100);        // вычисление износа дома;
+            texts_report[124] = Convert.ToString(((report.DateOfContract.Year - report.Apartment.Home.BuildYear) / 150) * 100);        // вычисление износа дома;
+            texts_report[125] = Convert.ToString(report.Apartment.Home.BuildYear);        
             texts_report[126] = "";
             texts_report[127] = "";
             texts_report[128] = "";
@@ -563,18 +563,18 @@ namespace PRDocument
             texts_report[148] = "";
             texts_report[149] = "";
             texts_report[150] = "";
-            texts_report[151] = "";
-            texts_report[152] = "";
+            texts_report[151] = report.Apartment.Home.Defects==true?"присутствуют":"отсутсвуют";
+            texts_report[152] = report.Apartment.Home.Defects == true ? "присутствуют" : "отсутсвуют"; ;
             texts_report[153] = report.Apartment.PlanMeets;
             texts_report[154] = report.Apartment.GetConditionTypeAsString(report.Apartment.CanaliztionCondition);
             texts_report[155] = report.Apartment.Counters;
             texts_report[156] = report.Apartment.GetPipesTypeAsString(report.Apartment.CanalizationPipesType);
-            texts_report[157] = "";
-            texts_report[158] = "";
-            texts_report[159] = "";
-            texts_report[160] = "";
+            texts_report[157] = report.Apartment.Home.KapremontPeriod;
+            texts_report[158] = report.Apartment.Home.KapremontYear;
+            texts_report[159] = report.Apartment.Home.KapremontYear;
+            texts_report[160] = report.Apartment.Home.District.Kinders;
             texts_report[161] = Convert.ToString(report.Apartment.KitchenArea); ;
-            texts_report[162] = "";
+            texts_report[162] = report.Apartment.Home.Lift == true ? "есть" : "нет";
             texts_report[163] = report.Apartment.Object.Restriction;
             texts_report[164] = report.Apartment.Object.Restriction;
             texts_report[165] = Convert.ToString(report.Apartment.LivingArea);
@@ -592,7 +592,7 @@ namespace PRDocument
             texts_report[177] = "";
             texts_report[178] = report.Apartment.PlanMeets;
             texts_report[179] = report.Apartment.ViewOnApparment=="ok"?"регистрация возможна":"регистрация не возможна";
-            texts_report[180] = "";
+            texts_report[180] = report.Apartment.Home.District.GetPrestigeAsString(report.Apartment.Home.District.Prestige);
             texts_report[181] = Convert.ToString(report.Apartment.Object.Price);
             texts_report[182] = Convert.ToString(report.Apartment.Object.Price);
             texts_report[183] = Convert.ToString(report.Apartment.Object.Price);
@@ -603,7 +603,7 @@ namespace PRDocument
             texts_report[188] = Convert.ToString(report.Apartment.Object.Price);
             texts_report[189] = Convert.ToString(report.Apartment.Object.Price);
             texts_report[190] = "";
-            texts_report[191] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
+            texts_report[191] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));       // Вычисление ликвидационной стоимости
             texts_report[192] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
             texts_report[193] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
             texts_report[194] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
@@ -612,14 +612,14 @@ namespace PRDocument
             texts_report[197] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
             texts_report[198] = "";
             texts_report[199] = "";
-            texts_report[200] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
+            texts_report[200] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);  // Вычисление ликвидационной стоимости в долларах
             texts_report[201] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
             texts_report[202] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
             texts_report[203] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
             texts_report[204] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
             texts_report[205] = "";
             texts_report[206] = "";
-            texts_report[207] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
+            texts_report[207] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);       // Вычисление стоимости в долларах
             texts_report[208] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
             texts_report[209] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
             texts_report[210] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
@@ -643,47 +643,49 @@ namespace PRDocument
             texts_report[228] = report.ReportNumber;
             texts_report[229] = report.ReportNumber;
             texts_report[230] = report.ReportNumber;
-            texts_report[231] = "";
+            texts_report[231] = report.Apartment.Home.District.RestPlaces;
             texts_report[232] = report.Apartment.Object.Property;
             texts_report[233] = report.Apartment.Object.Property;
-            texts_report[234] = "";
+            texts_report[234] = report.Apartment.GetConditionTypeAsString(report.Apartment.Home.RoofCondition);
             texts_report[235] = report.Apartment.GetDoorsTypeAsString(report.Apartment.RoomDoorsType); ;
             texts_report[236] = report.Apartment.GetRoomTypeAsString(report.Apartment.RoomType);
             texts_report[237] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
             texts_report[238] = report.Apartment.SanuzelQnt +" "+report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
-            texts_report[239] = "";
+            texts_report[239] = report.Apartment.Home.District.Schools;
             texts_report[240] = report.Apartment.HasSeparateKitchenOrWashroom == true ? "есть" : "нет";
-            texts_report[241] = "";
+            texts_report[241] = report.Apartment.Home.District.Services;
             texts_report[242] = report.Apartment.HasLowCurrent == true ? "есть" : "нет";
-            texts_report[243] = "";
-            texts_report[244] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.GrossArea);
+            texts_report[243] = report.Apartment.Home.Social;
+            texts_report[244] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.GrossArea);               // Вычисление стоимости квадратного метра
             texts_report[245] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.GrossArea);
-            texts_report[246] = Convert.ToString((report.Apartment.Object.Price / report.Apartment.GrossArea) / report.Apartment.Object.Dollar);
-            texts_report[247] = "";
+            texts_report[246] = Convert.ToString((report.Apartment.Object.Price / report.Apartment.GrossArea) / report.Apartment.Object.Dollar);// Вычисление стоимости квадратного метра в долларах
+            texts_report[247] = report.Apartment.Home.StopDistance;
             texts_report[248] = "подключен";
-            texts_report[249] = "";
+            texts_report[249] = "электроосвещение, центральное отопление, централизованное водоснабжение,"+
+                "канализация, вытяжная вентиляция, телевидение, телефон" + (report.Apartment.Home.Gaz == true ? ", газоснабжение" : "") +
+                (report.Apartment.Home.Garbadge == true ? ", мусоропровод" : "");
             texts_report[250] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForWashroomCeiling);
             texts_report[251] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForWashroomFloor);
             texts_report[252] = report.Apartment.GetWallMaterialAsString(report.Apartment.FinishingMaterialForWashroomWall);
-            texts_report[253] = "";
-            texts_report[254] = "";
+            texts_report[253] = report.Apartment.Home.District.Tradings;
+            texts_report[254] = report.Apartment.Home.Transport==true?"Автобусы и трамваи":"Автобусы";
             texts_report[255] = report.Apartment.Views;
             texts_report[256] = report.Apartment.GetWallMaterialAsString(report.Apartment.FinishingMaterialForHallWall);
             texts_report[257] = report.Apartment.GetWallMaterialAsString(report.Apartment.FinishingMaterialForKitchenWall);
             texts_report[258] = report.Apartment.GetWallMaterialAsString(report.Apartment.FinishingMaterialForLivingRoomWall);
-            texts_report[259] = "";
-            texts_report[260] = "";
-            texts_report[261] = "";
-            texts_report[262] = "";
-            texts_report[263] = "";
-            texts_report[264] = "";
+            texts_report[259] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[260] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall); 
+            texts_report[261] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.InsideWall);
+            texts_report[262] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[263] = Convert.ToString(((report.DateOfContract.Year - report.Apartment.Home.BuildYear) / 150) * 100);        // вычисление износа дома;
+            texts_report[264] = Convert.ToString(((report.DateOfContract.Year - report.Apartment.Home.BuildYear) / 150) * 100);        // вычисление износа дома;
             texts_report[265] = report.Apartment.GetConditionTypeAsString(report.Apartment.WaterCondition);
             texts_report[266] = "верхняя";
             texts_report[267] = "верхний";
             texts_report[268] = report.Apartment.GetConditionTypeAsString(report.Apartment.WindowsCondition); ;
             texts_report[269] = report.Apartment.GetWindowsTypeAsString(report.Apartment.WindowsType);
             texts_report[270] = Convert.ToString(report.ReportDate.Year); 
-            texts_report[271] = "";
+            texts_report[271] = Convert.ToString(report.Apartment.Home.BuildYear);
 
 
 

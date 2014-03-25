@@ -139,6 +139,26 @@ namespace PRInterfaces.Interfaces
         bool Gaz { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает локальные особенности
+        /// </summary>
+        string Loacals_1 { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает локальные особенности
+        /// </summary>
+        string Loacals_2 { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает название ближайшей остановки
+        /// </summary>
+        string StopName { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает наличие парковки
+        /// </summary>
+        bool Parking { get; set; }
+
+        /// <summary>
         /// Свойство. Задает и возвращает район
         /// </summary>
         IDistrict District { get; set; }

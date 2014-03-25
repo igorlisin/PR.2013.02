@@ -83,6 +83,10 @@ namespace PR.Classes
         /// </summary>
        private string _tradings ;
 
+       /// <summary>
+       /// Свойство. Задает и возвращает список аптек
+       /// </summary>
+       private string _pharmList;
 
         /// <summary>
         /// Поле. Задает и возвращает престижность района
@@ -223,6 +227,20 @@ namespace PR.Classes
            }
        }
 
+       /// <summary>
+       /// Свойство. Задает и возвращает список аптек
+       /// </summary>
+       public string PharmList
+       {
+           get
+           {
+               return (_pharmList);
+           }
+           set
+           {
+               _pharmList = value;
+           }
+       }
 
        /// <summary>
        /// Свойство. Задает и возвращает престижность района

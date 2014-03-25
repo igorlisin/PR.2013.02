@@ -54,6 +54,10 @@ namespace PRInterfaces.Interfaces
         /// </summary>
         string Tradings { get; set; }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает список аптек
+        /// </summary>
+        string PharmList { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает престижность района

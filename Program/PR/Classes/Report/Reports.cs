@@ -109,6 +109,7 @@ namespace PR.Classes
         {
             return (_reportsDbSet.Include(r => r.ClientForEntityFramwork.ManForEntityFramework.DocumentForEntityFramework)
                                  .Include(r => r.EmployeeForEntityFramework.ManForEntityFramework.DocumentForEntityFramework)
+                                 .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.DistrictForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.ObjectForEntityFramework)
@@ -123,6 +124,7 @@ namespace PR.Classes
             return (_reportsDbSet.Include(r => r.ClientForEntityFramwork.ManForEntityFramework.DocumentForEntityFramework)
                                  .Include(r => r.EmployeeForEntityFramework.ManForEntityFramework.DocumentForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework)
+                                 .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.DistrictForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.ObjectForEntityFramework)
                                  .ToArray<IReport>());
@@ -135,6 +137,7 @@ namespace PR.Classes
         {
             return ((IReport)_reportsDbSet.Include(r => r.ClientForEntityFramwork.ManForEntityFramework.DocumentForEntityFramework)
                             .Include(r => r.EmployeeForEntityFramework.ManForEntityFramework.DocumentForEntityFramework)
+                            .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.DistrictForEntityFramework)
                             .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework)
                             .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
                             .Include(r=>r.ApartmentForEntityFramework.ObjectForEntityFramework)
@@ -162,7 +165,13 @@ namespace PR.Classes
         /// </summary>
         public IEnumerator GetEnumerator()
         {
-            return (new EntityEnumerator(_reportsDbSet.Include(r => r.ClientForEntityFramwork.ManForEntityFramework).Include(r => r.EmployeeForEntityFramework.ManForEntityFramework).Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework).Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).ToArray<Report>()));
+            return (new EntityEnumerator(_reportsDbSet.Include(r => r.ClientForEntityFramwork.ManForEntityFramework)
+                                                      .Include(r => r.EmployeeForEntityFramework.ManForEntityFramework)
+                                                      .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework)
+                                                      .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
+                                                      .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.DistrictForEntityFramework)
+                                                      .Include(r => r.ApartmentForEntityFramework.ObjectForEntityFramework)
+                                                      .ToArray<Report>()));
         }
     }
 }

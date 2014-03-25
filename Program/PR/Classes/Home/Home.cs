@@ -77,13 +77,13 @@ namespace PR.Classes
             switch (material)                                    // Проверить тип
             {
                 case MaterialType.ArmedBeton:                            // Сравнить тип 
-                    materialAsString = "Железобетон";                 // Задать тип (как текстовую строку)
+                    materialAsString = "панельный";                 // Задать тип (как текстовую строку)
                     break;
                 case MaterialType.Brick:                        // Сравнить тип 
-                    materialAsString = "Кирпич";                // Задать тип (как текстовую строку)
+                    materialAsString = "кирпичный";                // Задать тип (как текстовую строку)
                     break;
                 case MaterialType.Gazobeton:                     // Сравнить тип 
-                    materialAsString = "Газобетон";      // Задать тип (как текстовую строку)
+                    materialAsString = "газобетонный";      // Задать тип (как текстовую строку)
                     break;
                 case MaterialType.Gips:                     // Сравнить тип 
                     materialAsString = "Гипс";      // Задать тип (как текстовую строку)
@@ -253,11 +253,31 @@ namespace PR.Classes
         /// </summary>
         private bool _transport;
 
-
         /// <summary>
         /// Поле. Наличие газа
         /// </summary>
         private bool _gaz;
+
+        /// <summary>
+        /// Поле. Задает и возвращает локальные особенности
+        /// </summary>
+        private string _loacals_1;
+
+        /// <summary>
+        /// Поле. Задает и возвращает локальные особенности
+        /// </summary>
+        private string _loacals_2;
+
+        /// <summary>
+        /// Поле. Задает и возвращает наличие парковки
+        /// </summary>
+        private bool _parking;
+
+        /// <summary>
+        /// Поле. Задает и возвращает локальные особенности
+        /// </summary>
+        private string _stopName;
+
         #endregion
 
         #region Properties
@@ -663,6 +683,66 @@ namespace PR.Classes
            set
            {
                _gaz = value;
+           }
+       }
+
+       /// <summary>
+       /// Свойство. Задает и возвращает локальные особенности
+       /// </summary>
+      public string Loacals_1
+       {
+           get
+           {
+               return _loacals_1;
+           }
+           set
+           {
+               _loacals_1 = value;
+           }
+       }
+
+       /// <summary>
+       /// Свойство. Задает и возвращает локальные особенности
+       /// </summary>
+      public string Loacals_2
+       {
+           get
+           {
+               return _loacals_2;
+           }
+           set
+           {
+               _loacals_2 = value;
+           }
+       }
+
+      /// <summary>
+      /// Свойство. Задает и возвращает название ближайшей остановки
+      /// </summary>
+      public string StopName
+      {
+          get
+          {
+              return _stopName;
+          }
+          set
+          {
+              _stopName = value;
+          }
+      }
+
+       /// <summary>
+       /// Свойство. Задает и возвращает наличие парковки
+       /// </summary>
+      public bool Parking
+       {
+           get
+           {
+               return _parking;
+           }
+           set
+           {
+               _parking = value;
            }
        }
 

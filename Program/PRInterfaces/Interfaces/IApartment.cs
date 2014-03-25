@@ -298,6 +298,10 @@ namespace PRInterfaces.Interfaces
         /// </summary>
         bool Domofon { get; set; }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает число квартир на этаже
+        /// </summary>
+        string FlatsOnFloor { get; set; }
 
 
         #endregion

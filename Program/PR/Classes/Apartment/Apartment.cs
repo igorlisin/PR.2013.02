@@ -764,6 +764,11 @@ namespace PR.Classes
         /// </summary>
         private bool _domofon;
 
+        /// <summary>
+        /// Свойство. Задает и возвращает число квартир на этаже
+        /// </summary>
+        private string _flatsOnFloor;
+
         #endregion
 
         #region Properties
@@ -1639,6 +1644,22 @@ namespace PR.Classes
                 _domofon = value;
             }
         }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает число квартир на этаже
+        /// </summary>
+       public string FlatsOnFloor
+        {
+            get
+            {
+                return _flatsOnFloor;
+            }
+            set
+            {
+                _flatsOnFloor = value;
+            }
+        }
+
 
         #endregion
 

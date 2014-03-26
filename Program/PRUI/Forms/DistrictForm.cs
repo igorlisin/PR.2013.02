@@ -56,6 +56,11 @@ namespace PRUI.Forms
         private string _tradings;
 
         /// <summary>
+        /// Поле. Список аптек
+        /// </summary>
+        private string _pharmacy;
+
+        /// <summary>
         /// Поле. Престижность района
         /// </summary>
         private Prestiges _prestige;
@@ -195,6 +200,20 @@ namespace PRUI.Forms
             }
         }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает список объектов торговли
+        /// </summary>
+        public string Pharmacy
+        {
+            get
+            {
+                return (PharmacyTextBox.Text);
+            }
+            set
+            {
+                PharmacyTextBox.Text = value;
+            }
+        }
 
         /// <summary>
         /// Свойство. Задает и возвращает престижность района
@@ -259,6 +278,7 @@ namespace PRUI.Forms
             Schools = "";
             Services = "";
             Tradings = "";
+            Pharmacy = "";
             ClearPrestigeList();
             FillPrestigeList();
         }                 
@@ -316,6 +336,7 @@ namespace PRUI.Forms
             Services = district.Services;
             Tradings = district.Tradings;
             Prestige = district.Prestige;
+            Pharmacy = district.PharmList;
         }
 
         /// <summary>
@@ -334,6 +355,7 @@ namespace PRUI.Forms
             _district.Services = Services;
             _district.Tradings = Tradings;
             _district.Prestige = Prestige;
+            _district.PharmList = Pharmacy;
 
         }
 

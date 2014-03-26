@@ -980,6 +980,21 @@ namespace PRUI.Forms
             }
         }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает количесто квартир на этаже 
+        /// </summary>
+        private string FlatsOnFloor
+        {
+            get
+            {
+                return (FlatsOnFloorTextBox.Text);
+            }
+            set
+            {
+                FlatsOnFloorTextBox.Text = value;
+            }
+        }
+
 
         #region Apartment man picture
 
@@ -1308,6 +1323,7 @@ namespace PRUI.Forms
 
             SanuzelQnt = "1";
             Counters = "";
+            FlatsOnFloor = "";
 
             ClearHeaterPipesTypeList(HeaterRadiatorTypeComboBox);
             FillHeatingRadiatorTypeList(HeaterRadiatorTypeComboBox);
@@ -1535,6 +1551,7 @@ namespace PRUI.Forms
             CanalizationPipesTypes = apartment.CanalizationPipesType;
             CanalizationCondition = apartment.CanaliztionCondition;
             HasDomofon = apartment.Domofon;
+            FlatsOnFloor = apartment.FlatsOnFloor;
         }
 
         /// <summary>
@@ -1599,6 +1616,7 @@ namespace PRUI.Forms
             apartment.CanalizationPipesType = CanalizationPipesTypes;
             apartment.CanaliztionCondition = CanalizationCondition;
             apartment.Domofon = HasDomofon;
+            apartment.FlatsOnFloor = FlatsOnFloor;
 
         }
 

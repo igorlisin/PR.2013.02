@@ -121,10 +121,13 @@
             this.apartmentMapPictureNameLabel = new System.Windows.Forms.Label();
             this.previewApartmentMapPictureButton = new System.Windows.Forms.Button();
             this.apartmentMapPictureBox = new System.Windows.Forms.PictureBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.numberOnFloor = new System.Windows.Forms.Label();
+            this.FlatsOnFloorTextBox = new System.Windows.Forms.TextBox();
             this.FloorsTextBox = new System.Windows.Forms.TextBox();
             this.SNIPTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.DomofonCheckBox = new System.Windows.Forms.CheckBox();
             this.stateAndFinishingTabControlPage = new System.Windows.Forms.TabPage();
             this.heatingSystemLabel = new System.Windows.Forms.Label();
             this.heatingSystemComboBox = new System.Windows.Forms.ComboBox();
@@ -186,7 +189,6 @@
             this.PorposeTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.otherTabControlPage = new System.Windows.Forms.TabPage();
-            this.DomofonCheckBox = new System.Windows.Forms.CheckBox();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -1002,7 +1004,9 @@
             this.baseTabControlPage.Controls.Add(this.apartmentMapPictureNameLabel);
             this.baseTabControlPage.Controls.Add(this.previewApartmentMapPictureButton);
             this.baseTabControlPage.Controls.Add(this.apartmentMapPictureBox);
+            this.baseTabControlPage.Controls.Add(this.label37);
             this.baseTabControlPage.Controls.Add(this.numberOnFloor);
+            this.baseTabControlPage.Controls.Add(this.FlatsOnFloorTextBox);
             this.baseTabControlPage.Controls.Add(this.FloorsTextBox);
             this.baseTabControlPage.Controls.Add(this.numberTextBox);
             this.baseTabControlPage.Controls.Add(this.kitchenAreaTextBox);
@@ -1111,6 +1115,15 @@
             this.apartmentMapPictureBox.TabIndex = 58;
             this.apartmentMapPictureBox.TabStop = false;
             // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(184, 3);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(98, 13);
+            this.label37.TabIndex = 57;
+            this.label37.Text = "Квартир на этаже";
+            // 
             // numberOnFloor
             // 
             this.numberOnFloor.AutoSize = true;
@@ -1119,6 +1132,13 @@
             this.numberOnFloor.Size = new System.Drawing.Size(91, 13);
             this.numberOnFloor.TabIndex = 57;
             this.numberOnFloor.Text = "Этажность дома";
+            // 
+            // FlatsOnFloorTextBox
+            // 
+            this.FlatsOnFloorTextBox.Location = new System.Drawing.Point(187, 19);
+            this.FlatsOnFloorTextBox.Name = "FlatsOnFloorTextBox";
+            this.FlatsOnFloorTextBox.Size = new System.Drawing.Size(87, 20);
+            this.FlatsOnFloorTextBox.TabIndex = 57;
             // 
             // FloorsTextBox
             // 
@@ -1144,6 +1164,16 @@
             this.label5.Size = new System.Drawing.Size(137, 13);
             this.label5.TabIndex = 13;
             this.label5.Text = "Общая площадь по СНиП";
+            // 
+            // DomofonCheckBox
+            // 
+            this.DomofonCheckBox.AutoSize = true;
+            this.DomofonCheckBox.Location = new System.Drawing.Point(238, 241);
+            this.DomofonCheckBox.Name = "DomofonCheckBox";
+            this.DomofonCheckBox.Size = new System.Drawing.Size(124, 17);
+            this.DomofonCheckBox.TabIndex = 17;
+            this.DomofonCheckBox.Text = "Наличие домофона";
+            this.DomofonCheckBox.UseVisualStyleBackColor = true;
             // 
             // stateAndFinishingTabControlPage
             // 
@@ -1235,7 +1265,7 @@
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(131, 13);
             this.label35.TabIndex = 65;
-            this.label35.Text = "Приборы учета";
+            this.label35.Text = "Сантех приборы";
             this.label35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // CounterTextBox
@@ -1777,16 +1807,6 @@
             this.otherTabControlPage.Text = "Разное";
             this.otherTabControlPage.UseVisualStyleBackColor = true;
             // 
-            // DomofonCheckBox
-            // 
-            this.DomofonCheckBox.AutoSize = true;
-            this.DomofonCheckBox.Location = new System.Drawing.Point(238, 241);
-            this.DomofonCheckBox.Name = "DomofonCheckBox";
-            this.DomofonCheckBox.Size = new System.Drawing.Size(124, 17);
-            this.DomofonCheckBox.TabIndex = 17;
-            this.DomofonCheckBox.Text = "Наличие домофона";
-            this.DomofonCheckBox.UseVisualStyleBackColor = true;
-            // 
             // ApartmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1989,5 +2009,7 @@
         protected System.Windows.Forms.TextBox HoldersDocumentsTextBox;
         protected System.Windows.Forms.Label label23;
         private System.Windows.Forms.CheckBox DomofonCheckBox;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox FlatsOnFloorTextBox;
     }
 }

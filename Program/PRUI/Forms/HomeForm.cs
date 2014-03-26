@@ -80,7 +80,6 @@ namespace PRUI.Forms
         /// </summary>
         private bool _conserge;
 
-
         /// <summary>
         /// Поле. Тип перекрытий
         /// </summary>
@@ -139,6 +138,28 @@ namespace PRUI.Forms
         /// Поле. Наличие газа
         /// </summary>
         private bool _gaz;
+
+        /// <summary>
+        /// Поле. Локальные особенности 1
+        /// </summary>
+        private string _local1;
+
+        /// <summary>
+        /// Поле. Локальные особенности 1
+        /// </summary>
+        private string _local2;
+
+        /// <summary>
+        /// Поле. Название ближайшей остановки
+        /// </summary>
+        private string _closestStop;
+
+        /// <summary>
+        /// Поле. Наличие паркинга
+        /// </summary>
+        private bool _parking;
+
+
         #endregion
 
         #region Properties
@@ -472,6 +493,67 @@ namespace PRUI.Forms
                 GazCheckBox.Checked = value;
             }
         }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает паркинга
+        /// </summary>
+        protected bool Parking
+        {
+            get
+            {
+                return (ParkingCheckBox.Checked);
+            }
+            set
+            {
+                ParkingCheckBox.Checked = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает локальные особенности 1
+        /// </summary>
+        protected string Local1
+        {
+            get
+            {
+                return (Local1TextBox.Text);
+            }
+            set
+            {
+                Local1TextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает локальные особенности 2
+        /// </summary>
+        protected string Local2
+        {
+            get
+            {
+                return (Local2TextBox.Text);
+            }
+            set
+            {
+                Local2TextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает название ближайшей остановки
+        /// </summary>
+        protected string ClosestStop
+        {
+            get
+            {
+                return (ClosestStopTextBox.Text);
+            }
+            set
+            {
+                ClosestStopTextBox.Text = value;
+            }
+        }
+
         #endregion
 
         #region Constructors
@@ -522,6 +604,11 @@ namespace PRUI.Forms
             Social = "";
             Transport = false;
             Gaz = false;
+            Parking = false;
+            Local1 = "";
+            Local2 = "";
+            ClosestStop = "";
+
             ClearRoofConditionList();
             FillRoofConditionList();
 
@@ -564,27 +651,31 @@ namespace PRUI.Forms
         /// </summary>
         protected void CopyLocationDataFromEntity()
         {
-            BuildYear = _home.BuildYear;                    // 
-            RoofCondition = _home.RoofCondition;
-            OutsideWall = _home.OutsideWall;
-            InsideWall = _home.InsideWall;
-            Lift = _home.Lift;
-            KapremontYear = _home.KapremontYear;
-            KapremontPeriod = _home.KapremontPeriod;
-            Defects = _home.Defects;
-            Garbadge = _home.Garbadge;
-            ExtraFactors = _home.ExtraFactors;
-            Conserge = _home.Conserge;
-            CeilingType = _home.CeilingType;
-            CeilingCondition = _home.CeilingCondition;
-            Basement = _home.Basement;
-            BasementWear = _home.BasementWear;
-            Attic = _home.Attic;
-            PromzoneDistance = _home.PromzoneDistance;
-            StopDistance = _home.StopDistance;
-            Social = _home.Social;
-            Transport = _home.Transport;
-            Gaz = _home.Gaz; 
+            BuildYear = _home.BuildYear;                    // Скопировать год постройки
+            RoofCondition = _home.RoofCondition;            // Скопировать состояние крыши
+            OutsideWall = _home.OutsideWall;                // Скопировать тип несущей стены
+            InsideWall = _home.InsideWall;                  // Скопировать тип материала перегородок
+            Lift = _home.Lift;                              // Скопировать наличие лифта
+            KapremontYear = _home.KapremontYear;            // Скопировать год капремонта
+            KapremontPeriod = _home.KapremontPeriod;        // Скопировать периодичность капремонта
+            Defects = _home.Defects;                        // Скопировать дефекты конструкции
+            Garbadge = _home.Garbadge;                      // Скопировать наличие мусоропровода
+            ExtraFactors = _home.ExtraFactors;              // Скопировать дополнительные факторы
+            Conserge = _home.Conserge;                      // Скопировать наличие консьержа
+            CeilingType = _home.CeilingType;                // Скопировать тип материала перекрытий
+            CeilingCondition = _home.CeilingCondition;      // Скопировать состояние перекрытий
+            Basement = _home.Basement;                      // Скопировать фундамент
+            BasementWear = _home.BasementWear;              // Скопировать износ фундамента
+            Attic = _home.Attic;                            // Скопировать наличие чердак
+            PromzoneDistance = _home.PromzoneDistance;      // Скопировать расстояние до промзоны
+            StopDistance = _home.StopDistance;              // Скопировать расстояние до остановки
+            Social = _home.Social;                          // Скопировать социальный слой жильцов
+            Transport = _home.Transport;                    // Скопировать наличие трамвая
+            Gaz = _home.Gaz;                                // Скопировать наличие газа
+            Parking = _home.Parking;                        // Скопировать наличие паркинга
+            Local1 = _home.Loacals_1;                       // Скопировать локальные особенности 1
+            Local2 = _home.Loacals_2;                       // Скопировать локальные особенности 2
+            ClosestStop = _home.StopName;                   // Скопировать название ближайшей остановки
         }
 
         /// <summary>
@@ -663,6 +754,10 @@ namespace PRUI.Forms
             _home.Social = Social;                                      // Скопировать социальный слой жильцов
             _home.Transport = Transport;                                // Скопировать наличие трамвая
             _home.Gaz = Gaz;                                            // Скопировать наличие газа
+            _home.Parking = Parking;                                    // Скопировать наличие паркинга
+            _home.Loacals_1 = Local1;                                   // Скопировать локальные особенности 1
+            _home.Loacals_2 = Local2;                                   // Скопировать локальные особенности 2
+            _home.StopName = ClosestStop;                               // Скопировать название ближайшей остановки
         }
 
         #endregion

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using BLL.Declension;
+using Slepov.Russian.СуммаПрописью;
 
 using Microsoft.Office.Interop.Word;
 
@@ -90,6 +91,10 @@ namespace PRDocument
             bookmarks_conclusion[31] = "street_addr";
             bookmarks_conclusion[32] = "employee_SRO";
 
+            ЕдиницаИзмерения rouble = new ЕдиницаИзмерения(РодЧисло.Мужской, "рубль", "рубля", "рублей");
+            ЕдиницаИзмерения dollar = new ЕдиницаИзмерения(РодЧисло.Мужской, "доллар", "доллара", "долларов");
+            ЕдиницаИзмерения empty = new ЕдиницаИзмерения(РодЧисло.Мужской, "", "", "");         
+            
             texts_conclusion[0] = Convert.ToString(report.Apartment.RoomNumber);
             texts_conclusion[1] = client_in_padeg;
             texts_conclusion[2] = report.ReportNumber;
@@ -101,12 +106,12 @@ namespace PRDocument
             texts_conclusion[8] = report.DateOfContract.ToLongDateString();
             texts_conclusion[9] = report.Apartment.Object.DestOfTheEvaluation;
             texts_conclusion[10] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
-            texts_conclusion[11] = "";
+            texts_conclusion[11] = Число.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar, dollar); 
             texts_conclusion[12] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
-            texts_conclusion[13] = "";
+            texts_conclusion[13] = Число.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount),rouble);
             texts_conclusion[14] = Convert.ToString(report.Apartment.Object.Dollar);
             texts_conclusion[15] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
-            texts_conclusion[16] = "";
+            texts_conclusion[16] = Число.Пропись(report.Apartment.Object.Price / report.Apartment.Object.Dollar,dollar);
             texts_conclusion[17] = report.Employee.Position;
             texts_conclusion[18] = report.Employee.Man.Surname + " " + report.Employee.Man.Name + " " + report.Employee.Man.Patronymic;
             texts_conclusion[19] = report.Employee.Man.Surname + " " + report.Employee.Man.Name + " " + report.Employee.Man.Patronymic;
@@ -117,7 +122,7 @@ namespace PRDocument
             texts_conclusion[24] = report.Apartment.Home.ComplexNumber;
             texts_conclusion[25] = report.Apartment.Object.Restriction;
             texts_conclusion[26] = Convert.ToString(report.Apartment.Object.Price);
-            texts_conclusion[27] = "";
+            texts_conclusion[27] = Число.Пропись(report.Apartment.Object.Price, rouble);
             texts_conclusion[28] = report.Apartment.Object.PurposeOfTheEvaluation;
             texts_conclusion[29] = report.Apartment.Object.Property;
             texts_conclusion[30] = Convert.ToString(report.Apartment.GrossAreaSNIP);
@@ -128,6 +133,10 @@ namespace PRDocument
         //Процедура формирования закладок и текстов их замен в отчете Отчет
         public static void ArrayFillReport(string[] bookmarks_report, string[] texts_report, IReport report, string client_in_padeg)
         {
+            ЕдиницаИзмерения rouble = new ЕдиницаИзмерения(РодЧисло.Мужской, "рубль", "рубля", "рублей");
+            ЕдиницаИзмерения dollar = new ЕдиницаИзмерения(РодЧисло.Мужской, "доллар", "доллара", "долларов");
+            ЕдиницаИзмерения empty = new ЕдиницаИзмерения(РодЧисло.Мужской, "", "", ""); 
+
             bookmarks_report[0] = "address_client";
             bookmarks_report[1] = "address_street";
             bookmarks_report[2] = "address_street10";
@@ -603,7 +612,7 @@ namespace PRDocument
             texts_report[187] = Convert.ToString(report.Apartment.Object.Price);
             texts_report[188] = Convert.ToString(report.Apartment.Object.Price);
             texts_report[189] = Convert.ToString(report.Apartment.Object.Price);
-            texts_report[190] = "";
+            texts_report[190] = Число.Пропись(report.Apartment.Object.Price, rouble); 
             texts_report[191] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));       // Вычисление ликвидационной стоимости
             texts_report[192] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
             texts_report[193] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
@@ -611,25 +620,25 @@ namespace PRDocument
             texts_report[195] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
             texts_report[196] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
             texts_report[197] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
-            texts_report[198] = "";
-            texts_report[199] = "";
+            texts_report[198] = Число.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount), rouble); ;
+            texts_report[199] = Число.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount), rouble); ;
             texts_report[200] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);  // Вычисление ликвидационной стоимости в долларах
             texts_report[201] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
             texts_report[202] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
             texts_report[203] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
             texts_report[204] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
-            texts_report[205] = "";
-            texts_report[206] = "";
+            texts_report[205] = Число.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar, dollar); 
+            texts_report[206] = Число.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount), rouble); 
             texts_report[207] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);       // Вычисление стоимости в долларах
             texts_report[208] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
             texts_report[209] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
             texts_report[210] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
             texts_report[211] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
-            texts_report[212] = "";
-            texts_report[213] = "";
-            texts_report[214] = "";
-            texts_report[215] = "";
-            texts_report[216] = "";
+            texts_report[212] = Число.Пропись(report.Apartment.Object.Price / report.Apartment.Object.Dollar, dollar); ;
+            texts_report[213] = Число.Пропись(report.Apartment.Object.Price / report.Apartment.Object.Dollar, dollar); ;
+            texts_report[214] = Число.Пропись(report.Apartment.Object.Price, rouble);
+            texts_report[215] = Число.Пропись(report.Apartment.Object.Price, rouble);
+            texts_report[216] = Число.Пропись(report.Apartment.Object.Price, rouble); 
             texts_report[217] = report.Apartment.Home.PromzoneDistance;
             texts_report[218] = report.Apartment.Object.PurposeOfTheEvaluation;
             texts_report[219] = report.Apartment.GetRepairWorkAsString(report.Apartment.RepairWork);
@@ -750,6 +759,7 @@ namespace PRDocument
             ObjWorkSheet.Cells[7, 2] = "Собственник Объекта - "+report.Apartment.Object.Holders;
             ObjWorkSheet.Cells[8, 2] = report.ReportDate.ToLongDateString();
             ObjWorkSheet.Cells[9, 2] = report.Apartment.Object.PurposeOfTheEvaluation;
+            ObjWorkSheet.Cells[13, 2] = report.Client.Address;     // Адрес заказчика
             ObjWorkSheet.Cells[14, 2] = //report.Client.Man.Document.Type 
                                         "паспорт"  + " серии " +
                                         report.Client.Man.Document.Series + " номер " +

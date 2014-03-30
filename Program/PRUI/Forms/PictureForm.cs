@@ -318,6 +318,28 @@ namespace PRUI.Forms
             }
         }
 
+       public override void okButton_Click(object sender, EventArgs e)
+        {
+           string path =_imageFolderPath +"\\"+ PictureName + "_"+
+                         _picture.CreationDate.ToShortDateString()+"_"+
+                         _picture.CreationDate.ToLongTimeString().Replace(":","_")+"_"+
+                         _picture.TypeAsString;
+            Picture.Save(path + ".png", System.Drawing.Imaging.ImageFormat.Png);
+
+            base.okButton_Click(sender, e);
+        }
+
+       public override void saveButton_Click(object sender, EventArgs e)
+       {
+           string path = _imageFolderPath + "\\" + PictureName + "_" +
+                         _picture.CreationDate.ToShortDateString() + "_" +
+                         _picture.CreationDate.ToLongTimeString().Replace(":", "_") + "_" +
+                         _picture.TypeAsString;
+           Picture.Save(path + ".png", System.Drawing.Imaging.ImageFormat.Png);
+
+           base.saveButton_Click(sender, e);
+       }
+
         #region Picture Type List
 
         //TODO: Изменить методы для заполнения списка типа изображения, метод GetSelectedImageType заменить на свойство ImageType (аналог см. в форме Apartment)

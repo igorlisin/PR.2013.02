@@ -203,7 +203,7 @@ namespace PRUI.TemplateForms
         /// <summary>
         /// Метод. Сохраняет изменения данных и закрывает диалоговое окно
         /// </summary>
-        public void okButton_Click(object sender, EventArgs e)
+        public virtual void okButton_Click(object sender, EventArgs e)
         {
             CopyDataToEntity();         // Скопировать данные из компонентов формы в данные сущности
 
@@ -215,7 +215,7 @@ namespace PRUI.TemplateForms
         /// <summary>
         /// Метод. Сохраняет изменения данных
         /// </summary>
-        public void saveButton_Click(object sender, EventArgs e)
+        public virtual void saveButton_Click(object sender, EventArgs e)
         {
             CopyDataToEntity();           // Скопировать данные из компонентов формы в данные дома
 

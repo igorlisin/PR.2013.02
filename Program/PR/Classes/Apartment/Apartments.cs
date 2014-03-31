@@ -121,7 +121,11 @@ namespace PR.Classes
         /// </summary>
         public List<IApartment> ToList()
         {
-            return (_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).Include(a => a.ObjectForEntityFramework).ToList<IApartment>());
+            return (_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework)
+                                     .Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
+                                     .Include(a => a.ObjectForEntityFramework)
+                                     .Include(a=>a.PictureForEntityFramwork)
+                                     .ToList<IApartment>());
         }
 
         /// <summary>
@@ -129,7 +133,11 @@ namespace PR.Classes
         /// </summary>
         public IApartment[] ToArray()
         {
-            return (_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).Include(a => a.ObjectForEntityFramework).ToArray<IApartment>());
+            return (_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework)
+                                     .Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
+                                     .Include(a => a.ObjectForEntityFramework)
+                                     .Include(a => a.PictureForEntityFramwork)
+                                     .ToArray<IApartment>());
         }
 
         /// <summary>
@@ -137,7 +145,11 @@ namespace PR.Classes
         /// </summary>
         public IApartment GetAppartment(int id)
         {
-            return ((IApartment)_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).Include(a => a.ObjectForEntityFramework).Where(a => a.Id == id).First());
+            return ((IApartment)_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework)
+                                                 .Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
+                                                 .Include(a => a.ObjectForEntityFramework)
+                                                 .Include(a => a.PictureForEntityFramwork)
+                                                 .Where(a => a.Id == id).First());
         }
 
         /// <summary>
@@ -161,7 +173,11 @@ namespace PR.Classes
         /// </summary>
         public IEnumerator GetEnumerator()
         {
-            return (new EntityEnumerator(_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework).Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework).Include(a=>a.ObjectForEntityFramework).ToArray<Apartment>()));
+            return (new EntityEnumerator(_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework)
+                                                          .Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
+                                                          .Include(a=>a.ObjectForEntityFramework)
+                                                          .Include(a => a.PictureForEntityFramwork)
+                                                          .ToArray<Apartment>()));
         }
 
         /// <summary>

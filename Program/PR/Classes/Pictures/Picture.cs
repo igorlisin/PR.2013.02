@@ -35,6 +35,28 @@ namespace PR.Classes
 
         #endregion
 
+        #region Properties
+        /// <summary>
+        /// Свойсво. Задает и возвращает квартиру (используется в Entity Framework) 
+        /// </summary>
+        public Apartment ApartmentForEntityFramework { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает объект оценки квартира
+        /// </summary>
+        public IApartment Apartment
+        {
+            get
+            {
+                return ((IApartment)ApartmentForEntityFramework);
+            }
+            set
+            {
+                ApartmentForEntityFramework = (Apartment)value;
+            }
+        }
+        #endregion
+
         #region Static methods
 
         /// <summary>

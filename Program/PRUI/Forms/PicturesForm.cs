@@ -27,6 +27,11 @@ namespace PRUI.Forms
         /// </summary>
         IPictures _pictures;
 
+        /// <summary>
+        /// Поле. Список Квартир
+        /// </summary>
+        IApartments _apartments;
+
         #endregion
 
         #region Constructors
@@ -34,12 +39,14 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public PicturesForm(IPictures pictures, string imageFolderPath)
+        public PicturesForm(IPictures pictures, IApartments apartments, string imageFolderPath)
             :base()
         {
             InitializeComponent();                  // Инициализировать компоненты формы
 
             _pictures = pictures;                   // Сохранить список картинок с поле
+
+            _apartments = apartments;               // Сохранить список квартир
 
             _imageFolderPath = imageFolderPath;     // Сохранить путь к папке с изображениями в поле
 
@@ -192,7 +199,7 @@ namespace PRUI.Forms
 
             picture = _pictures.Create();                                   // Создать картинку
 
-            pictureForm = new PictureForm(picture, _imageFolderPath);       // Создать форму для редактирования картинки
+            pictureForm = new PictureForm(picture, _apartments, _imageFolderPath);       // Создать форму для редактирования картинки
 
             pictureForm.ShowDialog();                                       // Отобразить форму для редактирования картинки
 
@@ -269,7 +276,7 @@ namespace PRUI.Forms
 
                 picture = _pictures.GetPicture(id);                             // Получить выделенную картинку
 
-                pictureForm = new PictureForm(picture, _imageFolderPath);       // Создать форму для редактирования картинки
+                pictureForm = new PictureForm(picture,_apartments,_imageFolderPath);       // Создать форму для редактирования картинки
 
                 pictureForm.ShowDialog();                                       // Отобразить форму для редактирования картиннки
 

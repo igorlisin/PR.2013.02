@@ -27,6 +27,16 @@ namespace PRUI.Forms
         /// </summary>
         IPicture _picture;
 
+        /// <summary>
+        /// Поле. Список Квартир
+        /// </summary>
+        private IApartments _apartments;
+
+        /// <summary>
+        /// Поле. Квартира после перепривязки
+        /// </summary>
+        private IApartment _apartmentAfterRelink;
+
         #endregion
 
         #region Properties
@@ -106,6 +116,51 @@ namespace PRUI.Forms
             }
         }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает название улицы
+        /// </summary>
+        private string StreetName
+        {
+            get
+            {
+                return (streetTextBox.Text);
+            }
+            set
+            {
+                streetTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает номер дома
+        /// </summary>
+        private string HomeNumber
+        {
+            get
+            {
+                return (houseTextBox.Text);
+            }
+            set
+            {
+                houseTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает номер квартиры
+        /// </summary>
+        private string ApartmentNumber
+        {
+            get
+            {
+                return (apartmentNumberTextBox.Text);
+            }
+            set
+            {
+                apartmentNumberTextBox.Text = value;
+            }
+        }
+
         #endregion
 
         #region Constructors
@@ -113,12 +168,14 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public PictureForm(IPicture picture, string imageFolderPath)
+        public PictureForm(IPicture picture, IApartments apartment, string imageFolderPath)
             : base()
         {
             InitializeComponent();                  // Инициализировать компоненты формы
 
             _picture = picture;                     // Сохранить картинку в поле
+
+            _apartments = apartment;                // Сохранить список квартир 
 
             _imageFolderPath = imageFolderPath;     // Сохранить путь к файлу картинок в поле
 
@@ -143,6 +200,17 @@ namespace PRUI.Forms
             base.CleanAllData();        // Очистить все данные
 
             CleanPicture();             // Очистить данные картинки
+            CleanApartment();           // Очистить данные квартиры
+        }
+
+               /// <summary>
+        /// Метод. Очищает данные квартиры
+        /// </summary>
+        private void CleanApartment()
+        {
+            ApartmentNumber = "";
+            HomeNumber = "";
+            StreetName = "";
         }
 
         /// <summary>
@@ -173,7 +241,51 @@ namespace PRUI.Forms
             CopyIdFromEntity((IEntity)_picture);                // Скопировать идентификатор
             CopyDescriptionFromEntity((IEntity)_picture);       // Скопировать описание
 
+            CopyLinkedDataFromEntity();                         // Скопировать данные из сущностей, связанных с основной сущностью 
             CopyPictureFromEntity(_picture);                    // Скопировать данные картинки
+        }
+
+        /// <summary>
+        /// Метод. Копирует данные из сущностей, связанных с основной сущностью
+        /// </summary>
+        private void CopyLinkedDataFromEntity()
+        {
+            if (_apartmentAfterRelink != null)                                                                // Проверить дом, связанный с квартирой
+            {
+                CopyApartmentNumberFromEntity(_apartmentAfterRelink);
+                if (_apartmentAfterRelink.Home != null)
+                {
+                    CopyHomeFromEntity(_apartmentAfterRelink.Home);
+                    if (_apartmentAfterRelink.Home.Street != null)
+                    {
+                        CopyStreetFromEntity(_apartmentAfterRelink.Home.Street);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Метод. Копирует данные сущности в компоненты улицы
+        /// </summary>
+        private void CopyStreetFromEntity(IStreet street)
+        {
+            StreetName = street.Name;       // Скопировать название улицы
+        }
+
+        /// <summary>
+        /// Метод. Копирует данные сущности в компоненты квартиры
+        /// </summary>
+        private void CopyApartmentNumberFromEntity(IApartment apartment)
+        {
+            ApartmentNumber = Convert.ToString(apartment.Number);       // Скопировать номер квартиры
+        }
+
+        /// <summary>
+        /// Метод. Копирует данные сущности в компоненты дома
+        /// </summary>
+        private void CopyHomeFromEntity(IHome home)
+        {
+            HomeNumber = home.Number;                   // Скопировать номер дома
         }
 
         /// <summary>
@@ -187,6 +299,7 @@ namespace PRUI.Forms
             _picture.Type = PictureType;                        // Скопировать тип
             _picture.ImageFileName = ImageFileName;             // Скопировать путь к файлу
             _picture.CreationDate = PictureCreationDate;        // Скопировать дату создания
+            _picture.Apartment = _apartmentAfterRelink;         // Скопировать привязку к квартире
         }
 
         /// <summary>
@@ -391,7 +504,42 @@ namespace PRUI.Forms
 
         #endregion
 
+        private void relinkApartmentButton_Click(object sender, EventArgs e)
+        {
+            ApartmentSelectForm apartmentSelectForm;                                  // Форма выбора квартиры
+
+            apartmentSelectForm = new ApartmentSelectForm(_apartments);                // Создать форму выбора квартиры
+
+            apartmentSelectForm.ShowDialog();                                // Отобразить форму выбора квартиры
+
+            if (apartmentSelectForm.SelectedApartment != null)                    // Проверить выбранный квартиры
+            {
+                _apartmentAfterRelink = apartmentSelectForm.SelectedApartment;      // Сохранить выбранный квартиру в поле
+            }
+
+            CopyLinkedDataFromEntity();                                 // Скопировать данные из сущностей, связанных с основной сущностью 
+        }
+
         #endregion
+
+        private void unlinkApartmentButton_Click(object sender, EventArgs e)
+        {
+            DialogResult unlinkConfirm;                         // Результат подтверждения сообщения
+
+            unlinkConfirm = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
+                "Вы действительно хотите отвязать квартиру?",
+                "Подтверждение",
+                MessageBoxButtons.YesNo);
+
+            if (unlinkConfirm == DialogResult.Yes)              // Проверить результат подтверждения сообщения
+            {
+                _apartmentAfterRelink = null;                    // Отвязать квартиру от связанного дома
+
+                CleanApartment();                                 // Очистить данные квартиры
+               
+                CopyLinkedDataFromEntity();                     // Скопировать данные из сущностей, связанных с основной сущностью 
+            }
+        }
 
         #endregion
     }

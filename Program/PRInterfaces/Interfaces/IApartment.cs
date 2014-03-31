@@ -97,7 +97,6 @@ namespace PRInterfaces.Interfaces
         /// </summary>
         ApartmentStates ApartmentState { get; set; }
 
-
         /// <summary>
         /// Свойство. Задает и возвращает необходимые ремонтные работы
         /// </summary>
@@ -303,6 +302,10 @@ namespace PRInterfaces.Interfaces
         /// </summary>
         string FlatsOnFloor { get; set; }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает картинки
+        /// </summary>
+        List <IPicture> Pictures { get; set; }
 
         #endregion
 

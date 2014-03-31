@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.pictureInfoGroup = new System.Windows.Forms.GroupBox();
+            this.unlinkApartmentButton = new System.Windows.Forms.Button();
+            this.relinkApartmentButton = new System.Windows.Forms.Button();
+            this.apartmentNumberTextBox = new System.Windows.Forms.TextBox();
+            this.houseTextBox = new System.Windows.Forms.TextBox();
+            this.streetTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.homeComplexNumberLabel = new System.Windows.Forms.Label();
             this.pictureCreationDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.pictureNameTextBox = new System.Windows.Forms.TextBox();
             this.pictureNameLabel = new System.Windows.Forms.Label();
@@ -64,6 +73,15 @@
             // 
             // pictureInfoGroup
             // 
+            this.pictureInfoGroup.Controls.Add(this.unlinkApartmentButton);
+            this.pictureInfoGroup.Controls.Add(this.relinkApartmentButton);
+            this.pictureInfoGroup.Controls.Add(this.apartmentNumberTextBox);
+            this.pictureInfoGroup.Controls.Add(this.houseTextBox);
+            this.pictureInfoGroup.Controls.Add(this.streetTextBox);
+            this.pictureInfoGroup.Controls.Add(this.label3);
+            this.pictureInfoGroup.Controls.Add(this.label2);
+            this.pictureInfoGroup.Controls.Add(this.label1);
+            this.pictureInfoGroup.Controls.Add(this.homeComplexNumberLabel);
             this.pictureInfoGroup.Controls.Add(this.pictureCreationDateDateTimePicker);
             this.pictureInfoGroup.Controls.Add(this.pictureNameTextBox);
             this.pictureInfoGroup.Controls.Add(this.pictureNameLabel);
@@ -80,6 +98,86 @@
             this.pictureInfoGroup.TabIndex = 11;
             this.pictureInfoGroup.TabStop = false;
             this.pictureInfoGroup.Text = "Картинка";
+            // 
+            // unlinkApartmentButton
+            // 
+            this.unlinkApartmentButton.Image = global::PRUI.Properties.Resources.unlinkButton;
+            this.unlinkApartmentButton.Location = new System.Drawing.Point(38, 359);
+            this.unlinkApartmentButton.Name = "unlinkApartmentButton";
+            this.unlinkApartmentButton.Size = new System.Drawing.Size(30, 20);
+            this.unlinkApartmentButton.TabIndex = 57;
+            this.unlinkApartmentButton.UseVisualStyleBackColor = true;
+            this.unlinkApartmentButton.Click += new System.EventHandler(this.unlinkApartmentButton_Click);
+            // 
+            // relinkApartmentButton
+            // 
+            this.relinkApartmentButton.Image = global::PRUI.Properties.Resources.linkButton;
+            this.relinkApartmentButton.Location = new System.Drawing.Point(2, 359);
+            this.relinkApartmentButton.Name = "relinkApartmentButton";
+            this.relinkApartmentButton.Size = new System.Drawing.Size(30, 20);
+            this.relinkApartmentButton.TabIndex = 56;
+            this.relinkApartmentButton.UseVisualStyleBackColor = true;
+            this.relinkApartmentButton.Click += new System.EventHandler(this.relinkApartmentButton_Click);
+            // 
+            // apartmentNumberTextBox
+            // 
+            this.apartmentNumberTextBox.Enabled = false;
+            this.apartmentNumberTextBox.Location = new System.Drawing.Point(6, 329);
+            this.apartmentNumberTextBox.Name = "apartmentNumberTextBox";
+            this.apartmentNumberTextBox.Size = new System.Drawing.Size(140, 20);
+            this.apartmentNumberTextBox.TabIndex = 55;
+            // 
+            // houseTextBox
+            // 
+            this.houseTextBox.Enabled = false;
+            this.houseTextBox.Location = new System.Drawing.Point(6, 287);
+            this.houseTextBox.Name = "houseTextBox";
+            this.houseTextBox.Size = new System.Drawing.Size(140, 20);
+            this.houseTextBox.TabIndex = 55;
+            // 
+            // streetTextBox
+            // 
+            this.streetTextBox.Enabled = false;
+            this.streetTextBox.Location = new System.Drawing.Point(6, 248);
+            this.streetTextBox.Name = "streetTextBox";
+            this.streetTextBox.Size = new System.Drawing.Size(140, 20);
+            this.streetTextBox.TabIndex = 55;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 310);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 13);
+            this.label3.TabIndex = 54;
+            this.label3.Text = "Номер квартиры";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 271);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 54;
+            this.label2.Text = "Дом";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 232);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Улица";
+            // 
+            // homeComplexNumberLabel
+            // 
+            this.homeComplexNumberLabel.AutoSize = true;
+            this.homeComplexNumberLabel.Location = new System.Drawing.Point(7, 209);
+            this.homeComplexNumberLabel.Name = "homeComplexNumberLabel";
+            this.homeComplexNumberLabel.Size = new System.Drawing.Size(55, 13);
+            this.homeComplexNumberLabel.TabIndex = 54;
+            this.homeComplexNumberLabel.Text = "Квартира";
             // 
             // pictureCreationDateDateTimePicker
             // 
@@ -211,5 +309,14 @@
         private System.Windows.Forms.Label pictureNameLabel;
         private System.Windows.Forms.DateTimePicker pictureCreationDateDateTimePicker;
         private System.Windows.Forms.Label pictureCreationDateAndTimeLabel;
+        protected System.Windows.Forms.Button unlinkApartmentButton;
+        protected System.Windows.Forms.Button relinkApartmentButton;
+        protected System.Windows.Forms.TextBox apartmentNumberTextBox;
+        protected System.Windows.Forms.TextBox houseTextBox;
+        protected System.Windows.Forms.TextBox streetTextBox;
+        protected System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.Label label1;
+        protected System.Windows.Forms.Label homeComplexNumberLabel;
     }
 }

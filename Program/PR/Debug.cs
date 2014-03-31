@@ -139,7 +139,7 @@ namespace PR
 
          private void picturesButton_Click(object sender, EventArgs e)
         {
-            PicturesForm picturesForm = new PicturesForm(_objectModel.Pictures, Properties.Settings.Default.imagesFolderPath);
+            PicturesForm picturesForm = new PicturesForm(_objectModel.Pictures, _objectModel.Appartments, Properties.Settings.Default.imagesFolderPath);
             picturesForm.ShowDialog();
         }
 

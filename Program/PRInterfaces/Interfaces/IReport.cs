@@ -56,5 +56,7 @@ namespace PRInterfaces.Interfaces
         /// Свойство. Задает и возвращает объект оценки квартира
         /// </summary>
         IApartment Apartment { get; set; }
+
+
     }
 }

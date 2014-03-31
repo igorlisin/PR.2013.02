@@ -31,6 +31,22 @@ namespace PR.Classes
         }
 
         /// <summary>
+        /// Статический метод. Преобразует объект типа Picture в объект типа IPicture
+        /// </summary>
+        public static IPicture PictureToIPictureConverter(Picture picture)
+        {
+            return ((IPicture)picture);
+        }
+
+        /// <summary>
+        /// Статический метод. Преобразует объект типа Picture в объект типа IPicture
+        /// </summary>
+        public static Picture IPictureToPictureConverter(IPicture picture)
+        {
+            return ((Picture)picture);
+        }
+
+        /// <summary>
         /// Статический метод. Возвращает тип комнат как тестовую строку
         /// </summary>
         public static string GetRoomTypeAsStringStatic(RoomTypes roomType)
@@ -1659,6 +1675,27 @@ namespace PR.Classes
                 _flatsOnFloor = value;
             }
         }
+
+       /// <summary>
+       /// Свойство. Задает и возвращает картинку
+       /// </summary>
+       public List<IPicture> Pictures
+       {
+           get
+           {
+               return (PictureForEntityFramwork.ConvertAll(Picture.PictureToIPictureConverter));
+           }
+           set
+           {
+               PictureForEntityFramwork = value.ConvertAll(Picture.IPictureToPictureConverter);
+           }
+
+       }
+
+       /// <summary>
+       /// Свойство. Задает и возвращает картинку (используется в Entity Framework) 
+       /// </summary>
+       public List<Picture> PictureForEntityFramwork { get; set; }
 
 
         #endregion

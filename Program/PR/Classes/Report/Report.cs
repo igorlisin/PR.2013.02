@@ -228,6 +228,7 @@ namespace PR.Classes
         /// </summary>
         public Object ObjectForEntityFramework { get; set; }
 
+
         /// <summary>
         /// Метод. Возвращает копию отчета
         /// </summary>

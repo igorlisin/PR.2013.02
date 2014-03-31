@@ -106,7 +106,7 @@ namespace PR.Classes
         /// </summary>
         public List<IPicture> ToList()
         {
-            return (_picturesDbSet.ToList<IPicture>());
+            return (_picturesDbSet.Include(p => p.ApartmentForEntityFramework).ToList<IPicture>());
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace PR.Classes
         /// </summary>
         public IPicture[] ToArray()
         {
-            return (_picturesDbSet.ToArray<IPicture>());
+            return (_picturesDbSet.Include(p => p.ApartmentForEntityFramework).ToArray<IPicture>());
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace PR.Classes
         /// </summary>
         public IPicture GetPicture(int id)
         {
-            return ((IPicture)_picturesDbSet.Find(id));
+            return ((IPicture)_picturesDbSet.Include(p=>p.ApartmentForEntityFramework).Where(p=>p.Id == id).First());
         }
 
         /// <summary>

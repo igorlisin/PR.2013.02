@@ -23,6 +23,11 @@ namespace PRUI.Forms
         private string _imageFolderPath;
 
         /// <summary>
+        /// Поле. имя файла изображения
+        /// </summary>
+        private string _imageFileName;
+
+        /// <summary>
         /// Поле. Картинка
         /// </summary>
         IPicture _picture;
@@ -433,22 +438,23 @@ namespace PRUI.Forms
 
        public override void okButton_Click(object sender, EventArgs e)
         {
-           string path =_imageFolderPath +"\\"+ PictureName + "_"+
-                         _picture.CreationDate.ToShortDateString()+"_"+
-                         _picture.CreationDate.ToLongTimeString().Replace(":","_")+"_"+
-                         _picture.TypeAsString;
-            Picture.Save(path + ".png", System.Drawing.Imaging.ImageFormat.Png);
+            ImageFileName = PictureName + "_" +
+                              _picture.CreationDate.ToShortDateString() + "_" +
+                              _picture.CreationDate.ToLongTimeString().Replace(":", ".") + "_" +
+                              _picture.TypeAsString + ".png";
+            Picture.Save(_imageFolderPath+"\\"+ImageFileName, System.Drawing.Imaging.ImageFormat.Png);
 
             base.okButton_Click(sender, e);
         }
 
        public override void saveButton_Click(object sender, EventArgs e)
        {
-           string path = _imageFolderPath + "\\" + PictureName + "_" +
-                         _picture.CreationDate.ToShortDateString() + "_" +
-                         _picture.CreationDate.ToLongTimeString().Replace(":", "_") + "_" +
-                         _picture.TypeAsString;
-           Picture.Save(path + ".png", System.Drawing.Imaging.ImageFormat.Png);
+           ImageFileName = PictureName + "_" +
+                             _picture.CreationDate.ToShortDateString() + "_" +
+                             _picture.CreationDate.ToLongTimeString().Replace(":", ".") + "_" +
+                             _picture.TypeAsString + ".png";
+           Picture.Save(_imageFolderPath + "\\" + ImageFileName, System.Drawing.Imaging.ImageFormat.Png);
+
 
            base.saveButton_Click(sender, e);
        }

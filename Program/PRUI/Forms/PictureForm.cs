@@ -439,22 +439,22 @@ namespace PRUI.Forms
 
        public override void okButton_Click(object sender, EventArgs e)
         {
-            ImageFileName = PictureName + "_" +
+            ImageFileName = _imageFolderPath + "\\" + PictureName + "_" +
                               _picture.CreationDate.ToShortDateString() + "_" +
                               _picture.CreationDate.ToLongTimeString().Replace(":", ".") + "_" +
                               _picture.TypeAsString + ".png";
-            Picture.Save(_imageFolderPath+"\\"+ImageFileName, System.Drawing.Imaging.ImageFormat.Png);
+            Picture.Save(ImageFileName, System.Drawing.Imaging.ImageFormat.Png);
 
             base.okButton_Click(sender, e);
         }
 
        public override void saveButton_Click(object sender, EventArgs e)
        {
-           ImageFileName = PictureName + "_" +
+           ImageFileName = _imageFolderPath + "\\" + PictureName + "_" +
                              _picture.CreationDate.ToShortDateString() + "_" +
                              _picture.CreationDate.ToLongTimeString().Replace(":", ".") + "_" +
                              _picture.TypeAsString + ".png";
-           Picture.Save(_imageFolderPath + "\\" + ImageFileName, System.Drawing.Imaging.ImageFormat.Png);
+           Picture.Save( ImageFileName, System.Drawing.Imaging.ImageFormat.Png);
 
 
            base.saveButton_Click(sender, e);

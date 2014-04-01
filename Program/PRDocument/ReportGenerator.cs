@@ -152,11 +152,11 @@ namespace PRDocument
         public static void FillPicturesArray(IReport report)
         {
             IPicture[] pics = report.Apartment.Pictures.ToArray();
-            IPicture[] apartmentMaps = null;
-            IPicture[] documents = null;
-            IPicture[] maps = null;
-            IPicture[] photo = null;
-            IPicture[] screenshot = null;
+            IPicture[] apartmentMaps = new IPicture[13];
+            IPicture[] documents = new IPicture[13];
+            IPicture[] maps = new IPicture[13];
+            IPicture[] photo = new IPicture[13];
+            IPicture[] screenshot = new IPicture[13];
 
             _apartmentMaps = new string[2, 12];
             _documents= new string[2, 12];
@@ -187,35 +187,35 @@ namespace PRDocument
             {
                 if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.appartmentMap)
                 {
-                    apartmentMaps[am] = pics[j];
+                    apartmentMaps[am] = report.Apartment.Pictures.ToArray()[j];
                     _apartmentMaps[0, am] = apartmentMaps[am].ImageFileName;
                     _apartmentMaps[1, am] = apartmentMaps[am].Name;
                     am++;
                 }
                 if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.document)
                 {
-                    documents[d] = pics[j];
+                    documents[d] = report.Apartment.Pictures.ToArray()[j];
                     _documents[0, d] = documents[d].ImageFileName;
                     _documents[1, d] = documents[d].Name;
                     d++;
                 }
                 if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.map)
                 {
-                    maps[m] = pics[j];
+                    maps[m] = report.Apartment.Pictures.ToArray()[j];
                     _maps[0, m] = maps[m].ImageFileName;
                     _maps[1, m] = maps[m].Name;
                     m++;
                 }
                 if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.photo)
                 {
-                    photo[p] = pics[j];
+                    photo[p] = report.Apartment.Pictures.ToArray()[j];
                     _photo[0, p] = photo[p].ImageFileName;
                     _photo[1, p] = photo[p].Name;
                     p++;
                 }
                 if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.screenshot)
                 {
-                    screenshot[ss] = pics[j];
+                    screenshot[ss] = report.Apartment.Pictures.ToArray()[j];
                     _screenshots[0, ss] = screenshot[ss].ImageFileName;
                     _screenshots[1, ss] = screenshot[ss].Name;
                     ss++;
@@ -831,8 +831,8 @@ namespace PRDocument
                     rg = bk[bookmarks[i]].Range;    
 
                     if (i > 257)                                // Здесь начинаются фотографии
-                    { 
-                    //    rg.InlineShapes.AddPicture(
+                    {
+                        rg.InlineShapes.AddPicture(_photo[0, 0]);
                     }
                     else
                     {                                                                         

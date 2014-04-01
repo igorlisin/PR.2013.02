@@ -106,7 +106,7 @@ namespace PR.Classes
         /// </summary>
         public List<IPicture> ToList()
         {
-            return (_picturesDbSet.Include(p => p.ApartmentForEntityFramework).ToList<IPicture>());
+            return (_picturesDbSet.Include(p => p.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework).ToList<IPicture>());
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace PR.Classes
         /// </summary>
         public IPicture[] ToArray()
         {
-            return (_picturesDbSet.Include(p => p.ApartmentForEntityFramework).ToArray<IPicture>());
+            return (_picturesDbSet.Include(p => p.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework).ToArray<IPicture>());
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace PR.Classes
         /// </summary>
         public IPicture GetPicture(int id)
         {
-            return ((IPicture)_picturesDbSet.Include(p=>p.ApartmentForEntityFramework).Where(p=>p.Id == id).First());
+            return ((IPicture)_picturesDbSet.Include(p => p.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework).Where(p => p.Id == id).First());
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace PR.Classes
         /// </summary>
         public IEnumerator GetEnumerator()
         {
-            return (new EntityEnumerator(_picturesDbSet.ToArray<Picture>()));
+            return (new EntityEnumerator(_picturesDbSet.Include(p => p.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework).ToArray<Picture>()));
         }
     }
 }

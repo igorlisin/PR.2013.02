@@ -20,6 +20,11 @@ namespace PRDocument
 {
     public class ReportGenerator
     {
+        private static string[,] _apartmentMaps;
+        private static string[,] _maps;
+        private static string[,] _documents;
+        private static string[,] _screenshots;
+        private static string[,] _photo;
 
        //Процедура формирования отчетов
         public static void Generate(IReport report, string reportTemplatesFolderPath, string reportsFolderPath)
@@ -141,6 +146,81 @@ namespace PRDocument
             texts_conclusion[30] = Convert.ToString(report.Apartment.GrossAreaSNIP);
             texts_conclusion[31] = report.Apartment.Home.Street.City.Name + ", " + report.Apartment.Home.Street.Name;
             texts_conclusion[32] = report.Employee.Membership;
+        }
+
+        // Заполнить массив картинок
+        public static void FillPicturesArray(IReport report)
+        {
+            IPicture[] pics = report.Apartment.Pictures.ToArray();
+            IPicture[] apartmentMaps = null;
+            IPicture[] documents = null;
+            IPicture[] maps = null;
+            IPicture[] photo = null;
+            IPicture[] screenshot = null;
+
+            _apartmentMaps = new string[2, 12];
+            _documents= new string[2, 12];
+            _maps= new string[2, 12];
+            _photo= new string[2, 12];
+            _screenshots = new string[2, 12];
+
+            int am = 0;
+            int d = 0;
+            int m = 0;
+            int p = 0;
+            int ss = 0;
+
+            for (int i = 0; i < 12; i++)                    // Зачистить массив для случая отсутсвия некоторых картинок
+            {
+                for (int c = 0; c < 2; c++)
+                {
+                    _apartmentMaps[c, i] =  "";
+                    _documents[c, i] = "";
+                    _maps[c, i] = "";
+                    _photo[c, i] = "";
+                    _screenshots[c, i] = "";
+
+                }
+            }
+
+            for (int j = 0; j < report.Apartment.Pictures.Count; j++)       // Заполняем массивы в зависимости от типа рисунка
+            {
+                if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.appartmentMap)
+                {
+                    apartmentMaps[am] = pics[j];
+                    _apartmentMaps[0, am] = apartmentMaps[am].ImageFileName;
+                    _apartmentMaps[1, am] = apartmentMaps[am].Name;
+                    am++;
+                }
+                if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.document)
+                {
+                    documents[d] = pics[j];
+                    _documents[0, d] = documents[d].ImageFileName;
+                    _documents[1, d] = documents[d].Name;
+                    d++;
+                }
+                if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.map)
+                {
+                    maps[m] = pics[j];
+                    _maps[0, m] = maps[m].ImageFileName;
+                    _maps[1, m] = maps[m].Name;
+                    m++;
+                }
+                if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.photo)
+                {
+                    photo[p] = pics[j];
+                    _photo[0, p] = photo[p].ImageFileName;
+                    _photo[1, p] = photo[p].Name;
+                    p++;
+                }
+                if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.screenshot)
+                {
+                    screenshot[ss] = pics[j];
+                    _screenshots[0, ss] = screenshot[ss].ImageFileName;
+                    _screenshots[1, ss] = screenshot[ss].Name;
+                    ss++;
+                }
+            }
         }
 
         //Процедура формирования закладок и текстов их замен в отчете Отчет
@@ -436,46 +516,7 @@ namespace PRDocument
             bookmarks_report[271] = "image_map1";
             bookmarks_report[272] = "image_map2";
 
-            IPicture[] pics = report.Apartment.Pictures.ToArray();
-            IPicture[] apartmentMaps = null;
-            IPicture[] documents = null;
-            IPicture[] maps = null;
-            IPicture[] photo = null;
-            IPicture[] screenshot = null;
-            int am = 0;
-            int d = 0;
-            int m = 0;
-            int p = 0;
-            int ss = 0;
-
-            for (int j=0;j<report.Apartment.Pictures.Count;j++)
-            {
-                if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.appartmentMap)
-                {
-                    apartmentMaps[am] = pics[j];
-                    am++;
-                }
-                if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.document)
-                {
-                    documents[d] = pics[j];
-                    d++;
-                }
-                if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.map)
-                {
-                    maps[m] = pics[j];
-                    m++;
-                }
-                if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.photo)
-                {
-                    photo[p] = pics[j];
-                    p++;
-                }
-                if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.screenshot)
-                {
-                    screenshot[ss] = pics[j];
-                    ss++;
-                }
-            }
+            FillPicturesArray(report);
 
             double wear = Convert.ToDouble(report.DateOfContract.Year - report.Apartment.Home.BuildYear) / 150.0 * 100.0;    // вычисление износа дома
 
@@ -739,15 +780,15 @@ namespace PRDocument
             texts_report[245] = Convert.ToString(report.ReportDate.Year);
             texts_report[246] = Convert.ToString(report.Apartment.Home.BuildYear);
             texts_report[247] = Convert.ToString(report.Apartment.Home.BuildYear - report.ReportDate.Year);
-            texts_report[248] = photo[0].Name;
-            texts_report[249] = photo[1].Name;
-            texts_report[250] = photo[2].Name;
-            texts_report[251] = photo[3].Name;
-            texts_report[252] = photo[4].Name;
-            texts_report[253] = photo[5].Name;
-            texts_report[254] = photo[6].Name;
-            texts_report[255] = photo[7].Name;
-            texts_report[256] = photo[8].Name;
+            texts_report[248] = _photo[1, 0];
+            texts_report[249] = _photo[1, 1]; 
+            texts_report[250] = _photo[1, 2];
+            texts_report[251] = _photo[1, 3];
+            texts_report[252] = _photo[1, 4];
+            texts_report[253] = _photo[1, 5];
+            texts_report[254] = _photo[1, 6];
+            texts_report[255] = _photo[1, 7];
+            texts_report[256] = _photo[1, 8];
             texts_report[257] = "";
             texts_report[258] = "";
             texts_report[259] = "";

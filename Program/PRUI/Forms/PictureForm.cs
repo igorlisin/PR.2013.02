@@ -181,6 +181,7 @@ namespace PRUI.Forms
             _picture = picture;                     // Сохранить картинку в поле
 
             _apartments = apartment;                // Сохранить список квартир 
+            _apartmentAfterRelink = picture.Apartment;
 
             _imageFolderPath = imageFolderPath;     // Сохранить путь к файлу картинок в поле
 

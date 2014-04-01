@@ -112,6 +112,7 @@ namespace PR.Classes
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.DistrictForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
+                                 .Include(r => r.ApartmentForEntityFramework.PictureForEntityFramwork)
                                  .Include(r => r.ApartmentForEntityFramework.ObjectForEntityFramework)
                                  .ToList<IReport>());
         }
@@ -127,6 +128,7 @@ namespace PR.Classes
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.DistrictForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
                                  .Include(r => r.ApartmentForEntityFramework.ObjectForEntityFramework)
+                                 .Include(r => r.ApartmentForEntityFramework.PictureForEntityFramwork)
                                  .ToArray<IReport>());
         }
 
@@ -140,6 +142,7 @@ namespace PR.Classes
                             .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.DistrictForEntityFramework)
                             .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework)
                             .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
+                            .Include(r => r.ApartmentForEntityFramework.PictureForEntityFramwork)
                             .Include(r=>r.ApartmentForEntityFramework.ObjectForEntityFramework)
                             .Where(r => r.Id == id).First());
         }
@@ -171,6 +174,7 @@ namespace PR.Classes
                                                       .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
                                                       .Include(r => r.ApartmentForEntityFramework.HomeForEntityFramework.DistrictForEntityFramework)
                                                       .Include(r => r.ApartmentForEntityFramework.ObjectForEntityFramework)
+                                                      .Include(r => r.ApartmentForEntityFramework.PictureForEntityFramwork)
                                                       .ToArray<Report>()));
         }
     }

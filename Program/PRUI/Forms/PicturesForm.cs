@@ -314,7 +314,7 @@ namespace PRUI.Forms
 
             fileName = picture.ImageFileName;                           // Получить название файла изображения
 
-            fileFullPath = _imageFolderPath + @"\" + fileName;          // Вычислить полный путь к файлу изображения
+            fileFullPath =  fileName;          // Вычислить полный путь к файлу изображения
 
             imagePreviewForm = new ImagePreviewForm(fileFullPath);      // Создать форму предварительного просмотра изображений
 

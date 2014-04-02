@@ -20,11 +20,12 @@ namespace PRDocument
 {
     public class ReportGenerator
     {
-        private static string[,] _apartmentMaps;
-        private static string[,] _maps;
-        private static string[,] _documents;
-        private static string[,] _screenshots;
-        private static string[,] _photo;
+        private static IPicture[] pics;
+        private static IPicture[] apartmentMaps;
+        private static IPicture[] documents;
+        private static IPicture[] maps;
+        private static IPicture[] photo;
+        private static IPicture[] screenshot;
 
        //Процедура формирования отчетов
         public static void Generate(IReport report, string reportTemplatesFolderPath, string reportsFolderPath)
@@ -151,18 +152,12 @@ namespace PRDocument
         // Заполнить массив картинок
         public static void FillPicturesArray(IReport report)
         {
-            IPicture[] pics = report.Apartment.Pictures.ToArray();
-            IPicture[] apartmentMaps = new IPicture[13];
-            IPicture[] documents = new IPicture[13];
-            IPicture[] maps = new IPicture[13];
-            IPicture[] photo = new IPicture[13];
-            IPicture[] screenshot = new IPicture[13];
-
-            _apartmentMaps = new string[2, 12];
-            _documents= new string[2, 12];
-            _maps= new string[2, 12];
-            _photo= new string[2, 12];
-            _screenshots = new string[2, 12];
+            pics = report.Apartment.Pictures.ToArray();
+            apartmentMaps = new IPicture[13];
+            documents = new IPicture[13];
+            maps = new IPicture[13];
+            photo = new IPicture[13];
+            screenshot = new IPicture[13];
 
             int am = 0;
             int d = 0;
@@ -170,54 +165,32 @@ namespace PRDocument
             int p = 0;
             int ss = 0;
 
-            for (int i = 0; i < 12; i++)                    // Зачистить массив для случая отсутсвия некоторых картинок
-            {
-                for (int c = 0; c < 2; c++)
-                {
-                    _apartmentMaps[c, i] =  "";
-                    _documents[c, i] = "";
-                    _maps[c, i] = "";
-                    _photo[c, i] = "";
-                    _screenshots[c, i] = "";
-
-                }
-            }
 
             for (int j = 0; j < report.Apartment.Pictures.Count; j++)       // Заполняем массивы в зависимости от типа рисунка
             {
                 if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.appartmentMap)
                 {
                     apartmentMaps[am] = report.Apartment.Pictures.ToArray()[j];
-                    _apartmentMaps[0, am] = apartmentMaps[am].ImageFileName;
-                    _apartmentMaps[1, am] = apartmentMaps[am].Name;
                     am++;
                 }
                 if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.document)
                 {
                     documents[d] = report.Apartment.Pictures.ToArray()[j];
-                    _documents[0, d] = documents[d].ImageFileName;
-                    _documents[1, d] = documents[d].Name;
                     d++;
                 }
                 if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.map)
                 {
                     maps[m] = report.Apartment.Pictures.ToArray()[j];
-                    _maps[0, m] = maps[m].ImageFileName;
-                    _maps[1, m] = maps[m].Name;
                     m++;
                 }
                 if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.photo)
                 {
                     photo[p] = report.Apartment.Pictures.ToArray()[j];
-                    _photo[0, p] = photo[p].ImageFileName;
-                    _photo[1, p] = photo[p].Name;
                     p++;
                 }
                 if (pics[j].Type == PRInterfaces.Enumerations.PictureTypes.screenshot)
                 {
                     screenshot[ss] = report.Apartment.Pictures.ToArray()[j];
-                    _screenshots[0, ss] = screenshot[ss].ImageFileName;
-                    _screenshots[1, ss] = screenshot[ss].Name;
                     ss++;
                 }
             }
@@ -780,31 +753,31 @@ namespace PRDocument
             texts_report[245] = Convert.ToString(report.ReportDate.Year);
             texts_report[246] = Convert.ToString(report.Apartment.Home.BuildYear);
             texts_report[247] = Convert.ToString(report.Apartment.Home.BuildYear - report.ReportDate.Year);
-            texts_report[248] = _photo[1, 0];
-            texts_report[249] = _photo[1, 1]; 
-            texts_report[250] = _photo[1, 2];
-            texts_report[251] = _photo[1, 3];
-            texts_report[252] = _photo[1, 4];
-            texts_report[253] = _photo[1, 5];
-            texts_report[254] = _photo[1, 6];
-            texts_report[255] = _photo[1, 7];
-            texts_report[256] = _photo[1, 8];
-            texts_report[257] = "";
-            texts_report[258] = "";
-            texts_report[259] = "";
-            texts_report[260] = "";
-            texts_report[261] = "";
-            texts_report[262] = "";
-            texts_report[263] = "";
-            texts_report[264] = "";
-            texts_report[265] = "";
-            texts_report[266] = "";
-            texts_report[267] = "";
-            texts_report[268] = "";
-            texts_report[269] = "";
-            texts_report[270] = "";
-            texts_report[271] = "";
-            texts_report[272] = "";
+            texts_report[248] = photo[0] != null ? photo[0].Name : "";
+            texts_report[249] = photo[1] != null ? photo[1].Name : "";
+            texts_report[250] = photo[2] != null ? photo[2].Name : "";
+            texts_report[251] = photo[3] != null ? photo[3].Name : "";
+            texts_report[252] = photo[4] != null ? photo[4].Name : "";
+            texts_report[253] = photo[5] != null ? photo[5].Name : "";
+            texts_report[254] = photo[6] != null ? photo[6].Name : "";
+            texts_report[255] = photo[7] != null ? photo[7].Name : "";
+            texts_report[256] = photo[8] != null ? photo[8].Name : "";
+            texts_report[257] = apartmentMaps[0] != null ? apartmentMaps[0].Name : "";
+            //texts_report[258] = "";
+            //texts_report[259] = "";
+            //texts_report[260] = "";
+            //texts_report[261] = "";
+            //texts_report[262] = "";
+            //texts_report[263] = "";
+            //texts_report[264] = "";
+            //texts_report[265] = "";
+            //texts_report[266] = "";
+            //texts_report[267] = "";
+            //texts_report[268] = "";
+            //texts_report[269] = "";
+            //texts_report[270] = "";
+            //texts_report[271] = "";
+            //texts_report[272] = "";
 
 
 
@@ -828,16 +801,38 @@ namespace PRDocument
                 int bkcount = bk.Count;
                 for (int i = 0; i < array_len; i++)                                                                         // Цикл выполняется только если длина массива закладок равено длине массиву заменяющих строк
                 {     
-                    rg = bk[bookmarks[i]].Range;    
+                    rg = bk[bookmarks[i]].Range;
+                    if (i < 258)
+                    {                                                                                           
+                        rg.Text = text[i];                                  // Выполнить замену строк
+                    }
 
-                    if (i > 257)                                // Здесь начинаются фотографии
+                    if (i > 257 & i < 267 )                                // Здесь начинаются фотографии
                     {
-                        rg.InlineShapes.AddPicture(_photo[0, 0]);
+                        if (photo[i - 258] != null)
+                        {
+                            rg.InlineShapes.AddPicture(photo[i - 258].ImageFileName);
+                        }
                     }
-                    else
-                    {                                                                         
-                        rg.Text = text[i];                  // Выполнить замен
+                    if (i == 267 & apartmentMaps[0] != null)                                // Здесь начинаются план квартиры
+                    {
+                        rg.InlineShapes.AddPicture(apartmentMaps[0].ImageFileName);
                     }
+                    if (i > 267 & i < 271 )                                // Здесь начинаются скан документов
+                    {
+                        if (documents[i - 268] != null)
+                        {
+                            rg.InlineShapes.AddPicture(documents[i - 268].ImageFileName);
+                        }
+                    }
+                    if (i > 270 & i < 273)                                // Здесь начинаются скан документов
+                    {
+                        if (screenshot[i - 271] != null)
+                        {
+                            rg.InlineShapes.AddPicture(screenshot[i - 271].ImageFileName);
+                        }
+                    }
+                    
                 }
             }
             catch

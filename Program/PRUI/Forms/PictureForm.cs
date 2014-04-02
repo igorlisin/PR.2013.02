@@ -419,7 +419,7 @@ namespace PRUI.Forms
             width = picturePictureBox.Width;                            // Получить ширину изображения
             height = picturePictureBox.Height;                          // Получить высоту изображения
 
-            pathToFile = _imageFolderPath + @"\" + pictureFilePath;     // Вычислить полный путь к файлу изображения
+            pathToFile = pictureFilePath;     // Вычислить полный путь к файлу изображения
 
             try
             {

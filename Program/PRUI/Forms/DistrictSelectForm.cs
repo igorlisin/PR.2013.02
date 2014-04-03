@@ -87,7 +87,7 @@ namespace PRUI.Forms
 
             columnName.Width = 110;                                                               // Задать ширину колонки
             columnName.Name = "number";                                                           // Задать название колонки
-            columnName.HeaderText = "Номер";                                                      // Задать заголовок
+            columnName.HeaderText = "Название";                                                      // Задать заголовок
 
             entitiesDataGridView.Columns.Add(columnName);                                           // Добавить колонку в элемент отображения списка сущностей
             entitiesDataGridView.Columns.Add(columnId);                                             // Добавить колонку в элемент отображения списка сущностей

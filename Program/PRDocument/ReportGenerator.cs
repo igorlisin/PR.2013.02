@@ -20,24 +20,43 @@ namespace PRDocument
 {
     public class ReportGenerator
     {
+        /// <summary>
+        /// Поле. Массив картинок квартиры
+        /// </summary>
         private static IPicture[] pics;
+        /// <summary>
+        /// Поле. Массив картинок схем квариры
+        /// </summary>
         private static IPicture[] apartmentMaps;
+        /// <summary>
+        /// Поле. Массив сканов документов
+        /// </summary>
         private static IPicture[] documents;
+        /// <summary>
+        /// Поле. Массив скриншотов карт
+        /// </summary>
         private static IPicture[] maps;
+        /// <summary>
+        /// Поле. Массив фотографий
+        /// </summary>
         private static IPicture[] photo;
+        /// <summary>
+        /// Поле. Массив скриншотов
+        /// </summary>
         private static IPicture[] screenshot;
+
 
        //Процедура формирования отчетов
         public static void Generate(IReport report, string reportTemplatesFolderPath, string reportsFolderPath)
         {
-            string templateConclusReport = reportTemplatesFolderPath + @"\conclusion.dotx";                                        // Путь к шаблону договора
+            string templateConclusReport = reportTemplatesFolderPath + @"\conclusion.dotx";                                        // Путь к шаблону заключения
             string reportConclusName = reportsFolderPath + @"\conclusion " + DateTime.Now.ToString().Replace(":", ".") + @".docx"; // Путь к выходному файлу
-            
-            string tempContractReport = reportTemplatesFolderPath + @"\contract.xltx";
-            string reportContractName = reportsFolderPath + @"\contract " + DateTime.Now.ToString().Replace(":", ".") + @".xlsx";
 
-            string tempReport = reportTemplatesFolderPath + @"\report.dotx";
-            string reportName = reportsFolderPath + @"\report " + DateTime.Now.ToString().Replace(":", ".") + @".docx";
+            string tempContractReport = reportTemplatesFolderPath + @"\contract.xltx";                                          // Путь к шаблону договора
+            string reportContractName = reportsFolderPath + @"\contract " + DateTime.Now.ToString().Replace(":", ".") + @".xlsx";// Путь к выходному файлу
+
+            string tempReport = reportTemplatesFolderPath + @"\report.dotx";                                            // Путь к шаблону отчета
+            string reportName = reportsFolderPath + @"\report " + DateTime.Now.ToString().Replace(":", ".") + @".docx";// Путь к выходному файлу
 
             string[] bookmarks_conclusion = new string[50];                                                                       // Массив закладок
             string[] texts_conclusion = new string[50];                                                                           // Массив вставляемых вместо закладок строк
@@ -45,16 +64,22 @@ namespace PRDocument
             string[] bookmarks_report = new string[275];                                                                       // Массив закладок
             string[] texts_report = new string[275];                                                                           // Массив вставляемых вместо закладок строк
 
-            string client_in_padeg = null;
+            string client_in_padeg = null;      //склонение ФИО па падежам
             int rod = 0;
-            client_in_padeg = BLL.Declension.DeclensionBLL.GetSNPDeclension(report.Client.Man.Surname, report.Client.Man.Name, report.Client.Man.Patronymic, BLL.Declension.DeclensionCase.Tvorit);
-            rod = BLL.Declension.DeclensionBLL.GetGender(report.Client.Man.Patronymic);
+            client_in_padeg = BLL.Declension.DeclensionBLL.GetSNPDeclension(report.Client.Man.Surname, 
+                                                                                report.Client.Man.Name, 
+                                                                                report.Client.Man.Patronymic, 
+                                                                                BLL.Declension.DeclensionCase.Tvorit);//получить ФИО в творительном падеже
+            rod = BLL.Declension.DeclensionBLL.GetGender(report.Client.Man.Patronymic); // Определить пол по отчеству
 
             string client_in_padeg_dat = null;
-            client_in_padeg_dat = BLL.Declension.DeclensionBLL.GetSNPDeclension(report.Client.Man.Surname, report.Client.Man.Name, report.Client.Man.Patronymic, BLL.Declension.DeclensionCase.Datel);
+            client_in_padeg_dat = BLL.Declension.DeclensionBLL.GetSNPDeclension(report.Client.Man.Surname, 
+                                                    report.Client.Man.Name,     
+                                                    report.Client.Man.Patronymic, 
+                                                    BLL.Declension.DeclensionCase.Datel);//ФИО клиента в дательном падеже
 
-            ArrayFillConcusion(bookmarks_conclusion, texts_conclusion, report, client_in_padeg);
-            ArrayFillReport(bookmarks_report, texts_report, report, client_in_padeg_dat);
+            ArrayFillConcusion(bookmarks_conclusion, texts_conclusion, report, client_in_padeg);        //Заполнить массив закладок для файла Заключение
+            ArrayFillReport(bookmarks_report, texts_report, report, client_in_padeg_dat);              //Заполнить массив закладок для файла Отчет 
 
             DocGenerate(templateConclusReport, reportConclusName, bookmarks_conclusion, texts_conclusion);                            // Сгенерировать отчет Заключение
             DocGenerate(tempReport, reportName, bookmarks_report, texts_report);                                                      // Сгенерировать отчет Отчет
@@ -98,6 +123,7 @@ namespace PRDocument
             bookmarks_conclusion[31] = "street_addr";
             bookmarks_conclusion[32] = "employee_SRO";
 
+            //Шаблоны написания сумм в валютах
             Валюта rouble = new Валюта(
                             new ЕдиницаИзмерения(РодЧисло.Мужской, "рубль", "рубля", "рублей"),
                             new ЕдиницаИзмерения(РодЧисло.Женский, "копейка", "копейки", "копеек"));
@@ -107,13 +133,16 @@ namespace PRDocument
             Валюта empty = new Валюта(
                            new ЕдиницаИзмерения(РодЧисло.Мужской, "-", "-", "-"),
                            new ЕдиницаИзмерения(РодЧисло.Мужской, "", "", ""));
-
+            //Сумма прописью без указания валюты
             string writePrice = Сумма.Пропись(report.Apartment.Object.Price, empty);
+            //Сумма в долларах прописью без указания валюты 
             string writePriceDollar = Сумма.Пропись(report.Apartment.Object.Price / report.Apartment.Object.Dollar, empty);
+            //Сумма с уценкой прописью без указания валюты
             string writePriceDiscount = Сумма.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount), empty);
+            //Сумма с уценкой прописью в долларах без указания валюты
             string witePriceDiscountDollar = Сумма.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar, empty);
 
-            
+            //Массив замен
             texts_conclusion[0] = Convert.ToString(report.Apartment.RoomNumber);
             texts_conclusion[1] = client_in_padeg;
             texts_conclusion[2] = report.ReportNumber;
@@ -124,12 +153,12 @@ namespace PRDocument
             texts_conclusion[7] = report.DateOfContract.ToLongDateString();
             texts_conclusion[8] = report.DateOfContract.ToLongDateString();
             texts_conclusion[9] = report.Apartment.Object.DestOfTheEvaluation;
-            texts_conclusion[10] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
+            texts_conclusion[10] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);//сумма с уценкой вдолларах
             texts_conclusion[11] = witePriceDiscountDollar; 
-            texts_conclusion[12] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
+            texts_conclusion[12] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));//сумма с уценкой
             texts_conclusion[13] = writePriceDiscount;
             texts_conclusion[14] = Convert.ToString(report.Apartment.Object.Dollar);
-            texts_conclusion[15] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
+            texts_conclusion[15] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);//сумма в долларах
             texts_conclusion[16] = writePriceDollar;
             texts_conclusion[17] = report.Employee.Position;
             texts_conclusion[18] = report.Employee.Man.Surname + " " + report.Employee.Man.Name + " " + report.Employee.Man.Patronymic;
@@ -141,7 +170,7 @@ namespace PRDocument
             texts_conclusion[24] = report.Apartment.Home.ComplexNumber;
             texts_conclusion[25] = report.Apartment.Object.Restriction;
             texts_conclusion[26] = Convert.ToString(report.Apartment.Object.Price);
-            texts_conclusion[27] = writePrice;
+            texts_conclusion[27] = writePrice;  //стоимость прописью
             texts_conclusion[28] = report.Apartment.Object.PurposeOfTheEvaluation;
             texts_conclusion[29] = report.Apartment.Object.Property;
             texts_conclusion[30] = Convert.ToString(report.Apartment.GrossAreaSNIP);
@@ -152,6 +181,7 @@ namespace PRDocument
         // Заполнить массив картинок
         public static void FillPicturesArray(IReport report)
         {
+            //инициализация массивов
             pics = report.Apartment.Pictures.ToArray();
             apartmentMaps = new IPicture[13];
             documents = new IPicture[13];
@@ -159,6 +189,7 @@ namespace PRDocument
             photo = new IPicture[25];
             screenshot = new IPicture[13];
 
+            //счетчики
             int am = 0;
             int d = 0;
             int m = 0;
@@ -208,10 +239,13 @@ namespace PRDocument
             Валюта empty = new Валюта(
                            new ЕдиницаИзмерения(РодЧисло.Мужской, "-", "-", "-"),
                            new ЕдиницаИзмерения(РодЧисло.Мужской, "", "", ""));
-
+            //Сумма прописью без указания валюты
             string writePrice = Сумма.Пропись(report.Apartment.Object.Price, empty);
+            //Сумма в долларах прописью без указания валюты 
             string writePriceDollar = Сумма.Пропись(report.Apartment.Object.Price / report.Apartment.Object.Dollar, empty);
+            //Сумма с уценкой прописью без указания валюты
             string writePriceDiscount = Сумма.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount), empty);
+            //Сумма с уценкой прописью в долларах без указания валюты
             string witePriceDiscountDollar = Сумма.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar, empty);
 
 
@@ -540,7 +574,7 @@ namespace PRDocument
             texts_report[44] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForLivingRoomCeiling);
             texts_report[45] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForHallCeiling);
             texts_report[46] = report.Client.Man.Surname+" "+report.Client.Man.Name+" "+report.Client.Man.Patronymic;
-            texts_report[47] = client_in_padeg;
+            texts_report[47] = client_in_padeg;                             // имя в творительном падеже
             texts_report[48] = report.Client.Man.Name+" "+report.Client.Man.Patronymic;
             texts_report[49] = report.Client.Man.Surname+" "+report.Client.Man.Name+" "+report.Client.Man.Patronymic;
             texts_report[50] = report.Client.Man.Surname+" "+report.Client.Man.Name+" "+report.Client.Man.Patronymic;
@@ -667,7 +701,7 @@ namespace PRDocument
             texts_report[162] = Convert.ToString(report.Apartment.Object.Price);
             texts_report[163] = Convert.ToString(report.Apartment.Object.Price);
             texts_report[164] = Convert.ToString(report.Apartment.Object.Price);
-            texts_report[165] = writePrice;
+            texts_report[165] = writePrice;     //сумма прописью
             texts_report[166] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));       // Вычисление ликвидационной стоимости
             texts_report[167] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
             texts_report[168] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
@@ -675,23 +709,23 @@ namespace PRDocument
             texts_report[170] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
             texts_report[171] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
             texts_report[172] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
-            texts_report[173] = writePriceDiscount;
+            texts_report[173] = writePriceDiscount; //Сумма с уценкой прописью
             texts_report[174] = writePriceDiscount;
             texts_report[175] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);  // Вычисление ликвидационной стоимости в долларах
             texts_report[176] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
             texts_report[177] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
             texts_report[178] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
             texts_report[179] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
-            texts_report[180] = witePriceDiscountDollar;
-            texts_report[181] = writePriceDiscount;
+            texts_report[180] = witePriceDiscountDollar; //Сумма с уценкой прописью в долларах
+            texts_report[181] = writePriceDiscount; //Сумма с уценкой прописью
             texts_report[182] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);       // Вычисление стоимости в долларах
             texts_report[183] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
             texts_report[184] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
             texts_report[185] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
             texts_report[186] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
-            texts_report[187] = writePriceDollar;
+            texts_report[187] = writePriceDollar; //Сумма прописью в долларах
             texts_report[188] = writePriceDollar;
-            texts_report[189] = writePrice;
+            texts_report[189] = writePrice;     //Сумма прописью
             texts_report[190] = writePrice;
             texts_report[191] = writePrice;
             texts_report[192] = report.Apartment.Home.PromzoneDistance;
@@ -722,7 +756,7 @@ namespace PRDocument
             texts_report[217] = report.Apartment.HasLowCurrent == true ? "есть" : "нет";
             texts_report[218] = report.Apartment.Home.Social;
             texts_report[219] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.GrossArea);               // Вычисление стоимости квадратного метра
-            texts_report[220] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.GrossArea);
+            texts_report[220] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.GrossArea);               // Вычисление стоимости квадратного метра
             texts_report[221] = Convert.ToString((report.Apartment.Object.Price / report.Apartment.GrossArea) / report.Apartment.Object.Dollar);// Вычисление стоимости квадратного метра в долларах
             texts_report[222] = report.Apartment.Home.StopDistance;
             texts_report[223] = report.ReportDate.ToShortDateString(); ;
@@ -752,8 +786,8 @@ namespace PRDocument
             texts_report[244] = report.Apartment.GetWindowsTypeAsString(report.Apartment.WindowsType);
             texts_report[245] = Convert.ToString(report.ReportDate.Year);
             texts_report[246] = Convert.ToString(report.Apartment.Home.BuildYear);
-            texts_report[247] = Convert.ToString(report.Apartment.Home.BuildYear - report.ReportDate.Year);
-            texts_report[248] = photo[0] != null ? photo[0].Name : "";
+            texts_report[247] = Convert.ToString(report.Apartment.Home.BuildYear - report.ReportDate.Year); //Вычисление возраста дома
+            texts_report[248] = photo[0] != null ? photo[0].Name : "";  //Комментарии к фото
             texts_report[249] = photo[1] != null ? photo[1].Name : "";
             texts_report[250] = photo[2] != null ? photo[2].Name : "";
             texts_report[251] = photo[3] != null ? photo[3].Name : "";
@@ -762,7 +796,7 @@ namespace PRDocument
             texts_report[254] = photo[6] != null ? photo[6].Name : "";
             texts_report[255] = photo[7] != null ? photo[7].Name : "";
             texts_report[256] = photo[8] != null ? photo[8].Name : "";
-            texts_report[257] = apartmentMaps[0] != null ? apartmentMaps[0].Name : "";
+            texts_report[257] = apartmentMaps[0] != null ? apartmentMaps[0].Name : ""; //Комментарий к схеме квартиры
             //texts_report[258] = "";
             //texts_report[259] = "";
             //texts_report[260] = "";
@@ -825,7 +859,7 @@ namespace PRDocument
                             rg.InlineShapes.AddPicture(documents[i - 268].ImageFileName);
                         }
                     }
-                    if (i > 270 & i < 273)                                // Здесь начинаются скан документов
+                    if (i > 270 & i < 273)                                // Здесь начинаются скриншоты карт
                     {
                         if (screenshot[i - 271] != null)
                         {
@@ -850,13 +884,13 @@ namespace PRDocument
 //Генерация документа Excel и заполнение данных в отчете Договор
         public static void XLSGenerate(string templateFileName, string reportFileName, IReport report,  int rod) 
         {
-            Microsoft.Office.Interop.Excel.Application excelAppl = new Microsoft.Office.Interop.Excel.Application();    // Создать документ Word
-            object d = (object)templateFileName;                                                                            // Создать пустой объект
+            Microsoft.Office.Interop.Excel.Application excelAppl = new Microsoft.Office.Interop.Excel.Application();    // Создать документ Excel
+           // object d = (object)templateFileName;                                                                            // Создать пустой объект
 
-            Microsoft.Office.Interop.Excel.Workbook ObjWorkBook = excelAppl.Workbooks.Open(templateFileName);                                                      // Открыть документ по указанному в объекте адресу
-            Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheet = excelAppl.Worksheets.get_Item(1);//ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
+            Microsoft.Office.Interop.Excel.Workbook ObjWorkBook = excelAppl.Workbooks.Open(templateFileName);          // Создать книгу                                            // Открыть документ по указанному в объекте адресу
+            Microsoft.Office.Interop.Excel.Worksheet ObjWorkSheet = excelAppl.Worksheets.get_Item(1);             //Открыть лист 1
 
-
+            // Заполнить ячейки данными
             ObjWorkSheet.Cells[1, 2] = report.ReportNumber;
             ObjWorkSheet.Cells[2, 2] = report.DateOfContract.ToShortDateString(); 
             ObjWorkSheet.Cells[3, 2] = report.Client.Man.Surname+" "+report.Client.Man.Name+" "+report.Client.Man.Patronymic;
@@ -880,8 +914,8 @@ namespace PRDocument
             ObjWorkSheet.Cells[17, 2] = report.Employee.Man.Surname + " " + report.Employee.Man.Name + " " + report.Employee.Man.Patronymic;
             ObjWorkSheet.Cells[18, 2] = report.Employee.Insurance;
 
-            ObjWorkBook.SaveAs(reportFileName);
-            excelAppl.Quit();
+            ObjWorkBook.SaveAs(reportFileName); // Сохранить
+            excelAppl.Quit();                   // Закрыть
     
     }
     

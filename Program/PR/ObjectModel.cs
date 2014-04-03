@@ -198,7 +198,7 @@ namespace PR
         }
 
         /// <summary>
-        /// Свойство. Задает и возвращает список городов
+        /// Свойство. Задает и возвращает список районов
         /// </summary>
         public IDistricts Districts
         {

@@ -460,13 +460,13 @@ namespace PRUI.Forms
             height = _pictureForSaving.Height;                          // Получить высоту изображения
 
 
-
-            if (width < height & PictureType != PictureTypes.document)
+            
+            if (width < height & PictureType != PictureTypes.document)  //Если не документ и картинка длинная
             {
-                _pictureForSaving.RotateFlip(RotateFlipType.Rotate90FlipNone);
+                _pictureForSaving.RotateFlip(RotateFlipType.Rotate90FlipNone);//переворачиваем
             }
 
-            if (PictureType == PictureTypes.document)
+            if (PictureType == PictureTypes.document)   //для документа размеры больше
             {
                 widthAfterResize = 800;
                 heightAfterResize = 600;
@@ -487,12 +487,13 @@ namespace PRUI.Forms
                     heightAfterResize);
             }
 
-            if (width > height & PictureType == PictureTypes.document)
+            if (width > height & PictureType == PictureTypes.document)      //Сканы документов в книжном формате 
             {
                 _pictureForSaving.RotateFlip(RotateFlipType.Rotate90FlipNone);
             }
         }
-
+    
+        //Сохраняем картинку с определенным именем в формате .png
        public override void okButton_Click(object sender, EventArgs e)
         {
             ChangeSizeImage(ImageFileName);
@@ -504,7 +505,7 @@ namespace PRUI.Forms
 
             base.okButton_Click(sender, e);
         }
-
+       //Сохраняем картинку с определенным именем в формате .png
        public override void saveButton_Click(object sender, EventArgs e)
        {
            ChangeSizeImage(ImageFileName);

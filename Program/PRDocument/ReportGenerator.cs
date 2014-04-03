@@ -156,7 +156,7 @@ namespace PRDocument
             apartmentMaps = new IPicture[13];
             documents = new IPicture[13];
             maps = new IPicture[13];
-            photo = new IPicture[13];
+            photo = new IPicture[25];
             screenshot = new IPicture[13];
 
             int am = 0;

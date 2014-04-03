@@ -28,6 +28,11 @@ namespace PRUI.Forms
         private string _imageFileName;
 
         /// <summary>
+        /// Поле. Ужатая и сохраненая картинка
+        /// </summary>
+        private Image _pictureForSaving;
+
+        /// <summary>
         /// Поле. Картинка
         /// </summary>
         IPicture _picture;
@@ -394,7 +399,7 @@ namespace PRUI.Forms
 
             if (imageSelectForm.SelectedFile != null)                   // Проверить выбранный файл изображения
             {
-                ImageFileName = imageSelectForm.SelectedFile;           // Сохранить имя файла изображения
+                ImageFileName =_imageFolderPath+"\\"+ imageSelectForm.SelectedFile;           // Сохранить имя файла изображения
 
                 SetPicture(ImageFileName);                              // Отобразить изображение в полотне
             }
@@ -437,24 +442,77 @@ namespace PRUI.Forms
             }
         }
 
+      /// <summary>
+      /// Метод. Изменяет размер изображения
+      /// </summary>
+        private void ChangeSizeImage(string pictureFilePath)
+        {
+            int width;                                                  // Ширина изображения                                                     
+            int height;                                                 // Высота изображения
+            int widthAfterResize = 600;                                       // Ширина изображения после изменения размера  
+            int heightAfterResize = 400;                                      // Высота изображения после изменения размера  
+
+            string pathToFile;                                          // Путь к файлу изображения
+            pathToFile = pictureFilePath;                               // Вычислить полный путь к файлу изображения
+            _pictureForSaving = Image.FromFile(pathToFile);
+
+            width = _pictureForSaving.Width;                            // Получить ширину изображения
+            height = _pictureForSaving.Height;                          // Получить высоту изображения
+
+
+
+            if (width < height & PictureType != PictureTypes.document)
+            {
+                _pictureForSaving.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            }
+
+            if (PictureType == PictureTypes.document)
+            {
+                widthAfterResize = 800;
+                heightAfterResize = 600;
+            }
+
+            try
+            {
+                _pictureForSaving = Utils.ImageUtils.ResizeImage(                 // Отобразить изображение из файла
+                    Image.FromFile(pathToFile),
+                    widthAfterResize,
+                    heightAfterResize);
+            }
+            catch
+            {
+                _pictureForSaving = Utils.ImageUtils.ResizeImage(                 // Отобразить изображение по умолчанию
+                    Properties.Resources.defaultPictureImage,
+                    widthAfterResize,
+                    heightAfterResize);
+            }
+
+            if (width > height & PictureType == PictureTypes.document)
+            {
+                _pictureForSaving.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            }
+        }
+
        public override void okButton_Click(object sender, EventArgs e)
         {
+            ChangeSizeImage(ImageFileName);
             ImageFileName = _imageFolderPath + "\\" + PictureName + "_" +
                               _picture.CreationDate.ToShortDateString() + "_" +
                               _picture.CreationDate.ToLongTimeString().Replace(":", ".") + "_" +
-                              _picture.TypeAsString + ".png";
-            Picture.Save(ImageFileName, System.Drawing.Imaging.ImageFormat.Png);
+                              _picture.GetPictureTypeAsString(PictureType) + ".png";
+            _pictureForSaving.Save(ImageFileName, System.Drawing.Imaging.ImageFormat.Png);
 
             base.okButton_Click(sender, e);
         }
 
        public override void saveButton_Click(object sender, EventArgs e)
        {
+           ChangeSizeImage(ImageFileName);
            ImageFileName = _imageFolderPath + "\\" + PictureName + "_" +
                              _picture.CreationDate.ToShortDateString() + "_" +
                              _picture.CreationDate.ToLongTimeString().Replace(":", ".") + "_" +
-                             _picture.TypeAsString + ".png";
-           Picture.Save( ImageFileName, System.Drawing.Imaging.ImageFormat.Png);
+                             _picture.GetPictureTypeAsString(PictureType) + ".png";
+           _pictureForSaving.Save(ImageFileName, System.Drawing.Imaging.ImageFormat.Png);
 
 
            base.saveButton_Click(sender, e);

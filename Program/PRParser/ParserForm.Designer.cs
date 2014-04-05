@@ -1,6 +1,6 @@
 ﻿namespace PRParser
 {
-    partial class Form1
+    partial class ParserForm
     {
         /// <summary>
         /// Required designer variable.

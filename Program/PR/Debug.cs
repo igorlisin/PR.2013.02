@@ -193,5 +193,11 @@ namespace PR
             DistrictsForm districtsForm = new DistrictsForm(_objectModel.Districts, _objectModel.Cities);
             districtsForm.ShowDialog();
         }
+
+        private void ParserButton_Click(object sender, EventArgs e)
+        {
+            PRParser.ParserForm parserForm = new PRParser.ParserForm();
+            parserForm.ShowDialog();
+        }
     }
 }

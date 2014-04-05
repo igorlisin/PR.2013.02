@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace PRParser
 {
-    public partial class Form1 : Form
+    public partial class ParserForm : Form
     {
         private Parser _parser;
         private Zakamned[] zakamneds;
 
-        public Form1()
+        public ParserForm()
         {
             InitializeComponent();
 
@@ -126,6 +126,7 @@ namespace PRParser
             string company;                                             // Описание
             string phoneToCall;                                             // Описание
             string description;
+            int price;
 
             int counter = 0;
 
@@ -144,6 +145,7 @@ namespace PRParser
                 ironDoor = zakamned.hasIronDoor.ToString();
                 company = zakamned.company;
                 phoneToCall = zakamned.phoneToCall;
+                price = zakamned.price;
                 description = zakamned.description;
 
                 rowId = apartmentDataGridView.Rows.Add(                              // Добавить строку в элемент отображения списка сущностей
@@ -156,6 +158,7 @@ namespace PRParser
                     ironDoor,
                     company,
                     phoneToCall,
+                    price.ToString(),
                     description);
 
                 apartmentDataGridView.Rows[rowId].Tag = zakamned;

@@ -142,6 +142,10 @@
       <Project>{4c5ad062-661c-4a1f-9d9d-703e2f2847b3}</Project>
       <Name>PRInterfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PRParser\PRParser.csproj">
+      <Project>{7370a55c-8163-4c72-9233-e7c01989ec95}</Project>
+      <Name>PRParser</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PRUI\PRUI.csproj">
       <Project>{4cdd1536-c2ac-43b3-83ff-c9b2a39b83f8}</Project>
       <Name>PRUI</Name>

@@ -28,7 +28,9 @@ namespace PRParser
         public new void ConfigureEntitiesDataGridView()
         {
             DataGridViewCell cellTemplateText;                                  // Шаблон ячеек
+            DataGridViewCell cellTemplateCheckBox;                            // ячеек с чекбоксами
 
+            DataGridViewColumn columnChecked;
             DataGridViewColumn columnNumber;                                      // Колонка "Адресс"
             DataGridViewColumn columnAddress;                                      // Колонка "Адресс"
             DataGridViewColumn columnFloor;                                    // Колонка "Серия"
@@ -42,7 +44,9 @@ namespace PRParser
             DataGridViewColumn columnDescription;                               // Колонка "Описание"
 
             cellTemplateText = new DataGridViewTextBoxCell();                   // Создать шаблон ячеек
+            cellTemplateCheckBox = new DataGridViewCheckBoxCell();
 
+            columnChecked = new DataGridViewColumn(cellTemplateCheckBox);
             columnNumber = new DataGridViewColumn(cellTemplateText);              // Создать колонку "Тип документа"
             columnAddress = new DataGridViewColumn(cellTemplateText);              // Создать колонку "Тип документа"
             columnFloor = new DataGridViewColumn(cellTemplateText);            // Создать колонку "Серия"
@@ -54,6 +58,12 @@ namespace PRParser
             columnPhoneToCall = new DataGridViewColumn(cellTemplateText);       // Создать колонку "Описание"
             columnPrice = new DataGridViewColumn(cellTemplateText);       // Создать колонку "Описание"
             columnDescription = new DataGridViewColumn(cellTemplateText);       // Создать колонку "Описание"
+
+            columnChecked.Width = 50;
+            columnChecked.Name = "checked";
+            columnChecked.Selected = false;
+            columnChecked.HeaderText = "Выбрать";
+           
 
             columnNumber.Width = 50;                                             // Задать ширину колонки
             columnNumber.Name = "Number";                                           // Задать название колонки
@@ -99,6 +109,7 @@ namespace PRParser
             columnDescription.Name = "description";                             // Задать название колонки
             columnDescription.HeaderText = "Описание";                          // Задать заголовок
 
+            apartmentDataGridView.Columns.Add(columnChecked);
             apartmentDataGridView.Columns.Add(columnNumber);                       // Добавить колонку в элемент отображения списка сущностей
             apartmentDataGridView.Columns.Add(columnAddress);                       // Добавить колонку в элемент отображения списка сущностей
             apartmentDataGridView.Columns.Add(columnFloor);                     // Добавить колонку в элемент отображения списка сущностей
@@ -110,6 +121,7 @@ namespace PRParser
             apartmentDataGridView.Columns.Add(columnPhoneToCall);                // Добавить колонку в элемент отображения списка сущностей
             apartmentDataGridView.Columns.Add(columnPrice);                // Добавить колонку в элемент отображения списка сущностей
             apartmentDataGridView.Columns.Add(columnDescription);                // Добавить колонку в элемент отображения списка сущностей
+            
         }
 
         /// <summary>
@@ -117,6 +129,7 @@ namespace PRParser
         /// </summary>
         public void FillEntitiesDataGridView()
         {
+           
             string address;                                                    // Тип
             string floor;                                                  // Серия 
             string area;                                                  // Номер
@@ -149,6 +162,7 @@ namespace PRParser
                 description = zakamned.description;
 
                 rowId = apartmentDataGridView.Rows.Add(                              // Добавить строку в элемент отображения списка сущностей
+                    false,
                     counter.ToString(),
                     address,
                     floor,

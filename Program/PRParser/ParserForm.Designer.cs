@@ -31,6 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.apartmentDataGridView = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
+            this.AddToReportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,15 +67,25 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form1
+            // AddToReportButton
+            // 
+            this.AddToReportButton.Location = new System.Drawing.Point(12, 665);
+            this.AddToReportButton.Name = "AddToReportButton";
+            this.AddToReportButton.Size = new System.Drawing.Size(127, 23);
+            this.AddToReportButton.TabIndex = 3;
+            this.AddToReportButton.Text = "Добавить в отчет";
+            this.AddToReportButton.UseVisualStyleBackColor = true;
+            // 
+            // ParserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 700);
+            this.Controls.Add(this.AddToReportButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.apartmentDataGridView);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "ParserForm";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -86,6 +97,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView apartmentDataGridView;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AddToReportButton;
     }
 }
 

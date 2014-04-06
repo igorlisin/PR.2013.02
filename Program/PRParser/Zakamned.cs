@@ -191,7 +191,7 @@ namespace PRParser
         }
 
         #endregion
-
+        
         #region Methods
 
         #region Areas
@@ -206,7 +206,7 @@ namespace PRParser
 
             areaString = areaString.Trim();                 // Удалить пробелы с начала и конца строки
             areas = areaString.Split('/');                  // Разбить строку на части
-
+            
             grosArea = 0;                                   // Задать общую площадь
 
             if (areas.Length > 0)                           // Проверить количество указанных площадей

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using PRInterfaces.Interfaces;
 using PRInterfaces.Enumerations;
+using PRParser;
 
 using PR.Classes;
 
@@ -92,6 +93,11 @@ namespace PR
         public DbSet<District> Districts { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает набор объектов сравнения
+        /// </summary>
+        public DbSet<ComparisonApart> ComparisonApartments { get; set; }
+
+        /// <summary>
         /// Свойство. Задает и возвращает набор отчетов
         /// </summary>
         public DbSet<Report> Reports { get; set; }
@@ -122,7 +128,7 @@ namespace PR
 
             modelBuilder.Configurations.Add(new PicturesTypeConfiguration());           // Добавить конфигурацию для таблицы "Картинки"
             modelBuilder.Configurations.Add(new ReportsTypeConfiguration());            // Добавить конфигурацию для таблицы "Отчеты"
-
+            modelBuilder.Configurations.Add(new ComparisonApartmentsTypeConfiguration()); // Добавить конфигурацию для таблицы "Квартиры для сравнения"
 
             base.OnModelCreating(modelBuilder);
         }
@@ -474,7 +480,33 @@ namespace PR
                 HasOptional(r => r.EmployeeForEntityFramework);
             }
         }
+        /// <summary>
+        /// Класс. Конфигурация таблицы "Квартиры для сравнения"
+        /// </summary>
+        private class ComparisonApartmentsTypeConfiguration : EntityTypeConfiguration<ComparisonApart>
+        {
+            /// <summary>
+            /// Конструктор
+            /// </summary>
+            public ComparisonApartmentsTypeConfiguration()
+            {
+              //  HasKey(c => c.Id);
+                //Property(c => c.address).IsOptional();
+                //Property(c => c.company).IsOptional();
+                //Property(c => c.description).IsOptional();
+                //Property(c => c.floor).IsOptional();
+                //Property(c => c.grossArea).IsOptional();
+                //Property(c => c.hasBalcony).IsOptional();
+                //Property(c => c.hasIronDoor).IsOptional();
+                //Property(c => c.hasPhone).IsOptional();
+                //Property(c => c.kitchenArea).IsOptional();
+                //Property(c => c.livingArea).IsOptional();
+                //Property(c => c.maxFloor).IsOptional();
+                //Property(c => c.phoneToCall).IsOptional();
+                //Property(c => c.price).IsOptional();
 
+            }
+        } 
         #endregion
     }
 }

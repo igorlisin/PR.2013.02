@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using PRInterfaces.Interfaces;
 using PRInterfaces.Enumerations;
-
+using PRParser;
 using System.Data.Entity;
 
 using PR.Classes;
@@ -46,6 +46,7 @@ namespace PR
 
             _objectModel.Pictures = new Pictures(_databaseContext.Pictures, new Pictures.SaveChangesDelegate(Save));
             _objectModel.Reports = new Reports(_databaseContext.Reports, new Reports.SaveChangesDelegate(Save));
+            _objectModel.ComparisonAppartments = new ComparisonAparts(_databaseContext.ComparisonApartments, new ComparisonAparts.SaveChangesDelegate(Save));
 
             SetClassDefaultValue();
         }
@@ -196,8 +197,10 @@ namespace PR
 
         private void ParserButton_Click(object sender, EventArgs e)
         {
+
             PRParser.ParserForm parserForm = new PRParser.ParserForm();
             parserForm.ShowDialog();
+
         }
     }
 }

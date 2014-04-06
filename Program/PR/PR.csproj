@@ -59,6 +59,8 @@
     <Compile Include="Classes\Client\Clients.cs" />
     <Compile Include="Classes\Company\Companies.cs" />
     <Compile Include="Classes\Company\Company.cs" />
+    <Compile Include="Classes\ComparisonApart\ComparisonApart.cs" />
+    <Compile Include="Classes\ComparisonApart\ComparisonAparts.cs" />
     <Compile Include="Classes\Complex\Complex.cs" />
     <Compile Include="Classes\Complex\Complexes.cs" />
     <Compile Include="Classes\Country\Countries.cs" />

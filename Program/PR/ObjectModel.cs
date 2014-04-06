@@ -93,6 +93,11 @@ namespace PR
         private IReports _reports;
 
         /// <summary>
+        /// Поле. Список квартир сравнения
+        /// </summary>
+        private IComparisonAparts _comparisonApartments;
+
+        /// <summary>
         /// Свойство. Задает и возвращает список документов
         /// </summary>
         public IDocuments Documents
@@ -330,6 +335,21 @@ namespace PR
             set
             {
                 _reports = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список квартир сравнения
+        /// </summary>
+        public IComparisonAparts ComparisonAppartments
+        {
+            get
+            {
+                return (_comparisonApartments);
+            }
+            set
+            {
+                _comparisonApartments = value;
             }
         }
     }

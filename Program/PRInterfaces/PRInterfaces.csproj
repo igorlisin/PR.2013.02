@@ -44,6 +44,8 @@
     <Compile Include="Enumerations\ObjectTypes.cs" />
     <Compile Include="Enumerations\PictureTypes.cs" />
     <Compile Include="Enumerations\ApartmentTypes.cs" />
+    <Compile Include="Interfaces\IComparisonApart.cs" />
+    <Compile Include="Interfaces\IComparisonAparts.cs" />
     <Compile Include="Interfaces\IDistrict.cs" />
     <Compile Include="Interfaces\IApartment.cs" />
     <Compile Include="Interfaces\IApartments.cs" />

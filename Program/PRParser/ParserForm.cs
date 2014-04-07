@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PRInterfaces.Interfaces;
 
 namespace PRParser
 {
@@ -14,9 +15,12 @@ namespace PRParser
     {
         private Parser _parser;
         private Zakamned[] zakamneds;
+        private IApartment _apartment;
 
-        public ParserForm()
+        public ParserForm(IApartment apartment)
         {
+            _apartment = apartment;
+
             InitializeComponent();
 
             ConfigureEntitiesDataGridView();
@@ -184,7 +188,7 @@ namespace PRParser
         {
 
             _parser = new Parser(
-                Zakamned.SiteAddress + @"/" + Zakamned.OneRoomApartmentAddress,
+                Zakamned.SiteAddress + @"/" + Zakamned.OneRoomApartmentAddress + _apartment.RoomNumber,
                 Zakamned.RowsRegExTemplate,
                 Zakamned.CellsRegExTemplate);
 

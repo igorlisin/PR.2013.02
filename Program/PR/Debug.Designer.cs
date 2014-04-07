@@ -58,7 +58,6 @@
             this.reportsButton = new System.Windows.Forms.Button();
             this.apartmentsButton = new System.Windows.Forms.Button();
             this.DistrictButton = new System.Windows.Forms.Button();
-            this.ParserButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -324,22 +323,11 @@
             this.DistrictButton.UseVisualStyleBackColor = true;
             this.DistrictButton.Click += new System.EventHandler(this.DistrictButton_Click);
             // 
-            // ParserButton
-            // 
-            this.ParserButton.Location = new System.Drawing.Point(13, 97);
-            this.ParserButton.Name = "ParserButton";
-            this.ParserButton.Size = new System.Drawing.Size(95, 29);
-            this.ParserButton.TabIndex = 23;
-            this.ParserButton.Text = "Обзор";
-            this.ParserButton.UseVisualStyleBackColor = true;
-            this.ParserButton.Click += new System.EventHandler(this.ParserButton_Click);
-            // 
             // Debug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 506);
-            this.Controls.Add(this.ParserButton);
             this.Controls.Add(this.DistrictButton);
             this.Controls.Add(this.apartmentsButton);
             this.Controls.Add(this.reportsButton);
@@ -370,13 +358,12 @@
             this.Controls.SetChildIndex(this.streetsButton, 0);
             this.Controls.SetChildIndex(this.complexesButton, 0);
             this.Controls.SetChildIndex(this.homesButton, 0);
-            this.Controls.SetChildIndex(this.closeButton, 0);
             this.Controls.SetChildIndex(this.picturesButton, 0);
             this.Controls.SetChildIndex(this.programOptionsButton, 0);
             this.Controls.SetChildIndex(this.reportsButton, 0);
             this.Controls.SetChildIndex(this.apartmentsButton, 0);
             this.Controls.SetChildIndex(this.DistrictButton, 0);
-            this.Controls.SetChildIndex(this.ParserButton, 0);
+            this.Controls.SetChildIndex(this.closeButton, 0);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -416,6 +403,5 @@
         private System.Windows.Forms.Button reportsButton;
         private System.Windows.Forms.Button apartmentsButton;
         private System.Windows.Forms.Button DistrictButton;
-        private System.Windows.Forms.Button ParserButton;
     }
 }

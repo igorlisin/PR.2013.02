@@ -520,6 +520,10 @@
       <Project>{4c5ad062-661c-4a1f-9d9d-703e2f2847b3}</Project>
       <Name>PRInterfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PRParser\PRParser.csproj">
+      <Project>{7370a55c-8163-4c72-9233-e7c01989ec95}</Project>
+      <Name>PRParser</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utils\Utils.csproj">
       <Project>{681aafb2-0bcb-4936-a9df-c65c5608af25}</Project>
       <Name>Utils</Name>

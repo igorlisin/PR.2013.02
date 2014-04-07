@@ -6,6 +6,7 @@ using Utils;
 
 using PRInterfaces.Interfaces;
 using PRInterfaces.Enumerations;
+using PRParser;
 
 using PRUI.TemplateForms;
 
@@ -692,6 +693,13 @@ namespace PRUI.Forms
 
                 CopyLinkedDataFromEntity();                     // Скопировать данные из сущностей, связанных с основной сущностью 
             }
+        }
+
+        private void ParserButton_Click(object sender, EventArgs e)
+        {
+            ParserForm parserForm = new ParserForm(_apartmentAfterRelinking);
+            parserForm.ShowDialog();
+
         }
     }
 }

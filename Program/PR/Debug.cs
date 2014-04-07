@@ -10,6 +10,7 @@ using PR.Classes;
 
 using PRUI.Forms;
 using PRUI.TemplateForms;
+using PRParser;
 
 using PRDocument;
 
@@ -197,9 +198,6 @@ namespace PR
 
         private void ParserButton_Click(object sender, EventArgs e)
         {
-
-            PRParser.ParserForm parserForm = new PRParser.ParserForm();
-            parserForm.ShowDialog();
 
         }
     }

@@ -104,7 +104,7 @@ namespace PRParser
         {
             _siteAddress = @"http://zakamned.ru";
 
-            _oneRoomApartmentAddress = @"base/index.php?b=1";
+            _oneRoomApartmentAddress = @"base/index.php?b=";
 
             _rowsRegExTemplate = @"<tr class='row(1|0)' ><td>.*?</td><td>.*?</td><td>.*?</td><td>.*?</td><td>.*?</td><td>.*?</td><td>.*?</td><td>.*?</td><td>.*?</td><td><div style='width: 100px; overflow:hidden'>.*?</div></td></tr>";
             _cellsRegExTemplate = @"<td>.*?</td>";

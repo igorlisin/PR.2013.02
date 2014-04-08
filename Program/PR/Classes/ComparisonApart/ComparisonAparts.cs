@@ -118,7 +118,7 @@ namespace PR.Classes
         /// </summary>
         public List<IComparisonApart> ToList()
         {
-            return (_comparisonApartsDbSet.ToList<IComparisonApart>());
+            return (_comparisonApartsDbSet.Include(a=>a.ApartmentForEntityFramework).ToList<IComparisonApart>());
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace PR.Classes
         /// </summary>
         public IComparisonApart[] ToArray()
         {
-            return (_comparisonApartsDbSet.ToArray<IComparisonApart>());
+            return (_comparisonApartsDbSet.Include(a=>a.ApartmentForEntityFramework).ToArray<IComparisonApart>());
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace PR.Classes
         /// </summary>
         public IComparisonApart GetComparisonApart(int id)
         {
-            return ((IComparisonApart)_comparisonApartsDbSet.First());
+            return ((IComparisonApart)_comparisonApartsDbSet.Include(a => a.ApartmentForEntityFramework).Where(a=>a.Id==id).First());
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace PR.Classes
         /// </summary>
         public IEnumerator GetEnumerator()
         {
-            return (new EntityEnumerator(_comparisonApartsDbSet.ToArray<ComparisonApart>()));
+            return (new EntityEnumerator(_comparisonApartsDbSet.Include(a => a.ApartmentForEntityFramework).ToArray<ComparisonApart>()));
         }
 
         #endregion

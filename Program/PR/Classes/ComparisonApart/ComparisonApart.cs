@@ -260,6 +260,44 @@ namespace PR.Classes
             }
         }
 
+        /// <summary>
+        /// Свойсво. Задает и возвращает квартиру (используется в Entity Framework) 
+        /// </summary>
+        public Apartment ApartmentForEntityFramework { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает объект оценки квартира
+        /// </summary>
+        public IApartment Apartment
+        {
+            get
+            {
+                return ((IApartment)ApartmentForEntityFramework);
+            }
+            set
+            {
+                ApartmentForEntityFramework = (Apartment)value;
+            }
+        }
+        #endregion
+
+        #region Static methods
+
+        /// <summary>
+        /// Статический метод. Преобразует объект типа IComparisonApart в объект типа ComparisonApart
+        /// </summary>
+        public static ComparisonApart IComparisonApartToComparisonApartConverter(IComparisonApart comparisonApart)
+        {
+            return ((ComparisonApart)comparisonApart);
+        }
+
+        /// <summary>
+        /// Статический метод. Преобразует объект типа ComparisonApart в объект типа IComparisonApart
+        /// </summary>
+        public static IComparisonApart ComparisonApartToIComparisonApartConverter(ComparisonApart picture)
+        {
+            return ((IComparisonApart)picture);
+        }
         #endregion
     }
 }

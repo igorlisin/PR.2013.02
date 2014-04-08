@@ -1697,6 +1697,26 @@ namespace PR.Classes
        /// </summary>
        public List<Picture> PictureForEntityFramwork { get; set; }
 
+       /// <summary>
+       /// Свойство. Задает и возвращает квартиры для сравнения
+       /// </summary>
+       public List<IComparisonApart> ComparApart
+       {
+           get
+           {
+               return (ComparisonForEntityFramwork.ConvertAll(ComparisonApart.ComparisonApartToIComparisonApartConverter));
+           }
+           set
+           {
+               ComparisonForEntityFramwork = value.ConvertAll(ComparisonApart.IComparisonApartToComparisonApartConverter);
+           }
+
+       }
+
+       /// <summary>
+       /// Свойство. Задает и возвращает квартиры для сравнения (используется в Entity Framework) 
+       /// </summary>
+       public List<ComparisonApart> ComparisonForEntityFramwork { get; set; }
 
         #endregion
 

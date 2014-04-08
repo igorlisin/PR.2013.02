@@ -68,5 +68,10 @@ namespace PRInterfaces.Interfaces
         /// </summary>
         int price { get; set; }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает квартиру
+        /// </summary>
+        IApartment Apartment { get; set; }
+
     }
 }

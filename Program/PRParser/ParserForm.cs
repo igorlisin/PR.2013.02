@@ -32,9 +32,8 @@ namespace PRParser
         public new void ConfigureEntitiesDataGridView()
         {
             DataGridViewCell cellTemplateText;                                  // Шаблон ячеек
-            DataGridViewCell cellTemplateCheckBox;                            // ячеек с чекбоксами
-
-            DataGridViewColumn columnChecked;
+            
+            DataGridViewCheckBoxColumn columnChecked;
             DataGridViewColumn columnNumber;                                      // Колонка "Адресс"
             DataGridViewColumn columnAddress;                                      // Колонка "Адресс"
             DataGridViewColumn columnFloor;                                    // Колонка "Серия"
@@ -48,9 +47,8 @@ namespace PRParser
             DataGridViewColumn columnDescription;                               // Колонка "Описание"
 
             cellTemplateText = new DataGridViewTextBoxCell();                   // Создать шаблон ячеек
-            cellTemplateCheckBox = new DataGridViewCheckBoxCell();
-
-            columnChecked = new DataGridViewColumn(cellTemplateCheckBox);
+           
+            columnChecked = new DataGridViewCheckBoxColumn();
             columnNumber = new DataGridViewColumn(cellTemplateText);              // Создать колонку "Тип документа"
             columnAddress = new DataGridViewColumn(cellTemplateText);              // Создать колонку "Тип документа"
             columnFloor = new DataGridViewColumn(cellTemplateText);            // Создать колонку "Серия"

@@ -410,7 +410,7 @@ namespace PR
                 Property(a => a.Number).IsRequired();
 
                 HasOptional(a => a.ObjectForEntityFramework);
-                HasOptional(a => a.HomeForEntityFramework).WithMany(h => h.AppartmentsForEntityFramework).WillCascadeOnDelete(false);
+                HasOptional(a => a.HomeForEntityFramework).WithMany(h => h.AppartmentsForEntityFramework).WillCascadeOnDelete(false);               
             }
         } 
 
@@ -490,20 +490,20 @@ namespace PR
             /// </summary>
             public ComparisonApartmentsTypeConfiguration()
             {
-              //  HasKey(c => c.Id);
-                //Property(c => c.address).IsOptional();
-                //Property(c => c.company).IsOptional();
-                //Property(c => c.description).IsOptional();
-                //Property(c => c.floor).IsOptional();
-                //Property(c => c.grossArea).IsOptional();
-                //Property(c => c.hasBalcony).IsOptional();
-                //Property(c => c.hasIronDoor).IsOptional();
-                //Property(c => c.hasPhone).IsOptional();
-                //Property(c => c.kitchenArea).IsOptional();
-                //Property(c => c.livingArea).IsOptional();
-                //Property(c => c.maxFloor).IsOptional();
-                //Property(c => c.phoneToCall).IsOptional();
-                //Property(c => c.price).IsOptional();
+                HasKey(c => c.Id);
+                Property(c => c.address).IsOptional();
+                Property(c => c.company).IsOptional();
+                Property(c => c.floor).IsOptional();
+                Property(c => c.grossArea).IsOptional();
+                Property(c => c.hasBalcony).IsOptional();
+                Property(c => c.hasIronDoor).IsOptional();
+                Property(c => c.hasPhone).IsOptional();
+                Property(c => c.kitchenArea).IsOptional();
+                Property(c => c.livingArea).IsOptional();
+                Property(c => c.maxFloor).IsOptional();
+                Property(c => c.phoneToCall).IsOptional();
+                Property(c => c.price).IsOptional();
+
 
             }
         } 

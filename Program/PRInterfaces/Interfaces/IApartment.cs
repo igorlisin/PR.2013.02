@@ -307,6 +307,11 @@ namespace PRInterfaces.Interfaces
         /// </summary>
         List <IPicture> Pictures { get; set; }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает сравниваемые квартиры
+        /// </summary>
+        List<IComparisonApart> ComparApart { get; set; }
+
         #endregion
 
         #region Methods

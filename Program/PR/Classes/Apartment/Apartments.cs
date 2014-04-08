@@ -124,7 +124,8 @@ namespace PR.Classes
             return (_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework)
                                      .Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
                                      .Include(a => a.ObjectForEntityFramework)
-                                     .Include(a=>a.PictureForEntityFramwork)
+                                     .Include(a => a.PictureForEntityFramwork)
+                                     .Include(a => a.ComparisonForEntityFramwork)
                                      .ToList<IApartment>());
         }
 
@@ -137,6 +138,7 @@ namespace PR.Classes
                                      .Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
                                      .Include(a => a.ObjectForEntityFramework)
                                      .Include(a => a.PictureForEntityFramwork)
+                                     .Include(a => a.ComparisonForEntityFramwork)
                                      .ToArray<IApartment>());
         }
 
@@ -149,6 +151,7 @@ namespace PR.Classes
                                                  .Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
                                                  .Include(a => a.ObjectForEntityFramework)
                                                  .Include(a => a.PictureForEntityFramwork)
+                                                 .Include(a => a.ComparisonForEntityFramwork)
                                                  .Where(a => a.Id == id).First());
         }
 
@@ -175,8 +178,9 @@ namespace PR.Classes
         {
             return (new EntityEnumerator(_appartmentsDbSet.Include(a => a.HomeForEntityFramework.StreetForEntityFramework.CityForEntityFramework.RegionForEntityFramework.CountryForEntityFramework)
                                                           .Include(a => a.HomeForEntityFramework.ComplexForEntityFramework.CityForEntityFramework)
-                                                          .Include(a=>a.ObjectForEntityFramework)
+                                                          .Include(a => a.ObjectForEntityFramework)
                                                           .Include(a => a.PictureForEntityFramwork)
+                                                          .Include(a => a.ComparisonForEntityFramwork)
                                                           .ToArray<Apartment>()));
         }
 

@@ -58,6 +58,7 @@
             this.reportsButton = new System.Windows.Forms.Button();
             this.apartmentsButton = new System.Windows.Forms.Button();
             this.DistrictButton = new System.Windows.Forms.Button();
+            this.CompareApartsButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -323,11 +324,22 @@
             this.DistrictButton.UseVisualStyleBackColor = true;
             this.DistrictButton.Click += new System.EventHandler(this.DistrictButton_Click);
             // 
+            // CompareApartsButton
+            // 
+            this.CompareApartsButton.Location = new System.Drawing.Point(114, 307);
+            this.CompareApartsButton.Name = "CompareApartsButton";
+            this.CompareApartsButton.Size = new System.Drawing.Size(96, 23);
+            this.CompareApartsButton.TabIndex = 23;
+            this.CompareApartsButton.Text = "Аналоги";
+            this.CompareApartsButton.UseVisualStyleBackColor = true;
+            this.CompareApartsButton.Click += new System.EventHandler(this.CompareApartsButton_Click);
+            // 
             // Debug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 506);
+            this.Controls.Add(this.CompareApartsButton);
             this.Controls.Add(this.DistrictButton);
             this.Controls.Add(this.apartmentsButton);
             this.Controls.Add(this.reportsButton);
@@ -364,6 +376,7 @@
             this.Controls.SetChildIndex(this.apartmentsButton, 0);
             this.Controls.SetChildIndex(this.DistrictButton, 0);
             this.Controls.SetChildIndex(this.closeButton, 0);
+            this.Controls.SetChildIndex(this.CompareApartsButton, 0);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -403,5 +416,6 @@
         private System.Windows.Forms.Button reportsButton;
         private System.Windows.Forms.Button apartmentsButton;
         private System.Windows.Forms.Button DistrictButton;
+        private System.Windows.Forms.Button CompareApartsButton;
     }
 }

@@ -82,7 +82,6 @@
             this.ObjectCityTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -634,22 +633,11 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Адрес";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(313, 323);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Аналоги";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.ParserButton_Click);
-            // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 618);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.ObjectGroupBox);
             this.Controls.Add(this.reportInfoGroup);
             this.Controls.Add(this.employeeInfoGroup);
@@ -666,7 +654,6 @@
             this.Controls.SetChildIndex(this.descriptionInfoGroup, 0);
             this.Controls.SetChildIndex(this.noteInfoGroup, 0);
             this.Controls.SetChildIndex(this.closeButton, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
             this.idInfoGroup.ResumeLayout(false);
             this.idInfoGroup.PerformLayout();
             this.descriptionInfoGroup.ResumeLayout(false);
@@ -741,6 +728,5 @@
         private System.Windows.Forms.DateTimePicker clientDocDataIssueTextBox;
         protected System.Windows.Forms.Label label13;
         protected System.Windows.Forms.TextBox ClientAddressTextBox;
-        private System.Windows.Forms.Button button1;
     }
 }

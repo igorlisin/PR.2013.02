@@ -75,6 +75,7 @@
             this.AddToReportButton.TabIndex = 3;
             this.AddToReportButton.Text = "Добавить в отчет";
             this.AddToReportButton.UseVisualStyleBackColor = true;
+            this.AddToReportButton.Click += new System.EventHandler(this.AddToReportButton_Click);
             // 
             // ParserForm
             // 

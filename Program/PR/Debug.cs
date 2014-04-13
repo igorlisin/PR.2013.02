@@ -196,9 +196,21 @@ namespace PR
             districtsForm.ShowDialog();
         }
 
-        private void ParserButton_Click(object sender, EventArgs e)
+        private void CompareApartsButton_Click(object sender, EventArgs e)
         {
+            IApartment apartAfterRelinking;
 
+            ApartmentSelectForm ApartSelectForm = new ApartmentSelectForm(_objectModel.Appartments);
+            ApartSelectForm.ShowDialog();
+
+            if (ApartSelectForm.SelectedApartment != null)
+            {
+                apartAfterRelinking = ApartSelectForm.SelectedApartment;
+
+                ParserForm parserForm = new PRParser.ParserForm(apartAfterRelinking, _objectModel.ComparisonAppartments);
+
+                parserForm.ShowDialog();
+            }
         }
     }
 }

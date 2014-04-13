@@ -619,7 +619,7 @@ namespace PRUI.Forms
 
                 }
             }
-
+            
         }
 
         private void AddClientButton_Click(object sender, EventArgs e)
@@ -628,6 +628,8 @@ namespace PRUI.Forms
             IDocument document;                                     // Документ
             IClient client;                                         // Клиент
 
+            if (_clientAfterRelinking == null)                      // Не даем создать еще одного клиента если он уже есть
+            {
             man = _man.Create();                                    // Создать человек
             document = _document.Create();                          // Создать документ
             client = _clients.Create();                             // Создать клиент
@@ -653,7 +655,9 @@ namespace PRUI.Forms
             _clients.Add(client);                                   // Добавить в базу клиента
 
             _clientAfterRelinking = client;                         // Привязывание клиента
-
+                               
+            }
+           
         }
 
 
@@ -697,8 +701,6 @@ namespace PRUI.Forms
 
         private void ParserButton_Click(object sender, EventArgs e)
         {
-            ParserForm parserForm = new ParserForm(_apartmentAfterRelinking);
-            parserForm.ShowDialog();
 
         }
     }

@@ -16,10 +16,12 @@ namespace PRParser
         private Parser _parser;
         private Zakamned[] zakamneds;
         private IApartment _apartment;
+        private IComparisonAparts _comparisonApartments;
 
-        public ParserForm(IApartment apartment)
+        public ParserForm(IApartment apartment, IComparisonAparts comparisonApartments)
         {
             _apartment = apartment;
+            _comparisonApartments = comparisonApartments;
 
             InitializeComponent();
 
@@ -207,6 +209,44 @@ namespace PRParser
 
             WebBrowserForm a = new WebBrowserForm((Zakamned)tagObject);
             a.Show();
+        }
+
+        private void AddToReportButton_Click(object sender, EventArgs e)
+        {
+            IComparisonApart[] aparts;
+            
+            aparts = new IComparisonApart[5];
+            int j = 0;
+            for (int i = 0; i < apartmentDataGridView.RowCount - 1; i++)        // Вычисляем выбранные квартиры
+            {
+                if ((bool)apartmentDataGridView[0, i].Value == true)
+                {
+                    if (j < 5)                                                 // Добавляем первые 5
+                    {
+                        aparts[j] = _comparisonApartments.Create();           // Создаем объект
+
+                        aparts[j].address = zakamneds[i].address;            // Заполняем поля
+                        aparts[j].company = zakamneds[i].company;
+                        aparts[j].floor = zakamneds[i].floor;
+                        aparts[j].grossArea = zakamneds[i].grossArea;
+                        aparts[j].hasBalcony = zakamneds[i].hasBalcony;
+                        aparts[j].hasIronDoor = zakamneds[i].hasIronDoor;
+                        aparts[j].hasPhone = zakamneds[i].hasPhone;
+                        aparts[j].kitchenArea = zakamneds[i].kitchenArea;
+                        aparts[j].livingArea = zakamneds[i].livingArea;
+                        aparts[j].maxFloor = zakamneds[i].maxFloor;
+                        aparts[j].phoneToCall = zakamneds[i].phoneToCall;
+                        aparts[j].price = zakamneds[i].price;
+                        aparts[j].Apartment = _apartment;
+
+                        _comparisonApartments.Add(aparts[j]);                                                      // Добавляем
+                        _comparisonApartments.SaveChanges();                                                       // Сохраняем
+                      
+                        j++;
+                    }
+                }
+            }
+            this.Close();
         }
     }
 }

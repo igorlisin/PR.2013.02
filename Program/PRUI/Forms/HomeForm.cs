@@ -776,6 +776,41 @@ namespace PRUI.Forms
             }
         }
 
+        /// <summary>
+        /// Метод. Сохраняет изменения данных и закрывает диалоговое окно
+        /// </summary>
+        public override void okButton_Click(object sender, EventArgs e)
+        {
+            DialogResult noRegMsg;                         // Результат подтверждения сообщения
+
+            if (_districtAfterRelinking == null)
+            {
+                noRegMsg = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
+                "Вы забыли привязать район",
+                "Предупреждение",
+                MessageBoxButtons.OKCancel);
+            }
+            else
+                base.okButton_Click(sender, e);
+        }
+
+        /// <summary>
+        /// Метод. Сохраняет изменения данных и закрывает диалоговое окно
+        /// </summary>
+        public override void saveButton_Click(object sender, EventArgs e)
+        {
+            DialogResult noRegMsg;                         // Результат подтверждения сообщения
+
+            if (_districtAfterRelinking == null)
+            {
+                noRegMsg = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
+                "Вы забыли привязать район",
+                "Предупреждение",
+                MessageBoxButtons.OKCancel);
+            }
+            else
+                base.saveButton_Click(sender, e);
+        }
         #endregion
 
         #region House Wall Type list

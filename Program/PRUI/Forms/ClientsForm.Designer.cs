@@ -61,6 +61,7 @@
             // 
             // addToolStripMenuItem
             // 
+            this.addToolStripMenuItem.Enabled = false;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.addToolStripMenuItem.Text = "Нового";
@@ -77,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1427, 437);
+            this.ClientSize = new System.Drawing.Size(1362, 437);
             this.Name = "ClientsForm";
             this.Text = "Список клиентов";
             this.Controls.SetChildIndex(this.removeButton, 0);

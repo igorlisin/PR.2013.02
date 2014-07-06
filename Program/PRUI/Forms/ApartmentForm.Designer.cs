@@ -1702,6 +1702,7 @@
             this.dollartextBox.Name = "dollartextBox";
             this.dollartextBox.Size = new System.Drawing.Size(73, 20);
             this.dollartextBox.TabIndex = 72;
+            this.dollartextBox.Text = "30";
             // 
             // label14
             // 

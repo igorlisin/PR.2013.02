@@ -129,8 +129,8 @@ namespace PR
 
         private void complexesButton_Click(object sender, EventArgs e)
         {
-            ComplexesForm complexesForm = new ComplexesForm(_objectModel.Complexes, _objectModel.Cities);
-            complexesForm.ShowDialog();
+            //ComplexesForm complexesForm = new ComplexesForm(_objectModel.Complexes, _objectModel.Cities);
+            //complexesForm.ShowDialog();
         }
 
         private void homesButton_Click(object sender, EventArgs e)

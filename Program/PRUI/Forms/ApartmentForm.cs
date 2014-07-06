@@ -1237,7 +1237,7 @@ namespace PRUI.Forms
             ObjectRestriction = "без ограничений и обременений";
             ObjectHolders = "";
             ObjectPrice = 0;
-            ObjectDollar = 0;
+            ObjectDollar = 30;
             ObjectDiscount = 0;
             ObjectPurpose = "Определение рыночной и ликвидационной стоимости";
             ObjectDest = "Обеспечение по ипотечному кредиту";
@@ -2779,6 +2779,7 @@ namespace PRUI.Forms
                 CopyLinkedDataFromEntity();                     // Скопировать данные из сущностей, связанных с основной сущностью 
             }
         }
+
 
         #endregion
 

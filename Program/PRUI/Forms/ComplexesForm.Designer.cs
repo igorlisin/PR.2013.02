@@ -61,6 +61,7 @@
             // 
             // addToolStripMenuItem
             // 
+            this.addToolStripMenuItem.Enabled = false;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.addToolStripMenuItem.Text = "Новый";

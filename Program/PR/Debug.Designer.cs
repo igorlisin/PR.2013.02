@@ -358,7 +358,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Debug";
-            this.Text = "Form1";
+            this.Text = "Таксатор";
             this.Controls.SetChildIndex(this.menuStrip1, 0);
             this.Controls.SetChildIndex(this.documentsButton, 0);
             this.Controls.SetChildIndex(this.mansButton, 0);

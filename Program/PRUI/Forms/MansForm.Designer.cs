@@ -58,10 +58,11 @@
             this.addToolStripMenuItem,
             this.addByDocumentToolStripMenuItem});
             this.addContextMenuStrip.Name = "contextMenuStrip1";
-            this.addContextMenuStrip.Size = new System.Drawing.Size(193, 48);
+            this.addContextMenuStrip.Size = new System.Drawing.Size(193, 70);
             // 
             // addToolStripMenuItem
             // 
+            this.addToolStripMenuItem.Enabled = false;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.addToolStripMenuItem.Text = "Нового";
@@ -78,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1403, 437);
+            this.ClientSize = new System.Drawing.Size(1362, 437);
             this.Name = "MansForm";
             this.Text = "Список людей";
             this.Controls.SetChildIndex(this.removeButton, 0);

@@ -61,6 +61,7 @@
             // 
             // addToolStripMenuItem
             // 
+            this.addToolStripMenuItem.Enabled = false;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.addToolStripMenuItem.Text = "Новый";
@@ -77,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1363, 437);
+            this.ClientSize = new System.Drawing.Size(1362, 437);
             this.Name = "CitiesForm";
             this.Text = "Список городов";
             this.Controls.SetChildIndex(this.removeButton, 0);

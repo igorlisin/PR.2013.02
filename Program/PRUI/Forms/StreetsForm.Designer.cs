@@ -57,10 +57,11 @@
             this.addToolStripMenuItem,
             this.addByCityToolStripMenuItem});
             this.addContextMenuStrip.Name = "contextMenuStrip1";
-            this.addContextMenuStrip.Size = new System.Drawing.Size(173, 48);
+            this.addContextMenuStrip.Size = new System.Drawing.Size(173, 70);
             // 
             // addToolStripMenuItem
             // 
+            this.addToolStripMenuItem.Enabled = false;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.addToolStripMenuItem.Text = "Новую";

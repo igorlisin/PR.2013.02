@@ -59,10 +59,11 @@
             this.addByStreetToolStripMenuItem,
             this.addByComplexToolStripMenuItem});
             this.addContextMenuStrip.Name = "contextMenuStrip1";
-            this.addContextMenuStrip.Size = new System.Drawing.Size(195, 92);
+            this.addContextMenuStrip.Size = new System.Drawing.Size(195, 70);
             // 
             // addToolStripMenuItem
             // 
+            this.addToolStripMenuItem.Enabled = false;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.addToolStripMenuItem.Text = "Новый";
@@ -77,6 +78,7 @@
             // 
             // addByComplexToolStripMenuItem
             // 
+            this.addByComplexToolStripMenuItem.Enabled = false;
             this.addByComplexToolStripMenuItem.Name = "addByComplexToolStripMenuItem";
             this.addByComplexToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.addByComplexToolStripMenuItem.Text = "На основе комплекса";
@@ -86,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1783, 437);
+            this.ClientSize = new System.Drawing.Size(1362, 437);
             this.Name = "HomesForm";
             this.Text = "Список домов";
             this.Controls.SetChildIndex(this.removeButton, 0);

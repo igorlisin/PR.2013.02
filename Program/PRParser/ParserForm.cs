@@ -73,7 +73,7 @@ namespace PRParser
             columnNumber.Name = "Number";                                           // Задать название колонки
             columnNumber.HeaderText = "#";                                      // Задать заголовок
 
-            columnAddress.Width = 200;                                             // Задать ширину колонки
+            columnAddress.Width = 150;                                             // Задать ширину колонки
             columnAddress.Name = "address";                                           // Задать название колонки
             columnAddress.HeaderText = "Адрес";                                      // Задать заголовок
 
@@ -97,19 +97,19 @@ namespace PRParser
             columnIronDoor.Name = "ironDoor";                                               // Задать название колонки
             columnIronDoor.HeaderText = "Ж/д";                              // Задать заголовок
 
-            columnCompany.Width = 200;                                      // Задать ширину колонки
+            columnCompany.Width = 100;                                      // Задать ширину колонки
             columnCompany.Name = "company";                             // Задать название колонки
             columnCompany.HeaderText = "Компания";                          // Задать заголовок
 
-            columnPhoneToCall.Width = 200;                                      // Задать ширину колонки
+            columnPhoneToCall.Width = 100;                                      // Задать ширину колонки
             columnPhoneToCall.Name = "phoneToCall";                             // Задать название колонки
             columnPhoneToCall.HeaderText = "Телефон";                          // Задать заголовок
 
-            columnPrice.Width = 100;                                      // Задать ширину колонки
+            columnPrice.Width = 70;                                      // Задать ширину колонки
             columnPrice.Name = "price";                             // Задать название колонки
             columnPrice.HeaderText = "Цена";                          // Задать заголовок
 
-            columnDescription.Width = 300;                                      // Задать ширину колонки
+            columnDescription.Width = 200;                                      // Задать ширину колонки
             columnDescription.Name = "description";                             // Задать название колонки
             columnDescription.HeaderText = "Описание";                          // Задать заголовок
 
@@ -187,20 +187,7 @@ namespace PRParser
         private void button1_Click(object sender, EventArgs e)
         {
 
-            _parser = new Parser(
-                Zakamned.SiteAddress + @"/" + Zakamned.OneRoomApartmentAddress + _apartment.RoomNumber,
-                Zakamned.RowsRegExTemplate,
-                Zakamned.CellsRegExTemplate);
 
-            zakamneds = new Zakamned[_parser.TableCells.Count];
-
-            for (int counter = 0; counter < _parser.TableCells.Count; counter++)
-            {
-                zakamneds[counter] = new Zakamned();
-                zakamneds[counter].TryParse(_parser.TableCells[counter]);
-            }
-
-            FillEntitiesDataGridView();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -247,6 +234,24 @@ namespace PRParser
                 }
             }
             this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            _parser = new Parser(
+            Zakamned.SiteAddress + @"/" + Zakamned.OneRoomApartmentAddress + _apartment.RoomNumber,
+            Zakamned.RowsRegExTemplate,
+            Zakamned.CellsRegExTemplate);
+
+            zakamneds = new Zakamned[_parser.TableCells.Count];
+
+            for (int counter = 0; counter < _parser.TableCells.Count; counter++)
+            {
+                zakamneds[counter] = new Zakamned();
+                zakamneds[counter].TryParse(_parser.TableCells[counter]);
+            }
+
+            FillEntitiesDataGridView();
         }
     }
 }

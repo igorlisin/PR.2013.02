@@ -79,8 +79,6 @@ namespace PRUI.Forms
 
             DataGridViewColumn columnId;                                                            // Колонка "Идентификатор"
             DataGridViewColumn columnNumber;                                                        // Колонка "Номер"
-            DataGridViewColumn columnCountry;                                                       // Колонка "Страна"
-            DataGridViewColumn columnRegion;                                                        // Колонка "Регион"
             DataGridViewColumn columnCity;                                                          // Колонка "Город"
             DataGridViewColumn columnStreet;                                                        // Колонка "Улица"
 
@@ -88,42 +86,28 @@ namespace PRUI.Forms
 
             columnId = new DataGridViewColumn(cellTemplateText);                                    // Создать колонку "Идентификатор"
             columnNumber = new DataGridViewColumn(cellTemplateText);                                // Создать колонку "Номер"
-            columnCountry = new DataGridViewColumn(cellTemplateText);                               // Создать колонку "Страна"
-            columnRegion = new DataGridViewColumn(cellTemplateText);                                // Создать колонку "Регион"
             columnCity = new DataGridViewColumn(cellTemplateText);                                  // Создать колонку "Город"
             columnStreet = new DataGridViewColumn(cellTemplateText);                                // Создать колонку "Улица"
 
-            columnId.Width = 100;                                                                   // Задать ширину колонки
+            columnId.Width = 80;                                                                   // Задать ширину колонки
             columnId.Name = "id";                                                                   // Задать название колонки
             columnId.HeaderText = "Идентификатор";                                                  // Задать заголовок
 
-            columnNumber.Width = 110;                                                               // Задать ширину колонки
+            columnNumber.Width = 70;                                                               // Задать ширину колонки
             columnNumber.Name = "number";                                                           // Задать название колонки
             columnNumber.HeaderText = "Номер";                                                      // Задать заголовок
 
-            columnCountry.Width = 110;                                                              // Задать ширину колонки
-            columnCountry.Name = "country";                                                         // Задать название колонки
-            columnCountry.HeaderText = "Страна";                                                    // Задать заголовок
-            columnCountry.SortMode = DataGridViewColumnSortMode.Automatic;                          // Задать тип сортировки
-
-            columnRegion.Width = 110;                                                               // Задать ширину колонки
-            columnRegion.Name = "region";                                                           // Задать название колонки
-            columnRegion.HeaderText = "Регион";                                                     // Задать заголовок
-            columnRegion.SortMode = DataGridViewColumnSortMode.Automatic;                           // Задать тип сортировки
-
-            columnCity.Width = 110;                                                                 // Задать ширину колонки
+            columnCity.Width = 70;                                                                 // Задать ширину колонки
             columnCity.Name = "city";                                                               // Задать название колонки
             columnCity.HeaderText = "Город";                                                        // Задать заголовок
             columnCity.SortMode = DataGridViewColumnSortMode.Automatic;                             // Задать тип сортировки
 
-            columnStreet.Width = 110;                                                               // Задать ширину колонки
+            columnStreet.Width = 70;                                                               // Задать ширину колонки
             columnStreet.Name = "street";                                                           // Задать название колонки
             columnStreet.HeaderText = "Улица";                                                      // Задать заголовок
             columnStreet.SortMode = DataGridViewColumnSortMode.Automatic;                           // Задать тип сортировки
 
             entitiesDataGridView.Columns.Add(columnNumber);                                         // Добавить колонку в элемент отображения списка сущностей
-            entitiesDataGridView.Columns.Add(columnCountry);                                        // Добавить колонку в элемент отображения списка сущностей
-            entitiesDataGridView.Columns.Add(columnRegion);                                         // Добавить колонку в элемент отображения списка сущностей
             entitiesDataGridView.Columns.Add(columnCity);                                           // Добавить колонку в элемент отображения списка сущностей
             entitiesDataGridView.Columns.Add(columnStreet);                                         // Добавить колонку в элемент отображения списка сущностей
             entitiesDataGridView.Columns.Add(columnId);                                             // Добавить колонку в элемент отображения списка сущностей
@@ -178,8 +162,6 @@ namespace PRUI.Forms
 
                 entitiesDataGridView.Rows.Add(                                      // Добавить строку в элемент отображения списка сущностей
                         number,
-                        country,
-                        region,
                         city,
                         street,
                         id);

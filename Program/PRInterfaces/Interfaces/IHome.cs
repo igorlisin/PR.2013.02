@@ -14,6 +14,11 @@ namespace PRInterfaces.Interfaces
         string Number { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает этажность дома 
+        /// </summary>
+        int Floors { get; set; }
+
+        /// <summary>
         /// Свойство. Задает и возвращает номер по комплексу
         /// </summary>
         string ComplexNumber { get; set; }

@@ -23,11 +23,6 @@ namespace PRInterfaces.Interfaces
         int Floor { get; set; }
 
         /// <summary>
-        /// Свойство. Задает и возвращает этажность дома 
-        /// </summary>
-        int Floors { get; set; }
-
-        /// <summary>
         /// Свойство. Задает и возвращает количество комнат
         /// </summary>
         int RoomNumber { get; set; }

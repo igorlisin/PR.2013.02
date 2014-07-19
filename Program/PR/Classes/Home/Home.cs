@@ -149,6 +149,11 @@ namespace PR.Classes
         private string _number;
 
         /// <summary>
+        /// Поле. Этажность
+        /// </summary>
+        private int _floors;
+
+        /// <summary>
         /// Поле. Номер по комплексу
         /// </summary>
         private string _complexNumber;
@@ -293,6 +298,21 @@ namespace PR.Classes
             set
             {
                 _number = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает этажность 
+        /// </summary>
+        public int Floors
+        {
+            get
+            {
+                return (_floors);
+            }
+            set
+            {
+                _floors = value;
             }
         }
 

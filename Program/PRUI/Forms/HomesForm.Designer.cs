@@ -88,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 437);
+            this.ClientSize = new System.Drawing.Size(1014, 437);
             this.Name = "HomesForm";
             this.Text = "Список домов";
             this.Controls.SetChildIndex(this.removeButton, 0);

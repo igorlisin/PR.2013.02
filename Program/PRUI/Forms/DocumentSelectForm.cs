@@ -93,19 +93,19 @@ namespace PRUI.Forms
             columnSeries = new DataGridViewColumn(cellTemplateText);        // Создать колонку "Серия"
             columnNumber = new DataGridViewColumn(cellTemplateText);        // Создать колонку "Номер"
 
-            columnType.Width = 160;                                         // Задать ширину колонки
+            columnType.Width = 80;                                         // Задать ширину колонки
             columnType.Name = "type";                                       // Задать название колонки
             columnType.HeaderText = "Тип";                                  // Задать заголовок
 
-            columnSeries.Width = 60;                                        // Задать ширину колонки
+            columnSeries.Width = 40;                                        // Задать ширину колонки
             columnSeries.Name = "series";                                   // Задать название колонки
             columnSeries.HeaderText = "Серия";                              // Задать заголовок
 
-            columnNumber.Width = 80;                                        // Задать ширину колонки
+            columnNumber.Width = 50;                                        // Задать ширину колонки
             columnNumber.Name = "number";                                   // Задать название колонки
             columnNumber.HeaderText = "Номер";                              // Задать заголовок
 
-            columnId.Width = 100;                                           // Задать ширину колонки
+            columnId.Width = 50;                                           // Задать ширину колонки
             columnId.Name = "id";                                           // Задать название колонки
             columnId.HeaderText = "Идентификатор";                          // Задать заголовок
 

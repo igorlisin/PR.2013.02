@@ -93,11 +93,11 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(93, 583);
+            this.saveButton.Location = new System.Drawing.Point(147, 492);
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(12, 583);
+            this.okButton.Location = new System.Drawing.Point(66, 492);
             // 
             // idInfoGroup
             // 
@@ -113,7 +113,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(1213, 583);
+            this.closeButton.Location = new System.Drawing.Point(228, 492);
             // 
             // clientInfoGroup
             // 
@@ -637,7 +637,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 618);
+            this.ClientSize = new System.Drawing.Size(1300, 538);
             this.Controls.Add(this.ObjectGroupBox);
             this.Controls.Add(this.reportInfoGroup);
             this.Controls.Add(this.employeeInfoGroup);

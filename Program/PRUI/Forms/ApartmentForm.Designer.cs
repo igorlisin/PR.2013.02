@@ -122,9 +122,7 @@
             this.previewApartmentMapPictureButton = new System.Windows.Forms.Button();
             this.apartmentMapPictureBox = new System.Windows.Forms.PictureBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.numberOnFloor = new System.Windows.Forms.Label();
             this.FlatsOnFloorTextBox = new System.Windows.Forms.TextBox();
-            this.FloorsTextBox = new System.Windows.Forms.TextBox();
             this.SNIPTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.DomofonCheckBox = new System.Windows.Forms.CheckBox();
@@ -1005,9 +1003,7 @@
             this.baseTabControlPage.Controls.Add(this.previewApartmentMapPictureButton);
             this.baseTabControlPage.Controls.Add(this.apartmentMapPictureBox);
             this.baseTabControlPage.Controls.Add(this.label37);
-            this.baseTabControlPage.Controls.Add(this.numberOnFloor);
             this.baseTabControlPage.Controls.Add(this.FlatsOnFloorTextBox);
-            this.baseTabControlPage.Controls.Add(this.FloorsTextBox);
             this.baseTabControlPage.Controls.Add(this.numberTextBox);
             this.baseTabControlPage.Controls.Add(this.kitchenAreaTextBox);
             this.baseTabControlPage.Controls.Add(this.kitchenAreaLabel);
@@ -1124,28 +1120,12 @@
             this.label37.TabIndex = 57;
             this.label37.Text = "Квартир на этаже";
             // 
-            // numberOnFloor
-            // 
-            this.numberOnFloor.AutoSize = true;
-            this.numberOnFloor.Location = new System.Drawing.Point(78, 3);
-            this.numberOnFloor.Name = "numberOnFloor";
-            this.numberOnFloor.Size = new System.Drawing.Size(91, 13);
-            this.numberOnFloor.TabIndex = 57;
-            this.numberOnFloor.Text = "Этажность дома";
-            // 
             // FlatsOnFloorTextBox
             // 
             this.FlatsOnFloorTextBox.Location = new System.Drawing.Point(187, 19);
             this.FlatsOnFloorTextBox.Name = "FlatsOnFloorTextBox";
             this.FlatsOnFloorTextBox.Size = new System.Drawing.Size(87, 20);
             this.FlatsOnFloorTextBox.TabIndex = 57;
-            // 
-            // FloorsTextBox
-            // 
-            this.FloorsTextBox.Location = new System.Drawing.Point(81, 19);
-            this.FloorsTextBox.Name = "FloorsTextBox";
-            this.FloorsTextBox.Size = new System.Drawing.Size(87, 20);
-            this.FloorsTextBox.TabIndex = 57;
             // 
             // SNIPTextBox
             // 
@@ -1938,8 +1918,6 @@
         private System.Windows.Forms.Label streetNameLabel;
         protected System.Windows.Forms.Button unlinkHomeButton;
         protected System.Windows.Forms.Button relinkHomeButton;
-        private System.Windows.Forms.Label numberOnFloor;
-        private System.Windows.Forms.TextBox FloorsTextBox;
         private System.Windows.Forms.TabPage otherTabControlPage;
         private System.Windows.Forms.PictureBox apartmentMapPictureBox;
         private System.Windows.Forms.Label apartmentPhotosDataGridView;

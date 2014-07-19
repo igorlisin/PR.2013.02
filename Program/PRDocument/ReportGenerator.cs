@@ -84,6 +84,8 @@ namespace PRDocument
             DocGenerate(templateConclusReport, reportConclusName, bookmarks_conclusion, texts_conclusion);                            // Сгенерировать отчет Заключение
             DocGenerate(tempReport, reportName, bookmarks_report, texts_report);                                                      // Сгенерировать отчет Отчет
             XLSGenerate(tempContractReport, reportContractName, report, rod);                                                         // Генерировать отчет Договор
+
+
         }
 
 //Процедура заполнеия закладок и текстов их замен для отчета Заключение
@@ -165,7 +167,7 @@ namespace PRDocument
             texts_conclusion[19] = report.Employee.Man.Surname + " " + report.Employee.Man.Name + " " + report.Employee.Man.Patronymic;
             texts_conclusion[20] = Convert.ToString(report.Apartment.Number);
             texts_conclusion[21] = Convert.ToString(report.Apartment.Floor);
-            texts_conclusion[22] = Convert.ToString(report.Apartment.Floors);
+            texts_conclusion[22] = Convert.ToString(report.Apartment.Home.Floors);
             texts_conclusion[23] = Convert.ToString(report.Apartment.GrossArea);
             texts_conclusion[24] = report.Apartment.Home.ComplexNumber;
             texts_conclusion[25] = report.Apartment.Object.Restriction;
@@ -647,8 +649,8 @@ namespace PRDocument
             texts_report[108] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForHallFloor);
             texts_report[109] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForKitchenFloor);
             texts_report[110] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForLivingRoomFloor);
-            texts_report[111] = Convert.ToString(report.Apartment.Floors);
-            texts_report[112] = Convert.ToString(report.Apartment.Floors);
+            texts_report[111] = Convert.ToString(report.Apartment.Home.Floors);
+            texts_report[112] = Convert.ToString(report.Apartment.Home.Floors);
             texts_report[113] = report.Apartment.Home.Garbadge == true ? "есть" : "нет";
             texts_report[114] = report.Apartment.GetConditionTypeAsString(report.Apartment.HeatingCondition);
             texts_report[115] = report.Apartment.GetPipesTypeAsString(report.Apartment.HeatingPipesType);
@@ -918,6 +920,7 @@ namespace PRDocument
             excelAppl.Quit();                   // Закрыть
     
     }
-    
+
+
     }
 }

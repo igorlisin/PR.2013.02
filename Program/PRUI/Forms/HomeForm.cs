@@ -178,6 +178,20 @@ namespace PRUI.Forms
             }
         }
 
+        /// <summary>
+        /// Свойство. Задает и возвращает этажность
+        /// </summary>
+        private string Floors
+        {
+            get
+            {
+                return (FloorsTextBox.Text);
+            }
+            set
+            {
+                FloorsTextBox.Text = value;
+            }
+        }
 
         /// <summary>
         /// Свойство. Задает и возвращает состояние крыши
@@ -589,6 +603,7 @@ namespace PRUI.Forms
         protected void CleanLocationData()
         {
             BuildYear = 1900;
+            Floors = "";                                                                    // Очистить этажность
             Lift = false;
             KapremontYear = "";
             KapremontPeriod = "";
@@ -652,6 +667,7 @@ namespace PRUI.Forms
         protected void CopyLocationDataFromEntity()
         {
             BuildYear = _home.BuildYear;                    // Скопировать год постройки
+            Floors = Convert.ToString(_home.Floors);        // Скопировать этажность
             RoofCondition = _home.RoofCondition;            // Скопировать состояние крыши
             OutsideWall = _home.OutsideWall;                // Скопировать тип несущей стены
             InsideWall = _home.InsideWall;                  // Скопировать тип материала перегородок
@@ -729,7 +745,7 @@ namespace PRUI.Forms
             _home.Street = _streetAfterRelinking;                       // Скопировать улицу после перепривязки
             _home.Complex = _complexAfterRelinking;                     // Скопировать комплекс после перепривязки
             _home.District = _districtAfterRelinking;                   // Скопировать район после перепривязки
-
+            _home.Floors = Convert.ToInt32(Floors);                     // Скопировать этажность
             _home.Number = homeNumberTextBox.Text;                      // Скопировать номер дома
             _home.ComplexNumber = homeComplexNumberTextBox.Text;        // Скопировать номер дома по комплексу
 

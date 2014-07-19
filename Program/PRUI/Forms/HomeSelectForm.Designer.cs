@@ -36,13 +36,13 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(665, 406);
+            this.closeButton.Location = new System.Drawing.Point(102, 406);
             // 
             // HomeSelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 441);
+            this.ClientSize = new System.Drawing.Size(617, 441);
             this.Name = "HomeSelectForm";
             this.Text = "Выбор дома";
             this.ResumeLayout(false);

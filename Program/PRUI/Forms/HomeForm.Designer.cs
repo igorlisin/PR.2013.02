@@ -32,6 +32,7 @@
             this.RoofConditionComboBox = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.ParkingCheckBox = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.TramwayCheckBox = new System.Windows.Forms.CheckBox();
             this.GazCheckBox = new System.Windows.Forms.CheckBox();
@@ -54,8 +55,11 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -63,18 +67,16 @@
             this.KapremontYearTextBox = new System.Windows.Forms.TextBox();
             this.ExtraFactorsTextBox = new System.Windows.Forms.TextBox();
             this.BasmentWearTextBox = new System.Windows.Forms.TextBox();
+            this.Local2TextBox = new System.Windows.Forms.TextBox();
+            this.Local1TextBox = new System.Windows.Forms.TextBox();
             this.SocialTextBox = new System.Windows.Forms.TextBox();
             this.PromDistanceTextBox = new System.Windows.Forms.TextBox();
+            this.ClosestStopTextBox = new System.Windows.Forms.TextBox();
             this.StopDistanceTextBox = new System.Windows.Forms.TextBox();
             this.BasementTextBox = new System.Windows.Forms.TextBox();
             this.BuildYearTextBox = new System.Windows.Forms.TextBox();
-            this.ParkingCheckBox = new System.Windows.Forms.CheckBox();
-            this.ClosestStopTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Local1TextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Local2TextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.numberOnFloor = new System.Windows.Forms.Label();
+            this.FloorsTextBox = new System.Windows.Forms.TextBox();
             this.regionInfoGroup.SuspendLayout();
             this.countryInfoGroup.SuspendLayout();
             this.homeInfoGroupBox.SuspendLayout();
@@ -122,6 +124,7 @@
             // homeInfoGroupBox
             // 
             this.homeInfoGroupBox.Location = new System.Drawing.Point(11, 330);
+            this.homeInfoGroupBox.Size = new System.Drawing.Size(385, 61);
             // 
             // complexNumberTextBox
             // 
@@ -159,6 +162,21 @@
             // DistrictTextBox
             // 
             this.DistrictTextBox.Enabled = false;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.numberOnFloor);
+            this.tabPage1.Controls.Add(this.FloorsTextBox);
+            this.tabPage1.Size = new System.Drawing.Size(401, 428);
+            this.tabPage1.Controls.SetChildIndex(this.streetInfoGroupBox, 0);
+            this.tabPage1.Controls.SetChildIndex(this.complexInfoGroupBox, 0);
+            this.tabPage1.Controls.SetChildIndex(this.cityInfoGroupBox, 0);
+            this.tabPage1.Controls.SetChildIndex(this.groupBox1, 0);
+            this.tabPage1.Controls.SetChildIndex(this.regionInfoGroup, 0);
+            this.tabPage1.Controls.SetChildIndex(this.homeInfoGroupBox, 0);
+            this.tabPage1.Controls.SetChildIndex(this.countryInfoGroup, 0);
+            this.tabPage1.Controls.SetChildIndex(this.FloorsTextBox, 0);
+            this.tabPage1.Controls.SetChildIndex(this.numberOnFloor, 0);
             // 
             // tabControl1
             // 
@@ -256,6 +274,18 @@
             this.groupBox5.TabIndex = 47;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Транспортная ситуация";
+            // 
+            // ParkingCheckBox
+            // 
+            this.ParkingCheckBox.AutoSize = true;
+            this.ParkingCheckBox.Checked = true;
+            this.ParkingCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ParkingCheckBox.Location = new System.Drawing.Point(106, 23);
+            this.ParkingCheckBox.Name = "ParkingCheckBox";
+            this.ParkingCheckBox.Size = new System.Drawing.Size(76, 17);
+            this.ParkingCheckBox.TabIndex = 17;
+            this.ParkingCheckBox.Text = "Парковка";
+            this.ParkingCheckBox.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
@@ -469,6 +499,24 @@
             this.label25.TabIndex = 33;
             this.label25.Text = "Дополнительные факторы";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(176, 191);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 13);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Локальные особенности 2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 192);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 13);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Локальные особенности 1";
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -486,6 +534,15 @@
             this.label27.Size = new System.Drawing.Size(157, 13);
             this.label27.TabIndex = 31;
             this.label27.Text = "Расстояние до промзоны, км";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 257);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Ближайшая остановка";
             // 
             // label28
             // 
@@ -543,6 +600,22 @@
             this.BasmentWearTextBox.Size = new System.Drawing.Size(101, 20);
             this.BasmentWearTextBox.TabIndex = 23;
             // 
+            // Local2TextBox
+            // 
+            this.Local2TextBox.Location = new System.Drawing.Point(179, 207);
+            this.Local2TextBox.Multiline = true;
+            this.Local2TextBox.Name = "Local2TextBox";
+            this.Local2TextBox.Size = new System.Drawing.Size(128, 25);
+            this.Local2TextBox.TabIndex = 22;
+            // 
+            // Local1TextBox
+            // 
+            this.Local1TextBox.Location = new System.Drawing.Point(9, 208);
+            this.Local1TextBox.Multiline = true;
+            this.Local1TextBox.Name = "Local1TextBox";
+            this.Local1TextBox.Size = new System.Drawing.Size(128, 25);
+            this.Local1TextBox.TabIndex = 22;
+            // 
             // SocialTextBox
             // 
             this.SocialTextBox.Location = new System.Drawing.Point(179, 251);
@@ -557,6 +630,13 @@
             this.PromDistanceTextBox.Name = "PromDistanceTextBox";
             this.PromDistanceTextBox.Size = new System.Drawing.Size(94, 20);
             this.PromDistanceTextBox.TabIndex = 21;
+            // 
+            // ClosestStopTextBox
+            // 
+            this.ClosestStopTextBox.Location = new System.Drawing.Point(8, 273);
+            this.ClosestStopTextBox.Name = "ClosestStopTextBox";
+            this.ClosestStopTextBox.Size = new System.Drawing.Size(94, 20);
+            this.ClosestStopTextBox.TabIndex = 20;
             // 
             // StopDistanceTextBox
             // 
@@ -579,67 +659,21 @@
             this.BuildYearTextBox.Size = new System.Drawing.Size(94, 20);
             this.BuildYearTextBox.TabIndex = 19;
             // 
-            // ParkingCheckBox
+            // numberOnFloor
             // 
-            this.ParkingCheckBox.AutoSize = true;
-            this.ParkingCheckBox.Checked = true;
-            this.ParkingCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ParkingCheckBox.Location = new System.Drawing.Point(106, 23);
-            this.ParkingCheckBox.Name = "ParkingCheckBox";
-            this.ParkingCheckBox.Size = new System.Drawing.Size(76, 17);
-            this.ParkingCheckBox.TabIndex = 17;
-            this.ParkingCheckBox.Text = "Парковка";
-            this.ParkingCheckBox.UseVisualStyleBackColor = true;
+            this.numberOnFloor.AutoSize = true;
+            this.numberOnFloor.Location = new System.Drawing.Point(293, 346);
+            this.numberOnFloor.Name = "numberOnFloor";
+            this.numberOnFloor.Size = new System.Drawing.Size(91, 13);
+            this.numberOnFloor.TabIndex = 58;
+            this.numberOnFloor.Text = "Этажность дома";
             // 
-            // ClosestStopTextBox
+            // FloorsTextBox
             // 
-            this.ClosestStopTextBox.Location = new System.Drawing.Point(8, 273);
-            this.ClosestStopTextBox.Name = "ClosestStopTextBox";
-            this.ClosestStopTextBox.Size = new System.Drawing.Size(94, 20);
-            this.ClosestStopTextBox.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 257);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 13);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Ближайшая остановка";
-            // 
-            // Local1TextBox
-            // 
-            this.Local1TextBox.Location = new System.Drawing.Point(9, 208);
-            this.Local1TextBox.Multiline = true;
-            this.Local1TextBox.Name = "Local1TextBox";
-            this.Local1TextBox.Size = new System.Drawing.Size(128, 25);
-            this.Local1TextBox.TabIndex = 22;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 13);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Локальные особенности 1";
-            // 
-            // Local2TextBox
-            // 
-            this.Local2TextBox.Location = new System.Drawing.Point(179, 207);
-            this.Local2TextBox.Multiline = true;
-            this.Local2TextBox.Name = "Local2TextBox";
-            this.Local2TextBox.Size = new System.Drawing.Size(128, 25);
-            this.Local2TextBox.TabIndex = 22;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(176, 191);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 13);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Локальные особенности 2";
+            this.FloorsTextBox.Location = new System.Drawing.Point(296, 362);
+            this.FloorsTextBox.Name = "FloorsTextBox";
+            this.FloorsTextBox.Size = new System.Drawing.Size(87, 20);
+            this.FloorsTextBox.TabIndex = 59;
             // 
             // HomeForm
             // 
@@ -663,6 +697,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.idInfoGroup.ResumeLayout(false);
             this.idInfoGroup.PerformLayout();
@@ -731,5 +766,7 @@
         protected System.Windows.Forms.TextBox Local2TextBox;
         protected System.Windows.Forms.TextBox Local1TextBox;
         protected System.Windows.Forms.TextBox ClosestStopTextBox;
+        private System.Windows.Forms.Label numberOnFloor;
+        private System.Windows.Forms.TextBox FloorsTextBox;
     }
 }

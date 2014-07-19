@@ -47,17 +47,13 @@
             // 
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
-            // closeButton
-            // 
-            this.closeButton.Location = new System.Drawing.Point(1276, 406);
-            // 
             // addContextMenuStrip
             // 
             this.addContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem,
             this.addByRegionToolStripMenuItem});
             this.addContextMenuStrip.Name = "contextMenuStrip1";
-            this.addContextMenuStrip.Size = new System.Drawing.Size(180, 70);
+            this.addContextMenuStrip.Size = new System.Drawing.Size(180, 48);
             // 
             // addToolStripMenuItem
             // 
@@ -78,7 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 437);
+            this.ClientSize = new System.Drawing.Size(471, 437);
             this.Name = "CitiesForm";
             this.Text = "Список городов";
             this.Controls.SetChildIndex(this.removeButton, 0);

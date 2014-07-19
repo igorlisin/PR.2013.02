@@ -49,7 +49,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(1340, 406);
+            this.closeButton.Location = new System.Drawing.Point(976, 402);
             // 
             // addContextMenuStrip
             // 
@@ -57,7 +57,7 @@
             this.addToolStripMenuItem,
             this.addByMenToolStripMenuItem});
             this.addContextMenuStrip.Name = "contextMenuStrip1";
-            this.addContextMenuStrip.Size = new System.Drawing.Size(186, 70);
+            this.addContextMenuStrip.Size = new System.Drawing.Size(186, 48);
             // 
             // addToolStripMenuItem
             // 
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 437);
+            this.ClientSize = new System.Drawing.Size(1056, 437);
             this.Name = "ClientsForm";
             this.Text = "Список клиентов";
             this.Controls.SetChildIndex(this.removeButton, 0);

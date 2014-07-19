@@ -42,15 +42,11 @@
             // 
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
-            // closeButton
-            // 
-            this.closeButton.Location = new System.Drawing.Point(1097, 406);
-            // 
             // DocumentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 434);
+            this.ClientSize = new System.Drawing.Size(427, 434);
             this.Name = "DocumentsForm";
             this.Text = "Список документов";
             this.ResumeLayout(false);

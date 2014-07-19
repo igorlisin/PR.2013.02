@@ -515,11 +515,6 @@ namespace PR.Classes
         private int _floor;
 
         /// <summary>
-        /// Поле. Этажность
-        /// </summary>
-        private int _floors;
-
-        /// <summary>
         /// Поле. Количество комнат
         /// </summary>
         private int _roomNumber;
@@ -816,21 +811,6 @@ namespace PR.Classes
             set
             {
                 _floor = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает этажность 
-        /// </summary>
-        public int Floors
-        {
-            get
-            {
-                return (_floors);
-            }
-            set
-            {
-                _floors = value;
             }
         }
 

@@ -76,6 +76,51 @@ namespace PR.Classes
         /// </summary>
         private string _description;
 
+        /// <summary>
+        /// Поле. Поправка на торг
+        /// </summary>
+        private float _kTorg;
+
+        /// <summary>
+        /// Поле. Поправка на тип дома
+        /// </summary>
+        private float _kWallType;
+
+        /// <summary>
+        /// Поле. Поправка на этажность дома
+        /// </summary>
+        private float _kFloors;
+
+        /// <summary>
+        /// Поле. Поправка на этаж квартиры
+        /// </summary>
+        private float _kFloor;
+
+        /// <summary>
+        /// Поле. Поправка на площадь кухни
+        /// </summary>
+        private float _kSKitchen;
+
+        /// <summary>
+        /// Поле. Поправка на наличие балкона
+        /// </summary>
+        private float _kBalcon;
+
+        /// <summary>
+        /// Поле. Поправка на тип санузла
+        /// </summary>
+        private float _kSanuzel;
+
+        /// <summary>
+        /// Поле. Доплата за ремонт
+        /// </summary>
+        private float _finishingQualityPrice;
+
+        /// <summary>
+        /// Поле. Скидка за состояние
+        /// </summary>
+        private float _stateDiscount;
+
         #endregion
 
         #region Properties
@@ -279,6 +324,142 @@ namespace PR.Classes
                 ApartmentForEntityFramework = (Apartment)value;
             }
         }
+
+        /// <summary>
+        /// Свойство. Поправка на торг
+        /// </summary>
+        public float kTorg
+        {
+            get
+            {
+                return (_kTorg);
+            }
+            set
+            {
+                _kTorg = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Поправка на тип дома
+        /// </summary>
+        public float kWallType
+        {
+            get
+            {
+                return (_kWallType);
+            }
+            set
+            {
+                _kWallType = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Поправка на этажность дома
+        /// </summary>
+        public float kFloors
+        {
+            get
+            {
+                return (_kFloors);
+            }
+            set
+            {
+                _kFloors = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Поправка на этаж квартиры
+        /// </summary>
+        public float kFloor
+        {
+            get
+            {
+                return (_kFloor);
+            }
+            set
+            {
+                _kFloor = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Поправка на площадь кухни
+        /// </summary>
+        public float kSKitchen
+        {
+            get
+            {
+                return (_kSKitchen);
+            }
+            set
+            {
+                _kSKitchen = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Поправка на наличие балкона
+        /// </summary>
+        public float kBalcon
+        {
+            get
+            {
+                return (_kBalcon);
+            }
+            set
+            {
+                _kBalcon = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Поправка на тип санузла
+        /// </summary>
+        public float kSanuzel
+        {
+            get
+            {
+                return (_kSanuzel);
+            }
+            set
+            {
+                _kSanuzel = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Доплата за ремонт
+        /// </summary>
+        public float finishingQualityPrice
+        {
+            get
+            {
+                return (_finishingQualityPrice);
+            }
+            set
+            {
+                _finishingQualityPrice = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Скидка за состояние
+        /// </summary>
+        public float stateDiscount
+        {
+            get
+            {
+                return (_stateDiscount);
+            }
+            set
+            {
+                _stateDiscount = value;
+            }
+        }
+
         #endregion
 
         #region Static methods

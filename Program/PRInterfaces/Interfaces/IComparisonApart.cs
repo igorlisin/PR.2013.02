@@ -73,5 +73,49 @@ namespace PRInterfaces.Interfaces
         /// </summary>
         IApartment Apartment { get; set; }
 
-    }
+        /// <summary>
+        /// Свойство. Поправка на торг
+        /// </summary>
+        float kTorg { get; set; }
+
+        /// <summary>
+        /// Свойство. Поправка на тип дома
+        /// </summary>
+        float kWallType { get; set; }
+
+        /// <summary>
+        /// Свойство. Поправка на этажность дома
+        /// </summary>
+        float kFloors { get; set; }
+
+        /// <summary>
+        /// Свойство. Поправка на этаж квартиры
+        /// </summary>
+        float kFloor { get; set; }
+
+        /// <summary>
+        /// Свойство. Поправка на площадь кухни
+        /// </summary>
+        float kSKitchen { get; set; }
+
+        /// <summary>
+        /// Свойство. Поправка на наличие балкона
+        /// </summary>
+        float kBalcon { get; set; }
+
+        /// <summary>
+        /// Свойство. Поправка на тип санузла
+        /// </summary>
+        float kSanuzel { get; set; }
+
+        /// <summary>
+        /// Свойство. Доплата за ремонт
+        /// </summary>
+        float finishingQualityPrice { get; set; }
+
+        /// <summary>
+        /// Свойство. Скидка за состояние
+        /// </summary>
+        float stateDiscount { get; set; }
+   }
 }

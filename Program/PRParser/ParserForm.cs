@@ -227,13 +227,16 @@ namespace PRParser
                         aparts[j].Apartment = _apartment;
 
                         _comparisonApartments.Add(aparts[j]);                                                      // Добавляем
-                        _comparisonApartments.SaveChanges();                                                       // Сохраняем
+                        //_comparisonApartments.SaveChanges();                                                       // Сохраняем
                       
                         j++;
                     }
                 }
             }
-            this.Close();
+            FactorRateForm frf = new FactorRateForm(aparts);
+            frf.Show();
+
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -252,6 +255,12 @@ namespace PRParser
             }
 
             FillEntitiesDataGridView();
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            _comparisonApartments.SaveChanges();
+            this.Close();
         }
     }
 }

@@ -32,6 +32,7 @@
             this.AddToReportButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,21 +45,22 @@
             this.apartmentDataGridView.Location = new System.Drawing.Point(12, 12);
             this.apartmentDataGridView.Name = "apartmentDataGridView";
             this.apartmentDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.apartmentDataGridView.Size = new System.Drawing.Size(860, 393);
+            this.apartmentDataGridView.Size = new System.Drawing.Size(860, 408);
             this.apartmentDataGridView.TabIndex = 1;
             // 
             // AddToReportButton
             // 
-            this.AddToReportButton.Location = new System.Drawing.Point(12, 426);
+            this.AddToReportButton.Location = new System.Drawing.Point(12, 443);
             this.AddToReportButton.Name = "AddToReportButton";
-            this.AddToReportButton.Size = new System.Drawing.Size(127, 23);
+            this.AddToReportButton.Size = new System.Drawing.Size(139, 23);
             this.AddToReportButton.TabIndex = 6;
-            this.AddToReportButton.Text = "Добавить в отчет";
+            this.AddToReportButton.Text = "Ввести коэффициенты";
             this.AddToReportButton.UseVisualStyleBackColor = true;
+            this.AddToReportButton.Click += new System.EventHandler(this.AddToReportButton_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(382, 426);
+            this.button2.Location = new System.Drawing.Point(590, 443);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(156, 23);
             this.button2.TabIndex = 5;
@@ -67,7 +69,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(752, 426);
+            this.button1.Location = new System.Drawing.Point(752, 443);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 23);
             this.button1.TabIndex = 4;
@@ -75,11 +77,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(171, 443);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(98, 23);
+            this.SaveButton.TabIndex = 7;
+            this.SaveButton.Text = "Сохранить";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
             // ParserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 477);
+            this.ClientSize = new System.Drawing.Size(884, 478);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.AddToReportButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -97,6 +110,7 @@
         private System.Windows.Forms.Button AddToReportButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SaveButton;
     }
 }
 

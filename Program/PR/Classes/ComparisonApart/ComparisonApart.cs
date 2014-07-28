@@ -121,6 +121,11 @@ namespace PR.Classes
         /// </summary>
         private float _stateDiscount;
 
+        /// <summary>
+        /// Поле. Вычисленная цена за квадратный метр
+        /// </summary>
+        private float _sqmCalcPrice;
+
         #endregion
 
         #region Properties
@@ -460,6 +465,21 @@ namespace PR.Classes
             }
         }
 
+
+        /// <summary>
+        /// Свойство. Вычисленная цена за квадратный метр
+        /// </summary>
+        public float sqmCalcPrice
+        {
+            get
+            {
+                return (_sqmCalcPrice);
+            }
+            set
+            {
+                _sqmCalcPrice = value;
+            }
+        }
         #endregion
 
         #region Static methods

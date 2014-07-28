@@ -117,5 +117,10 @@ namespace PRInterfaces.Interfaces
         /// Свойство. Скидка за состояние
         /// </summary>
         float stateDiscount { get; set; }
+
+        /// <summary>
+        /// Свойство. Вычисленная цена за квадратный метр
+        /// </summary>
+        float sqmCalcPrice { get; set; }
    }
 }

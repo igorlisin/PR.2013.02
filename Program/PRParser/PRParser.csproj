@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FactorRateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FactorRateForm.Designer.cs">
+      <DependentUpon>FactorRateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
       <DependentUpon>WebBrowserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Zakamned.cs" />
+    <EmbeddedResource Include="FactorRateForm.resx">
+      <DependentUpon>FactorRateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParserForm.resx">
       <DependentUpon>ParserForm.cs</DependentUpon>
     </EmbeddedResource>

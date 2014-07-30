@@ -37,11 +37,11 @@ namespace PRParser
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            float sqmPrice1 = _aparts[0].price / _aparts[0].grossArea;
-            float sqmPrice2 = _aparts[1].price / _aparts[1].grossArea;
-            float sqmPrice3 = _aparts[2].price / _aparts[2].grossArea;
-            float sqmPrice4 = _aparts[3].price / _aparts[3].grossArea;
-            float sqmPrice5 = _aparts[4].price / _aparts[4].grossArea;
+            float sqmPrice1 = _aparts[0].price*1000 / _aparts[0].grossArea;
+            float sqmPrice2 = _aparts[1].price*1000 / _aparts[1].grossArea;
+            float sqmPrice3 = _aparts[2].price*1000 / _aparts[2].grossArea;
+            float sqmPrice4 = _aparts[3].price*1000 / _aparts[3].grossArea;
+            float sqmPrice5 = _aparts[4].price*1000 / _aparts[4].grossArea;
 
             _aparts[0].kTorg = Convert.ToSingle(kTorgTextBox1.Text)/100;
             _aparts[0].kFloors = Convert.ToSingle(kFloorsTextBox1.Text) / 100;

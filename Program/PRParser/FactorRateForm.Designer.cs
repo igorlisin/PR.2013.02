@@ -158,6 +158,7 @@
             this.kTorgTextBox1.Name = "kTorgTextBox1";
             this.kTorgTextBox1.Size = new System.Drawing.Size(100, 20);
             this.kTorgTextBox1.TabIndex = 3;
+            this.kTorgTextBox1.Text = "0";
             // 
             // kWallTypeTextBox1
             // 
@@ -165,6 +166,7 @@
             this.kWallTypeTextBox1.Name = "kWallTypeTextBox1";
             this.kWallTypeTextBox1.Size = new System.Drawing.Size(100, 20);
             this.kWallTypeTextBox1.TabIndex = 4;
+            this.kWallTypeTextBox1.Text = "0";
             // 
             // kFloorsTextBox1
             // 
@@ -172,6 +174,7 @@
             this.kFloorsTextBox1.Name = "kFloorsTextBox1";
             this.kFloorsTextBox1.Size = new System.Drawing.Size(100, 20);
             this.kFloorsTextBox1.TabIndex = 5;
+            this.kFloorsTextBox1.Text = "0";
             // 
             // kFloorTextBox1
             // 
@@ -179,6 +182,7 @@
             this.kFloorTextBox1.Name = "kFloorTextBox1";
             this.kFloorTextBox1.Size = new System.Drawing.Size(100, 20);
             this.kFloorTextBox1.TabIndex = 6;
+            this.kFloorTextBox1.Text = "0";
             // 
             // kSKitchenTextBox1
             // 
@@ -186,6 +190,7 @@
             this.kSKitchenTextBox1.Name = "kSKitchenTextBox1";
             this.kSKitchenTextBox1.Size = new System.Drawing.Size(100, 20);
             this.kSKitchenTextBox1.TabIndex = 7;
+            this.kSKitchenTextBox1.Text = "0";
             // 
             // kBalconTextBox1
             // 
@@ -193,6 +198,7 @@
             this.kBalconTextBox1.Name = "kBalconTextBox1";
             this.kBalconTextBox1.Size = new System.Drawing.Size(100, 20);
             this.kBalconTextBox1.TabIndex = 8;
+            this.kBalconTextBox1.Text = "0";
             // 
             // kSanuzelTextBox1
             // 
@@ -200,6 +206,7 @@
             this.kSanuzelTextBox1.Name = "kSanuzelTextBox1";
             this.kSanuzelTextBox1.Size = new System.Drawing.Size(100, 20);
             this.kSanuzelTextBox1.TabIndex = 9;
+            this.kSanuzelTextBox1.Text = "0";
             // 
             // finishingQualityPriceTextBox1
             // 
@@ -207,6 +214,7 @@
             this.finishingQualityPriceTextBox1.Name = "finishingQualityPriceTextBox1";
             this.finishingQualityPriceTextBox1.Size = new System.Drawing.Size(100, 20);
             this.finishingQualityPriceTextBox1.TabIndex = 10;
+            this.finishingQualityPriceTextBox1.Text = "0";
             // 
             // stateDiscountTextBox1
             // 
@@ -214,6 +222,7 @@
             this.stateDiscountTextBox1.Name = "stateDiscountTextBox1";
             this.stateDiscountTextBox1.Size = new System.Drawing.Size(100, 20);
             this.stateDiscountTextBox1.TabIndex = 11;
+            this.stateDiscountTextBox1.Text = "0";
             // 
             // groupBox1
             // 
@@ -437,6 +446,7 @@
             this.kTorgTextBox2.Name = "kTorgTextBox2";
             this.kTorgTextBox2.Size = new System.Drawing.Size(100, 20);
             this.kTorgTextBox2.TabIndex = 3;
+            this.kTorgTextBox2.Text = "0";
             // 
             // stateDiscountTextBox2
             // 
@@ -444,6 +454,7 @@
             this.stateDiscountTextBox2.Name = "stateDiscountTextBox2";
             this.stateDiscountTextBox2.Size = new System.Drawing.Size(100, 20);
             this.stateDiscountTextBox2.TabIndex = 11;
+            this.stateDiscountTextBox2.Text = "0";
             // 
             // kWallTypeTextBox2
             // 
@@ -451,6 +462,7 @@
             this.kWallTypeTextBox2.Name = "kWallTypeTextBox2";
             this.kWallTypeTextBox2.Size = new System.Drawing.Size(100, 20);
             this.kWallTypeTextBox2.TabIndex = 4;
+            this.kWallTypeTextBox2.Text = "0";
             // 
             // finishingQualityPriceTextBox2
             // 
@@ -458,6 +470,7 @@
             this.finishingQualityPriceTextBox2.Name = "finishingQualityPriceTextBox2";
             this.finishingQualityPriceTextBox2.Size = new System.Drawing.Size(100, 20);
             this.finishingQualityPriceTextBox2.TabIndex = 10;
+            this.finishingQualityPriceTextBox2.Text = "0";
             // 
             // kFloorsTextBox2
             // 
@@ -465,6 +478,7 @@
             this.kFloorsTextBox2.Name = "kFloorsTextBox2";
             this.kFloorsTextBox2.Size = new System.Drawing.Size(100, 20);
             this.kFloorsTextBox2.TabIndex = 5;
+            this.kFloorsTextBox2.Text = "0";
             // 
             // kSanuzelTextBox2
             // 
@@ -472,6 +486,7 @@
             this.kSanuzelTextBox2.Name = "kSanuzelTextBox2";
             this.kSanuzelTextBox2.Size = new System.Drawing.Size(100, 20);
             this.kSanuzelTextBox2.TabIndex = 9;
+            this.kSanuzelTextBox2.Text = "0";
             // 
             // kFloorTextBox2
             // 
@@ -479,6 +494,7 @@
             this.kFloorTextBox2.Name = "kFloorTextBox2";
             this.kFloorTextBox2.Size = new System.Drawing.Size(100, 20);
             this.kFloorTextBox2.TabIndex = 6;
+            this.kFloorTextBox2.Text = "0";
             // 
             // kBalconTextBox2
             // 
@@ -486,6 +502,7 @@
             this.kBalconTextBox2.Name = "kBalconTextBox2";
             this.kBalconTextBox2.Size = new System.Drawing.Size(100, 20);
             this.kBalconTextBox2.TabIndex = 8;
+            this.kBalconTextBox2.Text = "0";
             // 
             // kSKitchenTextBox2
             // 
@@ -493,6 +510,7 @@
             this.kSKitchenTextBox2.Name = "kSKitchenTextBox2";
             this.kSKitchenTextBox2.Size = new System.Drawing.Size(100, 20);
             this.kSKitchenTextBox2.TabIndex = 7;
+            this.kSKitchenTextBox2.Text = "0";
             // 
             // groupBox3
             // 
@@ -608,6 +626,7 @@
             this.kTorgTextBox3.Name = "kTorgTextBox3";
             this.kTorgTextBox3.Size = new System.Drawing.Size(100, 20);
             this.kTorgTextBox3.TabIndex = 3;
+            this.kTorgTextBox3.Text = "0";
             // 
             // stateDiscountTextBox3
             // 
@@ -615,6 +634,7 @@
             this.stateDiscountTextBox3.Name = "stateDiscountTextBox3";
             this.stateDiscountTextBox3.Size = new System.Drawing.Size(100, 20);
             this.stateDiscountTextBox3.TabIndex = 11;
+            this.stateDiscountTextBox3.Text = "0";
             // 
             // kWallTypeTextBox3
             // 
@@ -622,6 +642,7 @@
             this.kWallTypeTextBox3.Name = "kWallTypeTextBox3";
             this.kWallTypeTextBox3.Size = new System.Drawing.Size(100, 20);
             this.kWallTypeTextBox3.TabIndex = 4;
+            this.kWallTypeTextBox3.Text = "0";
             // 
             // finishingQualityPriceTextBox3
             // 
@@ -629,6 +650,7 @@
             this.finishingQualityPriceTextBox3.Name = "finishingQualityPriceTextBox3";
             this.finishingQualityPriceTextBox3.Size = new System.Drawing.Size(100, 20);
             this.finishingQualityPriceTextBox3.TabIndex = 10;
+            this.finishingQualityPriceTextBox3.Text = "0";
             // 
             // kFloorsTextBox3
             // 
@@ -636,6 +658,7 @@
             this.kFloorsTextBox3.Name = "kFloorsTextBox3";
             this.kFloorsTextBox3.Size = new System.Drawing.Size(100, 20);
             this.kFloorsTextBox3.TabIndex = 5;
+            this.kFloorsTextBox3.Text = "0";
             // 
             // kSanuzelTextBox3
             // 
@@ -643,6 +666,7 @@
             this.kSanuzelTextBox3.Name = "kSanuzelTextBox3";
             this.kSanuzelTextBox3.Size = new System.Drawing.Size(100, 20);
             this.kSanuzelTextBox3.TabIndex = 9;
+            this.kSanuzelTextBox3.Text = "0";
             // 
             // kFloorTextBox3
             // 
@@ -650,6 +674,7 @@
             this.kFloorTextBox3.Name = "kFloorTextBox3";
             this.kFloorTextBox3.Size = new System.Drawing.Size(100, 20);
             this.kFloorTextBox3.TabIndex = 6;
+            this.kFloorTextBox3.Text = "0";
             // 
             // kBalconTextBox3
             // 
@@ -657,6 +682,7 @@
             this.kBalconTextBox3.Name = "kBalconTextBox3";
             this.kBalconTextBox3.Size = new System.Drawing.Size(100, 20);
             this.kBalconTextBox3.TabIndex = 8;
+            this.kBalconTextBox3.Text = "0";
             // 
             // kSKitchenTextBox3
             // 
@@ -664,6 +690,7 @@
             this.kSKitchenTextBox3.Name = "kSKitchenTextBox3";
             this.kSKitchenTextBox3.Size = new System.Drawing.Size(100, 20);
             this.kSKitchenTextBox3.TabIndex = 7;
+            this.kSKitchenTextBox3.Text = "0";
             // 
             // groupBox4
             // 
@@ -779,6 +806,7 @@
             this.kTorgTextBox4.Name = "kTorgTextBox4";
             this.kTorgTextBox4.Size = new System.Drawing.Size(100, 20);
             this.kTorgTextBox4.TabIndex = 3;
+            this.kTorgTextBox4.Text = "0";
             // 
             // stateDiscountTextBox4
             // 
@@ -786,6 +814,7 @@
             this.stateDiscountTextBox4.Name = "stateDiscountTextBox4";
             this.stateDiscountTextBox4.Size = new System.Drawing.Size(100, 20);
             this.stateDiscountTextBox4.TabIndex = 11;
+            this.stateDiscountTextBox4.Text = "0";
             // 
             // kWallTypeTextBox4
             // 
@@ -793,6 +822,7 @@
             this.kWallTypeTextBox4.Name = "kWallTypeTextBox4";
             this.kWallTypeTextBox4.Size = new System.Drawing.Size(100, 20);
             this.kWallTypeTextBox4.TabIndex = 4;
+            this.kWallTypeTextBox4.Text = "0";
             // 
             // finishingQualityPriceTextBox4
             // 
@@ -800,6 +830,7 @@
             this.finishingQualityPriceTextBox4.Name = "finishingQualityPriceTextBox4";
             this.finishingQualityPriceTextBox4.Size = new System.Drawing.Size(100, 20);
             this.finishingQualityPriceTextBox4.TabIndex = 10;
+            this.finishingQualityPriceTextBox4.Text = "0";
             // 
             // kFloorsTextBox4
             // 
@@ -807,6 +838,7 @@
             this.kFloorsTextBox4.Name = "kFloorsTextBox4";
             this.kFloorsTextBox4.Size = new System.Drawing.Size(100, 20);
             this.kFloorsTextBox4.TabIndex = 5;
+            this.kFloorsTextBox4.Text = "0";
             // 
             // kSanuzelTextBox4
             // 
@@ -814,6 +846,7 @@
             this.kSanuzelTextBox4.Name = "kSanuzelTextBox4";
             this.kSanuzelTextBox4.Size = new System.Drawing.Size(100, 20);
             this.kSanuzelTextBox4.TabIndex = 9;
+            this.kSanuzelTextBox4.Text = "0";
             // 
             // kFloorTextBox4
             // 
@@ -821,6 +854,7 @@
             this.kFloorTextBox4.Name = "kFloorTextBox4";
             this.kFloorTextBox4.Size = new System.Drawing.Size(100, 20);
             this.kFloorTextBox4.TabIndex = 6;
+            this.kFloorTextBox4.Text = "0";
             // 
             // kBalconTextBox4
             // 
@@ -828,6 +862,7 @@
             this.kBalconTextBox4.Name = "kBalconTextBox4";
             this.kBalconTextBox4.Size = new System.Drawing.Size(100, 20);
             this.kBalconTextBox4.TabIndex = 8;
+            this.kBalconTextBox4.Text = "0";
             // 
             // kSKitchenTextBox4
             // 
@@ -835,6 +870,7 @@
             this.kSKitchenTextBox4.Name = "kSKitchenTextBox4";
             this.kSKitchenTextBox4.Size = new System.Drawing.Size(100, 20);
             this.kSKitchenTextBox4.TabIndex = 7;
+            this.kSKitchenTextBox4.Text = "0";
             // 
             // groupBox5
             // 
@@ -950,6 +986,7 @@
             this.kTorgTextBox5.Name = "kTorgTextBox5";
             this.kTorgTextBox5.Size = new System.Drawing.Size(100, 20);
             this.kTorgTextBox5.TabIndex = 3;
+            this.kTorgTextBox5.Text = "0";
             // 
             // stateDiscountTextBox5
             // 
@@ -957,6 +994,7 @@
             this.stateDiscountTextBox5.Name = "stateDiscountTextBox5";
             this.stateDiscountTextBox5.Size = new System.Drawing.Size(100, 20);
             this.stateDiscountTextBox5.TabIndex = 11;
+            this.stateDiscountTextBox5.Text = "0";
             // 
             // kWallTypeTextBox5
             // 
@@ -964,6 +1002,7 @@
             this.kWallTypeTextBox5.Name = "kWallTypeTextBox5";
             this.kWallTypeTextBox5.Size = new System.Drawing.Size(100, 20);
             this.kWallTypeTextBox5.TabIndex = 4;
+            this.kWallTypeTextBox5.Text = "0";
             // 
             // finishingQualityPriceTextBox5
             // 
@@ -971,6 +1010,7 @@
             this.finishingQualityPriceTextBox5.Name = "finishingQualityPriceTextBox5";
             this.finishingQualityPriceTextBox5.Size = new System.Drawing.Size(100, 20);
             this.finishingQualityPriceTextBox5.TabIndex = 10;
+            this.finishingQualityPriceTextBox5.Text = "0";
             // 
             // kFloorsTextBox5
             // 
@@ -978,6 +1018,7 @@
             this.kFloorsTextBox5.Name = "kFloorsTextBox5";
             this.kFloorsTextBox5.Size = new System.Drawing.Size(100, 20);
             this.kFloorsTextBox5.TabIndex = 5;
+            this.kFloorsTextBox5.Text = "0";
             // 
             // kSanuzelTextBox5
             // 
@@ -985,6 +1026,7 @@
             this.kSanuzelTextBox5.Name = "kSanuzelTextBox5";
             this.kSanuzelTextBox5.Size = new System.Drawing.Size(100, 20);
             this.kSanuzelTextBox5.TabIndex = 9;
+            this.kSanuzelTextBox5.Text = "0";
             // 
             // kFloorTextBox5
             // 
@@ -992,6 +1034,7 @@
             this.kFloorTextBox5.Name = "kFloorTextBox5";
             this.kFloorTextBox5.Size = new System.Drawing.Size(100, 20);
             this.kFloorTextBox5.TabIndex = 6;
+            this.kFloorTextBox5.Text = "0";
             // 
             // kBalconTextBox5
             // 
@@ -999,6 +1042,7 @@
             this.kBalconTextBox5.Name = "kBalconTextBox5";
             this.kBalconTextBox5.Size = new System.Drawing.Size(100, 20);
             this.kBalconTextBox5.TabIndex = 8;
+            this.kBalconTextBox5.Text = "0";
             // 
             // kSKitchenTextBox5
             // 
@@ -1006,6 +1050,7 @@
             this.kSKitchenTextBox5.Name = "kSKitchenTextBox5";
             this.kSKitchenTextBox5.Size = new System.Drawing.Size(100, 20);
             this.kSKitchenTextBox5.TabIndex = 7;
+            this.kSKitchenTextBox5.Text = "0";
             // 
             // FactorRateForm
             // 

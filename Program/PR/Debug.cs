@@ -207,7 +207,7 @@ namespace PR
             {
                 apartAfterRelinking = ApartSelectForm.SelectedApartment;
 
-                ParserForm parserForm = new PRParser.ParserForm(apartAfterRelinking, _objectModel.ComparisonAppartments);
+                ParserForm parserForm = new PRParser.ParserForm(apartAfterRelinking,_objectModel.Objects, _objectModel.ComparisonAppartments);
 
                 parserForm.ShowDialog();
             }

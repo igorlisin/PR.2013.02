@@ -16,11 +16,15 @@ namespace PRParser
         private Parser _parser;
         private Zakamned[] zakamneds;
         private IApartment _apartment;
+        private IObjects _objects;
         private IComparisonAparts _comparisonApartments;
+        private IComparisonApart[] aparts;
+            
 
-        public ParserForm(IApartment apartment, IComparisonAparts comparisonApartments)
+        public ParserForm(IApartment apartment, IObjects objects, IComparisonAparts comparisonApartments)
         {
             _apartment = apartment;
+            _objects = objects;
             _comparisonApartments = comparisonApartments;
 
             InitializeComponent();
@@ -200,8 +204,6 @@ namespace PRParser
 
         private void AddToReportButton_Click(object sender, EventArgs e)
         {
-            IComparisonApart[] aparts;
-            
             aparts = new IComparisonApart[5];
             int j = 0;
             for (int i = 0; i < apartmentDataGridView.RowCount - 1; i++)        // Вычисляем выбранные квартиры
@@ -257,8 +259,18 @@ namespace PRParser
             FillEntitiesDataGridView();
         }
 
+        //Вычисление цены кв. м..Сохранение результата
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            float sum = 0;
+            float sqmCalcPrice;
+            for (int i = 0; i < 5; i++)
+            {
+                sum = aparts[i].sqmCalcPrice + sum;
+            }
+            sqmCalcPrice = sum / 5;
+            _apartment.Object.Price = sqmCalcPrice * _apartment.GrossArea;
+            _objects.SaveChanges();
             _comparisonApartments.SaveChanges();
             this.Close();
         }

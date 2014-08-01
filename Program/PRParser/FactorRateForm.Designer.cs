@@ -210,7 +210,7 @@
             // 
             // finishingQualityPriceTextBox1
             // 
-            this.finishingQualityPriceTextBox1.Location = new System.Drawing.Point(19, 402);
+            this.finishingQualityPriceTextBox1.Location = new System.Drawing.Point(19, 451);
             this.finishingQualityPriceTextBox1.Name = "finishingQualityPriceTextBox1";
             this.finishingQualityPriceTextBox1.Size = new System.Drawing.Size(100, 20);
             this.finishingQualityPriceTextBox1.TabIndex = 10;
@@ -218,7 +218,7 @@
             // 
             // stateDiscountTextBox1
             // 
-            this.stateDiscountTextBox1.Location = new System.Drawing.Point(19, 451);
+            this.stateDiscountTextBox1.Location = new System.Drawing.Point(19, 402);
             this.stateDiscountTextBox1.Name = "stateDiscountTextBox1";
             this.stateDiscountTextBox1.Size = new System.Drawing.Size(100, 20);
             this.stateDiscountTextBox1.TabIndex = 11;
@@ -254,16 +254,16 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 435);
+            this.label9.Location = new System.Drawing.Point(16, 386);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 13);
+            this.label9.Size = new System.Drawing.Size(135, 13);
             this.label9.TabIndex = 20;
-            this.label9.Text = "Скидка за состояние";
+            this.label9.Text = "Поправка на вид из окна";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 386);
+            this.label8.Location = new System.Drawing.Point(16, 435);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 13);
             this.label8.TabIndex = 19;
@@ -346,9 +346,9 @@
             this.groupBox2.Controls.Add(this.kTorgTextBox2);
             this.groupBox2.Controls.Add(this.stateDiscountTextBox2);
             this.groupBox2.Controls.Add(this.kWallTypeTextBox2);
-            this.groupBox2.Controls.Add(this.finishingQualityPriceTextBox2);
             this.groupBox2.Controls.Add(this.kFloorsTextBox2);
             this.groupBox2.Controls.Add(this.kSanuzelTextBox2);
+            this.groupBox2.Controls.Add(this.finishingQualityPriceTextBox2);
             this.groupBox2.Controls.Add(this.kFloorTextBox2);
             this.groupBox2.Controls.Add(this.kBalconTextBox2);
             this.groupBox2.Controls.Add(this.kSKitchenTextBox2);
@@ -362,16 +362,16 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 435);
+            this.label10.Location = new System.Drawing.Point(17, 386);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 13);
+            this.label10.Size = new System.Drawing.Size(135, 13);
             this.label10.TabIndex = 20;
-            this.label10.Text = "Скидка за состояние";
+            this.label10.Text = "Поправка на вид из окна";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 386);
+            this.label11.Location = new System.Drawing.Point(16, 435);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(106, 13);
             this.label11.TabIndex = 19;
@@ -450,7 +450,7 @@
             // 
             // stateDiscountTextBox2
             // 
-            this.stateDiscountTextBox2.Location = new System.Drawing.Point(19, 451);
+            this.stateDiscountTextBox2.Location = new System.Drawing.Point(20, 402);
             this.stateDiscountTextBox2.Name = "stateDiscountTextBox2";
             this.stateDiscountTextBox2.Size = new System.Drawing.Size(100, 20);
             this.stateDiscountTextBox2.TabIndex = 11;
@@ -466,7 +466,7 @@
             // 
             // finishingQualityPriceTextBox2
             // 
-            this.finishingQualityPriceTextBox2.Location = new System.Drawing.Point(19, 402);
+            this.finishingQualityPriceTextBox2.Location = new System.Drawing.Point(19, 451);
             this.finishingQualityPriceTextBox2.Name = "finishingQualityPriceTextBox2";
             this.finishingQualityPriceTextBox2.Size = new System.Drawing.Size(100, 20);
             this.finishingQualityPriceTextBox2.TabIndex = 10;
@@ -523,10 +523,10 @@
             this.groupBox3.Controls.Add(this.label25);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.finishingQualityPriceTextBox3);
             this.groupBox3.Controls.Add(this.kTorgTextBox3);
             this.groupBox3.Controls.Add(this.stateDiscountTextBox3);
             this.groupBox3.Controls.Add(this.kWallTypeTextBox3);
-            this.groupBox3.Controls.Add(this.finishingQualityPriceTextBox3);
             this.groupBox3.Controls.Add(this.kFloorsTextBox3);
             this.groupBox3.Controls.Add(this.kSanuzelTextBox3);
             this.groupBox3.Controls.Add(this.kFloorTextBox3);
@@ -542,16 +542,16 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(16, 435);
+            this.label19.Location = new System.Drawing.Point(16, 386);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(115, 13);
+            this.label19.Size = new System.Drawing.Size(135, 13);
             this.label19.TabIndex = 20;
-            this.label19.Text = "Скидка за состояние";
+            this.label19.Text = "Поправка на вид из окна";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(16, 386);
+            this.label20.Location = new System.Drawing.Point(16, 435);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(106, 13);
             this.label20.TabIndex = 19;
@@ -630,7 +630,7 @@
             // 
             // stateDiscountTextBox3
             // 
-            this.stateDiscountTextBox3.Location = new System.Drawing.Point(19, 451);
+            this.stateDiscountTextBox3.Location = new System.Drawing.Point(19, 402);
             this.stateDiscountTextBox3.Name = "stateDiscountTextBox3";
             this.stateDiscountTextBox3.Size = new System.Drawing.Size(100, 20);
             this.stateDiscountTextBox3.TabIndex = 11;
@@ -646,7 +646,7 @@
             // 
             // finishingQualityPriceTextBox3
             // 
-            this.finishingQualityPriceTextBox3.Location = new System.Drawing.Point(19, 402);
+            this.finishingQualityPriceTextBox3.Location = new System.Drawing.Point(19, 451);
             this.finishingQualityPriceTextBox3.Name = "finishingQualityPriceTextBox3";
             this.finishingQualityPriceTextBox3.Size = new System.Drawing.Size(100, 20);
             this.finishingQualityPriceTextBox3.TabIndex = 10;
@@ -694,19 +694,19 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label28);
             this.groupBox4.Controls.Add(this.label29);
             this.groupBox4.Controls.Add(this.label30);
+            this.groupBox4.Controls.Add(this.label28);
             this.groupBox4.Controls.Add(this.label31);
             this.groupBox4.Controls.Add(this.label32);
             this.groupBox4.Controls.Add(this.label33);
             this.groupBox4.Controls.Add(this.label34);
             this.groupBox4.Controls.Add(this.label35);
             this.groupBox4.Controls.Add(this.label36);
-            this.groupBox4.Controls.Add(this.kTorgTextBox4);
-            this.groupBox4.Controls.Add(this.stateDiscountTextBox4);
-            this.groupBox4.Controls.Add(this.kWallTypeTextBox4);
             this.groupBox4.Controls.Add(this.finishingQualityPriceTextBox4);
+            this.groupBox4.Controls.Add(this.kTorgTextBox4);
+            this.groupBox4.Controls.Add(this.kWallTypeTextBox4);
+            this.groupBox4.Controls.Add(this.stateDiscountTextBox4);
             this.groupBox4.Controls.Add(this.kFloorsTextBox4);
             this.groupBox4.Controls.Add(this.kSanuzelTextBox4);
             this.groupBox4.Controls.Add(this.kFloorTextBox4);
@@ -722,16 +722,16 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(16, 435);
+            this.label28.Location = new System.Drawing.Point(16, 386);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(115, 13);
+            this.label28.Size = new System.Drawing.Size(135, 13);
             this.label28.TabIndex = 20;
-            this.label28.Text = "Скидка за состояние";
+            this.label28.Text = "Поправка на вид из окна";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(16, 386);
+            this.label29.Location = new System.Drawing.Point(16, 435);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(106, 13);
             this.label29.TabIndex = 19;
@@ -810,7 +810,7 @@
             // 
             // stateDiscountTextBox4
             // 
-            this.stateDiscountTextBox4.Location = new System.Drawing.Point(19, 451);
+            this.stateDiscountTextBox4.Location = new System.Drawing.Point(19, 402);
             this.stateDiscountTextBox4.Name = "stateDiscountTextBox4";
             this.stateDiscountTextBox4.Size = new System.Drawing.Size(100, 20);
             this.stateDiscountTextBox4.TabIndex = 11;
@@ -826,7 +826,7 @@
             // 
             // finishingQualityPriceTextBox4
             // 
-            this.finishingQualityPriceTextBox4.Location = new System.Drawing.Point(19, 402);
+            this.finishingQualityPriceTextBox4.Location = new System.Drawing.Point(19, 451);
             this.finishingQualityPriceTextBox4.Name = "finishingQualityPriceTextBox4";
             this.finishingQualityPriceTextBox4.Size = new System.Drawing.Size(100, 20);
             this.finishingQualityPriceTextBox4.TabIndex = 10;
@@ -875,16 +875,16 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label37);
-            this.groupBox5.Controls.Add(this.label38);
             this.groupBox5.Controls.Add(this.label39);
             this.groupBox5.Controls.Add(this.label40);
+            this.groupBox5.Controls.Add(this.label38);
             this.groupBox5.Controls.Add(this.label41);
             this.groupBox5.Controls.Add(this.label42);
             this.groupBox5.Controls.Add(this.label43);
             this.groupBox5.Controls.Add(this.label44);
             this.groupBox5.Controls.Add(this.label45);
-            this.groupBox5.Controls.Add(this.kTorgTextBox5);
             this.groupBox5.Controls.Add(this.stateDiscountTextBox5);
+            this.groupBox5.Controls.Add(this.kTorgTextBox5);
             this.groupBox5.Controls.Add(this.kWallTypeTextBox5);
             this.groupBox5.Controls.Add(this.finishingQualityPriceTextBox5);
             this.groupBox5.Controls.Add(this.kFloorsTextBox5);
@@ -904,9 +904,9 @@
             this.label37.AutoSize = true;
             this.label37.Location = new System.Drawing.Point(16, 435);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(115, 13);
+            this.label37.Size = new System.Drawing.Size(135, 13);
             this.label37.TabIndex = 20;
-            this.label37.Text = "Скидка за состояние";
+            this.label37.Text = "Поправка на вид из окна";
             // 
             // label38
             // 

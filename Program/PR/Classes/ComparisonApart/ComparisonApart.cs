@@ -119,7 +119,7 @@ namespace PR.Classes
         /// <summary>
         /// Поле. Скидка за состояние
         /// </summary>
-        private float _stateDiscount;
+        private float _kView;
 
         /// <summary>
         /// Поле. Вычисленная цена за квадратный метр
@@ -453,15 +453,15 @@ namespace PR.Classes
         /// <summary>
         /// Свойство. Скидка за состояние
         /// </summary>
-        public float stateDiscount
+        public float kView
         {
             get
             {
-                return (_stateDiscount);
+                return (_kView);
             }
             set
             {
-                _stateDiscount = value;
+                _kView = value;
             }
         }
 

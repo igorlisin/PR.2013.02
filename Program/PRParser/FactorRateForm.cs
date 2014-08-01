@@ -51,7 +51,7 @@ namespace PRParser
             _aparts[0].kSKitchen = Convert.ToSingle(kSKitchenTextBox1.Text) / 100;
             _aparts[0].kWallType = Convert.ToSingle(kWallTypeTextBox1.Text) / 100;
             _aparts[0].finishingQualityPrice = Convert.ToSingle(finishingQualityPriceTextBox1.Text);
-            _aparts[0].stateDiscount = Convert.ToSingle(stateDiscountTextBox1.Text);
+            _aparts[0].kView = Convert.ToSingle(stateDiscountTextBox1.Text)/100;
             _aparts[0].sqmCalcPrice = sqmPrice1 + sqmPrice1 * _aparts[0].kTorg +
                                                 sqmPrice1 * _aparts[0].kFloors +
                                                 sqmPrice1 * _aparts[0].kFloor +
@@ -60,7 +60,7 @@ namespace PRParser
                                                 sqmPrice1 * _aparts[0].kSKitchen +
                                                 sqmPrice1 * _aparts[0].kWallType +
                                                  _aparts[0].finishingQualityPrice +
-                                                  _aparts[0].stateDiscount;
+                                                sqmPrice1 * _aparts[0].kView;
 
             _aparts[1].kTorg = Convert.ToSingle(kTorgTextBox2.Text) / 100;
             _aparts[1].kFloors = Convert.ToSingle(kFloorsTextBox2.Text) / 100;
@@ -70,7 +70,7 @@ namespace PRParser
             _aparts[1].kSKitchen = Convert.ToSingle(kSKitchenTextBox2.Text) / 100;
             _aparts[1].kWallType = Convert.ToSingle(kWallTypeTextBox2.Text) / 100;
             _aparts[1].finishingQualityPrice = Convert.ToSingle(finishingQualityPriceTextBox2.Text);
-            _aparts[1].stateDiscount = Convert.ToSingle(stateDiscountTextBox2.Text);
+            _aparts[1].kView = Convert.ToSingle(stateDiscountTextBox2.Text)/100;
             _aparts[1].sqmCalcPrice = sqmPrice2 + sqmPrice2 * _aparts[1].kTorg +
                                     sqmPrice2 * _aparts[1].kFloors +
                                     sqmPrice2 * _aparts[1].kFloor +
@@ -79,7 +79,7 @@ namespace PRParser
                                     sqmPrice2 * _aparts[1].kSKitchen +
                                     sqmPrice2 * _aparts[1].kWallType +
                                      _aparts[1].finishingQualityPrice +
-                                      _aparts[1].stateDiscount;
+                                    sqmPrice2 * _aparts[1].kView;
 
             _aparts[2].kTorg = Convert.ToSingle(kTorgTextBox3.Text) / 100;
             _aparts[2].kFloors = Convert.ToSingle(kFloorsTextBox3.Text) / 100;
@@ -89,7 +89,7 @@ namespace PRParser
             _aparts[2].kSKitchen = Convert.ToSingle(kSKitchenTextBox3.Text) / 100;
             _aparts[2].kWallType = Convert.ToSingle(kWallTypeTextBox3.Text) / 100;
             _aparts[2].finishingQualityPrice = Convert.ToSingle(finishingQualityPriceTextBox3.Text);
-            _aparts[2].stateDiscount = Convert.ToSingle(stateDiscountTextBox3.Text);
+            _aparts[2].kView = Convert.ToSingle(stateDiscountTextBox3.Text)/100;
             _aparts[2].sqmCalcPrice = sqmPrice3 + sqmPrice3 * _aparts[2].kTorg +
                                     sqmPrice3 * _aparts[2].kFloors +
                                     sqmPrice3 * _aparts[2].kFloor +
@@ -98,7 +98,7 @@ namespace PRParser
                                     sqmPrice3 * _aparts[2].kSKitchen +
                                     sqmPrice3 * _aparts[2].kWallType +
                                      _aparts[2].finishingQualityPrice +
-                                      _aparts[2].stateDiscount;
+                                    sqmPrice3 * _aparts[2].kView;
 
             _aparts[3].kTorg = Convert.ToSingle(kTorgTextBox4.Text) / 100;
             _aparts[3].kFloors = Convert.ToSingle(kFloorsTextBox4.Text) / 100;
@@ -108,7 +108,7 @@ namespace PRParser
             _aparts[3].kSKitchen = Convert.ToSingle(kSKitchenTextBox4.Text) / 100;
             _aparts[3].kWallType = Convert.ToSingle(kWallTypeTextBox4.Text) / 100;
             _aparts[3].finishingQualityPrice = Convert.ToSingle(finishingQualityPriceTextBox4.Text);
-            _aparts[3].stateDiscount = Convert.ToSingle(stateDiscountTextBox4.Text);
+            _aparts[3].kView = Convert.ToSingle(stateDiscountTextBox4.Text)/100;
             _aparts[3].sqmCalcPrice = sqmPrice4 + sqmPrice4 * _aparts[3].kTorg +
                                     sqmPrice4 * _aparts[3].kFloors +
                                     sqmPrice4 * _aparts[3].kFloor +
@@ -117,7 +117,7 @@ namespace PRParser
                                     sqmPrice4 * _aparts[3].kSKitchen +
                                     sqmPrice4 * _aparts[3].kWallType +
                                      _aparts[3].finishingQualityPrice +
-                                      _aparts[3].stateDiscount;
+                                    sqmPrice4 * _aparts[3].kView;
 
             _aparts[4].kTorg = Convert.ToSingle(kTorgTextBox5.Text) / 100;
             _aparts[4].kFloors = Convert.ToSingle(kFloorsTextBox5.Text) / 100;
@@ -127,7 +127,7 @@ namespace PRParser
             _aparts[4].kSKitchen = Convert.ToSingle(kSKitchenTextBox5.Text) / 100;
             _aparts[4].kWallType = Convert.ToSingle(kWallTypeTextBox5.Text) / 100;
             _aparts[4].finishingQualityPrice = Convert.ToSingle(finishingQualityPriceTextBox5.Text);
-            _aparts[4].stateDiscount = Convert.ToSingle(stateDiscountTextBox5.Text);
+            _aparts[4].kView = Convert.ToSingle(stateDiscountTextBox5.Text)/100;
             _aparts[4].sqmCalcPrice = sqmPrice5 + sqmPrice5 * _aparts[4].kTorg +
                                     sqmPrice5 * _aparts[4].kFloors +
                                     sqmPrice5 * _aparts[4].kFloor +
@@ -136,7 +136,7 @@ namespace PRParser
                                     sqmPrice5 * _aparts[4].kSKitchen +
                                     sqmPrice5 * _aparts[4].kWallType +
                                      _aparts[4].finishingQualityPrice +
-                                      _aparts[4].stateDiscount;
+                                    sqmPrice5 * _aparts[4].kView;
         }
     }
 }

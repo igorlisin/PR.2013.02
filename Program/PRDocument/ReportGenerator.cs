@@ -61,8 +61,8 @@ namespace PRDocument
             string[] bookmarks_conclusion = new string[50];                                                                       // Массив закладок
             string[] texts_conclusion = new string[50];                                                                           // Массив вставляемых вместо закладок строк
 
-            string[] bookmarks_report = new string[275];                                                                       // Массив закладок
-            string[] texts_report = new string[275];                                                                           // Массив вставляемых вместо закладок строк
+            string[] bookmarks_report = new string[332];                                                                       // Массив закладок
+            string[] texts_report = new string[332];                                                                           // Массив вставляемых вместо закладок строк
 
             string client_in_padeg = null;      //склонение ФИО па падежам
             int rod = 0;
@@ -250,6 +250,9 @@ namespace PRDocument
             //Сумма с уценкой прописью в долларах без указания валюты
             string witePriceDiscountDollar = Сумма.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar, empty);
 
+            //Массив квартир сравнения
+            IComparisonApart[] ca;  
+            ca = report.Apartment.ComparApart.ToArray();
 
             bookmarks_report[0] = "address_client";
             bookmarks_report[1] = "address_street";
@@ -524,6 +527,133 @@ namespace PRDocument
             bookmarks_report[270] = "image13";                          // Скан документов
             bookmarks_report[271] = "image_map1";
             bookmarks_report[272] = "image_map2";
+
+            bookmarks_report[273] = "k_Balkon1";
+            bookmarks_report[274] = "k_Balkon2";
+            bookmarks_report[275] = "k_Balkon3";
+            bookmarks_report[276] = "k_Balkon4";
+            bookmarks_report[277] = "k_Balkon5";
+            bookmarks_report[278] = "k_Floor1";
+            bookmarks_report[279] = "k_Floor2";
+            bookmarks_report[280] = "k_Floor3";
+            bookmarks_report[281] = "k_Floor4";
+            bookmarks_report[282] = "k_Floor5";
+            bookmarks_report[283] = "k_Floors1";
+            bookmarks_report[284] = "k_Floors2";
+            bookmarks_report[285] = "k_Floors3";
+            bookmarks_report[286] = "k_Floors4";
+            bookmarks_report[287] = "k_Floors5";
+            bookmarks_report[288] = "k_FullPrc1";
+            bookmarks_report[289] = "k_FullPrc2";
+            bookmarks_report[290] = "k_FullPrc3";
+            bookmarks_report[291] = "k_FullPrc4";
+            bookmarks_report[292] = "k_FullPrc5";
+            bookmarks_report[293] = "k_RemontPrice1";
+            bookmarks_report[294] = "k_RemontPrice2";
+            bookmarks_report[295] = "k_RemontPrice3";
+            bookmarks_report[296] = "k_RemontPrice4";
+            bookmarks_report[297] = "k_RemontPrice5";
+            bookmarks_report[298] = "k_Sanuzel1";
+            bookmarks_report[299] = "k_Sanuzel2";
+            bookmarks_report[300] = "k_Sanuzel3";
+            bookmarks_report[301] = "k_Sanuzel4";
+            bookmarks_report[302] = "k_Sanuzel5";
+            bookmarks_report[303] = "k_SKitchen1";
+            bookmarks_report[304] = "k_SKitchen2";
+            bookmarks_report[305] = "k_SKitchen3";
+            bookmarks_report[306] = "k_SKitchen4";
+            bookmarks_report[307] = "k_SKitchen5";
+            bookmarks_report[308] = "k_sqmCorrPrice1";
+            bookmarks_report[309] = "k_sqmCorrPrice2";
+            bookmarks_report[310] = "k_sqmCorrPrice3";
+            bookmarks_report[311] = "k_sqmCorrPrice4";
+            bookmarks_report[312] = "k_sqmCorrPrice5";
+            bookmarks_report[313] = "k_sqmPrcPrice1";
+            bookmarks_report[314] = "k_sqmPrcPrice2";
+            bookmarks_report[315] = "k_sqmPrcPrice3";
+            bookmarks_report[316] = "k_sqmPrcPrice4";
+            bookmarks_report[317] = "k_sqmPrcPrice5";
+            bookmarks_report[318] = "k_Torg1";
+            bookmarks_report[319] = "k_Torg2";
+            bookmarks_report[320] = "k_Torg3";
+            bookmarks_report[321] = "k_Torg4";
+            bookmarks_report[322] = "k_Torg5";
+            bookmarks_report[323] = "k_Type1";
+            bookmarks_report[324] = "k_Type2";
+            bookmarks_report[325] = "k_Type3";
+            bookmarks_report[326] = "k_Type4";
+            bookmarks_report[327] = "k_Type5";
+            bookmarks_report[328] = "k_Vid1";
+            bookmarks_report[329] = "k_Vid2";
+            bookmarks_report[330] = "k_Vid3";
+            bookmarks_report[331] = "k_Vid4";
+            bookmarks_report[332] = "k_Vid5";
+            bookmarks_report[332] = "k_Vid5";
+            bookmarks_report[333] = "k_aBalcon0";
+            bookmarks_report[334] = "k_aBalcon1";
+            bookmarks_report[335] = "k_aBalcon2";
+            bookmarks_report[336] = "k_aBalcon3";
+            bookmarks_report[337] = "k_aBalcon4";
+            bookmarks_report[338] = "k_aBalcon5";
+            bookmarks_report[339] = "k_addr0";
+            bookmarks_report[340] = "k_addr1";
+            bookmarks_report[341] = "k_addr2";
+            bookmarks_report[342] = "k_addr3";
+            bookmarks_report[343] = "k_addr4";
+            bookmarks_report[344] = "k_addr5";
+            bookmarks_report[345] = "k_addr00";
+            bookmarks_report[346] = "k_addr01";
+            bookmarks_report[347] = "k_addr02";
+            bookmarks_report[348] = "k_addr03";
+            bookmarks_report[349] = "k_addr04";
+            bookmarks_report[350] = "k_addr05";
+            bookmarks_report[351] = "k_aFloor0";
+            bookmarks_report[352] = "k_aFloor1";
+            bookmarks_report[353] = "k_aFloor2";
+            bookmarks_report[354] = "k_aFloor3";
+            bookmarks_report[355] = "k_aFloor4";
+            bookmarks_report[356] = "k_aFloor5";
+            bookmarks_report[357] = "k_aFloors0";
+            bookmarks_report[358] = "k_aFloors1";
+            bookmarks_report[359] = "k_aFloors2";
+            bookmarks_report[360] = "k_aFloors3";
+            bookmarks_report[361] = "k_aFloors4";
+            bookmarks_report[362] = "k_aFloors5";
+            bookmarks_report[363] = "k_area0";
+            bookmarks_report[364] = "k_area1";
+            bookmarks_report[365] = "k_area2";
+            bookmarks_report[366] = "k_area3";
+            bookmarks_report[367] = "k_area4";
+            bookmarks_report[368] = "k_area5";
+            bookmarks_report[369] = "k_aSKitchen0";
+            bookmarks_report[370] = "k_aSKitchen1";
+            bookmarks_report[371] = "k_aSKitchen2";
+            bookmarks_report[372] = "k_aSKitchen3";
+            bookmarks_report[373] = "k_aSKitchen4";
+            bookmarks_report[374] = "k_aSKitchen5";
+            bookmarks_report[375] = "k_Dollar";
+            bookmarks_report[376] = "k_DollarPrice0";
+            bookmarks_report[377] = "k_Price0";
+            bookmarks_report[378] = "k_Rooms0";
+            bookmarks_report[379] = "k_Rooms1";
+            bookmarks_report[380] = "k_Rooms2";
+            bookmarks_report[381] = "k_Rooms3";
+            bookmarks_report[382] = "k_Rooms4";
+            bookmarks_report[383] = "k_Rooms5";
+            bookmarks_report[384] = "k_SanType0";
+            bookmarks_report[385] = "k_SanType1";
+            bookmarks_report[386] = "k_SanType2";
+            bookmarks_report[387] = "k_SanType3";
+            bookmarks_report[388] = "k_SanType4";
+            bookmarks_report[389] = "k_SanType5";
+            bookmarks_report[390] = "k_wall0";
+            bookmarks_report[391] = "k_wall1";
+            bookmarks_report[392] = "k_wall2";
+            bookmarks_report[393] = "k_wall3";
+            bookmarks_report[394] = "k_wall4";
+            bookmarks_report[395] = "k_wall5";
+
+
 
             FillPicturesArray(report);
 
@@ -814,7 +944,134 @@ namespace PRDocument
             //texts_report[270] = "";
             //texts_report[271] = "";
             //texts_report[272] = "";
-
+            texts_report[273] = ca[0].kBalcon == 0 ? "-" : Convert.ToString(ca[0].kBalcon * 100);
+            texts_report[274] = ca[1].kBalcon == 0 ? "-" : Convert.ToString(ca[1].kBalcon * 100);
+            texts_report[275] = ca[2].kBalcon == 0 ? "-" : Convert.ToString(ca[2].kBalcon * 100);
+            texts_report[276] = ca[3].kBalcon == 0 ? "-" : Convert.ToString(ca[3].kBalcon * 100);
+            texts_report[277] = ca[4].kBalcon == 0 ? "-" : Convert.ToString(ca[4].kBalcon * 100);
+            texts_report[278] = ca[0].kFloor == 0 ? "-" : Convert.ToString(ca[0].kFloor * 100);
+            texts_report[279] = ca[1].kFloor == 0 ? "-" : Convert.ToString(ca[1].kFloor * 100);
+            texts_report[280] = ca[2].kFloor == 0 ? "-" : Convert.ToString(ca[2].kFloor * 100);
+            texts_report[281] = ca[3].kFloor == 0 ? "-" : Convert.ToString(ca[3].kFloor * 100);
+            texts_report[282] = ca[4].kFloor == 0 ? "-" : Convert.ToString(ca[4].kFloor * 100);
+            texts_report[283] = ca[0].kFloors == 0 ? "-" : Convert.ToString(ca[0].kFloors * 100);
+            texts_report[284] = ca[1].kFloors == 0 ? "-" : Convert.ToString(ca[1].kFloors * 100);
+            texts_report[285] = ca[2].kFloors == 0 ? "-" : Convert.ToString(ca[2].kFloors * 100);
+            texts_report[286] = ca[3].kFloors == 0 ? "-" : Convert.ToString(ca[3].kFloors * 100);
+            texts_report[287] = ca[4].kFloors == 0 ? "-" : Convert.ToString(ca[4].kFloors * 100);
+            texts_report[288] = Convert.ToString(ca[0].kBalcon+ca[0].kFloor+ca[0].kFloors+ca[0].kSanuzel+
+                                                 ca[0].kSKitchen+ca[0].kTorg+ca[0].kView+ca[0].kWallType);
+            texts_report[289] = Convert.ToString(ca[1].kBalcon+ca[1].kFloor+ca[1].kFloors+ca[1].kSanuzel+
+                                                 ca[1].kSKitchen+ca[1].kTorg+ca[1].kView+ca[1].kWallType);
+            texts_report[290] = Convert.ToString(ca[2].kBalcon+ca[2].kFloor+ca[2].kFloors+ca[2].kSanuzel+
+                                                 ca[2].kSKitchen+ca[2].kTorg+ca[2].kView+ca[2].kWallType);
+            texts_report[291] = Convert.ToString(ca[3].kBalcon+ca[3].kFloor+ca[3].kFloors+ca[3].kSanuzel+
+                                                 ca[3].kSKitchen+ca[3].kTorg+ca[3].kView+ca[3].kWallType);
+            texts_report[292] = Convert.ToString(ca[4].kBalcon+ca[4].kFloor+ca[4].kFloors+ca[4].kSanuzel+
+                                                 ca[4].kSKitchen+ca[4].kTorg+ca[4].kView+ca[4].kWallType);
+            texts_report[293] = Convert.ToString(ca[0].finishingQualityPrice);
+            texts_report[294] = Convert.ToString(ca[1].finishingQualityPrice);
+            texts_report[295] = Convert.ToString(ca[2].finishingQualityPrice);
+            texts_report[296] = Convert.ToString(ca[3].finishingQualityPrice);
+            texts_report[297] = Convert.ToString(ca[4].finishingQualityPrice);
+            //texts_report[298] =
+            //texts_report[299] =
+            //texts_report[300] =
+            //texts_report[301] =
+            //texts_report[302] =
+            //texts_report[303] =
+            //texts_report[304] =
+            //texts_report[305] =
+            //texts_report[306] =
+            //texts_report[307] =
+            //texts_report[308] =
+            //texts_report[309] =
+            //texts_report[310] =
+            //texts_report[311] =
+            //texts_report[312] =
+            //texts_report[313] =
+            //texts_report[314] =
+            //texts_report[315] =
+            //texts_report[316] =
+            //texts_report[317] =
+            //texts_report[318] =
+            //texts_report[319] =
+            //texts_report[320] =
+            //texts_report[321] =
+            //texts_report[322] =
+            //texts_report[323] =
+            //texts_report[324] =
+            //texts_report[325] =
+            //texts_report[326] =
+            //texts_report[327] =
+            //texts_report[328] =
+            //texts_report[329] =
+            //texts_report[330] =
+            //texts_report[331] =
+            //texts_report[332] =
+            //texts_report[333] =
+            //texts_report[334] =
+            //texts_report[335] =
+            //texts_report[336] =
+            //texts_report[337] =
+            //texts_report[338] =
+            //texts_report[339] =
+            //texts_report[340] =
+            //texts_report[341] =
+            //texts_report[342] =
+            //texts_report[343] =
+            //texts_report[344] =
+            //texts_report[345] =
+            //texts_report[346] =
+            //texts_report[347] =
+            //texts_report[348] =
+            //texts_report[349] =
+            //texts_report[350] =
+            //texts_report[351] =
+            //texts_report[352] =
+            //texts_report[353] =
+            //texts_report[354] =
+            //texts_report[355] =
+            //texts_report[356] =
+            //texts_report[357] =
+            //texts_report[358] =
+            //texts_report[359] =
+            //texts_report[360] =
+            //texts_report[361] =
+            //texts_report[362] =
+            //texts_report[363] =
+            //texts_report[364] =
+            //texts_report[365] =
+            //texts_report[366] =
+            //texts_report[367] =
+            //texts_report[368] =
+            //texts_report[369] =
+            //texts_report[370] =
+            //texts_report[371] =
+            //texts_report[372] =
+            //texts_report[373] =
+            //texts_report[374] =
+            //texts_report[375] =
+            //texts_report[376] =
+            //texts_report[377] =
+            //texts_report[378] =
+            //texts_report[379] =
+            //texts_report[380] =
+            //texts_report[381] =
+            //texts_report[382] =
+            //texts_report[383] =
+            //texts_report[384] =
+            //texts_report[385] =
+            //texts_report[386] =
+            //texts_report[387] =
+            //texts_report[388] =
+            //texts_report[389] =
+            //texts_report[390] =
+            //texts_report[391] =
+            //texts_report[392] =
+            //texts_report[393] =
+            //texts_report[394] =
+            //texts_report[395] =
 
 
         }

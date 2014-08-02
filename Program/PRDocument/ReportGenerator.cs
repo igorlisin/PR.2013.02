@@ -61,8 +61,8 @@ namespace PRDocument
             string[] bookmarks_conclusion = new string[50];                                                                       // Массив закладок
             string[] texts_conclusion = new string[50];                                                                           // Массив вставляемых вместо закладок строк
 
-            string[] bookmarks_report = new string[332];                                                                       // Массив закладок
-            string[] texts_report = new string[332];                                                                           // Массив вставляемых вместо закладок строк
+            string[] bookmarks_report = new string[412];                                                                       // Массив закладок
+            string[] texts_report = new string[412];                                                                           // Массив вставляемых вместо закладок строк
 
             string client_in_padeg = null;      //склонение ФИО па падежам
             int rod = 0;
@@ -652,6 +652,22 @@ namespace PRDocument
             bookmarks_report[393] = "k_wall3";
             bookmarks_report[394] = "k_wall4";
             bookmarks_report[395] = "k_wall5";
+            bookmarks_report[396] = "k_sqmPrice0";
+            bookmarks_report[397] = "k_sqmPrice1";
+            bookmarks_report[398] = "k_sqmPrice2";
+            bookmarks_report[399] = "k_sqmPrice3";
+            bookmarks_report[400] = "k_sqmPrice4";
+            bookmarks_report[401] = "k_sqmPrice5";
+            bookmarks_report[402] = "k_seller1";
+            bookmarks_report[403] = "k_seller2";
+            bookmarks_report[404] = "k_seller3";
+            bookmarks_report[405] = "k_seller4";
+            bookmarks_report[406] = "k_seller5";
+            bookmarks_report[407] = "k_Price1";
+            bookmarks_report[408] = "k_Price2";
+            bookmarks_report[409] = "k_Price3";
+            bookmarks_report[410] = "k_Price4";
+            bookmarks_report[411] = "k_Price5";
 
 
 
@@ -944,21 +960,21 @@ namespace PRDocument
             //texts_report[270] = "";
             //texts_report[271] = "";
             //texts_report[272] = "";
-            texts_report[273] = ca[0].kBalcon == 0 ? "-" : Convert.ToString(ca[0].kBalcon * 100);
-            texts_report[274] = ca[1].kBalcon == 0 ? "-" : Convert.ToString(ca[1].kBalcon * 100);
-            texts_report[275] = ca[2].kBalcon == 0 ? "-" : Convert.ToString(ca[2].kBalcon * 100);
-            texts_report[276] = ca[3].kBalcon == 0 ? "-" : Convert.ToString(ca[3].kBalcon * 100);
-            texts_report[277] = ca[4].kBalcon == 0 ? "-" : Convert.ToString(ca[4].kBalcon * 100);
-            texts_report[278] = ca[0].kFloor == 0 ? "-" : Convert.ToString(ca[0].kFloor * 100);
-            texts_report[279] = ca[1].kFloor == 0 ? "-" : Convert.ToString(ca[1].kFloor * 100);
-            texts_report[280] = ca[2].kFloor == 0 ? "-" : Convert.ToString(ca[2].kFloor * 100);
-            texts_report[281] = ca[3].kFloor == 0 ? "-" : Convert.ToString(ca[3].kFloor * 100);
-            texts_report[282] = ca[4].kFloor == 0 ? "-" : Convert.ToString(ca[4].kFloor * 100);
-            texts_report[283] = ca[0].kFloors == 0 ? "-" : Convert.ToString(ca[0].kFloors * 100);
-            texts_report[284] = ca[1].kFloors == 0 ? "-" : Convert.ToString(ca[1].kFloors * 100);
-            texts_report[285] = ca[2].kFloors == 0 ? "-" : Convert.ToString(ca[2].kFloors * 100);
-            texts_report[286] = ca[3].kFloors == 0 ? "-" : Convert.ToString(ca[3].kFloors * 100);
-            texts_report[287] = ca[4].kFloors == 0 ? "-" : Convert.ToString(ca[4].kFloors * 100);
+            texts_report[273] = ca[0].kBalcon == 0 ? "-" : Convert.ToString(ca[0].kBalcon * 100)+"%";
+            texts_report[274] = ca[1].kBalcon == 0 ? "-" : Convert.ToString(ca[1].kBalcon * 100)+"%";
+            texts_report[275] = ca[2].kBalcon == 0 ? "-" : Convert.ToString(ca[2].kBalcon * 100)+"%";
+            texts_report[276] = ca[3].kBalcon == 0 ? "-" : Convert.ToString(ca[3].kBalcon * 100)+"%";
+            texts_report[277] = ca[4].kBalcon == 0 ? "-" : Convert.ToString(ca[4].kBalcon * 100)+"%";
+            texts_report[278] = ca[0].kFloor == 0 ? "-" : Convert.ToString(ca[0].kFloor * 100)+"%";
+            texts_report[279] = ca[1].kFloor == 0 ? "-" : Convert.ToString(ca[1].kFloor * 100)+"%";
+            texts_report[280] = ca[2].kFloor == 0 ? "-" : Convert.ToString(ca[2].kFloor * 100)+"%";
+            texts_report[281] = ca[3].kFloor == 0 ? "-" : Convert.ToString(ca[3].kFloor * 100)+"%";
+            texts_report[282] = ca[4].kFloor == 0 ? "-" : Convert.ToString(ca[4].kFloor * 100)+"%";
+            texts_report[283] = ca[0].kFloors == 0 ? "-" : Convert.ToString(ca[0].kFloors * 100)+"%";
+            texts_report[284] = ca[1].kFloors == 0 ? "-" : Convert.ToString(ca[1].kFloors * 100)+"%";
+            texts_report[285] = ca[2].kFloors == 0 ? "-" : Convert.ToString(ca[2].kFloors * 100)+"%";
+            texts_report[286] = ca[3].kFloors == 0 ? "-" : Convert.ToString(ca[3].kFloors * 100)+"%";
+            texts_report[287] = ca[4].kFloors == 0 ? "-" : Convert.ToString(ca[4].kFloors * 100)+"%";
             texts_report[288] = Convert.ToString(ca[0].kBalcon+ca[0].kFloor+ca[0].kFloors+ca[0].kSanuzel+
                                                  ca[0].kSKitchen+ca[0].kTorg+ca[0].kView+ca[0].kWallType);
             texts_report[289] = Convert.ToString(ca[1].kBalcon+ca[1].kFloor+ca[1].kFloors+ca[1].kSanuzel+
@@ -974,104 +990,120 @@ namespace PRDocument
             texts_report[295] = Convert.ToString(ca[2].finishingQualityPrice);
             texts_report[296] = Convert.ToString(ca[3].finishingQualityPrice);
             texts_report[297] = Convert.ToString(ca[4].finishingQualityPrice);
-            //texts_report[298] =
-            //texts_report[299] =
-            //texts_report[300] =
-            //texts_report[301] =
-            //texts_report[302] =
-            //texts_report[303] =
-            //texts_report[304] =
-            //texts_report[305] =
-            //texts_report[306] =
-            //texts_report[307] =
-            //texts_report[308] =
-            //texts_report[309] =
-            //texts_report[310] =
-            //texts_report[311] =
-            //texts_report[312] =
-            //texts_report[313] =
-            //texts_report[314] =
-            //texts_report[315] =
-            //texts_report[316] =
-            //texts_report[317] =
-            //texts_report[318] =
-            //texts_report[319] =
-            //texts_report[320] =
-            //texts_report[321] =
-            //texts_report[322] =
-            //texts_report[323] =
-            //texts_report[324] =
-            //texts_report[325] =
-            //texts_report[326] =
-            //texts_report[327] =
-            //texts_report[328] =
-            //texts_report[329] =
-            //texts_report[330] =
-            //texts_report[331] =
-            //texts_report[332] =
-            //texts_report[333] =
-            //texts_report[334] =
-            //texts_report[335] =
-            //texts_report[336] =
-            //texts_report[337] =
-            //texts_report[338] =
-            //texts_report[339] =
-            //texts_report[340] =
-            //texts_report[341] =
-            //texts_report[342] =
-            //texts_report[343] =
-            //texts_report[344] =
-            //texts_report[345] =
-            //texts_report[346] =
-            //texts_report[347] =
-            //texts_report[348] =
-            //texts_report[349] =
-            //texts_report[350] =
-            //texts_report[351] =
-            //texts_report[352] =
-            //texts_report[353] =
-            //texts_report[354] =
-            //texts_report[355] =
-            //texts_report[356] =
-            //texts_report[357] =
-            //texts_report[358] =
-            //texts_report[359] =
-            //texts_report[360] =
-            //texts_report[361] =
-            //texts_report[362] =
-            //texts_report[363] =
-            //texts_report[364] =
-            //texts_report[365] =
-            //texts_report[366] =
-            //texts_report[367] =
-            //texts_report[368] =
-            //texts_report[369] =
-            //texts_report[370] =
-            //texts_report[371] =
-            //texts_report[372] =
-            //texts_report[373] =
-            //texts_report[374] =
-            //texts_report[375] =
-            //texts_report[376] =
-            //texts_report[377] =
-            //texts_report[378] =
-            //texts_report[379] =
-            //texts_report[380] =
-            //texts_report[381] =
-            //texts_report[382] =
-            //texts_report[383] =
-            //texts_report[384] =
-            //texts_report[385] =
-            //texts_report[386] =
-            //texts_report[387] =
-            //texts_report[388] =
-            //texts_report[389] =
-            //texts_report[390] =
-            //texts_report[391] =
-            //texts_report[392] =
-            //texts_report[393] =
-            //texts_report[394] =
-            //texts_report[395] =
+            texts_report[298] = ca[0].kSanuzel == 0 ? "-" : Convert.ToString(ca[0].kSanuzel * 100)+"%";
+            texts_report[299] = ca[1].kSanuzel == 0 ? "-" : Convert.ToString(ca[1].kSanuzel * 100)+"%";
+            texts_report[300] = ca[2].kSanuzel == 0 ? "-" : Convert.ToString(ca[2].kSanuzel * 100)+"%";
+            texts_report[301] = ca[3].kSanuzel == 0 ? "-" : Convert.ToString(ca[3].kSanuzel * 100)+"%";
+            texts_report[302] = ca[4].kSanuzel == 0 ? "-" : Convert.ToString(ca[4].kSanuzel * 100)+"%";
+            texts_report[303] = ca[0].kSKitchen == 0 ? "-" : Convert.ToString(ca[0].kSKitchen * 100)+"%";
+            texts_report[304] = ca[1].kSKitchen == 0 ? "-" : Convert.ToString(ca[1].kSKitchen * 100)+"%";
+            texts_report[305] = ca[2].kSKitchen == 0 ? "-" : Convert.ToString(ca[2].kSKitchen * 100)+"%";
+            texts_report[306] = ca[3].kSKitchen == 0 ? "-" : Convert.ToString(ca[3].kSKitchen * 100)+"%";
+            texts_report[307] = ca[4].kSKitchen == 0 ? "-" : Convert.ToString(ca[4].kSKitchen * 100)+"%";
+            texts_report[308] = Convert.ToString(ca[0].sqmCalcPrice);
+            texts_report[309] = Convert.ToString(ca[1].sqmCalcPrice);
+            texts_report[310] = Convert.ToString(ca[2].sqmCalcPrice);
+            texts_report[311] = Convert.ToString(ca[3].sqmCalcPrice);
+            texts_report[312] = Convert.ToString(ca[4].sqmCalcPrice);
+            texts_report[313] = Convert.ToString(ca[0].sqmCalcPrice - ca[0].finishingQualityPrice);
+            texts_report[314] = Convert.ToString(ca[1].sqmCalcPrice - ca[1].finishingQualityPrice);
+            texts_report[315] = Convert.ToString(ca[2].sqmCalcPrice - ca[2].finishingQualityPrice);
+            texts_report[316] = Convert.ToString(ca[3].sqmCalcPrice - ca[3].finishingQualityPrice);
+            texts_report[317] = Convert.ToString(ca[4].sqmCalcPrice - ca[4].finishingQualityPrice);
+            texts_report[318] = ca[0].kTorg == 0 ? "-" : Convert.ToString(ca[0].kTorg * 100)+"%";
+            texts_report[319] = ca[1].kTorg == 0 ? "-" : Convert.ToString(ca[1].kTorg * 100)+"%";
+            texts_report[320] = ca[2].kTorg == 0 ? "-" : Convert.ToString(ca[2].kTorg * 100)+"%";
+            texts_report[321] = ca[3].kTorg == 0 ? "-" : Convert.ToString(ca[3].kTorg * 100)+"%";
+            texts_report[322] = ca[4].kTorg == 0 ? "-" : Convert.ToString(ca[4].kTorg * 100) + "%";
+            texts_report[323] = ca[0].kWallType == 0 ? "-" : Convert.ToString(ca[0].kWallType * 100)+"%";
+            texts_report[324] = ca[1].kWallType == 0 ? "-" : Convert.ToString(ca[1].kWallType * 100)+"%";
+            texts_report[325] = ca[2].kWallType == 0 ? "-" : Convert.ToString(ca[2].kWallType * 100)+"%";
+            texts_report[326] = ca[3].kWallType == 0 ? "-" : Convert.ToString(ca[3].kWallType * 100)+"%";
+            texts_report[327] = ca[4].kWallType == 0 ? "-" : Convert.ToString(ca[4].kWallType * 100) + "%";
+            texts_report[328] = ca[0].kView == 0 ? "-" : Convert.ToString(ca[0].kView * 100)+"%";
+            texts_report[329] = ca[1].kView == 0 ? "-" : Convert.ToString(ca[1].kView * 100)+"%";
+            texts_report[330] = ca[2].kView == 0 ? "-" : Convert.ToString(ca[2].kView * 100)+"%";
+            texts_report[331] = ca[3].kView == 0 ? "-" : Convert.ToString(ca[3].kView * 100)+"%";
+            texts_report[332] = ca[4].kView == 0 ? "-" : Convert.ToString(ca[4].kView * 100) + "%";
+            texts_report[333] = report.Apartment.HasBalconyOrLoggia == true ? "есть" : "нет";
+            texts_report[334] = ca[0].hasBalcony == true ? "есть" : "нет";
+            texts_report[335] = ca[1].hasBalcony == true ? "есть" : "нет";
+            texts_report[336] = ca[2].hasBalcony == true ? "есть" : "нет";
+            texts_report[337] = ca[3].hasBalcony == true ? "есть" : "нет";
+            texts_report[338] = ca[4].hasBalcony == true ? "есть" : "нет";
+            texts_report[339] = report.Apartment.Home.Street.City.Name + ", "+report.Apartment.Home.ComplexNumber;
+            texts_report[340] = "г. Наб. Челны, " + ca[0].address;
+            texts_report[341] = "г. Наб. Челны, " + ca[1].address;
+            texts_report[342] = "г. Наб. Челны, " + ca[2].address;
+            texts_report[343] = "г. Наб. Челны, " + ca[3].address;
+            texts_report[344] = "г. Наб. Челны, " + ca[4].address;
+            texts_report[345] = report.Apartment.Home.Street.City.Name + ", "+report.Apartment.Home.ComplexNumber;
+            texts_report[346] = "г. Наб. Челны, " + ca[0].address;
+            texts_report[347] = "г. Наб. Челны, " + ca[1].address;
+            texts_report[348] = "г. Наб. Челны, " + ca[2].address;
+            texts_report[349] = "г. Наб. Челны, " + ca[3].address;
+            texts_report[350] = "г. Наб. Челны, " + ca[4].address;
+            texts_report[351] = Convert.ToString(report.Apartment.Floor);
+            texts_report[352] = Convert.ToString(ca[0].floor);
+            texts_report[353] = Convert.ToString(ca[1].floor);
+            texts_report[354] = Convert.ToString(ca[2].floor);
+            texts_report[355] = Convert.ToString(ca[3].floor);
+            texts_report[356] = Convert.ToString(ca[4].floor);
+            texts_report[357] = Convert.ToString(report.Apartment.Home.Floors);
+            texts_report[358] = Convert.ToString(ca[0].maxFloor);
+            texts_report[359] = Convert.ToString(ca[1].maxFloor);
+            texts_report[360] = Convert.ToString(ca[2].maxFloor);
+            texts_report[361] = Convert.ToString(ca[3].maxFloor);
+            texts_report[362] = Convert.ToString(ca[4].maxFloor);
+            texts_report[363] = Convert.ToString(report.Apartment.GrossArea);
+            texts_report[364] = Convert.ToString(ca[0].grossArea);
+            texts_report[365] = Convert.ToString(ca[1].grossArea);
+            texts_report[366] = Convert.ToString(ca[2].grossArea);
+            texts_report[367] = Convert.ToString(ca[3].grossArea);
+            texts_report[368] = Convert.ToString(ca[4].grossArea);
+            texts_report[369] = Convert.ToString(report.Apartment.KitchenArea);
+            texts_report[370] = Convert.ToString(ca[0].kitchenArea);
+            texts_report[371] = Convert.ToString(ca[1].kitchenArea);
+            texts_report[372] = Convert.ToString(ca[2].kitchenArea);
+            texts_report[373] = Convert.ToString(ca[3].kitchenArea);
+            texts_report[374] = Convert.ToString(ca[4].kitchenArea);
+            texts_report[375] = Convert.ToString(report.Apartment.Object.Dollar);
+            texts_report[376] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
+            texts_report[377] = Convert.ToString(report.Apartment.Object.Price);
+            texts_report[378] = Convert.ToString(report.Apartment.RoomNumber);
+            texts_report[379] = Convert.ToString(report.Apartment.RoomNumber);
+            texts_report[380] = Convert.ToString(report.Apartment.RoomNumber);
+            texts_report[381] = Convert.ToString(report.Apartment.RoomNumber);
+            texts_report[382] = Convert.ToString(report.Apartment.RoomNumber);
+            texts_report[383] = Convert.ToString(report.Apartment.RoomNumber);
+            texts_report[384] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
+            texts_report[385] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType); 
+            texts_report[386] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
+            texts_report[387] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
+            texts_report[388] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
+            texts_report[389] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
+            texts_report[390] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[391] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[392] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[393] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[394] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[395] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[396] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.GrossArea);
+            texts_report[397] = Convert.ToString(ca[0].price * 1000 / ca[0].grossArea);
+            texts_report[398] = Convert.ToString(ca[1].price * 1000 / ca[1].grossArea);
+            texts_report[399] = Convert.ToString(ca[2].price * 1000 / ca[2].grossArea);
+            texts_report[400] = Convert.ToString(ca[3].price * 1000 / ca[3].grossArea);
+            texts_report[401] = Convert.ToString(ca[4].price * 1000 / ca[4].grossArea);
+            texts_report[402] = ca[0].company;
+            texts_report[403] = ca[1].company;
+            texts_report[404] = ca[2].company;
+            texts_report[405] = ca[3].company;
+            texts_report[406] = ca[4].company;
+            texts_report[407] = Convert.ToString(ca[0].price * 1000);
+            texts_report[408] = Convert.ToString(ca[1].price * 1000);
+            texts_report[409] = Convert.ToString(ca[2].price * 1000);
+            texts_report[410] = Convert.ToString(ca[3].price * 1000);
+            texts_report[411] = Convert.ToString(ca[4].price * 1000);
 
 
         }
@@ -1124,6 +1156,11 @@ namespace PRDocument
                         {
                             rg.InlineShapes.AddPicture(screenshot[i - 271].ImageFileName);
                         }
+                    }
+
+                    if (i > 273)                                            // Заполнение таблицы сравнений
+                    {
+                        rg.Text = text[i];                                  // Выполнить замену строк
                     }
                     
                 }

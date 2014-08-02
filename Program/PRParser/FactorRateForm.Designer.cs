@@ -62,9 +62,9 @@
             this.kTorgTextBox2 = new System.Windows.Forms.TextBox();
             this.stateDiscountTextBox2 = new System.Windows.Forms.TextBox();
             this.kWallTypeTextBox2 = new System.Windows.Forms.TextBox();
-            this.finishingQualityPriceTextBox2 = new System.Windows.Forms.TextBox();
             this.kFloorsTextBox2 = new System.Windows.Forms.TextBox();
             this.kSanuzelTextBox2 = new System.Windows.Forms.TextBox();
+            this.finishingQualityPriceTextBox2 = new System.Windows.Forms.TextBox();
             this.kFloorTextBox2 = new System.Windows.Forms.TextBox();
             this.kBalconTextBox2 = new System.Windows.Forms.TextBox();
             this.kSKitchenTextBox2 = new System.Windows.Forms.TextBox();
@@ -78,29 +78,29 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.finishingQualityPriceTextBox3 = new System.Windows.Forms.TextBox();
             this.kTorgTextBox3 = new System.Windows.Forms.TextBox();
             this.stateDiscountTextBox3 = new System.Windows.Forms.TextBox();
             this.kWallTypeTextBox3 = new System.Windows.Forms.TextBox();
-            this.finishingQualityPriceTextBox3 = new System.Windows.Forms.TextBox();
             this.kFloorsTextBox3 = new System.Windows.Forms.TextBox();
             this.kSanuzelTextBox3 = new System.Windows.Forms.TextBox();
             this.kFloorTextBox3 = new System.Windows.Forms.TextBox();
             this.kBalconTextBox3 = new System.Windows.Forms.TextBox();
             this.kSKitchenTextBox3 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.kTorgTextBox4 = new System.Windows.Forms.TextBox();
-            this.stateDiscountTextBox4 = new System.Windows.Forms.TextBox();
-            this.kWallTypeTextBox4 = new System.Windows.Forms.TextBox();
             this.finishingQualityPriceTextBox4 = new System.Windows.Forms.TextBox();
+            this.kTorgTextBox4 = new System.Windows.Forms.TextBox();
+            this.kWallTypeTextBox4 = new System.Windows.Forms.TextBox();
+            this.stateDiscountTextBox4 = new System.Windows.Forms.TextBox();
             this.kFloorsTextBox4 = new System.Windows.Forms.TextBox();
             this.kSanuzelTextBox4 = new System.Windows.Forms.TextBox();
             this.kFloorTextBox4 = new System.Windows.Forms.TextBox();
@@ -108,16 +108,16 @@
             this.kSKitchenTextBox4 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.kTorgTextBox5 = new System.Windows.Forms.TextBox();
             this.stateDiscountTextBox5 = new System.Windows.Forms.TextBox();
+            this.kTorgTextBox5 = new System.Windows.Forms.TextBox();
             this.kWallTypeTextBox5 = new System.Windows.Forms.TextBox();
             this.finishingQualityPriceTextBox5 = new System.Windows.Forms.TextBox();
             this.kFloorsTextBox5 = new System.Windows.Forms.TextBox();
@@ -464,14 +464,6 @@
             this.kWallTypeTextBox2.TabIndex = 4;
             this.kWallTypeTextBox2.Text = "0";
             // 
-            // finishingQualityPriceTextBox2
-            // 
-            this.finishingQualityPriceTextBox2.Location = new System.Drawing.Point(19, 451);
-            this.finishingQualityPriceTextBox2.Name = "finishingQualityPriceTextBox2";
-            this.finishingQualityPriceTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.finishingQualityPriceTextBox2.TabIndex = 10;
-            this.finishingQualityPriceTextBox2.Text = "0";
-            // 
             // kFloorsTextBox2
             // 
             this.kFloorsTextBox2.Location = new System.Drawing.Point(19, 142);
@@ -487,6 +479,14 @@
             this.kSanuzelTextBox2.Size = new System.Drawing.Size(100, 20);
             this.kSanuzelTextBox2.TabIndex = 9;
             this.kSanuzelTextBox2.Text = "0";
+            // 
+            // finishingQualityPriceTextBox2
+            // 
+            this.finishingQualityPriceTextBox2.Location = new System.Drawing.Point(19, 451);
+            this.finishingQualityPriceTextBox2.Name = "finishingQualityPriceTextBox2";
+            this.finishingQualityPriceTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.finishingQualityPriceTextBox2.TabIndex = 10;
+            this.finishingQualityPriceTextBox2.Text = "0";
             // 
             // kFloorTextBox2
             // 
@@ -620,6 +620,14 @@
             this.label27.TabIndex = 12;
             this.label27.Text = "Поправка на торг";
             // 
+            // finishingQualityPriceTextBox3
+            // 
+            this.finishingQualityPriceTextBox3.Location = new System.Drawing.Point(19, 451);
+            this.finishingQualityPriceTextBox3.Name = "finishingQualityPriceTextBox3";
+            this.finishingQualityPriceTextBox3.Size = new System.Drawing.Size(100, 20);
+            this.finishingQualityPriceTextBox3.TabIndex = 10;
+            this.finishingQualityPriceTextBox3.Text = "0";
+            // 
             // kTorgTextBox3
             // 
             this.kTorgTextBox3.Location = new System.Drawing.Point(19, 44);
@@ -643,14 +651,6 @@
             this.kWallTypeTextBox3.Size = new System.Drawing.Size(100, 20);
             this.kWallTypeTextBox3.TabIndex = 4;
             this.kWallTypeTextBox3.Text = "0";
-            // 
-            // finishingQualityPriceTextBox3
-            // 
-            this.finishingQualityPriceTextBox3.Location = new System.Drawing.Point(19, 451);
-            this.finishingQualityPriceTextBox3.Name = "finishingQualityPriceTextBox3";
-            this.finishingQualityPriceTextBox3.Size = new System.Drawing.Size(100, 20);
-            this.finishingQualityPriceTextBox3.TabIndex = 10;
-            this.finishingQualityPriceTextBox3.Text = "0";
             // 
             // kFloorsTextBox3
             // 
@@ -719,15 +719,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "groupBox4";
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(16, 386);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(135, 13);
-            this.label28.TabIndex = 20;
-            this.label28.Text = "Поправка на вид из окна";
-            // 
             // label29
             // 
             this.label29.AutoSize = true;
@@ -745,6 +736,15 @@
             this.label30.Size = new System.Drawing.Size(136, 13);
             this.label30.TabIndex = 18;
             this.label30.Text = "Поправка на тип санузла";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(16, 386);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(135, 13);
+            this.label28.TabIndex = 20;
+            this.label28.Text = "Поправка на вид из окна";
             // 
             // label31
             // 
@@ -800,6 +800,14 @@
             this.label36.TabIndex = 12;
             this.label36.Text = "Поправка на торг";
             // 
+            // finishingQualityPriceTextBox4
+            // 
+            this.finishingQualityPriceTextBox4.Location = new System.Drawing.Point(19, 451);
+            this.finishingQualityPriceTextBox4.Name = "finishingQualityPriceTextBox4";
+            this.finishingQualityPriceTextBox4.Size = new System.Drawing.Size(100, 20);
+            this.finishingQualityPriceTextBox4.TabIndex = 10;
+            this.finishingQualityPriceTextBox4.Text = "0";
+            // 
             // kTorgTextBox4
             // 
             this.kTorgTextBox4.Location = new System.Drawing.Point(19, 44);
@@ -807,14 +815,6 @@
             this.kTorgTextBox4.Size = new System.Drawing.Size(100, 20);
             this.kTorgTextBox4.TabIndex = 3;
             this.kTorgTextBox4.Text = "0";
-            // 
-            // stateDiscountTextBox4
-            // 
-            this.stateDiscountTextBox4.Location = new System.Drawing.Point(19, 402);
-            this.stateDiscountTextBox4.Name = "stateDiscountTextBox4";
-            this.stateDiscountTextBox4.Size = new System.Drawing.Size(100, 20);
-            this.stateDiscountTextBox4.TabIndex = 11;
-            this.stateDiscountTextBox4.Text = "0";
             // 
             // kWallTypeTextBox4
             // 
@@ -824,13 +824,13 @@
             this.kWallTypeTextBox4.TabIndex = 4;
             this.kWallTypeTextBox4.Text = "0";
             // 
-            // finishingQualityPriceTextBox4
+            // stateDiscountTextBox4
             // 
-            this.finishingQualityPriceTextBox4.Location = new System.Drawing.Point(19, 451);
-            this.finishingQualityPriceTextBox4.Name = "finishingQualityPriceTextBox4";
-            this.finishingQualityPriceTextBox4.Size = new System.Drawing.Size(100, 20);
-            this.finishingQualityPriceTextBox4.TabIndex = 10;
-            this.finishingQualityPriceTextBox4.Text = "0";
+            this.stateDiscountTextBox4.Location = new System.Drawing.Point(19, 402);
+            this.stateDiscountTextBox4.Name = "stateDiscountTextBox4";
+            this.stateDiscountTextBox4.Size = new System.Drawing.Size(100, 20);
+            this.stateDiscountTextBox4.TabIndex = 11;
+            this.stateDiscountTextBox4.Text = "0";
             // 
             // kFloorsTextBox4
             // 
@@ -902,20 +902,11 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(16, 435);
+            this.label37.Location = new System.Drawing.Point(16, 386);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(135, 13);
             this.label37.TabIndex = 20;
             this.label37.Text = "Поправка на вид из окна";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(16, 386);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(106, 13);
-            this.label38.TabIndex = 19;
-            this.label38.Text = "Доплата за ремонт";
             // 
             // label39
             // 
@@ -934,6 +925,15 @@
             this.label40.Size = new System.Drawing.Size(161, 13);
             this.label40.TabIndex = 17;
             this.label40.Text = "Поправка на наличие балкона";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(16, 435);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(106, 13);
+            this.label38.TabIndex = 19;
+            this.label38.Text = "Доплата за ремонт";
             // 
             // label41
             // 
@@ -980,6 +980,14 @@
             this.label45.TabIndex = 12;
             this.label45.Text = "Поправка на торг";
             // 
+            // stateDiscountTextBox5
+            // 
+            this.stateDiscountTextBox5.Location = new System.Drawing.Point(19, 402);
+            this.stateDiscountTextBox5.Name = "stateDiscountTextBox5";
+            this.stateDiscountTextBox5.Size = new System.Drawing.Size(100, 20);
+            this.stateDiscountTextBox5.TabIndex = 11;
+            this.stateDiscountTextBox5.Text = "0";
+            // 
             // kTorgTextBox5
             // 
             this.kTorgTextBox5.Location = new System.Drawing.Point(19, 44);
@@ -987,14 +995,6 @@
             this.kTorgTextBox5.Size = new System.Drawing.Size(100, 20);
             this.kTorgTextBox5.TabIndex = 3;
             this.kTorgTextBox5.Text = "0";
-            // 
-            // stateDiscountTextBox5
-            // 
-            this.stateDiscountTextBox5.Location = new System.Drawing.Point(19, 451);
-            this.stateDiscountTextBox5.Name = "stateDiscountTextBox5";
-            this.stateDiscountTextBox5.Size = new System.Drawing.Size(100, 20);
-            this.stateDiscountTextBox5.TabIndex = 11;
-            this.stateDiscountTextBox5.Text = "0";
             // 
             // kWallTypeTextBox5
             // 
@@ -1006,7 +1006,7 @@
             // 
             // finishingQualityPriceTextBox5
             // 
-            this.finishingQualityPriceTextBox5.Location = new System.Drawing.Point(19, 402);
+            this.finishingQualityPriceTextBox5.Location = new System.Drawing.Point(19, 451);
             this.finishingQualityPriceTextBox5.Name = "finishingQualityPriceTextBox5";
             this.finishingQualityPriceTextBox5.Size = new System.Drawing.Size(100, 20);
             this.finishingQualityPriceTextBox5.TabIndex = 10;

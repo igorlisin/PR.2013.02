@@ -410,7 +410,8 @@ namespace PR
                 Property(a => a.Number).IsRequired();
 
                 HasOptional(a => a.ObjectForEntityFramework);
-                HasOptional(a => a.HomeForEntityFramework).WithMany(h => h.AppartmentsForEntityFramework).WillCascadeOnDelete(false);               
+                HasOptional(a => a.HomeForEntityFramework).WithMany(h => h.AppartmentsForEntityFramework).WillCascadeOnDelete(false);
+             
             }
         } 
 

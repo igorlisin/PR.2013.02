@@ -274,5 +274,19 @@ namespace PRParser
             _comparisonApartments.SaveChanges();
             this.Close();
         }
+
+        private void DeleteAnalogs_Click(object sender, EventArgs e)
+        {
+            IComparisonApart[] apartArray;
+            if (_apartment.ComparApart != null)
+            {
+                apartArray = _apartment.ComparApart.ToArray();
+                foreach (IComparisonApart a in apartArray)
+                {
+                    _comparisonApartments.Remove(a);
+                }
+                _comparisonApartments.SaveChanges();
+            }
+        }
     }
 }

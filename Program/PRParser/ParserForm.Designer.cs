@@ -33,6 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.DeleteAnalogs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.apartmentDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,12 +61,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(590, 443);
+            this.button2.Location = new System.Drawing.Point(284, 443);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(156, 23);
             this.button2.TabIndex = 5;
             this.button2.Text = "Отобразить в браузере";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             // 
             // button1
             // 
@@ -87,11 +89,22 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // DeleteAnalogs
+            // 
+            this.DeleteAnalogs.Location = new System.Drawing.Point(604, 443);
+            this.DeleteAnalogs.Name = "DeleteAnalogs";
+            this.DeleteAnalogs.Size = new System.Drawing.Size(108, 23);
+            this.DeleteAnalogs.TabIndex = 8;
+            this.DeleteAnalogs.Text = "Удалить аналоги";
+            this.DeleteAnalogs.UseVisualStyleBackColor = true;
+            this.DeleteAnalogs.Click += new System.EventHandler(this.DeleteAnalogs_Click);
+            // 
             // ParserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 478);
+            this.Controls.Add(this.DeleteAnalogs);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.AddToReportButton);
             this.Controls.Add(this.button2);
@@ -111,6 +124,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button DeleteAnalogs;
     }
 }
 

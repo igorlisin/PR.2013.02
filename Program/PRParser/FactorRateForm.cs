@@ -137,6 +137,7 @@ namespace PRParser
                                     sqmPrice5 * _aparts[4].kWallType +
                                      _aparts[4].finishingQualityPrice +
                                     sqmPrice5 * _aparts[4].kView;
+            this.Close();
         }
     }
 }

@@ -217,7 +217,7 @@ namespace PRParser
                         aparts[j].address = zakamneds[i].address;            // Заполняем поля
                         aparts[j].company = zakamneds[i].company;
                         aparts[j].floor = zakamneds[i].floor;
-                        aparts[j].grossArea = zakamneds[i].grossArea;
+                        aparts[j].grossArea = zakamneds[i].grossArea != 0 ? zakamneds[i].grossArea : Convert.ToInt32(_apartment.GrossArea) ; //Чтобы не было нулевой площади
                         aparts[j].hasBalcony = zakamneds[i].hasBalcony;
                         aparts[j].hasIronDoor = zakamneds[i].hasIronDoor;
                         aparts[j].hasPhone = zakamneds[i].hasPhone;
@@ -229,8 +229,7 @@ namespace PRParser
                         aparts[j].Apartment = _apartment;
 
                         _comparisonApartments.Add(aparts[j]);                                                      // Добавляем
-                        //_comparisonApartments.SaveChanges();                                                       // Сохраняем
-                      
+                                             
                         j++;
                     }
                 }
@@ -278,15 +277,26 @@ namespace PRParser
         private void DeleteAnalogs_Click(object sender, EventArgs e)
         {
             IComparisonApart[] apartArray;
-            if (_apartment.ComparApart != null)
+            DialogResult unlinkConfirm;                         // Результат подтверждения сообщения
+
+            unlinkConfirm = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
+                "Вы действительно хотите удалить все аналоги квартиры?",
+                "Подтверждение",
+                MessageBoxButtons.YesNo);
+
+            if (unlinkConfirm == DialogResult.Yes)              // Проверить результат подтверждения сообщения
             {
-                apartArray = _apartment.ComparApart.ToArray();
-                foreach (IComparisonApart a in apartArray)
+                if (_apartment.ComparApart != null)
                 {
+                apartArray = _apartment.ComparApart.ToArray();
+                    foreach (IComparisonApart a in apartArray)
+                     {
                     _comparisonApartments.Remove(a);
-                }
+                     }
                 _comparisonApartments.SaveChanges();
+                }
             }
+
         }
     }
 }

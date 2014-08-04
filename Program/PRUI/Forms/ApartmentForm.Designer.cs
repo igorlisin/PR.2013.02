@@ -782,6 +782,7 @@
             this.grossAreaTextBox.Name = "grossAreaTextBox";
             this.grossAreaTextBox.Size = new System.Drawing.Size(106, 20);
             this.grossAreaTextBox.TabIndex = 11;
+            this.grossAreaTextBox.Text = "1";
             this.grossAreaTextBox.Enter += new System.EventHandler(this.grossAreaTextBox_Enter);
             this.grossAreaTextBox.Leave += new System.EventHandler(this.grossAreaTextBox_Leave);
             // 

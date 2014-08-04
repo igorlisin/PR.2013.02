@@ -1212,7 +1212,7 @@ namespace PRUI.Forms
             ClearRoomTypeList();                                                            // Очистить список "Тип комнат"
             FillRoomTypeList();                                                             // Заполнить данными список "Тип комнат"
 
-            GrossArea = "";                                                                 // Очистить общую площадь
+            GrossArea = "1";                                                                 // Очистить общую площадь
             GrossAreaSNIP = "";                                                             // Очистить общую площадь по СНиП
             LivingArea = "";                                                                // Очистить жилую площадь
             KitchenArea = "";                                                               // Очистить площадь кухни

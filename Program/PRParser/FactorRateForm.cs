@@ -51,7 +51,8 @@ namespace PRParser
             _aparts[0].kSKitchen = Convert.ToSingle(kSKitchenTextBox1.Text) / 100;
             _aparts[0].kWallType = Convert.ToSingle(kWallTypeTextBox1.Text) / 100;
             _aparts[0].finishingQualityPrice = Convert.ToSingle(finishingQualityPriceTextBox1.Text);
-            _aparts[0].kView = Convert.ToSingle(stateDiscountTextBox1.Text)/100;
+            _aparts[0].statePrice = Convert.ToSingle(StateTextBox1.Text);
+            _aparts[0].kView = Convert.ToSingle(viewTextBox1.Text)/100;
             _aparts[0].sqmCalcPrice = sqmPrice1 + sqmPrice1 * _aparts[0].kTorg +
                                                 sqmPrice1 * _aparts[0].kFloors +
                                                 sqmPrice1 * _aparts[0].kFloor +
@@ -70,7 +71,8 @@ namespace PRParser
             _aparts[1].kSKitchen = Convert.ToSingle(kSKitchenTextBox2.Text) / 100;
             _aparts[1].kWallType = Convert.ToSingle(kWallTypeTextBox2.Text) / 100;
             _aparts[1].finishingQualityPrice = Convert.ToSingle(finishingQualityPriceTextBox2.Text);
-            _aparts[1].kView = Convert.ToSingle(stateDiscountTextBox2.Text)/100;
+            _aparts[1].statePrice = Convert.ToSingle(StateTextBox2.Text);
+            _aparts[1].kView = Convert.ToSingle(viewTextBox2.Text)/100;
             _aparts[1].sqmCalcPrice = sqmPrice2 + sqmPrice2 * _aparts[1].kTorg +
                                     sqmPrice2 * _aparts[1].kFloors +
                                     sqmPrice2 * _aparts[1].kFloor +
@@ -89,7 +91,8 @@ namespace PRParser
             _aparts[2].kSKitchen = Convert.ToSingle(kSKitchenTextBox3.Text) / 100;
             _aparts[2].kWallType = Convert.ToSingle(kWallTypeTextBox3.Text) / 100;
             _aparts[2].finishingQualityPrice = Convert.ToSingle(finishingQualityPriceTextBox3.Text);
-            _aparts[2].kView = Convert.ToSingle(stateDiscountTextBox3.Text)/100;
+            _aparts[2].statePrice = Convert.ToSingle(StateTextBox3.Text);
+            _aparts[2].kView = Convert.ToSingle(viewTextBox3.Text)/100;
             _aparts[2].sqmCalcPrice = sqmPrice3 + sqmPrice3 * _aparts[2].kTorg +
                                     sqmPrice3 * _aparts[2].kFloors +
                                     sqmPrice3 * _aparts[2].kFloor +
@@ -108,7 +111,8 @@ namespace PRParser
             _aparts[3].kSKitchen = Convert.ToSingle(kSKitchenTextBox4.Text) / 100;
             _aparts[3].kWallType = Convert.ToSingle(kWallTypeTextBox4.Text) / 100;
             _aparts[3].finishingQualityPrice = Convert.ToSingle(finishingQualityPriceTextBox4.Text);
-            _aparts[3].kView = Convert.ToSingle(stateDiscountTextBox4.Text)/100;
+            _aparts[3].statePrice = Convert.ToSingle(StateTextBox4.Text);
+            _aparts[3].kView = Convert.ToSingle(viewTextBox4.Text)/100;
             _aparts[3].sqmCalcPrice = sqmPrice4 + sqmPrice4 * _aparts[3].kTorg +
                                     sqmPrice4 * _aparts[3].kFloors +
                                     sqmPrice4 * _aparts[3].kFloor +
@@ -127,7 +131,8 @@ namespace PRParser
             _aparts[4].kSKitchen = Convert.ToSingle(kSKitchenTextBox5.Text) / 100;
             _aparts[4].kWallType = Convert.ToSingle(kWallTypeTextBox5.Text) / 100;
             _aparts[4].finishingQualityPrice = Convert.ToSingle(finishingQualityPriceTextBox5.Text);
-            _aparts[4].kView = Convert.ToSingle(stateDiscountTextBox5.Text)/100;
+            _aparts[4].statePrice = Convert.ToSingle(StateTextBox5.Text);
+            _aparts[4].kView = Convert.ToSingle(viewTextBox5.Text)/100;
             _aparts[4].sqmCalcPrice = sqmPrice5 + sqmPrice5 * _aparts[4].kTorg +
                                     sqmPrice5 * _aparts[4].kFloors +
                                     sqmPrice5 * _aparts[4].kFloor +

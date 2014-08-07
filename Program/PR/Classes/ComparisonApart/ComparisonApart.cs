@@ -117,6 +117,11 @@ namespace PR.Classes
         private float _finishingQualityPrice;
 
         /// <summary>
+        /// . Состояние квартиры
+        /// </summary>
+        private float _statePrice;
+
+        /// <summary>
         /// Поле. Скидка за состояние
         /// </summary>
         private float _kView;
@@ -451,7 +456,22 @@ namespace PR.Classes
         }
 
         /// <summary>
-        /// Свойство. Скидка за состояние
+        /// Свойство. Состояние квартиры
+        /// </summary>
+        public float statePrice
+        {
+            get
+            {
+                return (_statePrice);
+            }
+            set
+            {
+                _statePrice = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Поправка на вид из окна
         /// </summary>
         public float kView
         {

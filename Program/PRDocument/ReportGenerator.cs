@@ -975,16 +975,16 @@ namespace PRDocument
             texts_report[285] = ca[2].kFloors == 0 ? "-" : Convert.ToString(ca[2].kFloors * 100)+"%";
             texts_report[286] = ca[3].kFloors == 0 ? "-" : Convert.ToString(ca[3].kFloors * 100)+"%";
             texts_report[287] = ca[4].kFloors == 0 ? "-" : Convert.ToString(ca[4].kFloors * 100)+"%";
-            texts_report[288] = Convert.ToString(ca[0].kBalcon+ca[0].kFloor+ca[0].kFloors+ca[0].kSanuzel+
-                                                 ca[0].kSKitchen+ca[0].kTorg+ca[0].kView+ca[0].kWallType);
-            texts_report[289] = Convert.ToString(ca[1].kBalcon+ca[1].kFloor+ca[1].kFloors+ca[1].kSanuzel+
-                                                 ca[1].kSKitchen+ca[1].kTorg+ca[1].kView+ca[1].kWallType);
-            texts_report[290] = Convert.ToString(ca[2].kBalcon+ca[2].kFloor+ca[2].kFloors+ca[2].kSanuzel+
-                                                 ca[2].kSKitchen+ca[2].kTorg+ca[2].kView+ca[2].kWallType);
-            texts_report[291] = Convert.ToString(ca[3].kBalcon+ca[3].kFloor+ca[3].kFloors+ca[3].kSanuzel+
-                                                 ca[3].kSKitchen+ca[3].kTorg+ca[3].kView+ca[3].kWallType);
-            texts_report[292] = Convert.ToString(ca[4].kBalcon+ca[4].kFloor+ca[4].kFloors+ca[4].kSanuzel+
-                                                 ca[4].kSKitchen+ca[4].kTorg+ca[4].kView+ca[4].kWallType);
+            texts_report[288] = Convert.ToString((ca[0].kBalcon+ca[0].kFloor+ca[0].kFloors+ca[0].kSanuzel+
+                                                 ca[0].kSKitchen+ca[0].kTorg+ca[0].kView+ca[0].kWallType)*100)+"%";
+            texts_report[289] = Convert.ToString((ca[1].kBalcon+ca[1].kFloor+ca[1].kFloors+ca[1].kSanuzel+
+                                                 ca[1].kSKitchen+ca[1].kTorg+ca[1].kView+ca[1].kWallType)*100)+"%";
+            texts_report[290] = Convert.ToString((ca[2].kBalcon+ca[2].kFloor+ca[2].kFloors+ca[2].kSanuzel+
+                                                 ca[2].kSKitchen+ca[2].kTorg+ca[2].kView+ca[2].kWallType)*100)+"%";
+            texts_report[291] = Convert.ToString((ca[3].kBalcon+ca[3].kFloor+ca[3].kFloors+ca[3].kSanuzel+
+                                                 ca[3].kSKitchen+ca[3].kTorg+ca[3].kView+ca[3].kWallType)*100)+"%";
+            texts_report[292] = Convert.ToString((ca[4].kBalcon+ca[4].kFloor+ca[4].kFloors+ca[4].kSanuzel+
+                                                 ca[4].kSKitchen+ca[4].kTorg+ca[4].kView+ca[4].kWallType)*100)+"%";
             texts_report[293] = Convert.ToString(ca[0].finishingQualityPrice);
             texts_report[294] = Convert.ToString(ca[1].finishingQualityPrice);
             texts_report[295] = Convert.ToString(ca[2].finishingQualityPrice);
@@ -1158,7 +1158,7 @@ namespace PRDocument
                         }
                     }
 
-                    if (i > 273)                                            // Заполнение таблицы сравнений
+                    if (i > 272)                                            // Заполнение таблицы сравнений
                     {
                         rg.Text = text[i];                                  // Выполнить замену строк
                     }

@@ -114,6 +114,11 @@ namespace PRInterfaces.Interfaces
         float finishingQualityPrice { get; set; }
 
         /// <summary>
+        /// Свойство. Состояние квартиры
+        /// </summary>
+        float statePrice { get; set; }
+
+        /// <summary>
         /// Свойство. Поправка на вид из окна
         /// </summary>
         float kView { get; set; }

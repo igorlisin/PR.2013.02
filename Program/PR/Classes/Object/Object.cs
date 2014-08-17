@@ -16,6 +16,7 @@ namespace PR.Classes
         /// </summary>
         public class Object :   Entity, IObject
         {
+            #region Fields
             /// <summary>
             /// Поле. Тип объекта оценки
             /// </summary>
@@ -68,6 +69,76 @@ namespace PR.Classes
             /// Поле. Цель оценки
             /// </summary>            
             private string _destOfTheEvaluation;
+
+            /// <summary>
+            /// Поле. Доходность
+            /// </summary>
+            private float _r ;
+
+            /// <summary>
+            /// Поле. Срок реализации объекта по рыночной стоимости
+            /// </summary>
+            private float _t_r ;
+
+            /// <summary>
+            /// Поле. Срок реализации объекта по ликвидационной стоимости
+            /// </summary>
+            private float _t_l ;
+
+            /// <summary>
+            /// Поле. Ухудшение общей экономической ситуации
+            /// </summary>
+            private float _econSituationDown ;
+
+            /// <summary>
+            /// Поле. Увеличение числа конкурирующих объектов
+            /// </summary>
+            private float _concurentsUp ;
+
+            /// <summary>
+            /// Поле. Изменение федерального или местного законодательства
+            /// </summary>
+            private float _lowChange ;
+
+            /// <summary>
+            /// Поле. Природные и антропогенные чрезвычайные ситуации
+            /// </summary>
+            private float _extremalSituation ;
+
+            /// <summary>
+            /// Поле. Ускоренный износ объекта оценки
+            /// </summary>
+            private float _acceleratedWear ;
+
+            /// <summary>
+            /// Поле. Неполучение арендных платежей
+            /// </summary>
+            private float _noRentalMoney ;
+
+            /// <summary>
+            /// Поле. Неэффективный менеджмент
+            /// </summary>
+            private float _badManagment ;
+
+            /// <summary>
+            /// Поле. Криминогенные факторы
+            /// </summary>
+            private float _criminal ;
+
+            /// <summary>
+            /// Поле. Финансовые проверки
+            /// </summary>
+            private float _financeChecking ;
+
+            /// <summary>
+            /// Поле. Неправильное оформление договоров аренды
+            /// </summary>
+            private float _notCorrect ;
+
+            #endregion
+
+            #region Properties
+
             /// <summary>
             /// Свойство. Задает и возвращает тип объекта
             /// </summary>
@@ -224,28 +295,202 @@ namespace PR.Classes
                 }
             }
 
+            /// <summary>
+            /// Свойство. Доходность
+            /// </summary>
+            public float R
+            {
+                get
+                {
+                    return (_r);
+                }
+                set
+                {
+                    _r = value;
+                }
+            }
 
-            ///// <summary>
-            ///// Свойство. Задает и возвращает список улиц
-            ///// </summary>
-                    
-            //public IApartment Apartments
-            //{
-            //    get
-            //    {
-            //        return ((IApartment)ApartmentForEntityFramework);
-            //    }
-            //    set
-            //    {
-            //        ApartmentForEntityFramework = (Apartment)value;
-            //    }
-            //}
+            /// <summary>
+            /// Свойство. Срок реализации объекта по рыночной стоимости
+            /// </summary>
+            public float T_r
+            {
+                get
+                {
+                    return (_t_r);
+                }
+                set
+                {
+                    _t_r = value;
+                }
+            }
 
-            ///// <summary>
-            ///// Свойство. Задает и возвращает список улиц (используется в Entity Framework) 
-            ///// </summary>
-            
-            //public Apartment ApartmentForEntityFramework { get; set; }
+            /// <summary>
+            /// Свойство. Срок реализации объекта по ликвидационной стоимости
+            /// </summary>
+            public float T_l
+            {
+                get
+                {
+                    return (_t_l);
+                }
+                set
+                {
+                    _t_l = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Ухудшение общей экономической ситуации
+            /// </summary>
+            public float EconSituationDown
+            {
+                get
+                {
+                    return (_econSituationDown);
+                }
+                set
+                {
+                    _econSituationDown = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Увеличение числа конкурирующих объектов
+            /// </summary>
+            public float ConcurentsUp
+            {
+                get
+                {
+                    return (_concurentsUp);
+                }
+                set
+                {
+                    _concurentsUp = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Изменение федерального или местного законодательства
+            /// </summary>
+            public float LowChange
+            {
+                get
+                {
+                    return (_lowChange);
+                }
+                set
+                {
+                    _lowChange = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Природные и антропогенные чрезвычайные ситуации
+            /// </summary>
+            public float ExtremalSituation
+            {
+                get
+                {
+                    return (_extremalSituation);
+                }
+                set
+                {
+                    _extremalSituation = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Ускоренный износ объекта оценки
+            /// </summary>
+            public float AcceleratedWear
+            {
+                get
+                {
+                    return (_acceleratedWear);
+                }
+                set
+                {
+                    _acceleratedWear = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Неполучение арендных платежей
+            /// </summary>
+            public float NoRentalMoney
+            {
+                get
+                {
+                    return (_noRentalMoney);
+                }
+                set
+                {
+                    _noRentalMoney = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Неэффективный менеджмент
+            /// </summary>
+            public float BadManagment
+            {
+                get
+                {
+                    return (_badManagment);
+                }
+                set
+                {
+                    _badManagment = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Криминогенные факторы
+            /// </summary>
+            public float Criminal
+            {
+                get
+                {
+                    return (_criminal);
+                }
+                set
+                {
+                    _criminal = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Финансовые проверки
+            /// </summary>
+            public float FinanceChecking
+            {
+                get
+                {
+                    return (_financeChecking);
+                }
+                set
+                {
+                    _financeChecking = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Неправильное оформление договоров аренды
+            /// </summary>
+            public float NotCorrect
+            {
+                get
+                {
+                    return (_notCorrect);
+                }
+                set
+                {
+                    _notCorrect = value;
+                }
+            }
+
+        #endregion
         }
     }
 

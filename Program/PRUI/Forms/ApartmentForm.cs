@@ -982,6 +982,201 @@ namespace PRUI.Forms
             }
         }
 
+        /// <summary>
+        /// Свойство.  Доходность
+        /// </summary>
+        private float R
+        {
+            get
+            {
+                return Convert.ToSingle(RUpDown.Text);
+            }
+            set
+            {
+                RUpDown.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство.   Срок реализации объекта по рыночной стоимости
+        /// </summary>
+        private float T_r
+        {
+            get
+            {
+                return Convert.ToSingle(T_rUpDown.Text);
+            }
+            set
+            {
+                T_rUpDown.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство.  Срок реализации объекта по ликвидационной стоимости
+        /// </summary>
+        private float T_l
+        {
+            get
+            {
+                return Convert.ToSingle(T_lUpDown.Text);
+            }
+            set
+            {
+                T_lUpDown.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство.  Ухудшение общей экономической ситуации
+        /// </summary>
+        private float EconSituationDown
+        {
+            get
+            {
+                return Convert.ToSingle(EconSituationDownUpDown.Text);
+            }
+            set
+            {
+                EconSituationDownUpDown.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство.  Увеличение числа конкурирующих объектов
+        /// </summary>
+        private float ConcurentsUp
+        {
+            get
+            {
+                return Convert.ToSingle(ConcurentsUpUpDown.Text);
+            }
+            set
+            {
+                ConcurentsUpUpDown.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство.  Изменение федерального или местного законодательства
+        /// </summary>
+        private float LowChange
+        {
+            get
+            {
+                return Convert.ToSingle(LowChangeUpDown.Text);
+            }
+            set
+            {
+                LowChangeUpDown.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство.  Природные и антропогенные чрезвычайные ситуации
+        /// </summary>
+        private float ExtremalSituation
+        {
+            get
+            {
+                return Convert.ToSingle(ExtremalSituationUpDown.Text);
+            }
+            set
+            {
+                ExtremalSituationUpDown.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство.  Ускоренный износ объекта оценки
+        /// </summary>
+        private float AcceleratedWear
+        {
+            get
+            {
+                return Convert.ToSingle(AcceleratedWearUpDown.Text);
+            }
+            set
+            {
+                AcceleratedWearUpDown.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство.  Неполучение арендных платежей
+        /// </summary>
+        private float NoRentalMoney
+        {
+            get
+            {
+                return Convert.ToSingle(NoRentalMoneyUpDown.Text);
+            }
+            set
+            {
+                NoRentalMoneyUpDown.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Неэффективный менеджмент 
+        /// </summary>
+        private float BadManagment
+        {
+            get
+            {
+                return Convert.ToSingle(BadManagmentUpDown.Text);
+            }
+            set
+            {
+                BadManagmentUpDown.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство.  Криминогенные факторы
+        /// </summary>
+        private float Criminal
+        {
+            get
+            {
+                return Convert.ToSingle(CriminalUpDown.Text);
+            }
+            set
+            {
+                CriminalUpDown.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство.  Финансовые проверки
+        /// </summary>
+        private float FinanceChecking
+        {
+            get
+            {
+                return Convert.ToSingle(FinanceCheckingUpDown.Text);
+            }
+            set
+            {
+                FinanceCheckingUpDown.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Неправильное оформление договоров аренды 
+        /// </summary>
+        private float NotCorrect
+        {
+            get
+            {
+                return Convert.ToSingle(NotCorrectUpDown.Text);
+            }
+            set
+            {
+                NotCorrectUpDown.Text = Convert.ToString(value);
+            }
+        }
+
 
         #region Apartment man picture
 
@@ -1622,6 +1817,19 @@ namespace PRUI.Forms
             ObjectPurpose = obj.PurposeOfTheEvaluation;
             ObjectDest = obj.DestOfTheEvaluation;
             ObjectDocuments = obj.Documents;
+            R = obj.R;       
+            T_r = obj.T_r; 
+            T_l= obj.T_l;
+            EconSituationDown = obj.EconSituationDown; 
+            ConcurentsUp = obj.ConcurentsUp;
+            LowChange = obj.LowChange;
+            ExtremalSituation = obj.ExtremalSituation;
+            AcceleratedWear = obj.AcceleratedWear;
+            NoRentalMoney = obj.AcceleratedWear;
+            BadManagment = obj.BadManagment;
+            Criminal = obj.Criminal;
+            FinanceChecking = obj.Criminal;
+            NotCorrect = obj.NotCorrect;
             
 
         }
@@ -1655,6 +1863,20 @@ namespace PRUI.Forms
             obj.PurposeOfTheEvaluation = ObjectPurpose;
             obj.DestOfTheEvaluation = ObjectDest;
             obj.Documents = ObjectDocuments;
+
+           obj.R = R;
+           obj.T_r = T_r;
+           obj.T_l = T_l;
+           obj.EconSituationDown = EconSituationDown;
+           obj.ConcurentsUp = ConcurentsUp;
+           obj.LowChange = LowChange;
+           obj.ExtremalSituation = ExtremalSituation;
+           obj.AcceleratedWear = AcceleratedWear;
+           obj.AcceleratedWear = NoRentalMoney;
+           obj.BadManagment = BadManagment;
+           obj.Criminal = Criminal;
+           obj.Criminal = FinanceChecking;
+           obj.NotCorrect = NotCorrect;
 
             if (_objectAfterRelinking == null)  //Если объекта еще нет 
             {
@@ -2925,6 +3147,7 @@ namespace PRUI.Forms
         }
 
         #endregion
+
 
 
         #endregion

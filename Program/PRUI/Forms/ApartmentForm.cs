@@ -982,20 +982,7 @@ namespace PRUI.Forms
             }
         }
 
-        /// <summary>
-        /// Свойство.  Доходность
-        /// </summary>
-        private float R
-        {
-            get
-            {
-                return Convert.ToSingle(RUpDown.Text);
-            }
-            set
-            {
-                RUpDown.Text = Convert.ToString(value);
-            }
-        }
+   
 
         /// <summary>
         /// Свойство.   Срок реализации объекта по рыночной стоимости
@@ -1004,11 +991,11 @@ namespace PRUI.Forms
         {
             get
             {
-                return Convert.ToSingle(T_rUpDown.Text);
+                return Convert.ToSingle(T_rTextBox.Text);
             }
             set
             {
-                T_rUpDown.Text = Convert.ToString(value);
+                T_rTextBox.Text = Convert.ToString(value);
             }
         }
 
@@ -1019,11 +1006,11 @@ namespace PRUI.Forms
         {
             get
             {
-                return Convert.ToSingle(T_lUpDown.Text);
+                return Convert.ToSingle(T_lTextBox.Text);
             }
             set
             {
-                T_lUpDown.Text = Convert.ToString(value);
+                T_lTextBox.Text = Convert.ToString(value);
             }
         }
 
@@ -1468,7 +1455,6 @@ namespace PRUI.Forms
             ObjectPurpose = "Определение рыночной и ликвидационной стоимости";
             ObjectDest = "Обеспечение по ипотечному кредиту";
             ObjectDocuments = "";
-            R = 0;
             T_r = 0;
             T_l = 0;
             EconSituationDown = 0;
@@ -1876,8 +1862,7 @@ namespace PRUI.Forms
             ObjectDiscount = obj.Discount;
             ObjectPurpose = obj.PurposeOfTheEvaluation;
             ObjectDest = obj.DestOfTheEvaluation;
-            ObjectDocuments = obj.Documents;
-            R = obj.R;       
+            ObjectDocuments = obj.Documents;      
             T_r = obj.T_r; 
             T_l= obj.T_l;
             EconSituationDown = obj.EconSituationDown; 
@@ -1930,7 +1915,6 @@ namespace PRUI.Forms
             obj.DestOfTheEvaluation = ObjectDest;
             obj.Documents = ObjectDocuments;
 
-           obj.R = R;
            obj.T_r = T_r;
            obj.T_l = T_l;
            obj.EconSituationDown = EconSituationDown;

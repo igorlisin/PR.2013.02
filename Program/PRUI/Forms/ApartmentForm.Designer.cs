@@ -188,6 +188,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.otherTabControlPage = new System.Windows.Forms.TabPage();
             this.DiscountPage = new System.Windows.Forms.TabPage();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.K_elTextBox = new System.Windows.Forms.TextBox();
+            this.InvestManageTextBox = new System.Windows.Forms.TextBox();
+            this.NoRiskTextBox = new System.Windows.Forms.TextBox();
             this.NotCorrectUpDown = new System.Windows.Forms.DomainUpDown();
             this.CriminalUpDown = new System.Windows.Forms.DomainUpDown();
             this.BadManagmentUpDown = new System.Windows.Forms.DomainUpDown();
@@ -198,8 +204,6 @@
             this.LowChangeUpDown = new System.Windows.Forms.DomainUpDown();
             this.ConcurentsUpUpDown = new System.Windows.Forms.DomainUpDown();
             this.EconSituationDownUpDown = new System.Windows.Forms.DomainUpDown();
-            this.T_lUpDown = new System.Windows.Forms.DomainUpDown();
-            this.T_rUpDown = new System.Windows.Forms.DomainUpDown();
             this.label50 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -212,14 +216,8 @@
             this.label45 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.RUpDown = new System.Windows.Forms.DomainUpDown();
-            this.NoRiskTextBox = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.InvestManageTextBox = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.K_elTextBox = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
+            this.T_rTextBox = new System.Windows.Forms.TextBox();
+            this.T_lTextBox = new System.Windows.Forms.TextBox();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -1828,6 +1826,8 @@
             // 
             // DiscountPage
             // 
+            this.DiscountPage.Controls.Add(this.T_lTextBox);
+            this.DiscountPage.Controls.Add(this.T_rTextBox);
             this.DiscountPage.Controls.Add(this.label53);
             this.DiscountPage.Controls.Add(this.label52);
             this.DiscountPage.Controls.Add(this.label51);
@@ -1844,8 +1844,6 @@
             this.DiscountPage.Controls.Add(this.LowChangeUpDown);
             this.DiscountPage.Controls.Add(this.ConcurentsUpUpDown);
             this.DiscountPage.Controls.Add(this.EconSituationDownUpDown);
-            this.DiscountPage.Controls.Add(this.T_lUpDown);
-            this.DiscountPage.Controls.Add(this.T_rUpDown);
             this.DiscountPage.Controls.Add(this.label50);
             this.DiscountPage.Controls.Add(this.label49);
             this.DiscountPage.Controls.Add(this.label43);
@@ -1858,8 +1856,6 @@
             this.DiscountPage.Controls.Add(this.label45);
             this.DiscountPage.Controls.Add(this.label39);
             this.DiscountPage.Controls.Add(this.label44);
-            this.DiscountPage.Controls.Add(this.label38);
-            this.DiscountPage.Controls.Add(this.RUpDown);
             this.DiscountPage.Location = new System.Drawing.Point(4, 22);
             this.DiscountPage.Name = "DiscountPage";
             this.DiscountPage.Padding = new System.Windows.Forms.Padding(3);
@@ -1867,6 +1863,57 @@
             this.DiscountPage.TabIndex = 6;
             this.DiscountPage.Text = "Ликвидационная уценка";
             this.DiscountPage.UseVisualStyleBackColor = true;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(432, 400);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(225, 13);
+            this.label53.TabIndex = 16;
+            this.label53.Text = "Коэффициент, учитывающий эластичность";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(432, 349);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(165, 13);
+            this.label52.TabIndex = 16;
+            this.label52.Text = "Инвестиционный менеджмент ";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(432, 291);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(129, 13);
+            this.label51.TabIndex = 16;
+            this.label51.Text = "Безрисковая ставка, % ";
+            // 
+            // K_elTextBox
+            // 
+            this.K_elTextBox.Location = new System.Drawing.Point(435, 416);
+            this.K_elTextBox.Name = "K_elTextBox";
+            this.K_elTextBox.Size = new System.Drawing.Size(120, 20);
+            this.K_elTextBox.TabIndex = 15;
+            this.K_elTextBox.Text = "0,76";
+            // 
+            // InvestManageTextBox
+            // 
+            this.InvestManageTextBox.Location = new System.Drawing.Point(435, 365);
+            this.InvestManageTextBox.Name = "InvestManageTextBox";
+            this.InvestManageTextBox.Size = new System.Drawing.Size(120, 20);
+            this.InvestManageTextBox.TabIndex = 15;
+            this.InvestManageTextBox.Text = "1";
+            // 
+            // NoRiskTextBox
+            // 
+            this.NoRiskTextBox.Location = new System.Drawing.Point(435, 307);
+            this.NoRiskTextBox.Name = "NoRiskTextBox";
+            this.NoRiskTextBox.Size = new System.Drawing.Size(120, 20);
+            this.NoRiskTextBox.TabIndex = 15;
+            this.NoRiskTextBox.Text = "0";
             // 
             // NotCorrectUpDown
             // 
@@ -1987,7 +2034,7 @@
             this.AcceleratedWearUpDown.Items.Add("2");
             this.AcceleratedWearUpDown.Items.Add("1");
             this.AcceleratedWearUpDown.Items.Add("0");
-            this.AcceleratedWearUpDown.Location = new System.Drawing.Point(17, 417);
+            this.AcceleratedWearUpDown.Location = new System.Drawing.Point(16, 368);
             this.AcceleratedWearUpDown.Name = "AcceleratedWearUpDown";
             this.AcceleratedWearUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f9;
             this.AcceleratedWearUpDown.Size = new System.Drawing.Size(120, 20);
@@ -2008,7 +2055,7 @@
             this.ExtremalSituationUpDown.Items.Add("2");
             this.ExtremalSituationUpDown.Items.Add("1");
             this.ExtremalSituationUpDown.Items.Add("0");
-            this.ExtremalSituationUpDown.Location = new System.Drawing.Point(17, 366);
+            this.ExtremalSituationUpDown.Location = new System.Drawing.Point(16, 317);
             this.ExtremalSituationUpDown.Name = "ExtremalSituationUpDown";
             this.ExtremalSituationUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f8;
             this.ExtremalSituationUpDown.Size = new System.Drawing.Size(120, 20);
@@ -2029,7 +2076,7 @@
             this.LowChangeUpDown.Items.Add("2");
             this.LowChangeUpDown.Items.Add("1");
             this.LowChangeUpDown.Items.Add("0");
-            this.LowChangeUpDown.Location = new System.Drawing.Point(17, 307);
+            this.LowChangeUpDown.Location = new System.Drawing.Point(16, 258);
             this.LowChangeUpDown.Name = "LowChangeUpDown";
             this.LowChangeUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f7;
             this.LowChangeUpDown.Size = new System.Drawing.Size(120, 20);
@@ -2050,7 +2097,7 @@
             this.ConcurentsUpUpDown.Items.Add("2");
             this.ConcurentsUpUpDown.Items.Add("1");
             this.ConcurentsUpUpDown.Items.Add("0");
-            this.ConcurentsUpUpDown.Location = new System.Drawing.Point(17, 250);
+            this.ConcurentsUpUpDown.Location = new System.Drawing.Point(16, 201);
             this.ConcurentsUpUpDown.Name = "ConcurentsUpUpDown";
             this.ConcurentsUpUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f6;
             this.ConcurentsUpUpDown.Size = new System.Drawing.Size(120, 20);
@@ -2071,54 +2118,12 @@
             this.EconSituationDownUpDown.Items.Add("2");
             this.EconSituationDownUpDown.Items.Add("1");
             this.EconSituationDownUpDown.Items.Add("0");
-            this.EconSituationDownUpDown.Location = new System.Drawing.Point(17, 188);
+            this.EconSituationDownUpDown.Location = new System.Drawing.Point(16, 139);
             this.EconSituationDownUpDown.Name = "EconSituationDownUpDown";
             this.EconSituationDownUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f5;
             this.EconSituationDownUpDown.Size = new System.Drawing.Size(120, 20);
             this.EconSituationDownUpDown.TabIndex = 5;
             this.EconSituationDownUpDown.Text = "0";
-            // 
-            // T_lUpDown
-            // 
-            this.T_lUpDown.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::PRUI.Properties.Settings.Default, "f4", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.T_lUpDown.Items.Add("10");
-            this.T_lUpDown.Items.Add("9");
-            this.T_lUpDown.Items.Add("8");
-            this.T_lUpDown.Items.Add("7");
-            this.T_lUpDown.Items.Add("6");
-            this.T_lUpDown.Items.Add("5");
-            this.T_lUpDown.Items.Add("4");
-            this.T_lUpDown.Items.Add("3");
-            this.T_lUpDown.Items.Add("2");
-            this.T_lUpDown.Items.Add("1");
-            this.T_lUpDown.Items.Add("0");
-            this.T_lUpDown.Location = new System.Drawing.Point(17, 135);
-            this.T_lUpDown.Name = "T_lUpDown";
-            this.T_lUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f4;
-            this.T_lUpDown.Size = new System.Drawing.Size(120, 20);
-            this.T_lUpDown.TabIndex = 4;
-            this.T_lUpDown.Text = "0";
-            // 
-            // T_rUpDown
-            // 
-            this.T_rUpDown.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::PRUI.Properties.Settings.Default, "f3", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.T_rUpDown.Items.Add("10");
-            this.T_rUpDown.Items.Add("9");
-            this.T_rUpDown.Items.Add("8");
-            this.T_rUpDown.Items.Add("7");
-            this.T_rUpDown.Items.Add("6");
-            this.T_rUpDown.Items.Add("5");
-            this.T_rUpDown.Items.Add("4");
-            this.T_rUpDown.Items.Add("3");
-            this.T_rUpDown.Items.Add("2");
-            this.T_rUpDown.Items.Add("1");
-            this.T_rUpDown.Items.Add("0");
-            this.T_rUpDown.Location = new System.Drawing.Point(17, 80);
-            this.T_rUpDown.Name = "T_rUpDown";
-            this.T_rUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f3;
-            this.T_rUpDown.Size = new System.Drawing.Size(120, 20);
-            this.T_rUpDown.TabIndex = 3;
-            this.T_rUpDown.Text = "0";
             // 
             // label50
             // 
@@ -2141,7 +2146,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(14, 291);
+            this.label43.Location = new System.Drawing.Point(13, 242);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(310, 13);
             this.label43.TabIndex = 2;
@@ -2159,7 +2164,7 @@
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(14, 234);
+            this.label42.Location = new System.Drawing.Point(13, 185);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(234, 13);
             this.label42.TabIndex = 2;
@@ -2177,7 +2182,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(14, 172);
+            this.label41.Location = new System.Drawing.Point(13, 123);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(230, 13);
             this.label41.TabIndex = 2;
@@ -2195,7 +2200,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(14, 119);
+            this.label40.Location = new System.Drawing.Point(13, 70);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(325, 13);
             this.label40.TabIndex = 2;
@@ -2204,7 +2209,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(14, 401);
+            this.label45.Location = new System.Drawing.Point(13, 352);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(188, 13);
             this.label45.TabIndex = 2;
@@ -2213,7 +2218,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(14, 64);
+            this.label39.Location = new System.Drawing.Point(13, 15);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(290, 13);
             this.label39.TabIndex = 2;
@@ -2222,93 +2227,27 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(14, 350);
+            this.label44.Location = new System.Drawing.Point(13, 301);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(281, 13);
             this.label44.TabIndex = 2;
             this.label44.Text = "Природные и антропогенные чрезвычайные ситуации";
             // 
-            // label38
+            // T_rTextBox
             // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(14, 15);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(68, 13);
-            this.label38.TabIndex = 2;
-            this.label38.Text = "Доходность";
+            this.T_rTextBox.Location = new System.Drawing.Point(16, 30);
+            this.T_rTextBox.Name = "T_rTextBox";
+            this.T_rTextBox.Size = new System.Drawing.Size(120, 20);
+            this.T_rTextBox.TabIndex = 17;
+            this.T_rTextBox.Text = "0";
             // 
-            // RUpDown
+            // T_lTextBox
             // 
-            this.RUpDown.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::PRUI.Properties.Settings.Default, "f2", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.RUpDown.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.RUpDown.Items.Add("10");
-            this.RUpDown.Items.Add("9");
-            this.RUpDown.Items.Add("8");
-            this.RUpDown.Items.Add("7");
-            this.RUpDown.Items.Add("6");
-            this.RUpDown.Items.Add("5");
-            this.RUpDown.Items.Add("4");
-            this.RUpDown.Items.Add("3");
-            this.RUpDown.Items.Add("2");
-            this.RUpDown.Items.Add("1");
-            this.RUpDown.Items.Add("0");
-            this.RUpDown.Location = new System.Drawing.Point(17, 31);
-            this.RUpDown.Name = "RUpDown";
-            this.RUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f2;
-            this.RUpDown.Size = new System.Drawing.Size(120, 20);
-            this.RUpDown.TabIndex = 1;
-            this.RUpDown.Text = "0";
-            // 
-            // NoRiskTextBox
-            // 
-            this.NoRiskTextBox.Location = new System.Drawing.Point(435, 307);
-            this.NoRiskTextBox.Name = "NoRiskTextBox";
-            this.NoRiskTextBox.Size = new System.Drawing.Size(120, 20);
-            this.NoRiskTextBox.TabIndex = 15;
-            this.NoRiskTextBox.Text = "0";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(432, 291);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(129, 13);
-            this.label51.TabIndex = 16;
-            this.label51.Text = "Безрисковая ставка, % ";
-            // 
-            // InvestManageTextBox
-            // 
-            this.InvestManageTextBox.Location = new System.Drawing.Point(435, 365);
-            this.InvestManageTextBox.Name = "InvestManageTextBox";
-            this.InvestManageTextBox.Size = new System.Drawing.Size(120, 20);
-            this.InvestManageTextBox.TabIndex = 15;
-            this.InvestManageTextBox.Text = "1";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(432, 349);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(165, 13);
-            this.label52.TabIndex = 16;
-            this.label52.Text = "Инвестиционный менеджмент ";
-            // 
-            // K_elTextBox
-            // 
-            this.K_elTextBox.Location = new System.Drawing.Point(435, 416);
-            this.K_elTextBox.Name = "K_elTextBox";
-            this.K_elTextBox.Size = new System.Drawing.Size(120, 20);
-            this.K_elTextBox.TabIndex = 15;
-            this.K_elTextBox.Text = "0,76";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(432, 400);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(225, 13);
-            this.label53.TabIndex = 16;
-            this.label53.Text = "Коэффициент, учитывающий эластичность";
+            this.T_lTextBox.Location = new System.Drawing.Point(16, 86);
+            this.T_lTextBox.Name = "T_lTextBox";
+            this.T_lTextBox.Size = new System.Drawing.Size(120, 20);
+            this.T_lTextBox.TabIndex = 17;
+            this.T_lTextBox.Text = "0";
             // 
             // ApartmentForm
             // 
@@ -2515,8 +2454,6 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox FlatsOnFloorTextBox;
         private System.Windows.Forms.TabPage DiscountPage;
-        private System.Windows.Forms.DomainUpDown RUpDown;
-        private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label48;
@@ -2539,13 +2476,13 @@
         private System.Windows.Forms.DomainUpDown LowChangeUpDown;
         private System.Windows.Forms.DomainUpDown ConcurentsUpUpDown;
         private System.Windows.Forms.DomainUpDown EconSituationDownUpDown;
-        private System.Windows.Forms.DomainUpDown T_lUpDown;
-        private System.Windows.Forms.DomainUpDown T_rUpDown;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.TextBox K_elTextBox;
         private System.Windows.Forms.TextBox InvestManageTextBox;
         private System.Windows.Forms.TextBox NoRiskTextBox;
+        private System.Windows.Forms.TextBox T_lTextBox;
+        private System.Windows.Forms.TextBox T_rTextBox;
     }
 }

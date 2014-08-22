@@ -261,10 +261,10 @@ namespace PRDocument
                 report.Apartment.Object.EconSituationDown + report.Apartment.Object.ExtremalSituation +
                 report.Apartment.Object.FinanceChecking + report.Apartment.Object.LowChange +
                 report.Apartment.Object.NoRentalMoney + report.Apartment.Object.NotCorrect);
-            r12 = report.Apartment.Object.NoRisk + risks + report.Apartment.Object.NoRisk / 12 + report.Apartment.Object.InvestManage;
+            r12 = report.Apartment.Object.NoRisk + risks/10 + (report.Apartment.Object.NoRisk / 12)*report.Apartment.Object.T_r + report.Apartment.Object.InvestManage;
             r = r12 / 12;
             tm = report.Apartment.Object.T_r - report.Apartment.Object.T_l;
-            k_sdv = Convert.ToSingle(1 / (System.Math.Pow((1 + r) , tm)));
+            k_sdv = Convert.ToSingle(1 / (System.Math.Pow((1 + r/100) , tm)));
 
 
             //Массив квартир сравнения
@@ -692,7 +692,7 @@ namespace PRDocument
             bookmarks_report[415] = "extremalSituations";
             bookmarks_report[416] = "AcceleratedWear";
             bookmarks_report[417] = "NoRental";
-            bookmarks_report[418] = "Management";
+            bookmarks_report[418] = "Managment";
             bookmarks_report[419] = "Criminal";
             bookmarks_report[420] = "FinChecks";
             bookmarks_report[421] = "NotCorrect";
@@ -1157,20 +1157,20 @@ namespace PRDocument
             texts_report[419] = Convert.ToString(report.Apartment.Object.Criminal);
             texts_report[420] = Convert.ToString(report.Apartment.Object.FinanceChecking);
             texts_report[421] = Convert.ToString(report.Apartment.Object.NotCorrect);
-            texts_report[422] = Convert.ToString(risks);
-            texts_report[423] = Convert.ToString(risks / 10);
+            texts_report[422] = Convert.ToString(Convert.ToDecimal(risks));
+            texts_report[423] = Convert.ToString(Convert.ToDecimal(risks / 10));
             texts_report[424] = Convert.ToString(report.Apartment.Object.NoRisk);
-            texts_report[425] = Convert.ToString(risks / 10);
-            texts_report[426] = Convert.ToString(report.Apartment.Object.NoRisk / 12);
+            texts_report[425] = Convert.ToString(Convert.ToDecimal(risks / 10));
+            texts_report[426] = Convert.ToString(report.Apartment.Object.NoRisk / 4);
             texts_report[427] = Convert.ToString(report.Apartment.Object.InvestManage);
-            texts_report[428] = Convert.ToString(r);
+            texts_report[428] = Convert.ToString(Convert.ToDecimal(r12));
             texts_report[429] = Convert.ToString(report.Apartment.Object.K_el);
             texts_report[430] = Convert.ToString(report.Apartment.Object.Price);
-            texts_report[431] = Convert.ToString(r);
-            texts_report[432] = Convert.ToString(r / 12);
+            texts_report[431] = Convert.ToString(Convert.ToDecimal(r12));
+            texts_report[432] = Convert.ToString(Convert.ToDecimal(r12 / 12));
             texts_report[433] = Convert.ToString(report.Apartment.Object.T_l);
             texts_report[434] = Convert.ToString(report.Apartment.Object.T_r);
-            texts_report[435] = Convert.ToString(k_sdv);
+            texts_report[435] = Convert.ToString(Convert.ToDecimal(k_sdv));
             texts_report[436] = Convert.ToString(report.Apartment.Object.K_el);
 
 

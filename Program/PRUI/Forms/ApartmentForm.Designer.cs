@@ -188,6 +188,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.otherTabControlPage = new System.Windows.Forms.TabPage();
             this.DiscountPage = new System.Windows.Forms.TabPage();
+            this.NotCorrectUpDown = new System.Windows.Forms.DomainUpDown();
+            this.CriminalUpDown = new System.Windows.Forms.DomainUpDown();
+            this.BadManagmentUpDown = new System.Windows.Forms.DomainUpDown();
+            this.NoRentalMoneyUpDown = new System.Windows.Forms.DomainUpDown();
+            this.FinanceCheckingUpDown = new System.Windows.Forms.DomainUpDown();
+            this.AcceleratedWearUpDown = new System.Windows.Forms.DomainUpDown();
+            this.ExtremalSituationUpDown = new System.Windows.Forms.DomainUpDown();
+            this.LowChangeUpDown = new System.Windows.Forms.DomainUpDown();
+            this.ConcurentsUpUpDown = new System.Windows.Forms.DomainUpDown();
+            this.EconSituationDownUpDown = new System.Windows.Forms.DomainUpDown();
+            this.T_lUpDown = new System.Windows.Forms.DomainUpDown();
+            this.T_rUpDown = new System.Windows.Forms.DomainUpDown();
             this.label50 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -201,19 +213,13 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.NotCorrectUpDown = new System.Windows.Forms.DomainUpDown();
-            this.CriminalUpDown = new System.Windows.Forms.DomainUpDown();
-            this.BadManagmentUpDown = new System.Windows.Forms.DomainUpDown();
-            this.NoRentalMoneyUpDown = new System.Windows.Forms.DomainUpDown();
-            this.FinanceCheckingUpDown = new System.Windows.Forms.DomainUpDown();
-            this.AcceleratedWearUpDown = new System.Windows.Forms.DomainUpDown();
-            this.ExtremalSituationUpDown = new System.Windows.Forms.DomainUpDown();
-            this.LowChangeUpDown = new System.Windows.Forms.DomainUpDown();
-            this.ConcurentsUpUpDown = new System.Windows.Forms.DomainUpDown();
-            this.EconSituationDownUpDown = new System.Windows.Forms.DomainUpDown();
-            this.T_lUpDown = new System.Windows.Forms.DomainUpDown();
-            this.T_rUpDown = new System.Windows.Forms.DomainUpDown();
             this.RUpDown = new System.Windows.Forms.DomainUpDown();
+            this.NoRiskTextBox = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.InvestManageTextBox = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.K_elTextBox = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -1725,6 +1731,7 @@
             // 
             // DiscountTextBox
             // 
+            this.DiscountTextBox.Enabled = false;
             this.DiscountTextBox.Location = new System.Drawing.Point(149, 250);
             this.DiscountTextBox.Name = "DiscountTextBox";
             this.DiscountTextBox.Size = new System.Drawing.Size(122, 20);
@@ -1741,6 +1748,7 @@
             // 
             // PriceTextBox
             // 
+            this.PriceTextBox.Enabled = false;
             this.PriceTextBox.Location = new System.Drawing.Point(10, 250);
             this.PriceTextBox.Name = "PriceTextBox";
             this.PriceTextBox.Size = new System.Drawing.Size(111, 20);
@@ -1820,6 +1828,12 @@
             // 
             // DiscountPage
             // 
+            this.DiscountPage.Controls.Add(this.label53);
+            this.DiscountPage.Controls.Add(this.label52);
+            this.DiscountPage.Controls.Add(this.label51);
+            this.DiscountPage.Controls.Add(this.K_elTextBox);
+            this.DiscountPage.Controls.Add(this.InvestManageTextBox);
+            this.DiscountPage.Controls.Add(this.NoRiskTextBox);
             this.DiscountPage.Controls.Add(this.NotCorrectUpDown);
             this.DiscountPage.Controls.Add(this.CriminalUpDown);
             this.DiscountPage.Controls.Add(this.BadManagmentUpDown);
@@ -1854,123 +1868,6 @@
             this.DiscountPage.Text = "Ликвидационная уценка";
             this.DiscountPage.UseVisualStyleBackColor = true;
             // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(436, 291);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(245, 13);
-            this.label50.TabIndex = 2;
-            this.label50.Text = "Неправильное оформление договоров аренды";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(436, 234);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(125, 13);
-            this.label49.TabIndex = 2;
-            this.label49.Text = "Финансовые проверки";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(14, 291);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(310, 13);
-            this.label43.TabIndex = 2;
-            this.label43.Text = "Изменение федерального или местного законодательства";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(436, 172);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(137, 13);
-            this.label48.TabIndex = 2;
-            this.label48.Text = "Криминогенные факторы";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(14, 234);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(234, 13);
-            this.label42.TabIndex = 2;
-            this.label42.Text = "Увеличение числа конкурирующих объектов";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(434, 119);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(160, 13);
-            this.label47.TabIndex = 2;
-            this.label47.Text = "Неэффективный менеджмент";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(14, 172);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(230, 13);
-            this.label41.TabIndex = 2;
-            this.label41.Text = "Ухудшение общей экономической ситуации";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(434, 64);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(177, 13);
-            this.label46.TabIndex = 2;
-            this.label46.Text = "Неполучение арендных платежей";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(14, 119);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(299, 13);
-            this.label40.TabIndex = 2;
-            this.label40.Text = "Срок реализации объекта по ликвидационной стоимости";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(434, 15);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(188, 13);
-            this.label45.TabIndex = 2;
-            this.label45.Text = "Ускоренный износ объекта оценки";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(14, 64);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(264, 13);
-            this.label39.TabIndex = 2;
-            this.label39.Text = "Срок реализации объекта по рыночной стоимости";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(14, 350);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(281, 13);
-            this.label44.TabIndex = 2;
-            this.label44.Text = "Природные и антропогенные чрезвычайные ситуации";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(14, 15);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(68, 13);
-            this.label38.TabIndex = 2;
-            this.label38.Text = "Доходность";
-            // 
             // NotCorrectUpDown
             // 
             this.NotCorrectUpDown.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::PRUI.Properties.Settings.Default, "f14", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -1985,7 +1882,7 @@
             this.NotCorrectUpDown.Items.Add("2");
             this.NotCorrectUpDown.Items.Add("1");
             this.NotCorrectUpDown.Items.Add("0");
-            this.NotCorrectUpDown.Location = new System.Drawing.Point(437, 307);
+            this.NotCorrectUpDown.Location = new System.Drawing.Point(435, 258);
             this.NotCorrectUpDown.Name = "NotCorrectUpDown";
             this.NotCorrectUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f14;
             this.NotCorrectUpDown.Size = new System.Drawing.Size(120, 20);
@@ -2006,7 +1903,7 @@
             this.CriminalUpDown.Items.Add("2");
             this.CriminalUpDown.Items.Add("1");
             this.CriminalUpDown.Items.Add("0");
-            this.CriminalUpDown.Location = new System.Drawing.Point(437, 188);
+            this.CriminalUpDown.Location = new System.Drawing.Point(435, 139);
             this.CriminalUpDown.Name = "CriminalUpDown";
             this.CriminalUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f13;
             this.CriminalUpDown.Size = new System.Drawing.Size(120, 20);
@@ -2027,7 +1924,7 @@
             this.BadManagmentUpDown.Items.Add("2");
             this.BadManagmentUpDown.Items.Add("1");
             this.BadManagmentUpDown.Items.Add("0");
-            this.BadManagmentUpDown.Location = new System.Drawing.Point(437, 135);
+            this.BadManagmentUpDown.Location = new System.Drawing.Point(435, 86);
             this.BadManagmentUpDown.Name = "BadManagmentUpDown";
             this.BadManagmentUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f12;
             this.BadManagmentUpDown.Size = new System.Drawing.Size(120, 20);
@@ -2048,7 +1945,7 @@
             this.NoRentalMoneyUpDown.Items.Add("2");
             this.NoRentalMoneyUpDown.Items.Add("1");
             this.NoRentalMoneyUpDown.Items.Add("0");
-            this.NoRentalMoneyUpDown.Location = new System.Drawing.Point(437, 80);
+            this.NoRentalMoneyUpDown.Location = new System.Drawing.Point(435, 31);
             this.NoRentalMoneyUpDown.Name = "NoRentalMoneyUpDown";
             this.NoRentalMoneyUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f11;
             this.NoRentalMoneyUpDown.Size = new System.Drawing.Size(120, 20);
@@ -2069,7 +1966,7 @@
             this.FinanceCheckingUpDown.Items.Add("2");
             this.FinanceCheckingUpDown.Items.Add("1");
             this.FinanceCheckingUpDown.Items.Add("0");
-            this.FinanceCheckingUpDown.Location = new System.Drawing.Point(437, 250);
+            this.FinanceCheckingUpDown.Location = new System.Drawing.Point(435, 201);
             this.FinanceCheckingUpDown.Name = "FinanceCheckingUpDown";
             this.FinanceCheckingUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f10;
             this.FinanceCheckingUpDown.Size = new System.Drawing.Size(120, 20);
@@ -2090,7 +1987,7 @@
             this.AcceleratedWearUpDown.Items.Add("2");
             this.AcceleratedWearUpDown.Items.Add("1");
             this.AcceleratedWearUpDown.Items.Add("0");
-            this.AcceleratedWearUpDown.Location = new System.Drawing.Point(437, 31);
+            this.AcceleratedWearUpDown.Location = new System.Drawing.Point(17, 417);
             this.AcceleratedWearUpDown.Name = "AcceleratedWearUpDown";
             this.AcceleratedWearUpDown.SelectedIndex = global::PRUI.Properties.Settings.Default.f9;
             this.AcceleratedWearUpDown.Size = new System.Drawing.Size(120, 20);
@@ -2223,6 +2120,123 @@
             this.T_rUpDown.TabIndex = 3;
             this.T_rUpDown.Text = "0";
             // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(434, 242);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(245, 13);
+            this.label50.TabIndex = 2;
+            this.label50.Text = "Неправильное оформление договоров аренды";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(434, 185);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(125, 13);
+            this.label49.TabIndex = 2;
+            this.label49.Text = "Финансовые проверки";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(14, 291);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(310, 13);
+            this.label43.TabIndex = 2;
+            this.label43.Text = "Изменение федерального или местного законодательства";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(434, 123);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(137, 13);
+            this.label48.TabIndex = 2;
+            this.label48.Text = "Криминогенные факторы";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(14, 234);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(234, 13);
+            this.label42.TabIndex = 2;
+            this.label42.Text = "Увеличение числа конкурирующих объектов";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(432, 70);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(160, 13);
+            this.label47.TabIndex = 2;
+            this.label47.Text = "Неэффективный менеджмент";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(14, 172);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(230, 13);
+            this.label41.TabIndex = 2;
+            this.label41.Text = "Ухудшение общей экономической ситуации";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(432, 15);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(177, 13);
+            this.label46.TabIndex = 2;
+            this.label46.Text = "Неполучение арендных платежей";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(14, 119);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(325, 13);
+            this.label40.TabIndex = 2;
+            this.label40.Text = "Срок реализации объекта по ликвидационной стоимости, мес";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(14, 401);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(188, 13);
+            this.label45.TabIndex = 2;
+            this.label45.Text = "Ускоренный износ объекта оценки";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(14, 64);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(290, 13);
+            this.label39.TabIndex = 2;
+            this.label39.Text = "Срок реализации объекта по рыночной стоимости, мес";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(14, 350);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(281, 13);
+            this.label44.TabIndex = 2;
+            this.label44.Text = "Природные и антропогенные чрезвычайные ситуации";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(14, 15);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(68, 13);
+            this.label38.TabIndex = 2;
+            this.label38.Text = "Доходность";
+            // 
             // RUpDown
             // 
             this.RUpDown.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", global::PRUI.Properties.Settings.Default, "f2", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -2244,6 +2258,57 @@
             this.RUpDown.Size = new System.Drawing.Size(120, 20);
             this.RUpDown.TabIndex = 1;
             this.RUpDown.Text = "0";
+            // 
+            // NoRiskTextBox
+            // 
+            this.NoRiskTextBox.Location = new System.Drawing.Point(435, 307);
+            this.NoRiskTextBox.Name = "NoRiskTextBox";
+            this.NoRiskTextBox.Size = new System.Drawing.Size(120, 20);
+            this.NoRiskTextBox.TabIndex = 15;
+            this.NoRiskTextBox.Text = "0";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(432, 291);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(129, 13);
+            this.label51.TabIndex = 16;
+            this.label51.Text = "Безрисковая ставка, % ";
+            // 
+            // InvestManageTextBox
+            // 
+            this.InvestManageTextBox.Location = new System.Drawing.Point(435, 365);
+            this.InvestManageTextBox.Name = "InvestManageTextBox";
+            this.InvestManageTextBox.Size = new System.Drawing.Size(120, 20);
+            this.InvestManageTextBox.TabIndex = 15;
+            this.InvestManageTextBox.Text = "1";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(432, 349);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(165, 13);
+            this.label52.TabIndex = 16;
+            this.label52.Text = "Инвестиционный менеджмент ";
+            // 
+            // K_elTextBox
+            // 
+            this.K_elTextBox.Location = new System.Drawing.Point(435, 416);
+            this.K_elTextBox.Name = "K_elTextBox";
+            this.K_elTextBox.Size = new System.Drawing.Size(120, 20);
+            this.K_elTextBox.TabIndex = 15;
+            this.K_elTextBox.Text = "0,76";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(432, 400);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(225, 13);
+            this.label53.TabIndex = 16;
+            this.label53.Text = "Коэффициент, учитывающий эластичность";
             // 
             // ApartmentForm
             // 
@@ -2476,5 +2541,11 @@
         private System.Windows.Forms.DomainUpDown EconSituationDownUpDown;
         private System.Windows.Forms.DomainUpDown T_lUpDown;
         private System.Windows.Forms.DomainUpDown T_rUpDown;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.TextBox K_elTextBox;
+        private System.Windows.Forms.TextBox InvestManageTextBox;
+        private System.Windows.Forms.TextBox NoRiskTextBox;
     }
 }

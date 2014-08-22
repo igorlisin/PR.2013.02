@@ -1177,6 +1177,50 @@ namespace PRUI.Forms
             }
         }
 
+        /// <summary>
+        /// Свойство.   Безрисковая ставка
+        /// </summary>
+        private float NoRiskPrc
+        {
+            get
+            {
+                return Convert.ToSingle(NoRiskTextBox.Text);
+            }
+            set
+            {
+                NoRiskTextBox.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство.  Инвестиционный менеджмент
+        /// </summary>
+        private float InvestManage
+        {
+            get
+            {
+                return Convert.ToSingle(InvestManageTextBox.Text);
+            }
+            set
+            {
+                InvestManageTextBox.Text = Convert.ToString(value);
+            }
+        }
+
+        /// <summary>
+        /// Свойство.  Коэффициент, учитывающий эластичность
+        /// </summary>
+        private float K_el
+        {
+            get
+            {
+                return Convert.ToSingle(K_elTextBox.Text);
+            }
+            set
+            {
+                K_elTextBox.Text = Convert.ToString(value);
+            }
+        }
 
         #region Apartment man picture
 
@@ -1424,6 +1468,22 @@ namespace PRUI.Forms
             ObjectPurpose = "Определение рыночной и ликвидационной стоимости";
             ObjectDest = "Обеспечение по ипотечному кредиту";
             ObjectDocuments = "";
+            R = 0;
+            T_r = 0;
+            T_l = 0;
+            EconSituationDown = 0;
+            ConcurentsUp = 0;
+            LowChange = 0;
+            ExtremalSituation = 0;
+            AcceleratedWear = 0;
+            NoRentalMoney = 0;
+            BadManagment = 0;
+            Criminal = 0;
+            FinanceChecking = 0;
+            NotCorrect = 0;
+            NoRiskPrc = 0;
+            InvestManage = 0;
+            K_el = 0.76f;
 
             ClearWashroomTypeList();                                                        // Очистить список "Тип санузлов"
             FillWashroomTypeList();                                                         // Заполнить данными список "Тип санузлов"
@@ -1825,12 +1885,18 @@ namespace PRUI.Forms
             LowChange = obj.LowChange;
             ExtremalSituation = obj.ExtremalSituation;
             AcceleratedWear = obj.AcceleratedWear;
-            NoRentalMoney = obj.AcceleratedWear;
+            NoRentalMoney = obj.NoRentalMoney;
             BadManagment = obj.BadManagment;
             Criminal = obj.Criminal;
             FinanceChecking = obj.Criminal;
             NotCorrect = obj.NotCorrect;
-            
+            NoRiskPrc = obj.NoRisk;
+            InvestManage = obj.InvestManage;
+            K_el = obj.K_el;
+
+   //         ObjectDiscount = (obj.EconSituationDown + obj.ConcurentsUp + obj.LowChange +
+   //                           obj.ExtremalSituation + obj.AcceleratedWear +  obj.NoRentalMoney +
+   //                           obj.BadManagment + obj.Criminal + obj.NotCorrect) / 10;       
 
         }
 
@@ -1859,7 +1925,7 @@ namespace PRUI.Forms
             obj.Holders = ObjectHolders;
             obj.Price = ObjectPrice;
             obj.Dollar = ObjectDollar;
-            obj.Discount = ObjectDiscount;
+            
             obj.PurposeOfTheEvaluation = ObjectPurpose;
             obj.DestOfTheEvaluation = ObjectDest;
             obj.Documents = ObjectDocuments;
@@ -1877,6 +1943,11 @@ namespace PRUI.Forms
            obj.Criminal = Criminal;
            obj.Criminal = FinanceChecking;
            obj.NotCorrect = NotCorrect;
+           obj.NoRisk = NoRiskPrc;
+           obj.InvestManage = InvestManage;
+           obj.K_el = K_el;
+
+           obj.Discount = ObjectDiscount;
 
             if (_objectAfterRelinking == null)  //Если объекта еще нет 
             {

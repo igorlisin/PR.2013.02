@@ -50,7 +50,7 @@ namespace PRInterfaces.Interfaces
         float Price { get; set; }
 
         /// <summary>
-        /// Свойство. Задает и возвращает скидку по ликвидационной стоимости
+        /// Свойство. Задает и возвращает ликвидационную стоимость
         /// </summary>
         float Discount { get; set; }
 
@@ -133,7 +133,21 @@ namespace PRInterfaces.Interfaces
         /// Свойство. Неправильное оформление договоров аренды
         /// </summary>
         float NotCorrect { get; set; }
-        
+
+        /// <summary>
+        /// Свойство. Безрисковая ставка
+        /// </summary>
+        float NoRisk { get; set; }
+
+        /// <summary>
+        /// Свойство. Инвестиционный менеджмент
+        /// </summary>
+        float InvestManage { get; set; }
+
+        /// <summary>
+        /// Свойство. Коэффициент, учитывающий эластичность
+        /// </summary>
+        float K_el { get; set; }
 
     }
 }

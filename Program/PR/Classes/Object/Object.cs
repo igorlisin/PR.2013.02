@@ -135,6 +135,21 @@ namespace PR.Classes
             /// </summary>
             private float _notCorrect ;
 
+            /// <summary>
+            /// Поле. Безрисковая ставка
+            /// </summary>
+            private float _noRisk { get; set; }
+
+            /// <summary>
+            /// Поле. Инвестиционный менеджмент
+            /// </summary>
+            private float _investManage { get; set; }
+
+            /// <summary>
+            /// Поле. Коэффициент, учитывающий эластичность
+            /// </summary>
+            private float _k_el { get; set; }
+
             #endregion
 
             #region Properties
@@ -487,6 +502,51 @@ namespace PR.Classes
                 set
                 {
                     _notCorrect = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Безрисковая ставка
+            /// </summary>
+            public float NoRisk
+            {
+                get
+                {
+                    return (_noRisk);
+                }
+                set
+                {
+                    _noRisk = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Инвестиционный менеджмент
+            /// </summary>
+            public float InvestManage
+            {
+                get
+                {
+                    return (_investManage);
+                }
+                set
+                {
+                    _investManage = value;
+                }
+            }
+
+            /// <summary>
+            /// Свойство. Коэффициент, учитывающий эластичность
+            /// </summary>
+            public float K_el
+            {
+                get
+                {
+                    return (_k_el);
+                }
+                set
+                {
+                    _k_el = value;
                 }
             }
 

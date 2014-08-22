@@ -61,8 +61,8 @@ namespace PRDocument
             string[] bookmarks_conclusion = new string[50];                                                                       // Массив закладок
             string[] texts_conclusion = new string[50];                                                                           // Массив вставляемых вместо закладок строк
 
-            string[] bookmarks_report = new string[412];                                                                       // Массив закладок
-            string[] texts_report = new string[412];                                                                           // Массив вставляемых вместо закладок строк
+            string[] bookmarks_report = new string[437];                                                                       // Массив закладок
+            string[] texts_report = new string[437];                                                                           // Массив вставляемых вместо закладок строк
 
             string client_in_padeg = null;      //склонение ФИО па падежам
             int rod = 0;
@@ -140,9 +140,9 @@ namespace PRDocument
             //Сумма в долларах прописью без указания валюты 
             string writePriceDollar = Сумма.Пропись(report.Apartment.Object.Price / report.Apartment.Object.Dollar, empty);
             //Сумма с уценкой прописью без указания валюты
-            string writePriceDiscount = Сумма.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount), empty);
+            string writePriceDiscount = Сумма.Пропись(report.Apartment.Object.Discount, empty);
             //Сумма с уценкой прописью в долларах без указания валюты
-            string witePriceDiscountDollar = Сумма.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar, empty);
+            string witePriceDiscountDollar = Сумма.Пропись(report.Apartment.Object.Discount / report.Apartment.Object.Dollar, empty);
 
             //Массив замен
             texts_conclusion[0] = Convert.ToString(report.Apartment.RoomNumber);
@@ -155,9 +155,9 @@ namespace PRDocument
             texts_conclusion[7] = report.DateOfContract.ToLongDateString();
             texts_conclusion[8] = report.DateOfContract.ToLongDateString();
             texts_conclusion[9] = report.Apartment.Object.DestOfTheEvaluation;
-            texts_conclusion[10] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);//сумма с уценкой вдолларах
+            texts_conclusion[10] = Convert.ToString(report.Apartment.Object.Discount / report.Apartment.Object.Dollar);//сумма с уценкой вдолларах
             texts_conclusion[11] = witePriceDiscountDollar; 
-            texts_conclusion[12] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));//сумма с уценкой
+            texts_conclusion[12] = Convert.ToString(report.Apartment.Object.Discount);//сумма с уценкой
             texts_conclusion[13] = writePriceDiscount;
             texts_conclusion[14] = Convert.ToString(report.Apartment.Object.Dollar);
             texts_conclusion[15] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);//сумма в долларах
@@ -246,9 +246,26 @@ namespace PRDocument
             //Сумма в долларах прописью без указания валюты 
             string writePriceDollar = Сумма.Пропись(report.Apartment.Object.Price / report.Apartment.Object.Dollar, empty);
             //Сумма с уценкой прописью без указания валюты
-            string writePriceDiscount = Сумма.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount), empty);
+            string writePriceDiscount = Сумма.Пропись(report.Apartment.Object.Discount, empty);
             //Сумма с уценкой прописью в долларах без указания валюты
-            string witePriceDiscountDollar = Сумма.Пропись(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar, empty);
+            string witePriceDiscountDollar = Сумма.Пропись(report.Apartment.Object.Discount / report.Apartment.Object.Dollar, empty);
+
+            float k_sdv; //коэффициент стоимости денег во времени
+            float r12;//требуемая доходность инвестирования в объект оценки в год
+            double r;//требуемая доходность инвестирования в объект оценки 
+            float risks;//коэффициент по рискам
+            double tm; //разница во времени при продаже с рыночной ценой и ликвидационной
+
+            risks = (report.Apartment.Object.AcceleratedWear + report.Apartment.Object.BadManagment +
+                report.Apartment.Object.ConcurentsUp + report.Apartment.Object.Criminal +
+                report.Apartment.Object.EconSituationDown + report.Apartment.Object.ExtremalSituation +
+                report.Apartment.Object.FinanceChecking + report.Apartment.Object.LowChange +
+                report.Apartment.Object.NoRentalMoney + report.Apartment.Object.NotCorrect);
+            r12 = report.Apartment.Object.NoRisk + risks + report.Apartment.Object.NoRisk / 12 + report.Apartment.Object.InvestManage;
+            r = r12 / 12;
+            tm = report.Apartment.Object.T_r - report.Apartment.Object.T_l;
+            k_sdv = Convert.ToSingle(1 / (System.Math.Pow((1 + r) , tm)));
+
 
             //Массив квартир сравнения
             IComparisonApart[] ca;  
@@ -669,6 +686,31 @@ namespace PRDocument
             bookmarks_report[410] = "k_Price4";
             bookmarks_report[411] = "k_Price5";
 
+            bookmarks_report[412] = "econSituation";
+            bookmarks_report[413] = "concurUp";
+            bookmarks_report[414] = "LowsChange";
+            bookmarks_report[415] = "extremalSituations";
+            bookmarks_report[416] = "AcceleratedWear";
+            bookmarks_report[417] = "NoRental";
+            bookmarks_report[418] = "Management";
+            bookmarks_report[419] = "Criminal";
+            bookmarks_report[420] = "FinChecks";
+            bookmarks_report[421] = "NotCorrect";
+            bookmarks_report[422] = "RiskSumm";
+            bookmarks_report[423] = "RiskPrc";
+            bookmarks_report[424] = "NoRisk";
+            bookmarks_report[425] = "RiskPrc2";
+            bookmarks_report[426] = "NoRisk1m";
+            bookmarks_report[427] = "InvestManag";
+            bookmarks_report[428] = "InvestSalary";
+            bookmarks_report[429] = "K_el";
+            bookmarks_report[430] = "price11";
+            bookmarks_report[431] = "InvestSalary2";
+            bookmarks_report[432] = "InvestSalary1m";
+            bookmarks_report[433] = "t_l";
+            bookmarks_report[434] = "t_r";
+            bookmarks_report[435] = "K_sdv";
+            bookmarks_report[436] = "K_el2";
 
 
             FillPicturesArray(report);
@@ -747,8 +789,8 @@ namespace PRDocument
             texts_report[66] = Convert.ToString(report.Apartment.Object.Price); 
             texts_report[67] = report.Apartment.Object.DestOfTheEvaluation;
             texts_report[68] = "имеются";
-            texts_report[69] = Convert.ToString(report.Apartment.Object.Discount * 100) + "%";
-            texts_report[70] = Convert.ToString(report.Apartment.Object.Discount * 100) + "%";
+            texts_report[69] = Convert.ToString(report.Apartment.Object.Discount / report.Apartment.Object.Price * 100) + "%";
+            texts_report[70] = Convert.ToString(report.Apartment.Object.Discount / report.Apartment.Object.Price * 100) + "%";
             texts_report[71] = report.Apartment.Home.District.Name;
             texts_report[72] = "серия " +
                                         report.Client.Man.Document.Series + " номер " +
@@ -850,20 +892,20 @@ namespace PRDocument
             texts_report[163] = Convert.ToString(report.Apartment.Object.Price);
             texts_report[164] = Convert.ToString(report.Apartment.Object.Price);
             texts_report[165] = writePrice;     //сумма прописью
-            texts_report[166] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));       // Вычисление ликвидационной стоимости
-            texts_report[167] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
-            texts_report[168] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
-            texts_report[169] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
-            texts_report[170] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
-            texts_report[171] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
-            texts_report[172] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount));
+            texts_report[166] = Convert.ToString(report.Apartment.Object.Discount);       // Вычисление ликвидационной стоимости
+            texts_report[167] = Convert.ToString(report.Apartment.Object.Discount);
+            texts_report[168] = Convert.ToString(report.Apartment.Object.Discount);
+            texts_report[169] = Convert.ToString(report.Apartment.Object.Discount);
+            texts_report[170] = Convert.ToString(report.Apartment.Object.Discount);
+            texts_report[171] = Convert.ToString(report.Apartment.Object.Discount);
+            texts_report[172] = Convert.ToString(report.Apartment.Object.Discount);
             texts_report[173] = writePriceDiscount; //Сумма с уценкой прописью
             texts_report[174] = writePriceDiscount;
-            texts_report[175] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);  // Вычисление ликвидационной стоимости в долларах
-            texts_report[176] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
-            texts_report[177] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
-            texts_report[178] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
-            texts_report[179] = Convert.ToString(report.Apartment.Object.Price * (1 - report.Apartment.Object.Discount) / report.Apartment.Object.Dollar);
+            texts_report[175] = Convert.ToString(report.Apartment.Object.Discount / report.Apartment.Object.Dollar);  // Вычисление ликвидационной стоимости в долларах
+            texts_report[176] = Convert.ToString(report.Apartment.Object.Discount / report.Apartment.Object.Dollar);
+            texts_report[177] = Convert.ToString(report.Apartment.Object.Discount / report.Apartment.Object.Dollar);
+            texts_report[178] = Convert.ToString(report.Apartment.Object.Discount / report.Apartment.Object.Dollar);
+            texts_report[179] = Convert.ToString(report.Apartment.Object.Discount / report.Apartment.Object.Dollar);
             texts_report[180] = witePriceDiscountDollar; //Сумма с уценкой прописью в долларах
             texts_report[181] = writePriceDiscount; //Сумма с уценкой прописью
             texts_report[182] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);       // Вычисление стоимости в долларах
@@ -1104,6 +1146,33 @@ namespace PRDocument
             texts_report[409] = Convert.ToString(ca[2].price * 1000);
             texts_report[410] = Convert.ToString(ca[3].price * 1000);
             texts_report[411] = Convert.ToString(ca[4].price * 1000);
+
+            texts_report[412] = Convert.ToString(report.Apartment.Object.EconSituationDown);
+            texts_report[413] = Convert.ToString(report.Apartment.Object.ConcurentsUp);
+            texts_report[414] = Convert.ToString(report.Apartment.Object.LowChange);
+            texts_report[415] = Convert.ToString(report.Apartment.Object.ExtremalSituation);
+            texts_report[416] = Convert.ToString(report.Apartment.Object.AcceleratedWear);
+            texts_report[417] = Convert.ToString(report.Apartment.Object.NoRentalMoney);
+            texts_report[418] = Convert.ToString(report.Apartment.Object.BadManagment);
+            texts_report[419] = Convert.ToString(report.Apartment.Object.Criminal);
+            texts_report[420] = Convert.ToString(report.Apartment.Object.FinanceChecking);
+            texts_report[421] = Convert.ToString(report.Apartment.Object.NotCorrect);
+            texts_report[422] = Convert.ToString(risks);
+            texts_report[423] = Convert.ToString(risks / 10);
+            texts_report[424] = Convert.ToString(report.Apartment.Object.NoRisk);
+            texts_report[425] = Convert.ToString(risks / 10);
+            texts_report[426] = Convert.ToString(report.Apartment.Object.NoRisk / 12);
+            texts_report[427] = Convert.ToString(report.Apartment.Object.InvestManage);
+            texts_report[428] = Convert.ToString(r);
+            texts_report[429] = Convert.ToString(report.Apartment.Object.K_el);
+            texts_report[430] = Convert.ToString(report.Apartment.Object.Price);
+            texts_report[431] = Convert.ToString(r);
+            texts_report[432] = Convert.ToString(r / 12);
+            texts_report[433] = Convert.ToString(report.Apartment.Object.T_l);
+            texts_report[434] = Convert.ToString(report.Apartment.Object.T_r);
+            texts_report[435] = Convert.ToString(k_sdv);
+            texts_report[436] = Convert.ToString(report.Apartment.Object.K_el);
+
 
 
         }

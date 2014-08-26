@@ -77,6 +77,23 @@
             this.BuildYearTextBox = new System.Windows.Forms.TextBox();
             this.numberOnFloor = new System.Windows.Forms.Label();
             this.FloorsTextBox = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.BanksTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.HospitalsTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.KindersTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.SchoolsTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.RestPlacesTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.PharmacyTextBox = new System.Windows.Forms.TextBox();
+            this.ServicesTextBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TradingsTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.regionInfoGroup.SuspendLayout();
             this.countryInfoGroup.SuspendLayout();
             this.homeInfoGroupBox.SuspendLayout();
@@ -93,6 +110,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // regionNameTextBox
@@ -181,7 +199,9 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Size = new System.Drawing.Size(409, 454);
+            this.tabControl1.Controls.SetChildIndex(this.tabPage2, 0);
             this.tabControl1.Controls.SetChildIndex(this.tabPage3, 0);
             this.tabControl1.Controls.SetChildIndex(this.tabPage1, 0);
             // 
@@ -675,6 +695,168 @@
             this.FloorsTextBox.Size = new System.Drawing.Size(87, 20);
             this.FloorsTextBox.TabIndex = 59;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.BanksTextBox);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.HospitalsTextBox);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.KindersTextBox);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.SchoolsTextBox);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.RestPlacesTextBox);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.PharmacyTextBox);
+            this.tabPage2.Controls.Add(this.ServicesTextBox);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.TradingsTextBox);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(401, 428);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Особенности района";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // BanksTextBox
+            // 
+            this.BanksTextBox.Location = new System.Drawing.Point(18, 50);
+            this.BanksTextBox.Multiline = true;
+            this.BanksTextBox.Name = "BanksTextBox";
+            this.BanksTextBox.Size = new System.Drawing.Size(123, 45);
+            this.BanksTextBox.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 253);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(144, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Список объектов торговли";
+            // 
+            // HospitalsTextBox
+            // 
+            this.HospitalsTextBox.Location = new System.Drawing.Point(181, 50);
+            this.HospitalsTextBox.Multiline = true;
+            this.HospitalsTextBox.Name = "HospitalsTextBox";
+            this.HospitalsTextBox.Size = new System.Drawing.Size(123, 45);
+            this.HospitalsTextBox.TabIndex = 13;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(180, 253);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 13);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Список аптек";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(179, 175);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(140, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Список предприятий быта";
+            // 
+            // KindersTextBox
+            // 
+            this.KindersTextBox.Location = new System.Drawing.Point(19, 120);
+            this.KindersTextBox.Multiline = true;
+            this.KindersTextBox.Name = "KindersTextBox";
+            this.KindersTextBox.Size = new System.Drawing.Size(123, 45);
+            this.KindersTextBox.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(18, 175);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Список мест отдыха";
+            // 
+            // SchoolsTextBox
+            // 
+            this.SchoolsTextBox.Location = new System.Drawing.Point(181, 120);
+            this.SchoolsTextBox.Multiline = true;
+            this.SchoolsTextBox.Name = "SchoolsTextBox";
+            this.SchoolsTextBox.Size = new System.Drawing.Size(123, 45);
+            this.SchoolsTextBox.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(179, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Список школ";
+            // 
+            // RestPlacesTextBox
+            // 
+            this.RestPlacesTextBox.Location = new System.Drawing.Point(20, 191);
+            this.RestPlacesTextBox.Multiline = true;
+            this.RestPlacesTextBox.Name = "RestPlacesTextBox";
+            this.RestPlacesTextBox.Size = new System.Drawing.Size(123, 45);
+            this.RestPlacesTextBox.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 104);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 13);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Список детских садов";
+            // 
+            // PharmacyTextBox
+            // 
+            this.PharmacyTextBox.Location = new System.Drawing.Point(182, 269);
+            this.PharmacyTextBox.Multiline = true;
+            this.PharmacyTextBox.Name = "PharmacyTextBox";
+            this.PharmacyTextBox.Size = new System.Drawing.Size(123, 45);
+            this.PharmacyTextBox.TabIndex = 17;
+            // 
+            // ServicesTextBox
+            // 
+            this.ServicesTextBox.Location = new System.Drawing.Point(181, 191);
+            this.ServicesTextBox.Multiline = true;
+            this.ServicesTextBox.Name = "ServicesTextBox";
+            this.ServicesTextBox.Size = new System.Drawing.Size(123, 45);
+            this.ServicesTextBox.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(179, 34);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(89, 13);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Список больниц";
+            // 
+            // TradingsTextBox
+            // 
+            this.TradingsTextBox.Location = new System.Drawing.Point(21, 269);
+            this.TradingsTextBox.Multiline = true;
+            this.TradingsTextBox.Name = "TradingsTextBox";
+            this.TradingsTextBox.Size = new System.Drawing.Size(123, 45);
+            this.TradingsTextBox.TabIndex = 19;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 34);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 13);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Список банков";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -713,6 +895,8 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -768,5 +952,22 @@
         protected System.Windows.Forms.TextBox ClosestStopTextBox;
         private System.Windows.Forms.Label numberOnFloor;
         private System.Windows.Forms.TextBox FloorsTextBox;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox BanksTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox HospitalsTextBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox KindersTextBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox SchoolsTextBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox RestPlacesTextBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox PharmacyTextBox;
+        private System.Windows.Forms.TextBox ServicesTextBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox TradingsTextBox;
+        private System.Windows.Forms.Label label11;
     }
 }

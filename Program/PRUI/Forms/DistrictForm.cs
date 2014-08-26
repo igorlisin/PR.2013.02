@@ -21,46 +21,6 @@ namespace PRUI.Forms
         private string _name;
 
         /// <summary>
-        /// Поле. Список банков
-        /// </summary>
-        private string _banks;
-
-        /// <summary>
-        /// Поле. Список больниц
-        /// </summary>
-        private string _hospitals;
-
-        /// <summary>
-        /// Поле. Список дет садов
-        /// </summary>
-        private string _kinders;
-
-        /// <summary>
-        /// Поле. Список мест отдыха
-        /// </summary>
-        private string _restPlaces;
-
-        /// <summary>
-        /// Поле. Список Школ
-        /// </summary>
-        private string _schools;
-
-        /// <summary>
-        /// Поле. Список предприятий быта
-        /// </summary>
-        private string _services;
-
-        /// <summary>
-        /// Поле. Список объектов торговли
-        /// </summary>
-        private string _tradings;
-
-        /// <summary>
-        /// Поле. Список аптек
-        /// </summary>
-        private string _pharmacy;
-
-        /// <summary>
         /// Поле. Престижность района
         /// </summary>
         private Prestiges _prestige;
@@ -89,131 +49,7 @@ namespace PRUI.Forms
             }
         }
 
-        /// <summary>
-        /// Свойство. Задает и возвращает список банков
-        /// </summary>
-        public string Banks
-        {
-            get
-            {
-                return (BanksTextBox.Text);
-            }
-            set
-            {
-                BanksTextBox.Text = value;
-            }
-        }
 
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список больниц
-        /// </summary>
-        public string Hospitals
-        {
-            get
-            {
-                return (HospitalsTextBox.Text);
-            }
-            set
-            {
-                HospitalsTextBox.Text = value;
-            }
-        }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список дет садов
-        /// </summary>
-        public string Kinders
-        {
-            get
-            {
-                return (KindersTextBox.Text);
-            }
-            set
-            {
-                KindersTextBox.Text = value;
-            }
-        }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список мест отдыха
-        /// </summary>
-        public string RestPlaces
-        {
-            get
-            {
-                return (RestPlacesTextBox.Text);
-            }
-            set
-            {
-                RestPlacesTextBox.Text = value;
-            }
-        }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список школ
-        /// </summary>
-        public string Schools
-        {
-            get
-            {
-                return (SchoolsTextBox.Text);
-            }
-            set
-            {
-                SchoolsTextBox.Text = value;
-            }
-        }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список предприятий быта
-        /// </summary>
-        public string Services
-        {
-            get
-            {
-                return (ServicesTextBox.Text);
-            }
-            set
-            {
-                ServicesTextBox.Text = value;
-            }
-        }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список объектов торговли
-        /// </summary>
-        public string Tradings
-        {
-            get
-            {
-                return (TradingsTextBox.Text);
-            }
-            set
-            {
-                TradingsTextBox.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список объектов торговли
-        /// </summary>
-        public string Pharmacy
-        {
-            get
-            {
-                return (PharmacyTextBox.Text);
-            }
-            set
-            {
-                PharmacyTextBox.Text = value;
-            }
-        }
 
         /// <summary>
         /// Свойство. Задает и возвращает престижность района
@@ -271,14 +107,6 @@ namespace PRUI.Forms
         private void CleanDistrict()
         {
             Name = "";
-            Banks = "";
-            Hospitals = "";
-            Kinders = "";
-            RestPlaces = "";
-            Schools = "";
-            Services = "";
-            Tradings = "";
-            Pharmacy = "";
             ClearPrestigeList();
             FillPrestigeList();
         }                 
@@ -328,15 +156,7 @@ namespace PRUI.Forms
         private void CopyDistrictFromEntity(IDistrict district)
         {
             Name = district.Name;
-            Banks = district.Banks;
-            Hospitals = district.Hospitals;
-            Kinders = district.Kinders;
-            RestPlaces = district.RestPlaces;
-            Schools = district.Schools;
-            Services = district.Services;
-            Tradings = district.Tradings;
             Prestige = district.Prestige;
-            Pharmacy = district.PharmList;
         }
 
         /// <summary>
@@ -347,15 +167,8 @@ namespace PRUI.Forms
             ((IEntity)_district).Description = Description;       // Скопировать описание
 
             _district.Name = Name;
-            _district.Banks = Banks;
-            _district.Hospitals = Hospitals;
-            _district.Kinders = Kinders;
-            _district.RestPlaces = RestPlaces;
-            _district.Schools = Schools;
-            _district.Services = Services;
-            _district.Tradings = Tradings;
             _district.Prestige = Prestige;
-            _district.PharmList = Pharmacy;
+
 
         }
 

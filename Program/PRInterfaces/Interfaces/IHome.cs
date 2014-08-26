@@ -74,6 +74,11 @@ namespace PRInterfaces.Interfaces
         string KapremontPeriod { get; set; }
 
         /// <summary>
+        /// Свойство. Задает и возвращает информацио о капремонте
+        /// </summary>
+        string KapremontInformation { get; set; }
+
+        /// <summary>
         /// Свойство. Задает и возвращает наличия дефектов здания
         /// </summary>
         bool Defects { get; set; }
@@ -162,6 +167,52 @@ namespace PRInterfaces.Interfaces
         /// Свойство. Задает и возвращает наличие парковки
         /// </summary>
         bool Parking { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список банков
+        /// </summary>
+        string Banks { get; set; }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список больниц
+        /// </summary>
+        string Hospitals { get; set; }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает дет садов
+        /// </summary>
+        string Kinders { get; set; }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает мест отдыха
+        /// </summary>
+        string RestPlaces { get; set; }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список школ
+        /// </summary>
+        string Schools { get; set; }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список предприятий быта
+        /// </summary>
+        string Services { get; set; }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список объектов торговли
+        /// </summary>
+        string Tradings { get; set; }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список аптек
+        /// </summary>
+        string PharmList { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает район

@@ -16,6 +16,62 @@ namespace PR.Classes
         private static int _defaultNumber;
 
         /// <summary>
+        /// Поле. Задает и возвращает локальные особенности
+        /// </summary>
+        private string _loacals_1;
+
+        /// <summary>
+        /// Поле. Задает и возвращает локальные особенности
+        /// </summary>
+        private string _loacals_2;
+
+        /// <summary>
+        /// Поле. Задает и возвращает список банков
+        /// </summary>
+        private string _banks;
+
+
+        /// <summary>
+        /// Поле. Задает и возвращает список больниц
+        /// </summary>
+        private string _hospitals;
+
+
+        /// <summary>
+        /// Поле. Задает и возвращает список дет садов
+        /// </summary>
+        private string _kinders;
+
+
+        /// <summary>
+        /// Поле. Задает и возвращает список мест отдыха
+        /// </summary>
+        private string _restPlaces;
+
+
+        /// <summary>
+        /// Поле. Задает и возвращает список школ
+        /// </summary>
+        private string _schools;
+
+
+        /// <summary>
+        /// Поле. Задает и возвращает список предприятий быта
+        /// </summary>
+        private string _services;
+
+
+        /// <summary>
+        /// Поле. Задает и возвращает список объектов торговли
+        /// </summary>
+        private string _tradings;
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список аптек
+        /// </summary>
+        private string _pharmList;
+
+        /// <summary>
         /// Статическое свойство. Номер по умолчанию
         /// </summary>
         public static int DefaultNumber
@@ -67,6 +123,162 @@ namespace PR.Classes
         }
 
         /// <summary>
+        /// Свойство. Задает и возвращает локальные особенности
+        /// </summary>
+        public string Loacals_1
+        {
+            get
+            {
+                return _loacals_1;
+            }
+            set
+            {
+                _loacals_1 = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает локальные особенности
+        /// </summary>
+        public string Loacals_2
+        {
+            get
+            {
+                return _loacals_2;
+            }
+            set
+            {
+                _loacals_2 = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список банков
+        /// </summary>
+        public string Banks
+        {
+            get
+            {
+                return (_banks);
+            }
+            set
+            {
+                _banks = value;
+            }
+        }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список больниц
+        /// </summary>
+        public string Hospitals
+        {
+            get
+            {
+                return (_hospitals);
+            }
+            set
+            {
+                _hospitals = value;
+            }
+        }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список дет садов
+        /// </summary>
+        public string Kinders
+        {
+            get
+            {
+                return (_kinders);
+            }
+            set
+            {
+                _kinders = value;
+            }
+        }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список мест отдыха
+        /// </summary>
+        public string RestPlaces
+        {
+            get
+            {
+                return (_restPlaces);
+            }
+            set
+            {
+                _restPlaces = value;
+            }
+        }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список школ
+        /// </summary>
+        public string Schools
+        {
+            get
+            {
+                return (_schools);
+            }
+            set
+            {
+                _schools = value;
+            }
+        }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список предприятий быта
+        /// </summary>
+        public string Services
+        {
+            get
+            {
+                return (_services);
+            }
+            set
+            {
+                _services = value;
+            }
+        }
+
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список объектов торговли
+        /// </summary>
+        public string Tradings
+        {
+            get
+            {
+                return (_tradings);
+            }
+            set
+            {
+                _tradings = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает список аптек
+        /// </summary>
+        public string PharmList
+        {
+            get
+            {
+                return (_pharmList);
+            }
+            set
+            {
+                _pharmList = value;
+            }
+        }
+
+        /// <summary>
         /// Свойство. Задает и возвращает город
         /// </summary>
         public ICity City
@@ -106,6 +318,8 @@ namespace PR.Classes
         /// </summary>
         public List<Home> HomesForEntityFramework { get; set; }
 
+ 
+
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -128,5 +342,8 @@ namespace PR.Classes
 
             return ((object)complex);
         }
+
+ 
+
     }
 }

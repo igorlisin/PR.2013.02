@@ -361,7 +361,14 @@ namespace PRParser
 
             _objects.SaveChanges();
             _comparisonApartments.SaveChanges();
-            this.Close();
+
+            DialogResult unlinkConfirm;                         // Результат подтверждения сообщения
+
+            unlinkConfirm = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
+                "Рыночная стоимость равна " + Convert.ToString(_apartment.Object.Price) + "руб.",
+                "Подтверждение",
+                MessageBoxButtons.OK);
+
         }
     }
 }

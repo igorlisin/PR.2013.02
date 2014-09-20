@@ -18,6 +18,11 @@ namespace PRInterfaces.Enumerations
         /// <summary>
         /// Военный билет
         /// </summary>
-        warId = 2
+        warId = 2,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 3
     }
 }

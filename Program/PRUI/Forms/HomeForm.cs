@@ -56,6 +56,11 @@ namespace PRUI.Forms
         /// </summary>
         private string _kapremontPeriod;
 
+        /// <summary>
+        /// Поле. Информация о капремонте
+        /// </summary>
+        private string _kapremontInformation;
+
 
         /// <summary>
         /// Поле. Наличие дефектов конструкции
@@ -139,65 +144,7 @@ namespace PRUI.Forms
         /// </summary>
         private bool _gaz;
 
-        /// <summary>
-        /// Поле. Локальные особенности 1
-        /// </summary>
-        private string _local1;
-
-        /// <summary>
-        /// Поле. Локальные особенности 1
-        /// </summary>
-        private string _local2;
-
-        /// <summary>
-        /// Поле. Название ближайшей остановки
-        /// </summary>
-        private string _closestStop;
-
-        /// <summary>
-        /// Поле. Наличие паркинга
-        /// </summary>
-        private bool _parking;
-
-        /// <summary>
-        /// Поле. Список банков
-        /// </summary>
-        private string _banks;
-
-        /// <summary>
-        /// Поле. Список больниц
-        /// </summary>
-        private string _hospitals;
-
-        /// <summary>
-        /// Поле. Список дет садов
-        /// </summary>
-        private string _kinders;
-
-        /// <summary>
-        /// Поле. Список мест отдыха
-        /// </summary>
-        private string _restPlaces;
-
-        /// <summary>
-        /// Поле. Список Школ
-        /// </summary>
-        private string _schools;
-
-        /// <summary>
-        /// Поле. Список предприятий быта
-        /// </summary>
-        private string _services;
-
-        /// <summary>
-        /// Поле. Список объектов торговли
-        /// </summary>
-        private string _tradings;
-
-        /// <summary>
-        /// Поле. Список аптек
-        /// </summary>
-        private string _pharmacy;
+        
 
 
         #endregion
@@ -335,6 +282,21 @@ namespace PRUI.Forms
             set
             {
                 KapremontPeriodTextBox.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Свойство. Задает и возвращает инф капремонта
+        /// </summary>
+        protected string KapremonInformation
+        {
+            get
+            {
+                return (KapremontInfTextBox.Text);
+            }
+            set
+            {
+                KapremontInfTextBox.Text = value;
             }
         }
 
@@ -563,36 +525,7 @@ namespace PRUI.Forms
             }
         }
 
-        /// <summary>
-        /// Свойство. Задает и возвращает локальные особенности 1
-        /// </summary>
-        protected string Local1
-        {
-            get
-            {
-                return (Local1TextBox.Text);
-            }
-            set
-            {
-                Local1TextBox.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает локальные особенности 2
-        /// </summary>
-        protected string Local2
-        {
-            get
-            {
-                return (Local2TextBox.Text);
-            }
-            set
-            {
-                Local2TextBox.Text = value;
-            }
-        }
-
+        
         /// <summary>
         /// Свойство. Задает и возвращает название ближайшей остановки
         /// </summary>
@@ -608,131 +541,7 @@ namespace PRUI.Forms
             }
         }
 
-        /// <summary>
-        /// Свойство. Задает и возвращает список банков
-        /// </summary>
-        public string Banks
-        {
-            get
-            {
-                return (BanksTextBox.Text);
-            }
-            set
-            {
-                BanksTextBox.Text = value;
-            }
-        }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список больниц
-        /// </summary>
-        public string Hospitals
-        {
-            get
-            {
-                return (HospitalsTextBox.Text);
-            }
-            set
-            {
-                HospitalsTextBox.Text = value;
-            }
-        }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список дет садов
-        /// </summary>
-        public string Kinders
-        {
-            get
-            {
-                return (KindersTextBox.Text);
-            }
-            set
-            {
-                KindersTextBox.Text = value;
-            }
-        }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список мест отдыха
-        /// </summary>
-        public string RestPlaces
-        {
-            get
-            {
-                return (RestPlacesTextBox.Text);
-            }
-            set
-            {
-                RestPlacesTextBox.Text = value;
-            }
-        }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список школ
-        /// </summary>
-        public string Schools
-        {
-            get
-            {
-                return (SchoolsTextBox.Text);
-            }
-            set
-            {
-                SchoolsTextBox.Text = value;
-            }
-        }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список предприятий быта
-        /// </summary>
-        public string Services
-        {
-            get
-            {
-                return (ServicesTextBox.Text);
-            }
-            set
-            {
-                ServicesTextBox.Text = value;
-            }
-        }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список объектов торговли
-        /// </summary>
-        public string Tradings
-        {
-            get
-            {
-                return (TradingsTextBox.Text);
-            }
-            set
-            {
-                TradingsTextBox.Text = value;
-            }
-        }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список объектов торговли
-        /// </summary>
-        public string Pharmacy
-        {
-            get
-            {
-                return (PharmacyTextBox.Text);
-            }
-            set
-            {
-                PharmacyTextBox.Text = value;
-            }
-        }
+        
 
         #endregion
 
@@ -773,6 +582,7 @@ namespace PRUI.Forms
             Lift = false;
             KapremontYear = "";
             KapremontPeriod = "";
+            KapremonInformation = "";
             Defects = false;
             Garbadge = false;
             ExtraFactors = "";
@@ -786,18 +596,8 @@ namespace PRUI.Forms
             Transport = false;
             Gaz = false;
             Parking = false;
-            Local1 = "";
-            Local2 = "";
+          
             ClosestStop = "";
-
-            Banks = "";
-            Hospitals = "";
-            Kinders = "";
-            RestPlaces = "";
-            Schools = "";
-            Services = "";
-            Tradings = "";
-            Pharmacy = "";
 
             ClearRoofConditionList();
             FillRoofConditionList();
@@ -849,6 +649,7 @@ namespace PRUI.Forms
             Lift = _home.Lift;                              // Скопировать наличие лифта
             KapremontYear = _home.KapremontYear;            // Скопировать год капремонта
             KapremontPeriod = _home.KapremontPeriod;        // Скопировать периодичность капремонта
+            KapremonInformation = _home.KapremontInformation;
             Defects = _home.Defects;                        // Скопировать дефекты конструкции
             Garbadge = _home.Garbadge;                      // Скопировать наличие мусоропровода
             ExtraFactors = _home.ExtraFactors;              // Скопировать дополнительные факторы
@@ -864,19 +665,8 @@ namespace PRUI.Forms
             Transport = _home.Transport;                    // Скопировать наличие трамвая
             Gaz = _home.Gaz;                                // Скопировать наличие газа
             Parking = _home.Parking;                        // Скопировать наличие паркинга
-            Local1 = _home.Loacals_1;                       // Скопировать локальные особенности 1
-            Local2 = _home.Loacals_2;                       // Скопировать локальные особенности 2
             ClosestStop = _home.StopName;                   // Скопировать название ближайшей остановки
 
-            Banks = _home.Banks;
-            Hospitals = _home.Hospitals;
-            Kinders = _home.Kinders;
-            RestPlaces = _home.RestPlaces;
-            Schools = _home.Schools;
-            Services = _home.Services;
-            Tradings = _home.Tradings;
-           
-            Pharmacy = _home.PharmList;
         }
 
         /// <summary>
@@ -941,6 +731,7 @@ namespace PRUI.Forms
             _home.Lift = Lift;                                          // Скопировать наличие лифта
             _home.KapremontYear = KapremontYear;                        // Скопировать год капремонта
             _home.KapremontPeriod = KapremontPeriod;                    // Скопировать периодичность капремонта
+            _home.KapremontInformation = KapremonInformation;
             _home.Defects = Defects;                                    // Скопировать дефекты конструкции
             _home.Garbadge = Garbadge;                                  // Скопировать наличие мусоропровода
             _home.ExtraFactors = ExtraFactors;                          // Скопировать дополнительные факторы
@@ -956,18 +747,10 @@ namespace PRUI.Forms
             _home.Transport = Transport;                                // Скопировать наличие трамвая
             _home.Gaz = Gaz;                                            // Скопировать наличие газа
             _home.Parking = Parking;                                    // Скопировать наличие паркинга
-            _home.Loacals_1 = Local1;                                   // Скопировать локальные особенности 1
-            _home.Loacals_2 = Local2;                                   // Скопировать локальные особенности 2
+   
             _home.StopName = ClosestStop;                               // Скопировать название ближайшей остановки
 
-            _home.Banks = Banks;
-            _home.Hospitals = Hospitals;
-            _home.Kinders = Kinders;
-            _home.RestPlaces = RestPlaces;
-            _home.Schools = Schools;
-            _home.Services = Services;
-            _home.Tradings = Tradings;
-            _home.PharmList = Pharmacy;
+ 
         }
 
         #endregion
@@ -993,10 +776,10 @@ namespace PRUI.Forms
         {
             DialogResult noRegMsg;                         // Результат подтверждения сообщения
 
-            if (_districtAfterRelinking == null)
+            if (_districtAfterRelinking == null || _complexAfterRelinking == null)
             {
                 noRegMsg = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
-                "Вы забыли привязать район",
+                "Вы забыли привязать район или комплекс",
                 "Предупреждение",
                 MessageBoxButtons.OKCancel);
             }
@@ -1011,15 +794,16 @@ namespace PRUI.Forms
         {
             DialogResult noRegMsg;                         // Результат подтверждения сообщения
 
-            if (_districtAfterRelinking == null)
+            if (_districtAfterRelinking == null || _complexAfterRelinking==null )
             {
                 noRegMsg = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
-                "Вы забыли привязать район",
+                "Вы забыли привязать район или комплекс ",
                 "Предупреждение",
                 MessageBoxButtons.OKCancel);
             }
             else
                 base.saveButton_Click(sender, e);
+            
         }
         #endregion
 
@@ -1268,9 +1052,6 @@ namespace PRUI.Forms
         }
 
         #endregion
-
-
-
 
     }
 }

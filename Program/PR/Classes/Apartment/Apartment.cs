@@ -61,6 +61,15 @@ namespace PR.Classes
                 case RoomTypes.Union:                               // Сравнить тип 
                     roomTypeAsString = "Совмещенные комнаты";       // Задать тип (как текстовую строку)
                     break;
+                case RoomTypes.SeparateThrough:                               // Сравнить тип 
+                    roomTypeAsString = "Раздельные и проходные комнаты";       // Задать тип (как текстовую строку)
+                    break;
+                case RoomTypes.Through:                               // Сравнить тип 
+                    roomTypeAsString = "Проходные комнаты";       // Задать тип (как текстовую строку)
+                    break;
+                case RoomTypes.Free:                               // Сравнить тип 
+                    roomTypeAsString = "Свободная планировка";       // Задать тип (как текстовую строку)
+                    break;
                 default:                                            // Тип по умолчанию 
                     roomTypeAsString = "--";                        // Задать тип (как текстовую строку)
                     break;
@@ -84,6 +93,9 @@ namespace PR.Classes
                 case WashroomTypes.Union:                               // Сравнить тип 
                     washroomTypeAsString = "Совмещенный санузел";       // Задать тип (как текстовую строку)
                     break;
+                case WashroomTypes.Other:                               // Сравнить тип 
+                    washroomTypeAsString = "ПРОЧЕЕ!!!!!!!!";       // Задать тип (как текстовую строку)
+                    break;
                 default:                                                // Тип по умолчанию 
                     washroomTypeAsString = "--";                        // Задать тип (как текстовую строку)
                     break;
@@ -104,6 +116,9 @@ namespace PR.Classes
                 case Layouts.Standard:                              // Сравнить тип 
                     layoutAsString = "Стандартная планировка";      // Задать тип (как текстовую строку)
                     break;
+                case Layouts.Individual:                              // Сравнить тип 
+                    layoutAsString = "Индивидуальная планировка";      // Задать тип (как текстовую строку)
+                    break;
                 default:                                            // Тип по умолчанию 
                     layoutAsString = "--";                          // Задать тип (как текстовую строку)
                     break;
@@ -122,25 +137,19 @@ namespace PR.Classes
             switch (apartmentState)                                 // Проверить тип
             {
                 case ApartmentStates.Perfect:                       // Сравнить тип 
-                    apartmentStateAsString = "Идеальное";           // Задать тип (как текстовую строку)
-                    break;
-                case ApartmentStates.VeryGood:                      // Сравнить тип 
-                    apartmentStateAsString = "Очень хорошее";       // Задать тип (как текстовую строку)
+                    apartmentStateAsString = "Отличное";           // Задать тип (как текстовую строку)
                     break;
                 case ApartmentStates.Good:                          // Сравнить тип 
                     apartmentStateAsString = "Хорошее";             // Задать тип (как текстовую строку)
                     break;
                 case ApartmentStates.Normal:                        // Сравнить тип 
-                    apartmentStateAsString = "Нормальное";          // Задать тип (как текстовую строку)
+                    apartmentStateAsString = "Удовлетворительное";          // Задать тип (как текстовую строку)
                     break;
                 case ApartmentStates.Bad:                           // Сравнить тип 
-                    apartmentStateAsString = "Плохое";              // Задать тип (как текстовую строку)
+                    apartmentStateAsString = "Неудовлетворительное";              // Задать тип (как текстовую строку)
                     break;
-                case ApartmentStates.VeryBad:                       // Сравнить тип 
-                    apartmentStateAsString = "Очень плохое";        // Задать тип (как текстовую строку)
-                    break;
-                case ApartmentStates.Terrible:                      // Сравнить тип 
-                    apartmentStateAsString = "Ужасное";             // Задать тип (как текстовую строку)
+                case ApartmentStates.New:                           // Сравнить тип 
+                    apartmentStateAsString = "Новая квартира";              // Задать тип (как текстовую строку)
                     break;
                 default:                                            // Тип по умолчанию 
                     apartmentStateAsString = "--";                  // Задать тип (как текстовую строку)
@@ -159,11 +168,23 @@ namespace PR.Classes
 
             switch (repairWorkType)                                             // Проверить тип
             {
-                case RepairWorkTypes.Need:                                      // Сравнить тип 
-                    repairWorkAsString = "Требуются ремонтные работы";          // Задать тип (как текстовую строку)
+                case RepairWorkTypes.NeedCosmetic:                                      // Сравнить тип 
+                    repairWorkAsString = "Требуются косметический ремонт";          // Задать тип (как текстовую строку)
+                    break;
+                case RepairWorkTypes.NeedTotal:                                      // Сравнить тип 
+                    repairWorkAsString = "Требуются капитальный ремонт";          // Задать тип (как текстовую строку)
+                    break;
+                case RepairWorkTypes.NeedPartial:                                      // Сравнить тип 
+                    repairWorkAsString = "Требуются ремонт отдельных конструктивных элементов";          // Задать тип (как текстовую строку)
+                    break;
+                case RepairWorkTypes.NeedClear:                                      // Сравнить тип 
+                    repairWorkAsString = "Требуются работы по выполнению чистовой отделки";          // Задать тип (как текстовую строку)
                     break;
                 case RepairWorkTypes.NotNeed:                                   // Сравнить тип 
                     repairWorkAsString = "Ремонтные работы не требуются";       // Задать тип (как текстовую строку)
+                    break;
+                case RepairWorkTypes.Other:                                   // Сравнить тип 
+                    repairWorkAsString = "ПРОЧЕЕ!!!!!!!!";       // Задать тип (как текстовую строку)
                     break;
                 default:                                                        // Тип по умолчанию 
                     repairWorkAsString = "--";                                  // Задать тип (как текстовую строку)
@@ -182,26 +203,17 @@ namespace PR.Classes
 
             switch (roomFinishingQuality)                               // Проверить тип
             {
-                case RoomFinishingQualities.Perfect:                    // Сравнить тип 
-                    roomFinishingQualityAsString = "Идеальное";         // Задать тип (как текстовую строку)
+                case RoomFinishingQualities.Premium:                    // Сравнить тип 
+                    roomFinishingQualityAsString = "Премиум";         // Задать тип (как текстовую строку)
                     break;
-                case RoomFinishingQualities.VeryGood:                   // Сравнить тип 
-                    roomFinishingQualityAsString = "Очень хорошее";     // Задать тип (как текстовую строку)
+                case RoomFinishingQualities.Better:                       // Сравнить тип 
+                    roomFinishingQualityAsString = "Улучшенная";           // Задать тип (как текстовую строку)
                     break;
-                case RoomFinishingQualities.Good:                       // Сравнить тип 
-                    roomFinishingQualityAsString = "Хорошее";           // Задать тип (как текстовую строку)
+                case RoomFinishingQualities.Standart:                     // Сравнить тип 
+                    roomFinishingQualityAsString = "Стандартная";        // Задать тип (как текстовую строку)
                     break;
-                case RoomFinishingQualities.Normal:                     // Сравнить тип 
-                    roomFinishingQualityAsString = "Нормальное";        // Задать тип (как текстовую строку)
-                    break;
-                case RoomFinishingQualities.Bad:                        // Сравнить тип 
-                    roomFinishingQualityAsString = "Плохое";            // Задать тип (как текстовую строку)
-                    break;
-                case RoomFinishingQualities.VeryBad:                    // Сравнить тип 
-                    roomFinishingQualityAsString = "Очень плохое";      // Задать тип (как текстовую строку)
-                    break;
-                case RoomFinishingQualities.Terrible:                   // Сравнить тип 
-                    roomFinishingQualityAsString = "Ужасное";           // Задать тип (как текстовую строку)
+                case RoomFinishingQualities.Simple:                        // Сравнить тип 
+                    roomFinishingQualityAsString = "Обычная";            // Задать тип (как текстовую строку)
                     break;
                 default:                                                // Тип по умолчанию 
                     roomFinishingQualityAsString = "--";                // Задать тип (как текстовую строку)
@@ -225,14 +237,20 @@ namespace PR.Classes
                 case FloorMaterials.Linoleum:               // Сравнить тип 
                     floorMaterialAsString = "Линолеум";     // Задать тип (как текстовую строку)
                     break;
-                case FloorMaterials.Paint:                  // Сравнить тип 
-                    floorMaterialAsString = "Краска";       // Задать тип (как текстовую строку)
+                case FloorMaterials.NoFinishing:                  // Сравнить тип 
+                    floorMaterialAsString = "Бетонная стяжка";       // Задать тип (как текстовую строку)
                     break;
                 case FloorMaterials.Parquet:                // Сравнить тип 
                     floorMaterialAsString = "Паркет";       // Задать тип (как текстовую строку)
                     break;
+                case FloorMaterials.Kovrolin:                // Сравнить тип 
+                    floorMaterialAsString = "Ковролин";       // Задать тип (как текстовую строку)
+                    break;
                 case FloorMaterials.Tile:                   // Сравнить тип 
-                    floorMaterialAsString = "Плитка";       // Задать тип (как текстовую строку)
+                    floorMaterialAsString = "Керамическая плитка";       // Задать тип (как текстовую строку)
+                    break;
+                case FloorMaterials.Other:                   // Сравнить тип 
+                    floorMaterialAsString = "ПРОЧЕЕ!!!!!!!!";           // Задать тип (как текстовую строку)
                     break;
                 default:                                    // Тип по умолчанию 
                     floorMaterialAsString = "--";           // Задать тип (как текстовую строку)
@@ -262,6 +280,15 @@ namespace PR.Classes
                 case WallMaterials.WallpaperAndTile:            // Сравнить тип 
                     wallMaterialAsString = "Обои и плитка";     // Задать тип (как текстовую строку)
                     break;
+                case WallMaterials.PaintAndTile:            // Сравнить тип 
+                    wallMaterialAsString = "Краска и плитка";     // Задать тип (как текстовую строку)
+                    break;
+                case WallMaterials.PVH:            // Сравнить тип 
+                    wallMaterialAsString = "Панели ПВХ";     // Задать тип (как текстовую строку)
+                    break;
+                case WallMaterials.Other:                   // Сравнить тип 
+                    wallMaterialAsString = "ПРОЧЕЕ!!!!!!!!";           // Задать тип (как текстовую строку)
+                    break;
                 default:                                        // Тип по умолчанию 
                     wallMaterialAsString = "--";                // Задать тип (как текстовую строку)
                     break;
@@ -287,6 +314,15 @@ namespace PR.Classes
                 case CeilingMaterials.CeilingTiles:                     // Сравнить тип 
                     ceilingMaterialAsString = "Потолочная плитка";      // Задать тип (как текстовую строку)
                     break;
+                case CeilingMaterials.Wallpaper:                     // Сравнить тип 
+                    ceilingMaterialAsString = "Обои";      // Задать тип (как текстовую строку)
+                    break;
+                case CeilingMaterials.PVH:                     // Сравнить тип 
+                    ceilingMaterialAsString = "Панели ПВХ";      // Задать тип (как текстовую строку)
+                    break;
+                case CeilingMaterials.Other:                   // Сравнить тип 
+                    ceilingMaterialAsString = "ПРОЧЕЕ!!!!!!!!";           // Задать тип (как текстовую строку)
+                    break;
                 default:                                                // Тип по умолчанию 
                     ceilingMaterialAsString = "--";                     // Задать тип (как текстовую строку)
                     break;
@@ -310,6 +346,9 @@ namespace PR.Classes
                 case ObjectCommunicationTypes.NotConnected:                 // Сравнить тип 
                     objectCommunicationTypeAsString = "Не подключен";       // Задать тип (как текстовую строку)
                     break;
+                case ObjectCommunicationTypes.Other:                   // Сравнить тип 
+                    objectCommunicationTypeAsString = "ПРОЧЕЕ!!!!!!!!";           // Задать тип (как текстовую строку)
+                    break;
                 default:                                                    // Тип по умолчанию 
                     objectCommunicationTypeAsString = "--";                 // Задать тип (как текстовую строку)
                     break;
@@ -329,6 +368,12 @@ namespace PR.Classes
             {
                 case HeatingSystemTypes.Central:                    // Сравнить тип 
                     heatingSystemTypeAsString = "Центральное";      // Задать тип (как текстовую строку)
+                    break;
+                case HeatingSystemTypes.Home:                    // Сравнить тип 
+                    heatingSystemTypeAsString = "От общедомового газового котла";      // Задать тип (как текстовую строку)
+                    break;
+                case HeatingSystemTypes.Other:                   // Сравнить тип 
+                    heatingSystemTypeAsString = "ПРОЧЕЕ!!!!!!!!";           // Задать тип (как текстовую строку)
                     break;
                 default:                                            // Тип по умолчанию 
                     heatingSystemTypeAsString = "--";               // Задать тип (как текстовую строку)
@@ -350,6 +395,9 @@ namespace PR.Classes
                 case CurrentUsingTypes.LivingAppartment:            // Сравнить тип 
                     currentUsingTypeAsString = "Жилая квартира";    // Задать тип (как текстовую строку)
                     break;
+                case CurrentUsingTypes.Other:                   // Сравнить тип 
+                    currentUsingTypeAsString = "ПРОЧЕЕ!!!!!!!!";           // Задать тип (как текстовую строку)
+                    break;
                 default:                                            // Тип по умолчанию 
                     currentUsingTypeAsString = "--";                // Задать тип (как текстовую строку)
                     break;
@@ -368,13 +416,19 @@ namespace PR.Classes
             switch (WindowsType)                                       // Проверить тип
             {
                 case Windows.Wood:                                      // Сравнить тип 
-                    WindowsTypeAsString = "Деревянные";        // Задать тип (как текстовую строку)
+                    WindowsTypeAsString = "Деревянные простые";        // Задать тип (как текстовую строку)
                     break;
                 case Windows.Euro:                                     // Сравнить тип 
-                    WindowsTypeAsString = "Деревянные евро";       // Задать тип (как текстовую строку)
+                    WindowsTypeAsString = "Деревянные улучшенные";       // Задать тип (как текстовую строку)
                     break;
                 case Windows.Plastic:                                     // Сравнить тип 
-                    WindowsTypeAsString = "Пластиковые";       // Задать тип (как текстовую строку)
+                    WindowsTypeAsString = "ПВХ-профиль";       // Задать тип (как текстовую строку)
+                    break;
+                case Windows.Aluminium:                                     // Сравнить тип 
+                    WindowsTypeAsString = "Алюминевый профиль";       // Задать тип (как текстовую строку)
+                    break;
+                case Windows.Other:                   // Сравнить тип 
+                    WindowsTypeAsString = "ПРОЧЕЕ!!!!!!!!";           // Задать тип (как текстовую строку)
                     break;
                 default:                                                // Тип по умолчанию 
                     WindowsTypeAsString = "--";                        // Задать тип (как текстовую строку)
@@ -399,8 +453,17 @@ namespace PR.Classes
                 case Doors.Fil:                                     // Сравнить тип 
                     DoorsTypeAsString = "Филенчатые";       // Задать тип (как текстовую строку)
                     break;
+                case Doors.MetalAndWood:                                     // Сравнить тип 
+                    DoorsTypeAsString = "Двойная – деревянная и металлическая";       // Задать тип (как текстовую строку)
+                    break;
                 case Doors.Metal:                                     // Сравнить тип 
-                    DoorsTypeAsString = "Железная";       // Задать тип (как текстовую строку)
+                    DoorsTypeAsString = "Металлодеревянная";       // Задать тип (как текстовую строку)
+                    break;
+                case Doors.Plastic:                                     // Сравнить тип 
+                    DoorsTypeAsString = "Пластиковые";       // Задать тип (как текстовую строку)
+                    break;
+                case Doors.Other:                   // Сравнить тип 
+                    DoorsTypeAsString = "ПРОЧЕЕ!!!!!!!!";           // Задать тип (как текстовую строку)
                     break;
                 default:                                                // Тип по умолчанию 
                     DoorsTypeAsString = "--";                        // Задать тип (как текстовую строку)
@@ -420,13 +483,16 @@ namespace PR.Classes
             switch (PipesType)                                       // Проверить тип
             {
                 case Pipes.MetalPlastic:                                      // Сравнить тип 
-                    PipesTypeAsString = "Пластиковые";        // Задать тип (как текстовую строку)
+                    PipesTypeAsString = "Металлопластиковые";        // Задать тип (как текстовую строку)
                     break;
                 case Pipes.Plastic:                                     // Сравнить тип 
-                    PipesTypeAsString = "Металлопластиковые";       // Задать тип (как текстовую строку)
+                    PipesTypeAsString = "Полипропиленовые";       // Задать тип (как текстовую строку)
                     break;
                 case Pipes.Metal:                                     // Сравнить тип 
-                    PipesTypeAsString = "Стальные";       // Задать тип (как текстовую строку)
+                    PipesTypeAsString = "Металлические";       // Задать тип (как текстовую строку)
+                    break;
+                case Pipes.Other:                   // Сравнить тип 
+                    PipesTypeAsString = "ПРОЧЕЕ!!!!!!!!";           // Задать тип (как текстовую строку)
                     break;
                 default:                                                // Тип по умолчанию 
                     PipesTypeAsString = "--";                        // Задать тип (как текстовую строку)
@@ -454,6 +520,9 @@ namespace PR.Classes
                 case Heaters.Steel:                                     // Сравнить тип 
                     HeaterTypeAsString = "Стальные";       // Задать тип (как текстовую строку)
                     break;
+                case Heaters.Other:                   // Сравнить тип 
+                    HeaterTypeAsString = "ПРОЧЕЕ!!!!!!!!";           // Задать тип (как текстовую строку)
+                    break;
                 default:                                                // Тип по умолчанию 
                     HeaterTypeAsString = "--";                        // Задать тип (как текстовую строку)
                     break;
@@ -472,25 +541,19 @@ namespace PR.Classes
             switch (condition)                               // Проверить тип
             {
                 case Condition.Perfect:                    // Сравнить тип 
-                    conditionAsString = "Идеальное";         // Задать тип (как текстовую строку)
-                    break;
-                case Condition.VeryGood:                   // Сравнить тип 
-                    conditionAsString = "Очень хорошее";     // Задать тип (как текстовую строку)
+                    conditionAsString = "Отличное";         // Задать тип (как текстовую строку)
                     break;
                 case Condition.Good:                       // Сравнить тип 
                     conditionAsString = "Хорошее";           // Задать тип (как текстовую строку)
                     break;
                 case Condition.Normal:                     // Сравнить тип 
-                    conditionAsString = "Нормальное";        // Задать тип (как текстовую строку)
+                    conditionAsString = "Удовлетворительное";        // Задать тип (как текстовую строку)
                     break;
                 case Condition.Bad:                        // Сравнить тип 
-                    conditionAsString = "Плохое";            // Задать тип (как текстовую строку)
+                    conditionAsString = "Неудовлетворительное";            // Задать тип (как текстовую строку)
                     break;
-                case Condition.VeryBad:                    // Сравнить тип 
-                    conditionAsString = "Очень плохое";      // Задать тип (как текстовую строку)
-                    break;
-                case Condition.Terrible:                   // Сравнить тип 
-                    conditionAsString = "Ужасное";           // Задать тип (как текстовую строку)
+                case Condition.New:                   // Сравнить тип 
+                    conditionAsString = "Новая квартира";           // Задать тип (как текстовую строку)
                     break;
                 default:                                                // Тип по умолчанию 
                     conditionAsString = "--";                // Задать тип (как текстовую строку)

@@ -11,9 +11,24 @@
         Separate = 0,
 
         /// <summary>
+        /// Раздельные и проходные комнаты
+        /// </summary>
+        SeparateThrough = 1,
+
+        /// <summary>
+        /// Проходные комнаты
+        /// </summary>
+        Through = 2,
+
+        /// <summary>
         /// Совмещенные комнаты
         /// </summary>
-        Union = 1
+        Union = 3,
+
+        /// <summary>
+        /// Свободная планировка
+        /// </summary>
+        Free = 4
     }
 
     /// <summary>
@@ -29,7 +44,12 @@
         /// <summary>
         /// Совмещенные санузел
         /// </summary>
-        Union = 1
+        Union = 1,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 2
     }
 
     /// <summary>
@@ -70,23 +90,48 @@
         /// <summary>
         /// Ужасное
         /// </summary>
-        Terrible = 6
+        Terrible = 6,
+
+        /// <summary>
+        /// Новая квартира
+        /// </summary>
+        New = 7
     }
 
     /// <summary>
     /// Перечисление. Типы необходимых ремонтных работ
     /// </summary>
     public enum RepairWorkTypes
-    {
-        /// <summary>
-        /// Требуются ремонтные работы
-        /// </summary>
-        Need = 0,
-       
+    {  
         /// <summary>
         /// Ремонтные работы не требуются
         /// </summary>
-        NotNeed = 1
+        NotNeed = 0,
+
+        /// <summary>
+        /// Требуются косметический ремонтные работы
+        /// </summary>
+        NeedCosmetic = 1,
+
+        /// <summary>
+        /// Требуются капитальные ремонтные работы
+        /// </summary>
+        NeedTotal = 2,
+
+        /// <summary>
+        /// Требуются частичный ремонтные работы
+        /// </summary>
+        NeedPartial = 3,
+
+        /// <summary>
+        /// Требуются чистовая отделка
+        /// </summary>
+        NeedClear = 4,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 5
     }
 
     /// <summary>
@@ -95,39 +140,24 @@
     public enum RoomFinishingQualities
     {
         /// <summary>
-        /// Идеальное
+        /// Премиум
         /// </summary>
-        Perfect = 0,
+        Premium = 0,
 
         /// <summary>
-        /// Очень хорошее
+        /// Улучшенное
         /// </summary>
-        VeryGood = 1,
+        Better = 1,
 
         /// <summary>
-        /// Хорошее
+        /// Стандартное
         /// </summary>
-        Good = 2,
+        Standart = 2,
 
         /// <summary>
-        /// Нормальное
+        /// Простое
         /// </summary>
-        Normal = 3,
-
-        /// <summary>
-        /// Плохое
-        /// </summary>
-        Bad = 4,
-
-        /// <summary>
-        /// Очень плохое
-        /// </summary>
-        VeryBad = 5,
-
-        /// <summary>
-        /// Ужасное
-        /// </summary>
-        Terrible = 6
+        Simple = 3
     }
 
     /// <summary>
@@ -168,7 +198,12 @@
         /// <summary>
         /// Ужасное
         /// </summary>
-        Terrible = 6
+        Terrible = 6,
+
+        /// <summary>
+        /// Новая квартира
+        /// </summary>
+        New = 7
     }
 
     /// <summary>
@@ -197,9 +232,19 @@
         Parquet = 3,
 
         /// <summary>
-        /// Краска
+        /// Стяжка
         /// </summary>
-        Paint = 4
+        NoFinishing = 4,
+
+        /// <summary>
+        /// Ковролин
+        /// </summary>
+        Kovrolin = 5,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 6
     }
 
     /// <summary>
@@ -223,9 +268,24 @@
         Paint = 2,
 
         /// <summary>
+        /// Краска и плитка
+        /// </summary>
+        PaintAndTile = 3,
+
+        /// <summary>
         /// Плитка
         /// </summary>
-        Tile = 3
+        Tile = 4,
+
+        /// <summary>
+        /// Панели ПВХ
+        /// </summary>
+        PVH = 5,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 6
     }
 
     /// <summary>
@@ -246,7 +306,22 @@
         /// <summary>
         /// Краска
         /// </summary>
-        Paint = 2
+        Paint = 2,
+
+        /// <summary>
+        /// Обои
+        /// </summary>
+        Wallpaper = 3,
+
+        /// <summary>
+        /// Панели ПВХ
+        /// </summary>
+        PVH = 4,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 5
     }
 
     /// <summary>
@@ -262,7 +337,12 @@
         /// <summary>
         /// Неподключен
         /// </summary>
-        NotConnected = 1
+        NotConnected = 1,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 2
     }
 
     /// <summary>
@@ -273,7 +353,17 @@
         /// <summary>
         /// Центральная
         /// </summary>
-        Central = 0
+        Central = 0,
+
+        /// <summary>
+        /// От общедомового газового котла
+        /// </summary>
+        Home = 1,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 2
     }
 
     /// <summary>
@@ -284,7 +374,12 @@
         /// <summary>
         /// Жилай квартира
         /// </summary>
-        LivingAppartment = 0
+        LivingAppartment = 0,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 1
     }
 
     /// <summary>
@@ -295,7 +390,12 @@
         /// <summary>
         /// Стандартная планировка 
         /// </summary>
-        Standard = 0
+        Standard = 0,
+
+        /// <summary>
+        /// Индивидуальная
+        /// </summary>
+        Individual = 1
     }
 
     /// <summary>
@@ -316,7 +416,22 @@
         /// <summary>
         /// Металлические
         /// </summary>
-        Metal = 2
+        Metal = 2,
+
+        /// <summary>
+        /// 2 двери: металлическая и деревянная
+        /// </summary>
+        MetalAndWood = 3,
+
+        /// <summary>
+        /// Пластиковые
+        /// </summary>
+        Plastic = 4,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 5
     }
 
     /// <summary>
@@ -337,7 +452,17 @@
         /// <summary>
         /// Пластиковые
         /// </summary>
-        Plastic = 2
+        Plastic = 2,
+
+        /// <summary>
+        /// Алюминевые
+        /// </summary>
+        Aluminium = 3,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 4
     }
 
     /// <summary>
@@ -358,7 +483,12 @@
         /// <summary>
         /// Металлические
         /// </summary>
-        Metal = 2
+        Metal = 2,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 3
     }
 
     /// <summary>
@@ -379,6 +509,11 @@
         /// <summary>
         /// Стальные
         /// </summary>
-        Steel = 2
+        Steel = 2,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 3
     }
 }

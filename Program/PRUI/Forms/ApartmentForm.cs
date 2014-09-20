@@ -3017,6 +3017,52 @@ namespace PRUI.Forms
         }
 
         /// <summary>
+        /// Метод. Сохраняет изменения данных
+        /// </summary>
+        public override void saveButton_Click(object sender, EventArgs e)
+        {
+            float sum = 0;
+            float sqmCalcPrice;
+
+            //вычисление ликвидационной уценки
+            float k_sdv; //коэффициент стоимости денег во времени
+            float r12;//требуемая доходность инвестирования в объект оценки в год
+            double r;//требуемая доходность инвестирования в объект оценки 
+            float risks;//коэффициент по рискам
+            double tm; //разница во времени при продаже с рыночной ценой и ликвидационной
+            IComparisonApart[] aparts1;
+            if (_apartment.ComparApart != null)
+            {
+                aparts1 = _apartment.ComparApart.ToArray();
+
+                risks = (_apartment.Object.AcceleratedWear + _apartment.Object.BadManagment +
+                    _apartment.Object.ConcurentsUp + _apartment.Object.Criminal +
+                    _apartment.Object.EconSituationDown + _apartment.Object.ExtremalSituation +
+                    _apartment.Object.FinanceChecking + _apartment.Object.LowChange +
+                    _apartment.Object.NoRentalMoney + _apartment.Object.NotCorrect) / 10;
+                r12 = _apartment.Object.NoRisk + risks + (_apartment.Object.NoRisk / 12) * _apartment.Object.T_r + _apartment.Object.InvestManage;
+                r = r12 / 12;
+                tm = _apartment.Object.T_r - _apartment.Object.T_l;
+                k_sdv = Convert.ToSingle(1 / (System.Math.Pow((1 + r / 100), tm)));
+
+
+                for (int i = 0; i < 5; i++)
+                {
+                    sum = aparts1[i].sqmCalcPrice + sum;
+                }
+                sqmCalcPrice = sum / 5;
+                //Вычисление рыночной стоимости
+                _apartment.Object.Price = sqmCalcPrice * _apartment.GrossArea;
+
+                //Вычисление ликвидационной стоимости
+                _apartment.Object.Discount = _apartment.Object.Price * _apartment.Object.K_el * k_sdv;
+
+                _objects.SaveChanges();
+            }
+            base.saveButton_Click(sender, e);
+        }
+
+        /// <summary>
         /// Метод. Отвязывает квартиру от связанного дома
         /// </summary>
         private void unlinkHomeButton_Click(object sender, EventArgs e)
@@ -3202,6 +3248,39 @@ namespace PRUI.Forms
         }
 
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            //вычисление ликвидационной уценки
+            float k_sdv; //коэффициент стоимости денег во времени
+            float r12;//требуемая доходность инвестирования в объект оценки в год
+            double r;//требуемая доходность инвестирования в объект оценки 
+            float risks;//коэффициент по рискам
+            double tm; //разница во времени при продаже с рыночной ценой и ликвидационной
+
+
+                risks = (_apartment.Object.AcceleratedWear + _apartment.Object.BadManagment +
+                    _apartment.Object.ConcurentsUp + _apartment.Object.Criminal +
+                    _apartment.Object.EconSituationDown + _apartment.Object.ExtremalSituation +
+                    _apartment.Object.FinanceChecking + _apartment.Object.LowChange +
+                    _apartment.Object.NoRentalMoney + _apartment.Object.NotCorrect) / 10;
+                r12 = _apartment.Object.NoRisk + risks + (_apartment.Object.NoRisk / 12) * _apartment.Object.T_r + _apartment.Object.InvestManage;
+                r = r12 / 12;
+                tm = _apartment.Object.T_r - _apartment.Object.T_l;
+                k_sdv = Convert.ToSingle(1 / (System.Math.Pow((1 + r / 100), tm)));
+
+                //Вычисление ликвидационной стоимости
+                _apartment.Object.Discount = _apartment.Object.Price * _apartment.Object.K_el * k_sdv;
+            
+            DialogResult unlinkConfirm;                         // Результат подтверждения сообщения
+
+            unlinkConfirm = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
+                "Ликвидационная стоимoсть равна " + Convert.ToString(_apartment.Object.Discount)+"\n\r"+
+                "Рыночная стоимoсть равна " + Convert.ToString(_apartment.Object.Price),
+                "Подтверждение",
+                MessageBoxButtons.OK);
+        }
 
 
 

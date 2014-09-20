@@ -316,6 +316,13 @@ namespace PR
                 Property(c => c.Id).IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
                 Property(c => c.Description).IsOptional();
                 Property(c => c.Number).IsRequired();
+                Property(c => c.Banks).IsOptional();
+                Property(c => c.Hospitals).IsOptional();
+
+                Property(c => c.RestPlaces).IsOptional();
+                Property(c => c.Schools).IsOptional();
+                Property(c => c.Services).IsOptional();
+                Property(c => c.Tradings).IsOptional();
 
                 HasOptional(c => c.CityForEntityFramework).WithMany(c => c.ComplexesForEntityFramework).WillCascadeOnDelete(false);
             }
@@ -379,14 +386,7 @@ namespace PR
                 Property(h => h.Social).IsOptional();
                 Property(h => h.StopDistance).IsOptional();
                 Property(h => h.Transport).IsOptional();
-                Property(h => h.Banks).IsOptional();
-                Property(h => h.Hospitals).IsOptional();
-
-                Property(h => h.RestPlaces).IsOptional();
-                Property(h => h.Schools).IsOptional();
-                Property(h => h.Services).IsOptional();
-                Property(h => h.Tradings).IsOptional();
-
+ 
                 HasOptional(h => h.DistrictForEntityFramework).WithMany(h => h.HomesForEntityFramework).WillCascadeOnDelete(false);
                 HasOptional(h => h.StreetForEntityFramework).WithMany(s => s.HomesForEntityFramework).WillCascadeOnDelete(false);
                 HasOptional(h => h.ComplexForEntityFramework).WithMany(s => s.HomesForEntityFramework).WillCascadeOnDelete(false);

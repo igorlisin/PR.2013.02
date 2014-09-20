@@ -27,6 +27,9 @@ namespace PR.Classes
                case Prestiges.NotPrestige:                     // Сравнить тип 
                    prestigeAsString = "Не престижный";      // Задать тип (как текстовую строку)
                    break;
+               case Prestiges.Other:                     // Сравнить тип 
+                   prestigeAsString = "ПРОЧЕЕ!!!!!!!!";      // Задать тип (как текстовую строку)
+                   break;
                default:                                                // Тип по умолчанию 
                    prestigeAsString = "--";                     // Задать тип (как текстовую строку)
                    break;

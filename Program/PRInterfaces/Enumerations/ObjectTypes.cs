@@ -28,9 +28,9 @@ namespace PRInterfaces.Enumerations
         Gazobeton = 2,
 
         /// <summary>
-        /// Гипс
+        /// Монолитный жб
         ///</summary>
-        Gips = 3,
+        Monolyte = 3,
 
         /// <summary>
         /// Гипсокартон
@@ -40,7 +40,12 @@ namespace PRInterfaces.Enumerations
         /// <summary>
         /// Дерево
         ///</summary>
-        Wood = 5
+        Wood = 5,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 6
     }
 
     /// <summary>
@@ -61,7 +66,12 @@ namespace PRInterfaces.Enumerations
         /// <summary>
         /// Не престижный
         /// </summary>
-        NotPrestige = 2
+        NotPrestige = 2,
+
+        /// <summary>
+        /// ПРОЧЕЕ!!!!!!!!
+        /// </summary>
+        Other = 3
     }
 
     namespace Object

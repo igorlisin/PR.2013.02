@@ -55,8 +55,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,8 +65,6 @@
             this.KapremontYearTextBox = new System.Windows.Forms.TextBox();
             this.ExtraFactorsTextBox = new System.Windows.Forms.TextBox();
             this.BasmentWearTextBox = new System.Windows.Forms.TextBox();
-            this.Local2TextBox = new System.Windows.Forms.TextBox();
-            this.Local1TextBox = new System.Windows.Forms.TextBox();
             this.SocialTextBox = new System.Windows.Forms.TextBox();
             this.PromDistanceTextBox = new System.Windows.Forms.TextBox();
             this.ClosestStopTextBox = new System.Windows.Forms.TextBox();
@@ -78,22 +74,8 @@
             this.numberOnFloor = new System.Windows.Forms.Label();
             this.FloorsTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.BanksTextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.HospitalsTextBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.KindersTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.SchoolsTextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.RestPlacesTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.PharmacyTextBox = new System.Windows.Forms.TextBox();
-            this.ServicesTextBox = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.TradingsTextBox = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.KapremontInfTextBox = new System.Windows.Forms.TextBox();
             this.regionInfoGroup.SuspendLayout();
             this.countryInfoGroup.SuspendLayout();
             this.homeInfoGroupBox.SuspendLayout();
@@ -238,8 +220,6 @@
             this.tabPage3.Controls.Add(this.label23);
             this.tabPage3.Controls.Add(this.label24);
             this.tabPage3.Controls.Add(this.label25);
-            this.tabPage3.Controls.Add(this.label3);
-            this.tabPage3.Controls.Add(this.label2);
             this.tabPage3.Controls.Add(this.label26);
             this.tabPage3.Controls.Add(this.label27);
             this.tabPage3.Controls.Add(this.label1);
@@ -250,8 +230,6 @@
             this.tabPage3.Controls.Add(this.KapremontYearTextBox);
             this.tabPage3.Controls.Add(this.ExtraFactorsTextBox);
             this.tabPage3.Controls.Add(this.BasmentWearTextBox);
-            this.tabPage3.Controls.Add(this.Local2TextBox);
-            this.tabPage3.Controls.Add(this.Local1TextBox);
             this.tabPage3.Controls.Add(this.SocialTextBox);
             this.tabPage3.Controls.Add(this.PromDistanceTextBox);
             this.tabPage3.Controls.Add(this.ClosestStopTextBox);
@@ -400,7 +378,7 @@
             this.groupBox6.Size = new System.Drawing.Size(247, 64);
             this.groupBox6.TabIndex = 40;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Стены";
+            this.groupBox6.Text = "Перекрытия";
             // 
             // CeilingConditionComboBox
             // 
@@ -519,24 +497,6 @@
             this.label25.TabIndex = 33;
             this.label25.Text = "Дополнительные факторы";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(176, 191);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 13);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Локальные особенности 2";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 13);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Локальные особенности 1";
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -620,22 +580,6 @@
             this.BasmentWearTextBox.Size = new System.Drawing.Size(101, 20);
             this.BasmentWearTextBox.TabIndex = 23;
             // 
-            // Local2TextBox
-            // 
-            this.Local2TextBox.Location = new System.Drawing.Point(179, 207);
-            this.Local2TextBox.Multiline = true;
-            this.Local2TextBox.Name = "Local2TextBox";
-            this.Local2TextBox.Size = new System.Drawing.Size(128, 25);
-            this.Local2TextBox.TabIndex = 22;
-            // 
-            // Local1TextBox
-            // 
-            this.Local1TextBox.Location = new System.Drawing.Point(9, 208);
-            this.Local1TextBox.Multiline = true;
-            this.Local1TextBox.Name = "Local1TextBox";
-            this.Local1TextBox.Size = new System.Drawing.Size(128, 25);
-            this.Local1TextBox.TabIndex = 22;
-            // 
             // SocialTextBox
             // 
             this.SocialTextBox.Location = new System.Drawing.Point(179, 251);
@@ -697,165 +641,32 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.BanksTextBox);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.HospitalsTextBox);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.KindersTextBox);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.SchoolsTextBox);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.RestPlacesTextBox);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.PharmacyTextBox);
-            this.tabPage2.Controls.Add(this.ServicesTextBox);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.TradingsTextBox);
-            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.KapremontInfTextBox);
+            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(401, 428);
             this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "Особенности района";
+            this.tabPage2.Text = "Информация о капремонте";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // BanksTextBox
+            // label2
             // 
-            this.BanksTextBox.Location = new System.Drawing.Point(18, 50);
-            this.BanksTextBox.Multiline = true;
-            this.BanksTextBox.Name = "BanksTextBox";
-            this.BanksTextBox.Size = new System.Drawing.Size(123, 45);
-            this.BanksTextBox.TabIndex = 12;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Информация о капремонте";
             // 
-            // label8
+            // KapremontInfTextBox
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(19, 253);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 13);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Список объектов торговли";
-            // 
-            // HospitalsTextBox
-            // 
-            this.HospitalsTextBox.Location = new System.Drawing.Point(181, 50);
-            this.HospitalsTextBox.Multiline = true;
-            this.HospitalsTextBox.Name = "HospitalsTextBox";
-            this.HospitalsTextBox.Size = new System.Drawing.Size(123, 45);
-            this.HospitalsTextBox.TabIndex = 13;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(180, 253);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 13);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Список аптек";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(179, 175);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 13);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Список предприятий быта";
-            // 
-            // KindersTextBox
-            // 
-            this.KindersTextBox.Location = new System.Drawing.Point(19, 120);
-            this.KindersTextBox.Multiline = true;
-            this.KindersTextBox.Name = "KindersTextBox";
-            this.KindersTextBox.Size = new System.Drawing.Size(123, 45);
-            this.KindersTextBox.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 175);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 13);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Список мест отдыха";
-            // 
-            // SchoolsTextBox
-            // 
-            this.SchoolsTextBox.Location = new System.Drawing.Point(181, 120);
-            this.SchoolsTextBox.Multiline = true;
-            this.SchoolsTextBox.Name = "SchoolsTextBox";
-            this.SchoolsTextBox.Size = new System.Drawing.Size(123, 45);
-            this.SchoolsTextBox.TabIndex = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(179, 104);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 13);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Список школ";
-            // 
-            // RestPlacesTextBox
-            // 
-            this.RestPlacesTextBox.Location = new System.Drawing.Point(20, 191);
-            this.RestPlacesTextBox.Multiline = true;
-            this.RestPlacesTextBox.Name = "RestPlacesTextBox";
-            this.RestPlacesTextBox.Size = new System.Drawing.Size(123, 45);
-            this.RestPlacesTextBox.TabIndex = 16;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 104);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 13);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Список детских садов";
-            // 
-            // PharmacyTextBox
-            // 
-            this.PharmacyTextBox.Location = new System.Drawing.Point(182, 269);
-            this.PharmacyTextBox.Multiline = true;
-            this.PharmacyTextBox.Name = "PharmacyTextBox";
-            this.PharmacyTextBox.Size = new System.Drawing.Size(123, 45);
-            this.PharmacyTextBox.TabIndex = 17;
-            // 
-            // ServicesTextBox
-            // 
-            this.ServicesTextBox.Location = new System.Drawing.Point(181, 191);
-            this.ServicesTextBox.Multiline = true;
-            this.ServicesTextBox.Name = "ServicesTextBox";
-            this.ServicesTextBox.Size = new System.Drawing.Size(123, 45);
-            this.ServicesTextBox.TabIndex = 18;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(179, 34);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 13);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Список больниц";
-            // 
-            // TradingsTextBox
-            // 
-            this.TradingsTextBox.Location = new System.Drawing.Point(21, 269);
-            this.TradingsTextBox.Multiline = true;
-            this.TradingsTextBox.Name = "TradingsTextBox";
-            this.TradingsTextBox.Size = new System.Drawing.Size(123, 45);
-            this.TradingsTextBox.TabIndex = 19;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 34);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 13);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Список банков";
+            this.KapremontInfTextBox.Location = new System.Drawing.Point(16, 36);
+            this.KapremontInfTextBox.Multiline = true;
+            this.KapremontInfTextBox.Name = "KapremontInfTextBox";
+            this.KapremontInfTextBox.Size = new System.Drawing.Size(237, 86);
+            this.KapremontInfTextBox.TabIndex = 1;
             // 
             // HomeForm
             // 
@@ -944,30 +755,12 @@
         protected System.Windows.Forms.TextBox BasementTextBox;
         public System.Windows.Forms.TextBox BuildYearTextBox;
         private System.Windows.Forms.CheckBox ParkingCheckBox;
-        protected System.Windows.Forms.Label label3;
-        protected System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.TextBox Local2TextBox;
-        protected System.Windows.Forms.TextBox Local1TextBox;
         protected System.Windows.Forms.TextBox ClosestStopTextBox;
         private System.Windows.Forms.Label numberOnFloor;
         private System.Windows.Forms.TextBox FloorsTextBox;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox BanksTextBox;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox HospitalsTextBox;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox KindersTextBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox SchoolsTextBox;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox RestPlacesTextBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox PharmacyTextBox;
-        private System.Windows.Forms.TextBox ServicesTextBox;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox TradingsTextBox;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox KapremontInfTextBox;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -61,8 +61,8 @@ namespace PRDocument
             string[] bookmarks_conclusion = new string[50];                                                                       // Массив закладок
             string[] texts_conclusion = new string[50];                                                                           // Массив вставляемых вместо закладок строк
 
-            string[] bookmarks_report = new string[437];                                                                       // Массив закладок
-            string[] texts_report = new string[437];                                                                           // Массив вставляемых вместо закладок строк
+            string[] bookmarks_report = new string[504];                                                                       // Массив закладок
+            string[] texts_report = new string[504];                                                                           // Массив вставляемых вместо закладок строк
 
             string client_in_padeg = null;      //склонение ФИО па падежам
             int rod = 0;
@@ -186,7 +186,7 @@ namespace PRDocument
             //инициализация массивов
             pics = report.Apartment.Pictures.ToArray();
             apartmentMaps = new IPicture[13];
-            documents = new IPicture[13];
+            documents = new IPicture[30];
             maps = new IPicture[13];
             photo = new IPicture[25];
             screenshot = new IPicture[13];
@@ -519,7 +519,7 @@ namespace PRDocument
             bookmarks_report[245] = "year";
             bookmarks_report[246] = "year2";
             bookmarks_report[247] = "home_age";
-            bookmarks_report[248] = "image1_comment";
+            bookmarks_report[248] = "image1_comment";       //комментарии к фотографиям
             bookmarks_report[249] = "image2_comment";
             bookmarks_report[250] = "image3_comment";
             bookmarks_report[251] = "image4_comment";
@@ -529,188 +529,253 @@ namespace PRDocument
             bookmarks_report[255] = "image8_comment";
             bookmarks_report[256] = "image9_comment";
             bookmarks_report[257] = "image10_comment";
-            bookmarks_report[258] = "image1";                          // Фото
-            bookmarks_report[259] = "image2";                          // Фото
-            bookmarks_report[260] = "image3";                          // Фото
-            bookmarks_report[261] = "image4";                          // Фото
-            bookmarks_report[262] = "image5";                          // Фото
-            bookmarks_report[263] = "image6";                          // Фото
-            bookmarks_report[264] = "image7";                          // Фото
-            bookmarks_report[265] = "image8";                          // Фото
-            bookmarks_report[266] = "image9";                          // Фото
-            bookmarks_report[267] = "image10";                          // Схема квартиры
-            bookmarks_report[268] = "image11";                          // Скан документов
-            bookmarks_report[269] = "image12";                          // Скан документов
-            bookmarks_report[270] = "image13";                          // Скан документов
-            bookmarks_report[271] = "image_map1";
-            bookmarks_report[272] = "image_map2";
+            bookmarks_report[258] = "image11_comment";
+            bookmarks_report[259] = "image12_comment";
+            bookmarks_report[260] = "image13_comment";
+            bookmarks_report[261] = "image14_comment";
+            bookmarks_report[262] = "image15_comment";
+            bookmarks_report[263] = "image16_comment";
+            bookmarks_report[264] = "image17_comment";
+            bookmarks_report[265] = "image18_comment";
+            bookmarks_report[266] = "image19_comment";
+            bookmarks_report[267] = "image20_comment";
+            bookmarks_report[268] = "image21_comment";
+            bookmarks_report[269] = "image22_comment";
+            bookmarks_report[270] = "image23_comment";
+            bookmarks_report[271] = "image24_comment";
+            bookmarks_report[272] = "image25_comment";
+            bookmarks_report[273] = "image1";                   //фото
+            bookmarks_report[274] = "image2";
+            bookmarks_report[275] = "image3";
+            bookmarks_report[276] = "image4";
+            bookmarks_report[277] = "image5";
+            bookmarks_report[278] = "image6";
+            bookmarks_report[279] = "image7";
+            bookmarks_report[280] = "image8";
+            bookmarks_report[281] = "image9";
+            bookmarks_report[282] = "image10";
+            bookmarks_report[283] = "image11";
+            bookmarks_report[284] = "image12";
+            bookmarks_report[285] = "image13";
+            bookmarks_report[286] = "image11a";
+            bookmarks_report[287] = "image12a";
+            bookmarks_report[288] = "image13a";
+            bookmarks_report[289] = "image14";
+            bookmarks_report[290] = "image15";
+            bookmarks_report[291] = "image16";
+            bookmarks_report[292] = "image17";
+            bookmarks_report[293] = "image18";
+            bookmarks_report[294] = "image19";
+            bookmarks_report[295] = "image20";
+            bookmarks_report[296] = "image21";
+            bookmarks_report[297] = "image22";
+            bookmarks_report[298] = "image23";
+            bookmarks_report[299] = "image24";
+            bookmarks_report[300] = "image25"; 
+            bookmarks_report[301] = "planImage";            //план квартиры
+            bookmarks_report[302] = "image_map1";           //квартира на карте
+            bookmarks_report[303] = "image_map2";
+            bookmarks_report[304] = "screenshotAnalog1";    //скриншот закамнеда
+            bookmarks_report[305] = "screenshotAnalog2";
+            bookmarks_report[306] = "screenshotAnalog3";
+            bookmarks_report[307] = "screenshotAnalog4";
+            bookmarks_report[308] = "screenshotAnalog5";
+            bookmarks_report[309] = "documentImage1";       //скан документов заказчика
+            bookmarks_report[310] = "documentImage2";
+            bookmarks_report[311] = "documentImage3";
+            bookmarks_report[312] = "documentImage4";
+            bookmarks_report[313] = "documentImage5";
+            bookmarks_report[314] = "documentImage6";
+            bookmarks_report[315] = "documentImage7";
+            bookmarks_report[316] = "documentImage8";
+            bookmarks_report[317] = "documentImage9";
+            bookmarks_report[318] = "documentImage10";
+            bookmarks_report[319] = "documentImage11";
+            bookmarks_report[320] = "documentImage12";
+            bookmarks_report[321] = "documentImage13";
+            bookmarks_report[322] = "documentImage14";
+            bookmarks_report[323] = "documentImage15";
+            bookmarks_report[324] = "documentImage16";
+            bookmarks_report[325] = "documentImage17";
+            bookmarks_report[326] = "documentImage18";
+            bookmarks_report[327] = "documentImage19";
+            bookmarks_report[328] = "documentImage20";
+            bookmarks_report[329] = "documentImage21";
+            bookmarks_report[330] = "documentImage22";
+            bookmarks_report[331] = "documentImage23";
+            bookmarks_report[332] = "documentImage24";
+            bookmarks_report[333] = "documentImage25";  //документы оценщика
+            bookmarks_report[334] = "documentImage26";
+            bookmarks_report[335] = "documentImage27";
+            bookmarks_report[336] = "documentImage28";
+            bookmarks_report[337] = "documentImage29";
+            bookmarks_report[338] = "documentImage30";
+            bookmarks_report[339] = "k_Balkon1";        //коэффициенты для расчета рыночной стоимости
+            bookmarks_report[340] = "k_Balkon2";
+            bookmarks_report[341] = "k_Balkon3";
+            bookmarks_report[342] = "k_Balkon4";
+            bookmarks_report[343] = "k_Balkon5";
+            bookmarks_report[344] = "k_Floor1";
+            bookmarks_report[345] = "k_Floor2";
+            bookmarks_report[346] = "k_Floor3";
+            bookmarks_report[347] = "k_Floor4";
+            bookmarks_report[348] = "k_Floor5";
+            bookmarks_report[349] = "k_Floors1";
+            bookmarks_report[350] = "k_Floors2";
+            bookmarks_report[351] = "k_Floors3";
+            bookmarks_report[352] = "k_Floors4";
+            bookmarks_report[353] = "k_Floors5";
+            bookmarks_report[354] = "k_FullPrc1";
+            bookmarks_report[355] = "k_FullPrc2";
+            bookmarks_report[356] = "k_FullPrc3";
+            bookmarks_report[357] = "k_FullPrc4";
+            bookmarks_report[358] = "k_FullPrc5";
+            bookmarks_report[359] = "k_RemontPrice1";
+            bookmarks_report[360] = "k_RemontPrice2";
+            bookmarks_report[361] = "k_RemontPrice3";
+            bookmarks_report[362] = "k_RemontPrice4";
+            bookmarks_report[363] = "k_RemontPrice5";
+            bookmarks_report[364] = "k_Sanuzel1";
+            bookmarks_report[365] = "k_Sanuzel2";
+            bookmarks_report[366] = "k_Sanuzel3";
+            bookmarks_report[367] = "k_Sanuzel4";
+            bookmarks_report[368] = "k_Sanuzel5";
+            bookmarks_report[369] = "k_SKitchen1";
+            bookmarks_report[370] = "k_SKitchen2";
+            bookmarks_report[371] = "k_SKitchen3";
+            bookmarks_report[372] = "k_SKitchen4";
+            bookmarks_report[373] = "k_SKitchen5";
+            bookmarks_report[374] = "k_sqmCorrPrice1";
+            bookmarks_report[375] = "k_sqmCorrPrice2";
+            bookmarks_report[376] = "k_sqmCorrPrice3";
+            bookmarks_report[377] = "k_sqmCorrPrice4";
+            bookmarks_report[378] = "k_sqmCorrPrice5";
+            bookmarks_report[379] = "k_sqmPrcPrice1";
+            bookmarks_report[380] = "k_sqmPrcPrice2";
+            bookmarks_report[381] = "k_sqmPrcPrice3";
+            bookmarks_report[382] = "k_sqmPrcPrice4";
+            bookmarks_report[383] = "k_sqmPrcPrice5";
+            bookmarks_report[384] = "k_Torg1";
+            bookmarks_report[385] = "k_Torg2";
+            bookmarks_report[386] = "k_Torg3";
+            bookmarks_report[387] = "k_Torg4";
+            bookmarks_report[388] = "k_Torg5";
+            bookmarks_report[389] = "k_Type1";
+            bookmarks_report[390] = "k_Type2";
+            bookmarks_report[391] = "k_Type3";
+            bookmarks_report[392] = "k_Type4";
+            bookmarks_report[393] = "k_Type5";
+            bookmarks_report[394] = "k_Vid1";
+            bookmarks_report[395] = "k_Vid2";
+            bookmarks_report[396] = "k_Vid3";
+            bookmarks_report[397] = "k_Vid4";
+            bookmarks_report[398] = "k_Vid5";
+            bookmarks_report[399] = "k_aBalcon0";
+            bookmarks_report[400] = "k_aBalcon1";
+            bookmarks_report[401] = "k_aBalcon2";
+            bookmarks_report[402] = "k_aBalcon3";
+            bookmarks_report[403] = "k_aBalcon4";
+            bookmarks_report[404] = "k_aBalcon5";
+            bookmarks_report[405] = "k_addr0";
+            bookmarks_report[406] = "k_addr1";
+            bookmarks_report[407] = "k_addr2";
+            bookmarks_report[408] = "k_addr3";
+            bookmarks_report[409] = "k_addr4";
+            bookmarks_report[410] = "k_addr5";
+            bookmarks_report[411] = "k_addr00";
+            bookmarks_report[412] = "k_addr01";
+            bookmarks_report[413] = "k_addr02";
+            bookmarks_report[414] = "k_addr03";
+            bookmarks_report[415] = "k_addr04";
+            bookmarks_report[416] = "k_addr05";
+            bookmarks_report[417] = "k_aFloor0";
+            bookmarks_report[418] = "k_aFloor1";
+            bookmarks_report[419] = "k_aFloor2";
+            bookmarks_report[420] = "k_aFloor3";
+            bookmarks_report[421] = "k_aFloor4";
+            bookmarks_report[422] = "k_aFloor5";
+            bookmarks_report[423] = "k_aFloors0";
+            bookmarks_report[424] = "k_aFloors1";
+            bookmarks_report[425] = "k_aFloors2";
+            bookmarks_report[426] = "k_aFloors3";
+            bookmarks_report[427] = "k_aFloors4";
+            bookmarks_report[428] = "k_aFloors5";
+            bookmarks_report[429] = "k_area0";
+            bookmarks_report[430] = "k_area1";
+            bookmarks_report[431] = "k_area2";
+            bookmarks_report[432] = "k_area3";
+            bookmarks_report[433] = "k_area4";
+            bookmarks_report[434] = "k_area5";
+            bookmarks_report[435] = "k_aSKitchen0";
+            bookmarks_report[436] = "k_aSKitchen1";
+            bookmarks_report[437] = "k_aSKitchen2";
+            bookmarks_report[438] = "k_aSKitchen3";
+            bookmarks_report[439] = "k_aSKitchen4";
+            bookmarks_report[440] = "k_aSKitchen5";
+            bookmarks_report[441] = "k_Dollar";
+            bookmarks_report[442] = "k_DollarPrice0";
+            bookmarks_report[443] = "k_Price0";
+            bookmarks_report[444] = "k_Rooms0";
+            bookmarks_report[445] = "k_Rooms1";
+            bookmarks_report[446] = "k_Rooms2";
+            bookmarks_report[447] = "k_Rooms3";
+            bookmarks_report[448] = "k_Rooms4";
+            bookmarks_report[449] = "k_Rooms5";
+            bookmarks_report[450] = "k_SanType0";
+            bookmarks_report[451] = "k_SanType1";
+            bookmarks_report[452] = "k_SanType2";
+            bookmarks_report[453] = "k_SanType3";
+            bookmarks_report[454] = "k_SanType4";
+            bookmarks_report[455] = "k_SanType5";
+            bookmarks_report[456] = "k_wall0";
+            bookmarks_report[457] = "k_wall1";
+            bookmarks_report[458] = "k_wall2";
+            bookmarks_report[459] = "k_wall3";
+            bookmarks_report[460] = "k_wall4";
+            bookmarks_report[461] = "k_wall5";
+            bookmarks_report[462] = "k_sqmPrice0";
+            bookmarks_report[463] = "k_sqmPrice1";
+            bookmarks_report[464] = "k_sqmPrice2";
+            bookmarks_report[465] = "k_sqmPrice3";
+            bookmarks_report[466] = "k_sqmPrice4";
+            bookmarks_report[467] = "k_sqmPrice5";
+            bookmarks_report[468] = "k_seller1";
+            bookmarks_report[469] = "k_seller2";
+            bookmarks_report[470] = "k_seller3";
+            bookmarks_report[471] = "k_seller4";
+            bookmarks_report[472] = "k_seller5";
+            bookmarks_report[473] = "k_Price1";
+            bookmarks_report[474] = "k_Price2";
+            bookmarks_report[475] = "k_Price3";
+            bookmarks_report[476] = "k_Price4";
+            bookmarks_report[477] = "k_Price5";
+            bookmarks_report[478] = "econSituation";            //коэффициенты для расчета ликвидационной стоимости
+            bookmarks_report[479] = "concurUp";
+            bookmarks_report[480] = "LowsChange";
+            bookmarks_report[481] = "extremalSituations";
+            bookmarks_report[482] = "AcceleratedWear";
+            bookmarks_report[483] = "NoRental";
+            bookmarks_report[484] = "Managment";
+            bookmarks_report[485] = "Criminal";
+            bookmarks_report[486] = "FinChecks";
+            bookmarks_report[487] = "NotCorrect";
+            bookmarks_report[488] = "RiskSumm";
+            bookmarks_report[489] = "RiskPrc";
+            bookmarks_report[490] = "NoRisk";
+            bookmarks_report[491] = "RiskPrc2";
+            bookmarks_report[492] = "NoRisk1m";
+            bookmarks_report[493] = "InvestManag";
+            bookmarks_report[494] = "InvestSalary";
+            bookmarks_report[495] = "K_el";
+            bookmarks_report[496] = "price11";
+            bookmarks_report[497] = "InvestSalary2";
+            bookmarks_report[498] = "InvestSalary1m";
+            bookmarks_report[499] = "t_l";
+            bookmarks_report[500] = "t_r";
+            bookmarks_report[501] = "K_sdv";
+            bookmarks_report[502] = "K_el2";
+            bookmarks_report[503] = "kapremontInformation";
 
-            bookmarks_report[273] = "k_Balkon1";
-            bookmarks_report[274] = "k_Balkon2";
-            bookmarks_report[275] = "k_Balkon3";
-            bookmarks_report[276] = "k_Balkon4";
-            bookmarks_report[277] = "k_Balkon5";
-            bookmarks_report[278] = "k_Floor1";
-            bookmarks_report[279] = "k_Floor2";
-            bookmarks_report[280] = "k_Floor3";
-            bookmarks_report[281] = "k_Floor4";
-            bookmarks_report[282] = "k_Floor5";
-            bookmarks_report[283] = "k_Floors1";
-            bookmarks_report[284] = "k_Floors2";
-            bookmarks_report[285] = "k_Floors3";
-            bookmarks_report[286] = "k_Floors4";
-            bookmarks_report[287] = "k_Floors5";
-            bookmarks_report[288] = "k_FullPrc1";
-            bookmarks_report[289] = "k_FullPrc2";
-            bookmarks_report[290] = "k_FullPrc3";
-            bookmarks_report[291] = "k_FullPrc4";
-            bookmarks_report[292] = "k_FullPrc5";
-            bookmarks_report[293] = "k_RemontPrice1";
-            bookmarks_report[294] = "k_RemontPrice2";
-            bookmarks_report[295] = "k_RemontPrice3";
-            bookmarks_report[296] = "k_RemontPrice4";
-            bookmarks_report[297] = "k_RemontPrice5";
-            bookmarks_report[298] = "k_Sanuzel1";
-            bookmarks_report[299] = "k_Sanuzel2";
-            bookmarks_report[300] = "k_Sanuzel3";
-            bookmarks_report[301] = "k_Sanuzel4";
-            bookmarks_report[302] = "k_Sanuzel5";
-            bookmarks_report[303] = "k_SKitchen1";
-            bookmarks_report[304] = "k_SKitchen2";
-            bookmarks_report[305] = "k_SKitchen3";
-            bookmarks_report[306] = "k_SKitchen4";
-            bookmarks_report[307] = "k_SKitchen5";
-            bookmarks_report[308] = "k_sqmCorrPrice1";
-            bookmarks_report[309] = "k_sqmCorrPrice2";
-            bookmarks_report[310] = "k_sqmCorrPrice3";
-            bookmarks_report[311] = "k_sqmCorrPrice4";
-            bookmarks_report[312] = "k_sqmCorrPrice5";
-            bookmarks_report[313] = "k_sqmPrcPrice1";
-            bookmarks_report[314] = "k_sqmPrcPrice2";
-            bookmarks_report[315] = "k_sqmPrcPrice3";
-            bookmarks_report[316] = "k_sqmPrcPrice4";
-            bookmarks_report[317] = "k_sqmPrcPrice5";
-            bookmarks_report[318] = "k_Torg1";
-            bookmarks_report[319] = "k_Torg2";
-            bookmarks_report[320] = "k_Torg3";
-            bookmarks_report[321] = "k_Torg4";
-            bookmarks_report[322] = "k_Torg5";
-            bookmarks_report[323] = "k_Type1";
-            bookmarks_report[324] = "k_Type2";
-            bookmarks_report[325] = "k_Type3";
-            bookmarks_report[326] = "k_Type4";
-            bookmarks_report[327] = "k_Type5";
-            bookmarks_report[328] = "k_Vid1";
-            bookmarks_report[329] = "k_Vid2";
-            bookmarks_report[330] = "k_Vid3";
-            bookmarks_report[331] = "k_Vid4";
-            bookmarks_report[332] = "k_Vid5";
-            bookmarks_report[332] = "k_Vid5";
-            bookmarks_report[333] = "k_aBalcon0";
-            bookmarks_report[334] = "k_aBalcon1";
-            bookmarks_report[335] = "k_aBalcon2";
-            bookmarks_report[336] = "k_aBalcon3";
-            bookmarks_report[337] = "k_aBalcon4";
-            bookmarks_report[338] = "k_aBalcon5";
-            bookmarks_report[339] = "k_addr0";
-            bookmarks_report[340] = "k_addr1";
-            bookmarks_report[341] = "k_addr2";
-            bookmarks_report[342] = "k_addr3";
-            bookmarks_report[343] = "k_addr4";
-            bookmarks_report[344] = "k_addr5";
-            bookmarks_report[345] = "k_addr00";
-            bookmarks_report[346] = "k_addr01";
-            bookmarks_report[347] = "k_addr02";
-            bookmarks_report[348] = "k_addr03";
-            bookmarks_report[349] = "k_addr04";
-            bookmarks_report[350] = "k_addr05";
-            bookmarks_report[351] = "k_aFloor0";
-            bookmarks_report[352] = "k_aFloor1";
-            bookmarks_report[353] = "k_aFloor2";
-            bookmarks_report[354] = "k_aFloor3";
-            bookmarks_report[355] = "k_aFloor4";
-            bookmarks_report[356] = "k_aFloor5";
-            bookmarks_report[357] = "k_aFloors0";
-            bookmarks_report[358] = "k_aFloors1";
-            bookmarks_report[359] = "k_aFloors2";
-            bookmarks_report[360] = "k_aFloors3";
-            bookmarks_report[361] = "k_aFloors4";
-            bookmarks_report[362] = "k_aFloors5";
-            bookmarks_report[363] = "k_area0";
-            bookmarks_report[364] = "k_area1";
-            bookmarks_report[365] = "k_area2";
-            bookmarks_report[366] = "k_area3";
-            bookmarks_report[367] = "k_area4";
-            bookmarks_report[368] = "k_area5";
-            bookmarks_report[369] = "k_aSKitchen0";
-            bookmarks_report[370] = "k_aSKitchen1";
-            bookmarks_report[371] = "k_aSKitchen2";
-            bookmarks_report[372] = "k_aSKitchen3";
-            bookmarks_report[373] = "k_aSKitchen4";
-            bookmarks_report[374] = "k_aSKitchen5";
-            bookmarks_report[375] = "k_Dollar";
-            bookmarks_report[376] = "k_DollarPrice0";
-            bookmarks_report[377] = "k_Price0";
-            bookmarks_report[378] = "k_Rooms0";
-            bookmarks_report[379] = "k_Rooms1";
-            bookmarks_report[380] = "k_Rooms2";
-            bookmarks_report[381] = "k_Rooms3";
-            bookmarks_report[382] = "k_Rooms4";
-            bookmarks_report[383] = "k_Rooms5";
-            bookmarks_report[384] = "k_SanType0";
-            bookmarks_report[385] = "k_SanType1";
-            bookmarks_report[386] = "k_SanType2";
-            bookmarks_report[387] = "k_SanType3";
-            bookmarks_report[388] = "k_SanType4";
-            bookmarks_report[389] = "k_SanType5";
-            bookmarks_report[390] = "k_wall0";
-            bookmarks_report[391] = "k_wall1";
-            bookmarks_report[392] = "k_wall2";
-            bookmarks_report[393] = "k_wall3";
-            bookmarks_report[394] = "k_wall4";
-            bookmarks_report[395] = "k_wall5";
-            bookmarks_report[396] = "k_sqmPrice0";
-            bookmarks_report[397] = "k_sqmPrice1";
-            bookmarks_report[398] = "k_sqmPrice2";
-            bookmarks_report[399] = "k_sqmPrice3";
-            bookmarks_report[400] = "k_sqmPrice4";
-            bookmarks_report[401] = "k_sqmPrice5";
-            bookmarks_report[402] = "k_seller1";
-            bookmarks_report[403] = "k_seller2";
-            bookmarks_report[404] = "k_seller3";
-            bookmarks_report[405] = "k_seller4";
-            bookmarks_report[406] = "k_seller5";
-            bookmarks_report[407] = "k_Price1";
-            bookmarks_report[408] = "k_Price2";
-            bookmarks_report[409] = "k_Price3";
-            bookmarks_report[410] = "k_Price4";
-            bookmarks_report[411] = "k_Price5";
-
-            bookmarks_report[412] = "econSituation";
-            bookmarks_report[413] = "concurUp";
-            bookmarks_report[414] = "LowsChange";
-            bookmarks_report[415] = "extremalSituations";
-            bookmarks_report[416] = "AcceleratedWear";
-            bookmarks_report[417] = "NoRental";
-            bookmarks_report[418] = "Managment";
-            bookmarks_report[419] = "Criminal";
-            bookmarks_report[420] = "FinChecks";
-            bookmarks_report[421] = "NotCorrect";
-            bookmarks_report[422] = "RiskSumm";
-            bookmarks_report[423] = "RiskPrc";
-            bookmarks_report[424] = "NoRisk";
-            bookmarks_report[425] = "RiskPrc2";
-            bookmarks_report[426] = "NoRisk1m";
-            bookmarks_report[427] = "InvestManag";
-            bookmarks_report[428] = "InvestSalary";
-            bookmarks_report[429] = "K_el";
-            bookmarks_report[430] = "price11";
-            bookmarks_report[431] = "InvestSalary2";
-            bookmarks_report[432] = "InvestSalary1m";
-            bookmarks_report[433] = "t_l";
-            bookmarks_report[434] = "t_r";
-            bookmarks_report[435] = "K_sdv";
-            bookmarks_report[436] = "K_el2";
 
 
             FillPicturesArray(report);
@@ -748,9 +813,9 @@ namespace PRDocument
             texts_report[28] = Convert.ToString(report.Apartment.GrossArea);
             texts_report[29] = Convert.ToString(report.Apartment.GrossAreaSNIP);
             texts_report[30] = Convert.ToString(report.Apartment.GrossAreaSNIP);
-            texts_report[31] = report.Apartment.Home.Attic == true ? "есть" : "нет";
-            texts_report[32] = report.Apartment.HasBalconyOrLoggia == true ? "есть" : "нет";//нужно дополнить размеры балкона и застекленность
-            texts_report[33] = report.Apartment.Home.Banks;
+            texts_report[31] = report.Apartment.Home.Attic == true ? "Есть" : "Нет";
+            texts_report[32] = report.Apartment.HasBalconyOrLoggia == true ? "Есть" : "Нет";//нужно дополнить размеры балкона и застекленность
+            texts_report[33] = report.Apartment.Home.Complex.Banks;
             texts_report[34] = report.Apartment.Home.Basement;
             texts_report[35] = report.Apartment.Home.BasementWear;
             texts_report[36] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForWashroomCeiling);
@@ -774,7 +839,7 @@ namespace PRDocument
                                         report.Client.Man.Document.Number + " " +
                                         report.Client.Man.Document.PlaceOfIssue;
             texts_report[53] = report.Apartment.Home.StopName;
-            texts_report[54] = report.Apartment.Home.Conserge == true ? "есть" : "нет";
+            texts_report[54] = report.Apartment.Home.Conserge == true ? "Есть" : "Нет";
             texts_report[55] = report.ReportDate.ToLongDateString();
             texts_report[56] = report.ReportDate.ToLongDateString();
             texts_report[57] = report.ReportDate.ToLongDateString();
@@ -800,7 +865,7 @@ namespace PRDocument
             texts_report[74] = Convert.ToString(report.Apartment.Object.Dollar);
             texts_report[75] = Convert.ToString(report.Apartment.Object.Dollar);
             texts_report[76] = Convert.ToString(report.Apartment.Object.Dollar);
-            texts_report[77] = report.Apartment.Domofon == true ? "есть" : "нет";
+            texts_report[77] = report.Apartment.Domofon == true ? "Есть" : "Нет";
             texts_report[78] = report.Apartment.GetConditionTypeAsString(report.Apartment.DoorsCondition);
             texts_report[79] = report.Employee.Man.Surname + " " + report.Employee.Man.Name + " " + report.Employee.Man.Patronymic;
             texts_report[80] = report.Employee.Man.Surname + " " + report.Employee.Man.Name + " " + report.Employee.Man.Patronymic;
@@ -839,7 +904,7 @@ namespace PRDocument
             texts_report[110] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForLivingRoomFloor);
             texts_report[111] = Convert.ToString(report.Apartment.Home.Floors);
             texts_report[112] = Convert.ToString(report.Apartment.Home.Floors);
-            texts_report[113] = report.Apartment.Home.Garbadge == true ? "есть" : "нет";
+            texts_report[113] = report.Apartment.Home.Garbadge == true ? "Есть" : "Нет";
             texts_report[114] = report.Apartment.GetConditionTypeAsString(report.Apartment.HeatingCondition);
             texts_report[115] = report.Apartment.GetPipesTypeAsString(report.Apartment.HeatingPipesType);
             texts_report[116] = report.Apartment.GetHeaterTypeAsString(report.Apartment.HeatersType);
@@ -848,7 +913,7 @@ namespace PRDocument
             texts_report[119] = report.Apartment.Object.Holders;
             texts_report[120] = report.Apartment.Object.Documents;
             texts_report[121] = report.Apartment.Object.Documents;
-            texts_report[122] = report.Apartment.Home.Hospitals;
+            texts_report[122] = report.Apartment.Home.Complex.Hospitals;
             texts_report[123] = Convert.ToString(Convert.ToInt32(wear));        // вычисление износа дома;
             texts_report[124] = Convert.ToString(Convert.ToInt32(wear));        // вычисление износа дома;
             texts_report[125] = Convert.ToString(report.Apartment.Home.BuildYear);
@@ -861,15 +926,15 @@ namespace PRDocument
             texts_report[132] = report.Apartment.Home.KapremontPeriod;
             texts_report[133] = report.Apartment.Home.KapremontYear;
             texts_report[134] = report.Apartment.Home.KapremontYear;
-            texts_report[135] = report.Apartment.Home.Kinders;
+            texts_report[135] = report.Apartment.Home.Complex.Kinders;
             texts_report[136] = Convert.ToString(report.Apartment.KitchenArea); ;
-            texts_report[137] = report.Apartment.Home.Lift == true ? "есть" : "нет";
+            texts_report[137] = report.Apartment.Home.Lift == true ? "Есть" : "Нет";
             texts_report[138] = report.Apartment.Object.Restriction;
             texts_report[139] = report.Apartment.Object.Restriction;
             texts_report[140] = Convert.ToString(report.Apartment.LivingArea);
             texts_report[141] = Convert.ToString(report.Apartment.LivingArea);
-            texts_report[142] = report.Apartment.Home.Loacals_1;
-            texts_report[143] = report.Apartment.Home.Loacals_2;
+            texts_report[142] = report.Apartment.Home.Complex.Loacals_1;
+            texts_report[143] = report.Apartment.Home.Complex.Loacals_2;
             texts_report[144] = report.Apartment.GetDoorsTypeAsString(report.Apartment.MainDoorType);
             texts_report[145] = report.Apartment.Object.ObjectType;
             texts_report[146] = report.Apartment.Object.ObjectType;
@@ -877,8 +942,8 @@ namespace PRDocument
             texts_report[148] = report.Apartment.Object.ObjectType;
             texts_report[149] = report.Apartment.Object.ObjectType;
             texts_report[150] = report.Apartment.Object.ObjectType;
-            texts_report[151] = report.Apartment.Home.Parking == true ? "есть" : "нет";
-            texts_report[152] = report.Apartment.Home.PharmList;
+            texts_report[151] = report.Apartment.Home.Parking == true ? "Есть" : "Нет";
+            texts_report[152] = report.Apartment.Home.Complex.PharmList;
             texts_report[153] = report.Apartment.PlanMeets;
             texts_report[154] = report.Apartment.ViewOnApparment;
             texts_report[155] = report.Apartment.Home.District.GetPrestigeAsString(report.Apartment.Home.District.Prestige);
@@ -932,7 +997,7 @@ namespace PRDocument
             texts_report[203] = report.ReportNumber;
             texts_report[204] = report.ReportNumber;
             texts_report[205] = report.ReportNumber;
-            texts_report[206] = report.Apartment.Home.RestPlaces;
+            texts_report[206] = report.Apartment.Home.Complex.RestPlaces;
             texts_report[207] = report.Apartment.Object.Property;
             texts_report[208] = report.Apartment.Object.Property;
             texts_report[209] = report.Apartment.GetConditionTypeAsString(report.Apartment.Home.RoofCondition);
@@ -940,10 +1005,10 @@ namespace PRDocument
             texts_report[211] = report.Apartment.GetRoomTypeAsString(report.Apartment.RoomType);
             texts_report[212] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
             texts_report[213] = report.Apartment.SanuzelQnt + " " + report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
-            texts_report[214] = report.Apartment.Home.Schools;
-            texts_report[215] = report.Apartment.HasSeparateKitchenOrWashroom == true ? "есть" : "нет";
-            texts_report[216] = report.Apartment.Home.Services;
-            texts_report[217] = report.Apartment.HasLowCurrent == true ? "есть" : "нет";
+            texts_report[214] = report.Apartment.Home.Complex.Schools;
+            texts_report[215] = report.Apartment.HasSeparateKitchenOrWashroom == true ? "Есть" : "Нет";
+            texts_report[216] = report.Apartment.Home.Complex.Services;
+            texts_report[217] = report.Apartment.HasLowCurrent == true ? "Есть" : "Нет";
             texts_report[218] = report.Apartment.Home.Social;
             texts_report[219] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.GrossArea);               // Вычисление стоимости квадратного метра
             texts_report[220] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.GrossArea);               // Вычисление стоимости квадратного метра
@@ -957,7 +1022,7 @@ namespace PRDocument
             texts_report[225] = report.Apartment.GetCeilingMaterialAsString(report.Apartment.FinishingMaterialForWashroomCeiling);
             texts_report[226] = report.Apartment.GetFloorMaterialAsString(report.Apartment.FinishingMaterialForWashroomFloor);
             texts_report[227] = report.Apartment.GetWallMaterialAsString(report.Apartment.FinishingMaterialForWashroomWall);
-            texts_report[228] = report.Apartment.Home.Tradings;
+            texts_report[228] = report.Apartment.Home.Complex.Tradings;
             texts_report[229] = report.Apartment.Home.Transport == true ? "Автобусы и трамваи" : "Автобусы";
             texts_report[230] = report.Apartment.Views;
             texts_report[231] = report.Apartment.GetWallMaterialAsString(report.Apartment.FinishingMaterialForHallWall);
@@ -977,203 +1042,262 @@ namespace PRDocument
             texts_report[245] = Convert.ToString(report.ReportDate.Year);
             texts_report[246] = Convert.ToString(report.Apartment.Home.BuildYear);
             texts_report[247] = Convert.ToString(report.Apartment.Home.BuildYear - report.ReportDate.Year); //Вычисление возраста дома
-            texts_report[248] = photo[0] != null ? photo[0].Name : "";  //Комментарии к фото
-            texts_report[249] = photo[1] != null ? photo[1].Name : "";
-            texts_report[250] = photo[2] != null ? photo[2].Name : "";
-            texts_report[251] = photo[3] != null ? photo[3].Name : "";
-            texts_report[252] = photo[4] != null ? photo[4].Name : "";
-            texts_report[253] = photo[5] != null ? photo[5].Name : "";
-            texts_report[254] = photo[6] != null ? photo[6].Name : "";
-            texts_report[255] = photo[7] != null ? photo[7].Name : "";
-            texts_report[256] = photo[8] != null ? photo[8].Name : "";
-            texts_report[257] = apartmentMaps[0] != null ? apartmentMaps[0].Name : ""; //Комментарий к схеме квартиры
-            //texts_report[258] = "";
-            //texts_report[259] = "";
-            //texts_report[260] = "";
-            //texts_report[261] = "";
-            //texts_report[262] = "";
-            //texts_report[263] = "";
-            //texts_report[264] = "";
-            //texts_report[265] = "";
-            //texts_report[266] = "";
-            //texts_report[267] = "";
-            //texts_report[268] = "";
-            //texts_report[269] = "";
-            //texts_report[270] = "";
-            //texts_report[271] = "";
-            //texts_report[272] = "";
-            texts_report[273] = ca[0].kBalcon == 0 ? "-" : Convert.ToString(ca[0].kBalcon * 100)+"%";
-            texts_report[274] = ca[1].kBalcon == 0 ? "-" : Convert.ToString(ca[1].kBalcon * 100)+"%";
-            texts_report[275] = ca[2].kBalcon == 0 ? "-" : Convert.ToString(ca[2].kBalcon * 100)+"%";
-            texts_report[276] = ca[3].kBalcon == 0 ? "-" : Convert.ToString(ca[3].kBalcon * 100)+"%";
-            texts_report[277] = ca[4].kBalcon == 0 ? "-" : Convert.ToString(ca[4].kBalcon * 100)+"%";
-            texts_report[278] = ca[0].kFloor == 0 ? "-" : Convert.ToString(ca[0].kFloor * 100)+"%";
-            texts_report[279] = ca[1].kFloor == 0 ? "-" : Convert.ToString(ca[1].kFloor * 100)+"%";
-            texts_report[280] = ca[2].kFloor == 0 ? "-" : Convert.ToString(ca[2].kFloor * 100)+"%";
-            texts_report[281] = ca[3].kFloor == 0 ? "-" : Convert.ToString(ca[3].kFloor * 100)+"%";
-            texts_report[282] = ca[4].kFloor == 0 ? "-" : Convert.ToString(ca[4].kFloor * 100)+"%";
-            texts_report[283] = ca[0].kFloors == 0 ? "-" : Convert.ToString(ca[0].kFloors * 100)+"%";
-            texts_report[284] = ca[1].kFloors == 0 ? "-" : Convert.ToString(ca[1].kFloors * 100)+"%";
-            texts_report[285] = ca[2].kFloors == 0 ? "-" : Convert.ToString(ca[2].kFloors * 100)+"%";
-            texts_report[286] = ca[3].kFloors == 0 ? "-" : Convert.ToString(ca[3].kFloors * 100)+"%";
-            texts_report[287] = ca[4].kFloors == 0 ? "-" : Convert.ToString(ca[4].kFloors * 100)+"%";
-            texts_report[288] = Convert.ToString((ca[0].kBalcon+ca[0].kFloor+ca[0].kFloors+ca[0].kSanuzel+
-                                                 ca[0].kSKitchen+ca[0].kTorg+ca[0].kView+ca[0].kWallType)*100)+"%";
-            texts_report[289] = Convert.ToString((ca[1].kBalcon+ca[1].kFloor+ca[1].kFloors+ca[1].kSanuzel+
-                                                 ca[1].kSKitchen+ca[1].kTorg+ca[1].kView+ca[1].kWallType)*100)+"%";
-            texts_report[290] = Convert.ToString((ca[2].kBalcon+ca[2].kFloor+ca[2].kFloors+ca[2].kSanuzel+
-                                                 ca[2].kSKitchen+ca[2].kTorg+ca[2].kView+ca[2].kWallType)*100)+"%";
-            texts_report[291] = Convert.ToString((ca[3].kBalcon+ca[3].kFloor+ca[3].kFloors+ca[3].kSanuzel+
-                                                 ca[3].kSKitchen+ca[3].kTorg+ca[3].kView+ca[3].kWallType)*100)+"%";
-            texts_report[292] = Convert.ToString((ca[4].kBalcon+ca[4].kFloor+ca[4].kFloors+ca[4].kSanuzel+
-                                                 ca[4].kSKitchen+ca[4].kTorg+ca[4].kView+ca[4].kWallType)*100)+"%";
-            texts_report[293] = Convert.ToString(ca[0].finishingQualityPrice);
-            texts_report[294] = Convert.ToString(ca[1].finishingQualityPrice);
-            texts_report[295] = Convert.ToString(ca[2].finishingQualityPrice);
-            texts_report[296] = Convert.ToString(ca[3].finishingQualityPrice);
-            texts_report[297] = Convert.ToString(ca[4].finishingQualityPrice);
-            texts_report[298] = ca[0].kSanuzel == 0 ? "-" : Convert.ToString(ca[0].kSanuzel * 100)+"%";
-            texts_report[299] = ca[1].kSanuzel == 0 ? "-" : Convert.ToString(ca[1].kSanuzel * 100)+"%";
-            texts_report[300] = ca[2].kSanuzel == 0 ? "-" : Convert.ToString(ca[2].kSanuzel * 100)+"%";
-            texts_report[301] = ca[3].kSanuzel == 0 ? "-" : Convert.ToString(ca[3].kSanuzel * 100)+"%";
-            texts_report[302] = ca[4].kSanuzel == 0 ? "-" : Convert.ToString(ca[4].kSanuzel * 100)+"%";
-            texts_report[303] = ca[0].kSKitchen == 0 ? "-" : Convert.ToString(ca[0].kSKitchen * 100)+"%";
-            texts_report[304] = ca[1].kSKitchen == 0 ? "-" : Convert.ToString(ca[1].kSKitchen * 100)+"%";
-            texts_report[305] = ca[2].kSKitchen == 0 ? "-" : Convert.ToString(ca[2].kSKitchen * 100)+"%";
-            texts_report[306] = ca[3].kSKitchen == 0 ? "-" : Convert.ToString(ca[3].kSKitchen * 100)+"%";
-            texts_report[307] = ca[4].kSKitchen == 0 ? "-" : Convert.ToString(ca[4].kSKitchen * 100)+"%";
-            texts_report[308] = Convert.ToString(ca[0].sqmCalcPrice);
-            texts_report[309] = Convert.ToString(ca[1].sqmCalcPrice);
-            texts_report[310] = Convert.ToString(ca[2].sqmCalcPrice);
-            texts_report[311] = Convert.ToString(ca[3].sqmCalcPrice);
-            texts_report[312] = Convert.ToString(ca[4].sqmCalcPrice);
-            texts_report[313] = Convert.ToString(ca[0].sqmCalcPrice - ca[0].finishingQualityPrice);
-            texts_report[314] = Convert.ToString(ca[1].sqmCalcPrice - ca[1].finishingQualityPrice);
-            texts_report[315] = Convert.ToString(ca[2].sqmCalcPrice - ca[2].finishingQualityPrice);
-            texts_report[316] = Convert.ToString(ca[3].sqmCalcPrice - ca[3].finishingQualityPrice);
-            texts_report[317] = Convert.ToString(ca[4].sqmCalcPrice - ca[4].finishingQualityPrice);
-            texts_report[318] = ca[0].kTorg == 0 ? "-" : Convert.ToString(ca[0].kTorg * 100)+"%";
-            texts_report[319] = ca[1].kTorg == 0 ? "-" : Convert.ToString(ca[1].kTorg * 100)+"%";
-            texts_report[320] = ca[2].kTorg == 0 ? "-" : Convert.ToString(ca[2].kTorg * 100)+"%";
-            texts_report[321] = ca[3].kTorg == 0 ? "-" : Convert.ToString(ca[3].kTorg * 100)+"%";
-            texts_report[322] = ca[4].kTorg == 0 ? "-" : Convert.ToString(ca[4].kTorg * 100) + "%";
-            texts_report[323] = ca[0].kWallType == 0 ? "-" : Convert.ToString(ca[0].kWallType * 100)+"%";
-            texts_report[324] = ca[1].kWallType == 0 ? "-" : Convert.ToString(ca[1].kWallType * 100)+"%";
-            texts_report[325] = ca[2].kWallType == 0 ? "-" : Convert.ToString(ca[2].kWallType * 100)+"%";
-            texts_report[326] = ca[3].kWallType == 0 ? "-" : Convert.ToString(ca[3].kWallType * 100)+"%";
-            texts_report[327] = ca[4].kWallType == 0 ? "-" : Convert.ToString(ca[4].kWallType * 100) + "%";
-            texts_report[328] = ca[0].kView == 0 ? "-" : Convert.ToString(ca[0].kView * 100)+"%";
-            texts_report[329] = ca[1].kView == 0 ? "-" : Convert.ToString(ca[1].kView * 100)+"%";
-            texts_report[330] = ca[2].kView == 0 ? "-" : Convert.ToString(ca[2].kView * 100)+"%";
-            texts_report[331] = ca[3].kView == 0 ? "-" : Convert.ToString(ca[3].kView * 100)+"%";
-            texts_report[332] = ca[4].kView == 0 ? "-" : Convert.ToString(ca[4].kView * 100) + "%";
-            texts_report[333] = report.Apartment.HasBalconyOrLoggia == true ? "есть" : "нет";
-            texts_report[334] = ca[0].hasBalcony == true ? "есть" : "нет";
-            texts_report[335] = ca[1].hasBalcony == true ? "есть" : "нет";
-            texts_report[336] = ca[2].hasBalcony == true ? "есть" : "нет";
-            texts_report[337] = ca[3].hasBalcony == true ? "есть" : "нет";
-            texts_report[338] = ca[4].hasBalcony == true ? "есть" : "нет";
-            texts_report[339] = report.Apartment.Home.Street.City.Name + ", "+report.Apartment.Home.ComplexNumber;
-            texts_report[340] = "г. Наб. Челны, " + ca[0].address;
-            texts_report[341] = "г. Наб. Челны, " + ca[1].address;
-            texts_report[342] = "г. Наб. Челны, " + ca[2].address;
-            texts_report[343] = "г. Наб. Челны, " + ca[3].address;
-            texts_report[344] = "г. Наб. Челны, " + ca[4].address;
-            texts_report[345] = report.Apartment.Home.Street.City.Name + ", "+report.Apartment.Home.ComplexNumber;
-            texts_report[346] = "г. Наб. Челны, " + ca[0].address;
-            texts_report[347] = "г. Наб. Челны, " + ca[1].address;
-            texts_report[348] = "г. Наб. Челны, " + ca[2].address;
-            texts_report[349] = "г. Наб. Челны, " + ca[3].address;
-            texts_report[350] = "г. Наб. Челны, " + ca[4].address;
-            texts_report[351] = Convert.ToString(report.Apartment.Floor);
-            texts_report[352] = Convert.ToString(ca[0].floor);
-            texts_report[353] = Convert.ToString(ca[1].floor);
-            texts_report[354] = Convert.ToString(ca[2].floor);
-            texts_report[355] = Convert.ToString(ca[3].floor);
-            texts_report[356] = Convert.ToString(ca[4].floor);
-            texts_report[357] = Convert.ToString(report.Apartment.Home.Floors);
-            texts_report[358] = Convert.ToString(ca[0].maxFloor);
-            texts_report[359] = Convert.ToString(ca[1].maxFloor);
-            texts_report[360] = Convert.ToString(ca[2].maxFloor);
-            texts_report[361] = Convert.ToString(ca[3].maxFloor);
-            texts_report[362] = Convert.ToString(ca[4].maxFloor);
-            texts_report[363] = Convert.ToString(report.Apartment.GrossArea);
-            texts_report[364] = Convert.ToString(ca[0].grossArea);
-            texts_report[365] = Convert.ToString(ca[1].grossArea);
-            texts_report[366] = Convert.ToString(ca[2].grossArea);
-            texts_report[367] = Convert.ToString(ca[3].grossArea);
-            texts_report[368] = Convert.ToString(ca[4].grossArea);
-            texts_report[369] = Convert.ToString(report.Apartment.KitchenArea);
-            texts_report[370] = Convert.ToString(ca[0].kitchenArea);
-            texts_report[371] = Convert.ToString(ca[1].kitchenArea);
-            texts_report[372] = Convert.ToString(ca[2].kitchenArea);
-            texts_report[373] = Convert.ToString(ca[3].kitchenArea);
-            texts_report[374] = Convert.ToString(ca[4].kitchenArea);
-            texts_report[375] = Convert.ToString(report.Apartment.Object.Dollar);
-            texts_report[376] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
-            texts_report[377] = Convert.ToString(report.Apartment.Object.Price);
-            texts_report[378] = Convert.ToString(report.Apartment.RoomNumber);
-            texts_report[379] = Convert.ToString(report.Apartment.RoomNumber);
-            texts_report[380] = Convert.ToString(report.Apartment.RoomNumber);
-            texts_report[381] = Convert.ToString(report.Apartment.RoomNumber);
-            texts_report[382] = Convert.ToString(report.Apartment.RoomNumber);
-            texts_report[383] = Convert.ToString(report.Apartment.RoomNumber);
-            texts_report[384] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
-            texts_report[385] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType); 
-            texts_report[386] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
-            texts_report[387] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
-            texts_report[388] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
-            texts_report[389] = report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
-            texts_report[390] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
-            texts_report[391] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
-            texts_report[392] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
-            texts_report[393] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
-            texts_report[394] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
-            texts_report[395] = report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
-            texts_report[396] = Convert.ToString(report.Apartment.Object.Price / report.Apartment.GrossArea);
-            texts_report[397] = Convert.ToString(ca[0].price * 1000 / ca[0].grossArea);
-            texts_report[398] = Convert.ToString(ca[1].price * 1000 / ca[1].grossArea);
-            texts_report[399] = Convert.ToString(ca[2].price * 1000 / ca[2].grossArea);
-            texts_report[400] = Convert.ToString(ca[3].price * 1000 / ca[3].grossArea);
-            texts_report[401] = Convert.ToString(ca[4].price * 1000 / ca[4].grossArea);
-            texts_report[402] = ca[0].company;
-            texts_report[403] = ca[1].company;
-            texts_report[404] = ca[2].company;
-            texts_report[405] = ca[3].company;
-            texts_report[406] = ca[4].company;
-            texts_report[407] = Convert.ToString(ca[0].price * 1000);
-            texts_report[408] = Convert.ToString(ca[1].price * 1000);
-            texts_report[409] = Convert.ToString(ca[2].price * 1000);
-            texts_report[410] = Convert.ToString(ca[3].price * 1000);
-            texts_report[411] = Convert.ToString(ca[4].price * 1000);
-
-            texts_report[412] = Convert.ToString(report.Apartment.Object.EconSituationDown);
-            texts_report[413] = Convert.ToString(report.Apartment.Object.ConcurentsUp);
-            texts_report[414] = Convert.ToString(report.Apartment.Object.LowChange);
-            texts_report[415] = Convert.ToString(report.Apartment.Object.ExtremalSituation);
-            texts_report[416] = Convert.ToString(report.Apartment.Object.AcceleratedWear);
-            texts_report[417] = Convert.ToString(report.Apartment.Object.NoRentalMoney);
-            texts_report[418] = Convert.ToString(report.Apartment.Object.BadManagment);
-            texts_report[419] = Convert.ToString(report.Apartment.Object.Criminal);
-            texts_report[420] = Convert.ToString(report.Apartment.Object.FinanceChecking);
-            texts_report[421] = Convert.ToString(report.Apartment.Object.NotCorrect);
-            texts_report[422] = Convert.ToString(Convert.ToDecimal(risks));
-            texts_report[423] = Convert.ToString(Convert.ToDecimal(risks / 10));
-            texts_report[424] = Convert.ToString(report.Apartment.Object.NoRisk);
-            texts_report[425] = Convert.ToString(Convert.ToDecimal(risks / 10));
-            texts_report[426] = Convert.ToString(report.Apartment.Object.NoRisk / 4);
-            texts_report[427] = Convert.ToString(report.Apartment.Object.InvestManage);
-            texts_report[428] = Convert.ToString(Convert.ToDecimal(r12));
-            texts_report[429] = Convert.ToString(report.Apartment.Object.K_el);
-            texts_report[430] = Convert.ToString(report.Apartment.Object.Price);
-            texts_report[431] = Convert.ToString(Convert.ToDecimal(r12));
-            texts_report[432] = Convert.ToString(Convert.ToDecimal(r12 / 12));
-            texts_report[433] = Convert.ToString(report.Apartment.Object.T_l);
-            texts_report[434] = Convert.ToString(report.Apartment.Object.T_r);
-            texts_report[435] = Convert.ToString(Convert.ToDecimal(k_sdv));
-            texts_report[436] = Convert.ToString(report.Apartment.Object.K_el);
-
-
+            texts_report[248]= photo[0] != null ? photo[0].Name : "";  //Комментарии к фото
+            texts_report[249]= photo[1] != null ? photo[1].Name : "";
+            texts_report[250]= photo[2] != null ? photo[2].Name : "";
+            texts_report[251]= photo[3] != null ? photo[3].Name : "";
+            texts_report[252]= photo[4] != null ? photo[4].Name : "";
+            texts_report[253]= photo[5] != null ? photo[5].Name : "";
+            texts_report[254]= photo[6] != null ? photo[6].Name : "";
+            texts_report[255]= photo[7] != null ? photo[7].Name : "";
+            texts_report[256]= photo[8] != null ? photo[8].Name : "";
+            texts_report[257]= photo[9] != null ? photo[9].Name : "";
+            texts_report[258]= photo[10] != null ? photo[10].Name : "";
+            texts_report[259]= photo[11] != null ? photo[11].Name : "";
+            texts_report[260]= photo[12] != null ? photo[12].Name : "";
+            texts_report[261]= photo[13] != null ? photo[13].Name : "";
+            texts_report[262]= photo[14] != null ? photo[14].Name : "";
+            texts_report[263]= photo[15] != null ? photo[15].Name : "";
+            texts_report[264]= photo[16] != null ? photo[16].Name : "";
+            texts_report[265]= photo[17] != null ? photo[17].Name : "";
+            texts_report[266]= photo[18] != null ? photo[18].Name : "";
+            texts_report[267]= photo[19] != null ? photo[19].Name : "";
+            texts_report[268]= photo[20] != null ? photo[20].Name : "";
+            texts_report[269]= photo[21] != null ? photo[21].Name : "";
+            texts_report[270]= photo[22] != null ? photo[22].Name : "";
+            texts_report[271]= photo[23] != null ? photo[23].Name : "";
+            texts_report[272]= photo[24] != null ? photo[24].Name : "";
+            //texts_report[273]= //apartmentMaps[0] != null ? apartmentMaps[0].Name : ""; //Комментарий к схеме квартиры
+            //texts_report[274]=
+            //texts_report[275]=
+            //texts_report[276]=
+            //texts_report[277]=
+            //texts_report[278]=
+            //texts_report[279]=
+            //texts_report[280]=
+            //texts_report[281]=
+            //texts_report[282]=
+            //texts_report[283]=
+            //texts_report[284]=
+            //texts_report[285]=
+            //texts_report[286]=
+            //texts_report[287]=
+            //texts_report[288]=
+            //texts_report[289]=
+            //texts_report[290]=
+            //texts_report[291]=
+            //texts_report[292]=
+            //texts_report[293]=
+            //texts_report[294]=
+            //texts_report[295]=
+            //texts_report[296]=
+            //texts_report[297]=
+            //texts_report[298]=
+            //texts_report[299]=
+            //texts_report[300]=
+            //texts_report[301]= 
+            //texts_report[302]=
+            //texts_report[303]=
+            //texts_report[304]=
+            //texts_report[305]=
+            //texts_report[306]=
+            //texts_report[307]=
+            //texts_report[308]=
+            //texts_report[309]=
+            //texts_report[310]=
+            //texts_report[311]=
+            //texts_report[312]=
+            //texts_report[313]=
+            //texts_report[314]=
+            //texts_report[315]=
+            //texts_report[316]=
+            //texts_report[317]=
+            //texts_report[318]=
+            //texts_report[319]=
+            //texts_report[320]=
+            //texts_report[321]=
+            //texts_report[322]=
+            //texts_report[323]=
+            //texts_report[324]=
+            //texts_report[325]=
+            //texts_report[326]=
+            //texts_report[327]=
+            //texts_report[328]=
+            //texts_report[329]=
+            //texts_report[330]=
+            //texts_report[331]=
+            //texts_report[332]=
+            //texts_report[333]=
+            //texts_report[334]=
+            //texts_report[335]=
+            //texts_report[336]=
+            //texts_report[337]=
+            //texts_report[338]=
+            texts_report[339]= ca[0].kBalcon == 0 ? "-" : Convert.ToString(ca[0].kBalcon * 100)+"%";
+            texts_report[340]= ca[1].kBalcon == 0 ? "-" : Convert.ToString(ca[1].kBalcon * 100)+"%";
+            texts_report[341]= ca[2].kBalcon == 0 ? "-" : Convert.ToString(ca[2].kBalcon * 100)+"%";
+            texts_report[342]= ca[3].kBalcon == 0 ? "-" : Convert.ToString(ca[3].kBalcon * 100)+"%";
+            texts_report[343]= ca[4].kBalcon == 0 ? "-" : Convert.ToString(ca[4].kBalcon * 100)+"%";
+            texts_report[344]= ca[0].kFloor == 0 ? "-" : Convert.ToString(ca[0].kFloor * 100)+"%";
+            texts_report[345]= ca[1].kFloor == 0 ? "-" : Convert.ToString(ca[1].kFloor * 100)+"%";
+            texts_report[346]= ca[2].kFloor == 0 ? "-" : Convert.ToString(ca[2].kFloor * 100)+"%";
+            texts_report[347]= ca[3].kFloor == 0 ? "-" : Convert.ToString(ca[3].kFloor * 100)+"%";
+            texts_report[348]= ca[4].kFloor == 0 ? "-" : Convert.ToString(ca[4].kFloor * 100)+"%";
+            texts_report[349]= ca[0].kFloors == 0 ? "-" : Convert.ToString(ca[0].kFloors * 100)+"%";
+            texts_report[350]= ca[1].kFloors == 0 ? "-" : Convert.ToString(ca[1].kFloors * 100)+"%";
+            texts_report[351]= ca[2].kFloors == 0 ? "-" : Convert.ToString(ca[2].kFloors * 100)+"%";
+            texts_report[352]= ca[3].kFloors == 0 ? "-" : Convert.ToString(ca[3].kFloors * 100)+"%";
+            texts_report[353]= ca[4].kFloors == 0 ? "-" : Convert.ToString(ca[4].kFloors * 100)+"%";
+            texts_report[354]= Convert.ToString((ca[0].kBalcon+ca[0].kFloor+ca[0].kFloors+ca[0].kSanuzel+ca[0].kSKitchen+ca[0].kTorg+ca[0].kView+ca[0].kWallType)*100)+"%";
+            texts_report[355]= Convert.ToString((ca[1].kBalcon+ca[1].kFloor+ca[1].kFloors+ca[1].kSanuzel+ca[1].kSKitchen+ca[1].kTorg+ca[1].kView+ca[1].kWallType)*100)+"%";
+            texts_report[356]= Convert.ToString((ca[2].kBalcon+ca[2].kFloor+ca[2].kFloors+ca[2].kSanuzel+ca[2].kSKitchen+ca[2].kTorg+ca[2].kView+ca[2].kWallType)*100)+"%";
+            texts_report[357]= Convert.ToString((ca[3].kBalcon+ca[3].kFloor+ca[3].kFloors+ca[3].kSanuzel+ca[3].kSKitchen+ca[3].kTorg+ca[3].kView+ca[3].kWallType)*100)+"%";
+            texts_report[358]= Convert.ToString((ca[4].kBalcon+ca[4].kFloor+ca[4].kFloors+ca[4].kSanuzel+ca[4].kSKitchen+ca[4].kTorg+ca[4].kView+ca[4].kWallType)*100)+"%";
+            texts_report[359]= Convert.ToString(ca[0].finishingQualityPrice);
+            texts_report[360]= Convert.ToString(ca[1].finishingQualityPrice);
+            texts_report[361]= Convert.ToString(ca[2].finishingQualityPrice);
+            texts_report[362]= Convert.ToString(ca[3].finishingQualityPrice);
+            texts_report[363]= Convert.ToString(ca[4].finishingQualityPrice);
+            texts_report[364]= ca[0].kSanuzel == 0 ? "-" : Convert.ToString(ca[0].kSanuzel * 100)+"%";
+            texts_report[365]= ca[1].kSanuzel == 0 ? "-" : Convert.ToString(ca[1].kSanuzel * 100)+"%";
+            texts_report[366]= ca[2].kSanuzel == 0 ? "-" : Convert.ToString(ca[2].kSanuzel * 100)+"%";
+            texts_report[367]= ca[3].kSanuzel == 0 ? "-" : Convert.ToString(ca[3].kSanuzel * 100)+"%";
+            texts_report[368]= ca[4].kSanuzel == 0 ? "-" : Convert.ToString(ca[4].kSanuzel * 100)+"%";
+            texts_report[369]= ca[0].kSKitchen == 0 ? "-" : Convert.ToString(ca[0].kSKitchen * 100)+"%";
+            texts_report[370]= ca[1].kSKitchen == 0 ? "-" : Convert.ToString(ca[1].kSKitchen * 100)+"%";
+            texts_report[371]= ca[2].kSKitchen == 0 ? "-" : Convert.ToString(ca[2].kSKitchen * 100)+"%";
+            texts_report[372]= ca[3].kSKitchen == 0 ? "-" : Convert.ToString(ca[3].kSKitchen * 100)+"%";
+            texts_report[373]= ca[4].kSKitchen == 0 ? "-" : Convert.ToString(ca[4].kSKitchen * 100)+"%";
+            texts_report[374]= Convert.ToString(ca[0].sqmCalcPrice);
+            texts_report[375]= Convert.ToString(ca[1].sqmCalcPrice);
+            texts_report[376]= Convert.ToString(ca[2].sqmCalcPrice);
+            texts_report[377]= Convert.ToString(ca[3].sqmCalcPrice);
+            texts_report[378]= Convert.ToString(ca[4].sqmCalcPrice);
+            texts_report[379]= Convert.ToString(ca[0].sqmCalcPrice - ca[0].finishingQualityPrice);
+            texts_report[380]= Convert.ToString(ca[1].sqmCalcPrice - ca[1].finishingQualityPrice);
+            texts_report[381]= Convert.ToString(ca[2].sqmCalcPrice - ca[2].finishingQualityPrice);
+            texts_report[382]= Convert.ToString(ca[3].sqmCalcPrice - ca[3].finishingQualityPrice);
+            texts_report[383]= Convert.ToString(ca[4].sqmCalcPrice - ca[4].finishingQualityPrice);
+            texts_report[384]= ca[0].kTorg == 0 ? "-" : Convert.ToString(ca[0].kTorg * 100)+"%";
+            texts_report[385]= ca[1].kTorg == 0 ? "-" : Convert.ToString(ca[1].kTorg * 100)+"%";
+            texts_report[386]= ca[2].kTorg == 0 ? "-" : Convert.ToString(ca[2].kTorg * 100)+"%";
+            texts_report[387]= ca[3].kTorg == 0 ? "-" : Convert.ToString(ca[3].kTorg * 100)+"%";
+            texts_report[388]= ca[4].kTorg == 0 ? "-" : Convert.ToString(ca[4].kTorg * 100) + "%";
+            texts_report[389]= ca[0].kWallType == 0 ? "-" : Convert.ToString(ca[0].kWallType * 100)+"%";
+            texts_report[390]= ca[1].kWallType == 0 ? "-" : Convert.ToString(ca[1].kWallType * 100)+"%";
+            texts_report[391]= ca[2].kWallType == 0 ? "-" : Convert.ToString(ca[2].kWallType * 100)+"%";
+            texts_report[392]= ca[3].kWallType == 0 ? "-" : Convert.ToString(ca[3].kWallType * 100)+"%";
+            texts_report[393]= ca[4].kWallType == 0 ? "-" : Convert.ToString(ca[4].kWallType * 100) + "%";
+            texts_report[394]= ca[0].kView == 0 ? "-" : Convert.ToString(ca[0].kView * 100)+"%";
+            texts_report[395]= ca[1].kView == 0 ? "-" : Convert.ToString(ca[1].kView * 100)+"%";
+            texts_report[396]= ca[2].kView == 0 ? "-" : Convert.ToString(ca[2].kView * 100)+"%";
+            texts_report[397]= ca[3].kView == 0 ? "-" : Convert.ToString(ca[3].kView * 100)+"%";
+            texts_report[398]= ca[4].kView == 0 ? "-" : Convert.ToString(ca[4].kView * 100) + "%";
+            texts_report[399]= report.Apartment.HasBalconyOrLoggia == true ? "Есть" : "Нет";
+            texts_report[400]= ca[0].hasBalcony == true ? "Есть" : "Нет";
+            texts_report[401]= ca[1].hasBalcony == true ? "Есть" : "Нет";
+            texts_report[402]= ca[2].hasBalcony == true ? "Есть" : "Нет";
+            texts_report[403]= ca[3].hasBalcony == true ? "есть" : "Нет";
+            texts_report[404]= ca[4].hasBalcony == true ? "есть" : "Нет";
+            texts_report[405]= report.Apartment.Home.Street.City.Name + ", "+report.Apartment.Home.ComplexNumber;
+            texts_report[406]= "г. Наб. Челны, " + ca[0].address;
+            texts_report[407]= "г. Наб. Челны, " + ca[1].address;
+            texts_report[408]= "г. Наб. Челны, " + ca[2].address;
+            texts_report[409]= "г. Наб. Челны, " + ca[3].address;
+            texts_report[410]= "г. Наб. Челны, " + ca[4].address;
+            texts_report[411]= report.Apartment.Home.Street.City.Name + ", "+report.Apartment.Home.ComplexNumber;
+            texts_report[412]= "г. Наб. Челны, " + ca[0].address;
+            texts_report[413]= "г. Наб. Челны, " + ca[1].address;
+            texts_report[414]= "г. Наб. Челны, " + ca[2].address;
+            texts_report[415]= "г. Наб. Челны, " + ca[3].address;
+            texts_report[416]= "г. Наб. Челны, " + ca[4].address;
+            texts_report[417]= Convert.ToString(report.Apartment.Floor);
+            texts_report[418]= Convert.ToString(ca[0].floor);
+            texts_report[419]= Convert.ToString(ca[1].floor);
+            texts_report[420]= Convert.ToString(ca[2].floor);
+            texts_report[421]= Convert.ToString(ca[3].floor);
+            texts_report[422]= Convert.ToString(ca[4].floor);
+            texts_report[423]= Convert.ToString(report.Apartment.Home.Floors);
+            texts_report[424]= Convert.ToString(ca[0].maxFloor);
+            texts_report[425]= Convert.ToString(ca[1].maxFloor);
+            texts_report[426]= Convert.ToString(ca[2].maxFloor);
+            texts_report[427]= Convert.ToString(ca[3].maxFloor);
+            texts_report[428]= Convert.ToString(ca[4].maxFloor);
+            texts_report[429]= Convert.ToString(report.Apartment.GrossArea);
+            texts_report[430]= Convert.ToString(ca[0].grossArea);
+            texts_report[431]= Convert.ToString(ca[1].grossArea);
+            texts_report[432]= Convert.ToString(ca[2].grossArea);
+            texts_report[433]= Convert.ToString(ca[3].grossArea);
+            texts_report[434]= Convert.ToString(ca[4].grossArea);
+            texts_report[435]= Convert.ToString(report.Apartment.KitchenArea);
+            texts_report[436]= Convert.ToString(ca[0].kitchenArea);
+            texts_report[437]= Convert.ToString(ca[1].kitchenArea);
+            texts_report[438]= Convert.ToString(ca[2].kitchenArea);
+            texts_report[439]= Convert.ToString(ca[3].kitchenArea);
+            texts_report[440]= Convert.ToString(ca[4].kitchenArea);
+            texts_report[441]= Convert.ToString(report.Apartment.Object.Dollar);
+            texts_report[442]= Convert.ToString(report.Apartment.Object.Price / report.Apartment.Object.Dollar);
+            texts_report[443]= Convert.ToString(report.Apartment.Object.Price);
+            texts_report[444]= Convert.ToString(report.Apartment.RoomNumber);
+            texts_report[445]= Convert.ToString(report.Apartment.RoomNumber);
+            texts_report[446]= Convert.ToString(report.Apartment.RoomNumber);
+            texts_report[447]= Convert.ToString(report.Apartment.RoomNumber);
+            texts_report[448]= Convert.ToString(report.Apartment.RoomNumber);
+            texts_report[449]= Convert.ToString(report.Apartment.RoomNumber);
+            texts_report[450]= report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
+            texts_report[451]= report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType); 
+            texts_report[452]= report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
+            texts_report[453]= report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
+            texts_report[454]= report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
+            texts_report[455]= report.Apartment.GetWashroomTypeAsString(report.Apartment.WashroomType);
+            texts_report[456]= report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[457]= report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[458]= report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[459]= report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[460]= report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[461]= report.Apartment.Home.GetMaterialTypeAsString(report.Apartment.Home.OutsideWall);
+            texts_report[462]= Convert.ToString(report.Apartment.Object.Price / report.Apartment.GrossArea);
+            texts_report[463]= Convert.ToString(ca[0].price * 1000 / ca[0].grossArea);
+            texts_report[464]= Convert.ToString(ca[1].price * 1000 / ca[1].grossArea);
+            texts_report[465]= Convert.ToString(ca[2].price * 1000 / ca[2].grossArea);
+            texts_report[466]= Convert.ToString(ca[3].price * 1000 / ca[3].grossArea);
+            texts_report[467]= Convert.ToString(ca[4].price * 1000 / ca[4].grossArea);
+            texts_report[468]= ca[0].company;
+            texts_report[469]= ca[1].company;
+            texts_report[470]= ca[2].company;
+            texts_report[471]= ca[3].company;
+            texts_report[472]= ca[4].company;
+            texts_report[473]= Convert.ToString(ca[0].price * 1000);
+            texts_report[474]= Convert.ToString(ca[1].price * 1000);
+            texts_report[475]= Convert.ToString(ca[2].price * 1000);
+            texts_report[476]= Convert.ToString(ca[3].price * 1000);
+            texts_report[477]= Convert.ToString(ca[4].price * 1000);
+            texts_report[478]= Convert.ToString(report.Apartment.Object.EconSituationDown);
+            texts_report[479]= Convert.ToString(report.Apartment.Object.ConcurentsUp);
+            texts_report[480]= Convert.ToString(report.Apartment.Object.LowChange);
+            texts_report[481]= Convert.ToString(report.Apartment.Object.ExtremalSituation);
+            texts_report[482]= Convert.ToString(report.Apartment.Object.AcceleratedWear);
+            texts_report[483]= Convert.ToString(report.Apartment.Object.NoRentalMoney);
+            texts_report[484]= Convert.ToString(report.Apartment.Object.BadManagment);
+            texts_report[485]= Convert.ToString(report.Apartment.Object.Criminal);
+            texts_report[486]= Convert.ToString(report.Apartment.Object.FinanceChecking);
+            texts_report[487]= Convert.ToString(report.Apartment.Object.NotCorrect);
+            texts_report[488]= Convert.ToString(Convert.ToDecimal(risks));
+            texts_report[489]= Convert.ToString(Convert.ToDecimal(risks / 10));
+            texts_report[490]= Convert.ToString(report.Apartment.Object.NoRisk);
+            texts_report[491]= Convert.ToString(Convert.ToDecimal(risks / 10));
+            texts_report[492]= Convert.ToString(report.Apartment.Object.NoRisk / 4);
+            texts_report[493]= Convert.ToString(report.Apartment.Object.InvestManage);
+            texts_report[494]= Convert.ToString(Convert.ToDecimal(r12));
+            texts_report[495]= Convert.ToString(report.Apartment.Object.K_el);
+            texts_report[496]= Convert.ToString(report.Apartment.Object.Price);
+            texts_report[497]= Convert.ToString(Convert.ToDecimal(r12));
+            texts_report[498]= Convert.ToString(Convert.ToDecimal(r12 / 12));
+            texts_report[499]= Convert.ToString(report.Apartment.Object.T_l);
+            texts_report[500]= Convert.ToString(report.Apartment.Object.T_r);
+            texts_report[501]= Convert.ToString(Convert.ToDecimal(k_sdv));
+            texts_report[502]= Convert.ToString(report.Apartment.Object.K_el);
+            texts_report[503] = report.Apartment.Home.KapremontInformation;
 
         }
     //Генерация документа Word
@@ -1196,38 +1320,38 @@ namespace PRDocument
                 for (int i = 0; i < array_len; i++)                                                                         // Цикл выполняется только если длина массива закладок равено длине массиву заменяющих строк
                 {     
                     rg = bk[bookmarks[i]].Range;
-                    if (i < 258)
+                    if (i < 273)
                     {                                                                                           
                         rg.Text = text[i];                                  // Выполнить замену строк
                     }
 
-                    if (i > 257 & i < 267 )                                // Здесь начинаются фотографии
+                    if (i > 272 & i < 301 )                                // Здесь начинаются фотографии
                     {
-                        if (photo[i - 258] != null)
+                        if (photo[i - 273] != null)
                         {
-                            rg.InlineShapes.AddPicture(photo[i - 258].ImageFileName);
+                            rg.InlineShapes.AddPicture(photo[i - 273].ImageFileName);
                         }
                     }
-                    if (i == 267 & apartmentMaps[0] != null)                                // Здесь начинаются план квартиры
+                    if (i > 300 & i < 302 & apartmentMaps[0] != null)                                // Здесь начинаются план квартиры
                     {
                         rg.InlineShapes.AddPicture(apartmentMaps[0].ImageFileName);
                     }
-                    if (i > 267 & i < 271 )                                // Здесь начинаются скан документов
+                    if (i > 308 & i < 339 )                                // Здесь начинаются скан документов
                     {
-                        if (documents[i - 268] != null)
+                        if (documents[i - 309] != null)
                         {
-                            rg.InlineShapes.AddPicture(documents[i - 268].ImageFileName);
+                            rg.InlineShapes.AddPicture(documents[i - 309].ImageFileName);
                         }
                     }
-                    if (i > 270 & i < 273)                                // Здесь начинаются скриншоты карт
+                    if (i > 301 & i < 309)                                // Здесь начинаются скриншоты карт
                     {
-                        if (screenshot[i - 271] != null)
+                        if (screenshot[i - 302] != null)
                         {
-                            rg.InlineShapes.AddPicture(screenshot[i - 271].ImageFileName);
+                            rg.InlineShapes.AddPicture(screenshot[i - 302].ImageFileName);
                         }
                     }
 
-                    if (i > 272)                                            // Заполнение таблицы сравнений
+                    if (i > 338)                                            // Заполнение таблицы сравнений
                     {
                         rg.Text = text[i];                                  // Выполнить замену строк
                     }

@@ -139,24 +139,14 @@ namespace PRInterfaces.Interfaces
         string Social { get; set; }
 
         /// <summary>
-        /// Свойство. Задает и возвращает наличие трамвая
-        /// </summary>
-        bool Transport { get; set; }
-
-        /// <summary>
         /// Свойство. Задает и возвращает наличие газа
         /// </summary>
         bool Gaz { get; set; }
 
         /// <summary>
-        /// Свойство. Задает и возвращает локальные особенности
+        /// Свойство. Задает и возвращает наличие трамвая
         /// </summary>
-        string Loacals_1 { get; set; }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает локальные особенности
-        /// </summary>
-        string Loacals_2 { get; set; }
+        bool Transport { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает название ближайшей остановки
@@ -167,52 +157,6 @@ namespace PRInterfaces.Interfaces
         /// Свойство. Задает и возвращает наличие парковки
         /// </summary>
         bool Parking { get; set; }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список банков
-        /// </summary>
-        string Banks { get; set; }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список больниц
-        /// </summary>
-        string Hospitals { get; set; }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает дет садов
-        /// </summary>
-        string Kinders { get; set; }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает мест отдыха
-        /// </summary>
-        string RestPlaces { get; set; }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список школ
-        /// </summary>
-        string Schools { get; set; }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список предприятий быта
-        /// </summary>
-        string Services { get; set; }
-
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список объектов торговли
-        /// </summary>
-        string Tradings { get; set; }
-
-        /// <summary>
-        /// Свойство. Задает и возвращает список аптек
-        /// </summary>
-        string PharmList { get; set; }
 
         /// <summary>
         /// Свойство. Задает и возвращает район

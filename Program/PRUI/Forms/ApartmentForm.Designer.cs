@@ -188,6 +188,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.otherTabControlPage = new System.Windows.Forms.TabPage();
             this.DiscountPage = new System.Windows.Forms.TabPage();
+            this.T_lTextBox = new System.Windows.Forms.TextBox();
+            this.T_rTextBox = new System.Windows.Forms.TextBox();
             this.label53 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
@@ -216,8 +218,7 @@
             this.label45 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
-            this.T_rTextBox = new System.Windows.Forms.TextBox();
-            this.T_lTextBox = new System.Windows.Forms.TextBox();
+            this.RecalculateButton = new System.Windows.Forms.Button();
             this.idInfoGroup.SuspendLayout();
             this.descriptionInfoGroup.SuspendLayout();
             this.noteInfoGroup.SuspendLayout();
@@ -1826,6 +1827,7 @@
             // 
             // DiscountPage
             // 
+            this.DiscountPage.Controls.Add(this.RecalculateButton);
             this.DiscountPage.Controls.Add(this.T_lTextBox);
             this.DiscountPage.Controls.Add(this.T_rTextBox);
             this.DiscountPage.Controls.Add(this.label53);
@@ -1863,6 +1865,22 @@
             this.DiscountPage.TabIndex = 6;
             this.DiscountPage.Text = "Ликвидационная уценка";
             this.DiscountPage.UseVisualStyleBackColor = true;
+            // 
+            // T_lTextBox
+            // 
+            this.T_lTextBox.Location = new System.Drawing.Point(16, 86);
+            this.T_lTextBox.Name = "T_lTextBox";
+            this.T_lTextBox.Size = new System.Drawing.Size(120, 20);
+            this.T_lTextBox.TabIndex = 17;
+            this.T_lTextBox.Text = "0";
+            // 
+            // T_rTextBox
+            // 
+            this.T_rTextBox.Location = new System.Drawing.Point(16, 30);
+            this.T_rTextBox.Name = "T_rTextBox";
+            this.T_rTextBox.Size = new System.Drawing.Size(120, 20);
+            this.T_rTextBox.TabIndex = 17;
+            this.T_rTextBox.Text = "0";
             // 
             // label53
             // 
@@ -2233,21 +2251,15 @@
             this.label44.TabIndex = 2;
             this.label44.Text = "Природные и антропогенные чрезвычайные ситуации";
             // 
-            // T_rTextBox
+            // RecalculateButton
             // 
-            this.T_rTextBox.Location = new System.Drawing.Point(16, 30);
-            this.T_rTextBox.Name = "T_rTextBox";
-            this.T_rTextBox.Size = new System.Drawing.Size(120, 20);
-            this.T_rTextBox.TabIndex = 17;
-            this.T_rTextBox.Text = "0";
-            // 
-            // T_lTextBox
-            // 
-            this.T_lTextBox.Location = new System.Drawing.Point(16, 86);
-            this.T_lTextBox.Name = "T_lTextBox";
-            this.T_lTextBox.Size = new System.Drawing.Size(120, 20);
-            this.T_lTextBox.TabIndex = 17;
-            this.T_lTextBox.Text = "0";
+            this.RecalculateButton.Location = new System.Drawing.Point(16, 413);
+            this.RecalculateButton.Name = "RecalculateButton";
+            this.RecalculateButton.Size = new System.Drawing.Size(81, 23);
+            this.RecalculateButton.TabIndex = 18;
+            this.RecalculateButton.Text = "Пересчитать";
+            this.RecalculateButton.UseVisualStyleBackColor = true;
+            this.RecalculateButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // ApartmentForm
             // 
@@ -2484,5 +2496,6 @@
         private System.Windows.Forms.TextBox NoRiskTextBox;
         private System.Windows.Forms.TextBox T_lTextBox;
         private System.Windows.Forms.TextBox T_rTextBox;
+        private System.Windows.Forms.Button RecalculateButton;
     }
 }

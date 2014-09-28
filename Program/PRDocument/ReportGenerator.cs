@@ -185,11 +185,11 @@ namespace PRDocument
         {
             //инициализация массивов
             pics = report.Apartment.Pictures.ToArray();
-            apartmentMaps = new IPicture[13];
+            apartmentMaps = new IPicture[30];
             documents = new IPicture[30];
-            maps = new IPicture[13];
-            photo = new IPicture[25];
-            screenshot = new IPicture[13];
+            maps = new IPicture[30];
+            photo = new IPicture[30];
+            screenshot = new IPicture[30];
 
             //счетчики
             int am = 0;

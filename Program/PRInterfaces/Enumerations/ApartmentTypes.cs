@@ -63,39 +63,24 @@
         Perfect = 0,
 
         /// <summary>
-        /// Очень хорошее
-        /// </summary>
-        VeryGood = 1,
-
-        /// <summary>
         /// Хорошее
         /// </summary>
-        Good = 2,
+        Good = 1,
 
         /// <summary>
         /// Нормальное
         /// </summary>
-        Normal = 3,
+        Normal = 2,
 
         /// <summary>
         /// Плохое
         /// </summary>
-        Bad = 4,
-
-        /// <summary>
-        /// Очень плохое
-        /// </summary>
-        VeryBad = 5,
-
-        /// <summary>
-        /// Ужасное
-        /// </summary>
-        Terrible = 6,
+        Bad = 3,
 
         /// <summary>
         /// Новая квартира
         /// </summary>
-        New = 7
+        New = 4
     }
 
     /// <summary>
@@ -171,39 +156,24 @@
         Perfect = 0,
 
         /// <summary>
-        /// Очень хорошее
-        /// </summary>
-        VeryGood = 1,
-
-        /// <summary>
         /// Хорошее
         /// </summary>
-        Good = 2,
+        Good = 1,
 
         /// <summary>
         /// Нормальное
         /// </summary>
-        Normal = 3,
+        Normal = 2,
 
         /// <summary>
         /// Плохое
         /// </summary>
-        Bad = 4,
-
-        /// <summary>
-        /// Очень плохое
-        /// </summary>
-        VeryBad = 5,
-
-        /// <summary>
-        /// Ужасное
-        /// </summary>
-        Terrible = 6,
+        Bad = 3,
 
         /// <summary>
         /// Новая квартира
         /// </summary>
-        New = 7
+        New = 4
     }
 
     /// <summary>

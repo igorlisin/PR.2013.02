@@ -43,6 +43,11 @@ namespace PRInterfaces.Interfaces
         IPicture GetPicture(int id);
 
         /// <summary>
+        /// Метод. Возвращает список картинок для выбранной квартиры
+        /// </summary>
+        IPictures PicturesForApartment(IApartment apartment);
+
+        /// <summary>
         /// Метод. Сохраняет изменения списка документов
         /// </summary>
         void SaveChanges();

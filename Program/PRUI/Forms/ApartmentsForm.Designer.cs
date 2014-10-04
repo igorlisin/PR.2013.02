@@ -57,7 +57,7 @@
             this.addToolStripMenuItem,
             this.addByHomeToolStripMenuItem});
             this.addContextMenuStrip.Name = "contextMenuStrip1";
-            this.addContextMenuStrip.Size = new System.Drawing.Size(163, 70);
+            this.addContextMenuStrip.Size = new System.Drawing.Size(163, 48);
             // 
             // addToolStripMenuItem
             // 

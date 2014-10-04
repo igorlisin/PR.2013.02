@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.previewImageButton = new System.Windows.Forms.Button();
+            this.btnChoiseApart = new System.Windows.Forms.Button();
+            this.labelApart = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // removeButton
@@ -57,11 +59,31 @@
             this.previewImageButton.UseVisualStyleBackColor = true;
             this.previewImageButton.Click += new System.EventHandler(this.previewImageButton_Click);
             // 
+            // btnChoiseApart
+            // 
+            this.btnChoiseApart.Location = new System.Drawing.Point(352, 406);
+            this.btnChoiseApart.Name = "btnChoiseApart";
+            this.btnChoiseApart.Size = new System.Drawing.Size(110, 23);
+            this.btnChoiseApart.TabIndex = 5;
+            this.btnChoiseApart.Text = "Выбрать квартиру";
+            this.btnChoiseApart.UseVisualStyleBackColor = true;
+            this.btnChoiseApart.Click += new System.EventHandler(this.btnChoiseApart_Click);
+            // 
+            // labelApart
+            // 
+            this.labelApart.AutoSize = true;
+            this.labelApart.Location = new System.Drawing.Point(521, 411);
+            this.labelApart.Name = "labelApart";
+            this.labelApart.Size = new System.Drawing.Size(0, 13);
+            this.labelApart.TabIndex = 6;
+            // 
             // PicturesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 437);
+            this.ClientSize = new System.Drawing.Size(849, 440);
+            this.Controls.Add(this.labelApart);
+            this.Controls.Add(this.btnChoiseApart);
             this.Controls.Add(this.previewImageButton);
             this.Name = "PicturesForm";
             this.Text = "Список картинок";
@@ -70,12 +92,17 @@
             this.Controls.SetChildIndex(this.editButton, 0);
             this.Controls.SetChildIndex(this.closeButton, 0);
             this.Controls.SetChildIndex(this.previewImageButton, 0);
+            this.Controls.SetChildIndex(this.btnChoiseApart, 0);
+            this.Controls.SetChildIndex(this.labelApart, 0);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button previewImageButton;
+        private System.Windows.Forms.Button btnChoiseApart;
+        private System.Windows.Forms.Label labelApart;
     }
 }

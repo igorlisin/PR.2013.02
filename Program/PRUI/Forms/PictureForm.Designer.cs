@@ -55,6 +55,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picturePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
+            // saveButton
+            // 
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // idInfoGroup
             // 
             this.idInfoGroup.Location = new System.Drawing.Point(610, 12);

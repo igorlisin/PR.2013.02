@@ -40,12 +40,13 @@ namespace PRUI.Forms
         /// <summary>
         /// Поле. Список Квартир
         /// </summary>
-        private IApartments _apartments;
+        private IApartment _apartment;
 
         /// <summary>
         /// Поле. Квартира после перепривязки
         /// </summary>
         private IApartment _apartmentAfterRelink;
+
 
         #endregion
 
@@ -178,15 +179,15 @@ namespace PRUI.Forms
         /// <summary>
         /// Конструктор
         /// </summary>
-        public PictureForm(IPicture picture, IApartments apartment, string imageFolderPath)
+        public PictureForm(IPicture picture, IApartment apartment, string imageFolderPath)
             : base()
         {
             InitializeComponent();                  // Инициализировать компоненты формы
 
             _picture = picture;                     // Сохранить картинку в поле
 
-            _apartments = apartment;                // Сохранить список квартир 
-            _apartmentAfterRelink = picture.Apartment;
+            _apartment = apartment;                // Сохранить список квартир 
+            _apartmentAfterRelink = apartment;
 
             _imageFolderPath = imageFolderPath;     // Сохранить путь к файлу картинок в поле
 
@@ -195,6 +196,7 @@ namespace PRUI.Forms
             CopyDataFromEntity();                   // Скопировать данные сущности в компоненты формы
 
             SetPicture(ImageFileName);            // Задать картинку для предварительного просмотра
+
         }
 
         #endregion
@@ -496,27 +498,33 @@ namespace PRUI.Forms
         //Сохраняем картинку с определенным именем в формате .png
        public override void okButton_Click(object sender, EventArgs e)
         {
+            
             ChangeSizeImage(ImageFileName);
             ImageFileName = _imageFolderPath + "\\" + PictureName + "_" +
                               _picture.CreationDate.ToShortDateString() + "_" +
                               _picture.CreationDate.ToLongTimeString().Replace(":", ".") + "_" +
                               _picture.GetPictureTypeAsString(PictureType) + ".png";
             _pictureForSaving.Save(ImageFileName, System.Drawing.Imaging.ImageFormat.Png);
+            _pictureForSaving.Dispose();
 
             base.okButton_Click(sender, e);
         }
        //Сохраняем картинку с определенным именем в формате .png
        public override void saveButton_Click(object sender, EventArgs e)
        {
+
            ChangeSizeImage(ImageFileName);
            ImageFileName = _imageFolderPath + "\\" + PictureName + "_" +
                              _picture.CreationDate.ToShortDateString() + "_" +
                              _picture.CreationDate.ToLongTimeString().Replace(":", ".") + "_" +
                              _picture.GetPictureTypeAsString(PictureType) + ".png";
            _pictureForSaving.Save(ImageFileName, System.Drawing.Imaging.ImageFormat.Png);
-
+            
 
            base.saveButton_Click(sender, e);
+
+           _pictureForSaving.Dispose();
+           
        }
 
         #region Picture Type List
@@ -572,41 +580,42 @@ namespace PRUI.Forms
 
         private void relinkApartmentButton_Click(object sender, EventArgs e)
         {
-            ApartmentSelectForm apartmentSelectForm;                                  // Форма выбора квартиры
+            //ApartmentSelectForm apartmentSelectForm;                                  // Форма выбора квартиры
 
-            apartmentSelectForm = new ApartmentSelectForm(_apartments);                // Создать форму выбора квартиры
+            //apartmentSelectForm = new ApartmentSelectForm(_apartment);                // Создать форму выбора квартиры
 
-            apartmentSelectForm.ShowDialog();                                // Отобразить форму выбора квартиры
+            //apartmentSelectForm.ShowDialog();                                // Отобразить форму выбора квартиры
 
-            if (apartmentSelectForm.SelectedApartment != null)                    // Проверить выбранный квартиры
-            {
-                _apartmentAfterRelink = apartmentSelectForm.SelectedApartment;      // Сохранить выбранный квартиру в поле
-            }
+            //if (apartmentSelectForm.SelectedApartment != null)                    // Проверить выбранный квартиры
+            //{
+            //    _apartmentAfterRelink = apartmentSelectForm.SelectedApartment;      // Сохранить выбранный квартиру в поле
+            //}
 
-            CopyLinkedDataFromEntity();                                 // Скопировать данные из сущностей, связанных с основной сущностью 
+            //CopyLinkedDataFromEntity();                                 // Скопировать данные из сущностей, связанных с основной сущностью 
         }
 
         #endregion
 
         private void unlinkApartmentButton_Click(object sender, EventArgs e)
         {
-            DialogResult unlinkConfirm;                         // Результат подтверждения сообщения
+            //DialogResult unlinkConfirm;                         // Результат подтверждения сообщения
 
-            unlinkConfirm = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
-                "Вы действительно хотите отвязать квартиру?",
-                "Подтверждение",
-                MessageBoxButtons.YesNo);
+            //unlinkConfirm = MessageBox.Show(                    // Отобразить окно сообщения с подтверждением и сохранить результат подтверждения
+            //    "Вы действительно хотите отвязать квартиру?",
+            //    "Подтверждение",
+            //    MessageBoxButtons.YesNo);
 
-            if (unlinkConfirm == DialogResult.Yes)              // Проверить результат подтверждения сообщения
-            {
-                _apartmentAfterRelink = null;                    // Отвязать квартиру от связанного дома
+            //if (unlinkConfirm == DialogResult.Yes)              // Проверить результат подтверждения сообщения
+            //{
+            //    _apartmentAfterRelink = null;                    // Отвязать квартиру от связанного дома
 
-                CleanApartment();                                 // Очистить данные квартиры
+            //    CleanApartment();                                 // Очистить данные квартиры
                
-                CopyLinkedDataFromEntity();                     // Скопировать данные из сущностей, связанных с основной сущностью 
-            }
+            //    CopyLinkedDataFromEntity();                     // Скопировать данные из сущностей, связанных с основной сущностью 
+            //}
         }
 
         #endregion
+
     }
 }

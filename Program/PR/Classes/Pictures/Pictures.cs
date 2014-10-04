@@ -126,6 +126,14 @@ namespace PR.Classes
         }
 
         /// <summary>
+        /// Метод. Возвращает список картинок для выбранной квартиры
+        /// </summary>
+        public IPictures PicturesForApartment(IApartment apartment)
+        {
+            return (IPictures)_picturesDbSet.Include(p => p.ApartmentForEntityFramework.HomeForEntityFramework.StreetForEntityFramework).Where(p => p.Apartment == apartment);
+        }
+
+        /// <summary>
         /// Метод. Возвращает количество элементов в списке
         /// </summary>
         public int Count()

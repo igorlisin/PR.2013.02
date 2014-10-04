@@ -220,6 +220,8 @@ namespace PRUI.TemplateForms
             CopyDataToEntity();           // Скопировать данные из компонентов формы в данные дома
 
             _entityNeedSave = true;     // Установить флаг необходимости сохранения сущности
+
+            Activate();
         }
 
         #endregion

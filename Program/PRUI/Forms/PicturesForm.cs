@@ -28,9 +28,19 @@ namespace PRUI.Forms
         IPictures _pictures;
 
         /// <summary>
+        /// Поле. Список картинок привязанных к квартире
+        /// </summary>
+        List <IPicture> _picturesApartment;
+
+        /// <summary>
         /// Поле. Список Квартир
         /// </summary>
         IApartments _apartments;
+
+        /// <summary>
+        /// Поле. Квартирa
+        /// </summary>
+        IApartment _selectedApartment;
 
         #endregion
 
@@ -42,9 +52,16 @@ namespace PRUI.Forms
         public PicturesForm(IPictures pictures, IApartments apartments, string imageFolderPath)
             :base()
         {
+
+            //IPictures pics;
+
             InitializeComponent();                  // Инициализировать компоненты формы
 
-            _pictures = pictures;                   // Сохранить список картинок с поле
+            //pics = (IPictures) pictures.ToList().FindAll(p => p.Apartment == apartments);
+
+            // _pictures = pics;                   // Сохранить список картинок с поле
+
+             _pictures = pictures;                   // Сохранить список картинок с поле
 
             _apartments = apartments;               // Сохранить список квартир
 
@@ -52,7 +69,14 @@ namespace PRUI.Forms
 
             ConfigureEntitiesDataGridView();        // Настроить визуальное представление элемента отображения списка сущностей
 
-            FillEntitiesDataGridView();             // Заполнить элемент отображения списка сущностей
+            if (_picturesApartment == null)
+            {
+                FillEntitiesDataGridView();                                     // Заполнить данными элемент отображения списка сущностей
+            }
+            else
+            {
+                FillEntitiesDataGridView2(_picturesApartment);
+            }
 
             SetButtonActivity();                    // Задать активность элементов управления
         }
@@ -152,6 +176,39 @@ namespace PRUI.Forms
         }
 
         /// <summary>
+        /// Метод. Заполняет данными элемент отображения списка сущностей
+        /// </summary>
+        public void FillEntitiesDataGridView2(List<IPicture> pictures)
+        {
+            string id;                                                      // Идентификатор
+            string description;                                             // Описание
+            string name;                                                    // Название
+            string type;                                                    // Тип
+            string fileName;                                                // Имя файла изображения
+            string creationDate;                                            // Дата создания
+
+            entitiesDataGridView.Rows.Clear();                              // Очистить элемент отображения списка сущностей
+
+            foreach (IPicture picture in pictures)                         // Выполнить для всех картинок из списка картинок
+            {
+                id = ((IEntity)picture).Id.ToString();                      // Получить идентификатор
+                description = ((IEntity)picture).Description;               // Получить описание
+                name = picture.Name; ;                                      // Получить название
+                type = picture.TypeAsString;                                // Получить тип
+                fileName = picture.ImageFileName;                           // Получить имя файла изображения
+                creationDate = picture.CreationDate.ToShortDateString();    // Получить дату создания
+
+                entitiesDataGridView.Rows.Add(                              // Добавить строку в элемент отображения списка сущностей
+                    name,
+                    type,
+                    fileName,
+                    creationDate,
+                    id,
+                    description);
+            }
+        }
+
+        /// <summary>
         /// Метод. Задает активность компонентов
         /// </summary>
         protected override void SetButtonActivity()
@@ -199,7 +256,7 @@ namespace PRUI.Forms
 
             picture = _pictures.Create();                                   // Создать картинку
 
-            pictureForm = new PictureForm(picture, _apartments, _imageFolderPath);       // Создать форму для редактирования картинки
+            pictureForm = new PictureForm(picture, _selectedApartment, _imageFolderPath);       // Создать форму для редактирования картинки
 
             pictureForm.ShowDialog();                                       // Отобразить форму для редактирования картинки
 
@@ -210,7 +267,14 @@ namespace PRUI.Forms
                 _pictures.Add(picture);                                     // Добавить созданную картинку в список
             }
 
-            FillEntitiesDataGridView();                                     // Заполнить данными элемент отображения списка сущностей
+            if (_picturesApartment == null)
+            {
+                FillEntitiesDataGridView();                                     // Заполнить данными элемент отображения списка сущностей
+            }
+            else
+            {
+                FillEntitiesDataGridView2(_picturesApartment);
+            }
 
             if (rowCount > 0)                                               // Проверить общее количество картинок
             {
@@ -241,7 +305,14 @@ namespace PRUI.Forms
 
                 _pictures.RemoveById(id);                                   // Удалить картинку из списка
 
-                FillEntitiesDataGridView();                                 // Заполнить данными элемент отображения списка сущностей
+                if (_picturesApartment == null)
+                {
+                    FillEntitiesDataGridView();                                     // Заполнить данными элемент отображения списка сущностей
+                }
+                else
+                {
+                    FillEntitiesDataGridView2(_picturesApartment);
+                }
 
                 if (selectedRowIndex > 1)                                   // Проверить индекс выделенной строки
                 {
@@ -276,7 +347,7 @@ namespace PRUI.Forms
 
                 picture = _pictures.GetPicture(id);                             // Получить выделенную картинку
 
-                pictureForm = new PictureForm(picture,_apartments,_imageFolderPath);       // Создать форму для редактирования картинки
+                pictureForm = new PictureForm(picture, _selectedApartment, _imageFolderPath);       // Создать форму для редактирования картинки
 
                 pictureForm.ShowDialog();                                       // Отобразить форму для редактирования картиннки
 
@@ -287,7 +358,14 @@ namespace PRUI.Forms
                     _pictures.SaveChanges();                                    // Сохранить изменения списка картинок
                 }
 
-                FillEntitiesDataGridView();                                     // Заполнить данными элемент отображения списка сущностей
+                if (_picturesApartment == null)
+                {
+                    FillEntitiesDataGridView();                                     // Заполнить данными элемент отображения списка сущностей
+                }
+                else
+                {
+                    FillEntitiesDataGridView2(_picturesApartment);
+                }
 
                 SelectRow(selectedRowIndex);                                    // Выделить строку
             }
@@ -325,6 +403,28 @@ namespace PRUI.Forms
         }
 
         #endregion
+
+        private void btnChoiseApart_Click(object sender, EventArgs e)
+        {
+            ApartmentSelectForm apartmentSelectForm;                                  // Форма выбора квартиры
+
+            apartmentSelectForm = new ApartmentSelectForm(_apartments);                // Создать форму выбора квартиры
+
+            apartmentSelectForm.ShowDialog();                                // Отобразить форму выбора квартиры
+
+            if (apartmentSelectForm.SelectedApartment != null)                    // Проверить выбранный квартиры
+            {
+                _selectedApartment = apartmentSelectForm.SelectedApartment;      // Сохранить выбранный квартиру в поле
+            }
+
+            labelApart.Text = _selectedApartment.Home.Street.Name + ", " + _selectedApartment.Home.Number +
+                              " (" + _selectedApartment.Home.ComplexNumber + ") кв." + _selectedApartment.Number;
+            _picturesApartment = _pictures.ToList().FindAll(p=>p.Apartment == _selectedApartment);
+            
+            //_pictures.
+
+            FillEntitiesDataGridView2(_picturesApartment);
+        }
 
         #endregion
     }
